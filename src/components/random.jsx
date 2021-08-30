@@ -1,8 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import $ from "jquery";
-import "jquery-ui/ui/widgets/draggable";
-import "jquery-ui/ui/widgets/droppable";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -14,7 +11,6 @@ export class Random extends React.Component {
       poem: []
     };
   }
-
   getPoem() {
     axios
       .get(URL, {
