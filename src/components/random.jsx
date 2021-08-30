@@ -3,6 +3,7 @@ import * as axios from "axios";
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
+let span = <span class="word">hello</span>;
 
 export class Random extends React.Component {
   constructor(props) {
@@ -48,10 +49,8 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <DragDropContainer targetKey="foo">
-                    <span className="word" key={"word-" + i}>
-                      {word}
-                    </span>
+                  <DragDropContainer dragClone={true} targetKey="foo" customDragElement={span}>
+                    
                   </DragDropContainer>
                 ))}
               </div>
