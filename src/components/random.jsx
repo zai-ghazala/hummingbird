@@ -1,8 +1,7 @@
 import * as React from "react";
 import * as axios from "axios";
 
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import Draggable from "react-draggable";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -45,7 +44,6 @@ export class Random extends React.Component {
         <button type="button" onClick={e => this.handleClick(e)}>
           next
         </button>
-				<DndProvider backend={HTML5Backend}>
         {this.state.poem.map((item, i) => (
           <div key={"block-" + i}>
             {item.lines.map((line, i) => (
@@ -63,7 +61,6 @@ export class Random extends React.Component {
         ))}
         <div id="droppable"></div>
           
-				</DndProvider>
       </>
     );
   }
