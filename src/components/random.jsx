@@ -43,6 +43,7 @@ export class Random extends React.Component {
   }
 
   render() {
+    
     return (
       <>
         <button type="submit" onClick={e => this.handleClick(e)}>
@@ -56,12 +57,10 @@ export class Random extends React.Component {
                 {line.split(" ").map((word, i) => (
                   <DragDropContainer
                     dragClone="true"
-                    targetKey="foo"
+                    targetKey="foo" 
                     key={"drag-" + i}
                   >
-                    <span className="word" key={"word-" + i}>
-                      {word}
-                    </span>
+                    
                   </DragDropContainer>
                 ))}
               </div>
