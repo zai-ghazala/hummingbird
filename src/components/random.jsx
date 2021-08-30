@@ -59,6 +59,9 @@ export class Random extends React.Component {
             </div>
           ))}
         </div>
+           <Draggable handle=".word">
+                    <SplitText className="word">{line}</SplitText>
+                  </Draggable>
       </>
     );
   }
