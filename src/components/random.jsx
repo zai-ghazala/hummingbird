@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as axios from "axios";
-import { DragDropContainer } from 'react-drag-drop-container';
+import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -41,19 +41,29 @@ export class Random extends React.Component {
   render() {
     return (
       <>
-          <button type="submit" onClick={e => this.handleClick(e)}>
-            next
-          </button>
+        <button type="submit" onClick={e => this.handleClick(e)}>
+          next
+        </button>
 
-          {this.state.poem.map((item, i) => (
-            <div key={"block-" + i}>
-              {item.lines.map((line, i) => (
-                <div key={"line-" + i}>
-                  {line.split(' ').map((word, i) => <DragDropContainer targetKey="foo"><span className="word" key={"word-" + i}>{word}</span></DragDropContainer>)}
-                </div>
-              ))}
-            </div>
-          ))}
+        {this.state.poem.map((item, i) => (
+          <div key={"block-" + i}>
+            {item.lines.map((line, i) => (
+              <div key={"line-" + i}>
+                {line.split(" ").map((word, i) => (
+                  <DragDropContainer dragClone="true" targetKey="foo">
+                    <span className="word" key={"word-" + i}>
+                      {word}
+                    </span>
+                  </DragDropContainer>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
+
+        <DropTarget targetKey="foo">
+          <div id="droptarget"></div>
+        </DropTarget>
       </>
     );
   }

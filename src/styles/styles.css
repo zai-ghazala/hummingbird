@@ -100,7 +100,8 @@ span.word:empty {
 #droptarget {
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 200vw;
+  left: -100vw;
   height: 14vh;
   background: white;
 }
