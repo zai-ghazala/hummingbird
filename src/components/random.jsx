@@ -49,11 +49,10 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <DragDropContainer
-                    targetKey="foo" 
-                    key={"drag-" + i} customDragElement={elem}
-                  >
-                   
+                  <DragDropContainer targetKey="foo" key={"drag-" + i}>
+                    <span className="word" key={"word-" + i}>
+                      {word}
+                    </span>
                   </DragDropContainer>
                 ))}
               </div>
@@ -61,7 +60,7 @@ export class Random extends React.Component {
           </div>
         ))}
 
-        <DropTarget onHit={this.dropped} targetKey="foo">
+        <DropTarget targetKey="foo">
           <div id="droptarget"></div>
         </DropTarget>
       </>
