@@ -75,15 +75,17 @@ END Glitch hello-app default styles
 body {
   font-family: serif;
   background-color: var(--color-bg);
+  margin-bottom: 14vh
 }
 #container {
   min-height: var(--wrapper-height);
   margin: 0 1rem;
   min-height: 86vh;
   color: var(--color-text-main);
-   display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  overflow-y: scroll;
 }
 span.word {
   box-shadow: 5px 10px #888888;
@@ -91,16 +93,14 @@ span.word {
   padding: 5px;
   margin: 3px;
   background: #fff;
-  
-  
 }
 span.word:empty {
-  display: none
+  display: none;
 }
 #droptarget {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 30vh;
+  height: 14vh;
   background: white;
 }
