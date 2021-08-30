@@ -7,6 +7,5 @@
     "include": ["^\\.env$", "^backend/"],
     "exclude": ["src/"]
   },
-  "noSavedEvents": true,
-  "throttle": 900000
+  "noSavedEvents": true
 }
