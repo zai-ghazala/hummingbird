@@ -1,18 +1,12 @@
 {
   "install": {
-    "include": [
-      "^package\\.json$"
-    ],
+    "include": ["^package\\.json$"],
     "exclude": []
   },
   "restart": {
-    "include": [
-      "^\\.env$",
-      "^backend/"
-    ],
-    "exclude": [
-      "src/" 
-    ]
+    "include": ["^\\.env$", "^backend/"],
+    "exclude": ["src/"]
   },
-  "noSavedEvents": true
+  "noSavedEvents": true,
+  "throttle": 900000
 }
