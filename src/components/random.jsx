@@ -9,7 +9,8 @@ export class Random extends React.Component {
     super(props);
     this.getPoem = this.getPoem.bind(this);
     this.state = {
-      poem: []
+      poem: [],
+      dragged: [],
     };
   }
   getPoem() {
@@ -35,7 +36,15 @@ export class Random extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.getPoem();
-  }
+  };
+  
+  handleDrop(e) {
+      let dragged = this.state.dragged.slice();
+      dragged.push({dragData, uid: shortid.generate()});
+      this.setState({items: items});
+      e.containerElem.style.visibility="hidden";
+    };
+
 
   render() {
     return (
@@ -48,7 +57,7 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <DragDropContainer targetKey="foo">
+                  <DragDropContainer dragdata={word} targetKey="foo">
                     <span className="word">{word}</span>
                   </DragDropContainer>
                 ))}
@@ -56,7 +65,7 @@ export class Random extends React.Component {
             ))}
           </div>
         ))}
-        <DropTarget targetKey="foo">
+        <DropTarget onHit={this.handleDrop} targetKey="foo">
           <div id="droppable"></div>
         </DropTarget>
       </>
