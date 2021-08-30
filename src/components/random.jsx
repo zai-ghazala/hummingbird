@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -38,12 +37,6 @@ export class Random extends React.Component {
     this.getPoem();
   };
   
-  handleDrop(e) {
-      let dragged = this.state.dragged.slice();
-      dragged.push({dragData, uid: shortid.generate()});
-      this.setState({items: items});
-      e.containerElem.style.visibility="hidden";
-    };
 
 
   render() {
@@ -57,17 +50,15 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <DragDropContainer dragdata={word} targetKey="foo">
                     <span className="word">{word}</span>
-                  </DragDropContainer>
                 ))}
               </div>
             ))}
           </div>
         ))}
-        <DropTarget onHit={this.handleDrop} targetKey="foo">
-          <div id="droppable"></div>
-        </DropTarget>
+          <div id="droppable">
+          </div>
+          
       </>
     );
   }
