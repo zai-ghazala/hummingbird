@@ -47,20 +47,19 @@ export class Random extends React.Component {
             next
           </button>
 
-          {this.state.poem.map((item, i) => (
-            <div key={"block-" + i}>
-              {item.lines.map((line, i) => (
-                
-                <p key={"line-" + i}>
-                  
-                  <Draggable handle=".word">
+            {this.state.poem.map((item, i) => (
+            
+          <Draggable>
+              <div key={"block-" + i}>
+                {item.lines.map((line, i) => (
+                  <p key={"line-" + i}>
                     <SplitText className="word">{line}</SplitText>
-               
-                     </Draggable>
-                </p>
-              ))}
-            </div>
-          ))}
+                  </p>
+                ))}
+              </div>
+              
+          </Draggable>
+            ))}
         </div>
       </>
     );
