@@ -1,8 +1,11 @@
 import * as React from "react";
 import * as axios from "axios";
-import * as ReactDOM from 'react-dom';
-import * as dragula from "react-dragula";
-
+import {
+  Draggable,
+  Droppable,
+  DragComponent,
+  DragState
+} from "react-dragtastic";
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 export class Random extends React.Component {
@@ -31,8 +34,6 @@ export class Random extends React.Component {
 
   componentDidMount() {
     this.getPoem();
-    
-    dragula([document.querySelectorAll(".draggable"), document.querySelectorAll(".droppable")]);
   }
 
   handleClick(e) {
@@ -47,17 +48,24 @@ export class Random extends React.Component {
           next
         </button>
 
-          {this.state.poem.map((item, i) => (
-            <div key={"block-" + i}>
-              {item.lines.map((line, i) => (
-                <div key={"line-" + i}>
-                  {line.split(" ").map((word, i) => (
-                      <span className="word" key={"word" + i}>{word}</span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
+        {this.state.poem.map((item, i) => (
+          <div key={"block-" + i}>
+            {item.lines.map((line, i) => (
+              <div key={"line-" + i}>
+                {line.split(" ").map((word, i) => (
+                  <Draggable>
+                    {({ isDragging, events }) => (
+                      <span {...events} className="word" key={"word" + i}>
+                        {word}
+                      </span>
+                    )}
+                  </Draggable>
+                ))}
+                )
+              </div>
+            ))}
+          </div>
+        ))}
         <div className="droppable"></div>
       </>
     );
