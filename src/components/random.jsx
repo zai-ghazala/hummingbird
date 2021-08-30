@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as axios from "axios";
 import ReactDOM from 'react-dom';
-import $ from 'jquery'; 
-import 'jquery-ui'; 
+import $ from 'jquery';
+import 'jquery-ui/ui/widgets/draggable'
+import 'jquery-ui/ui/widgets/droppable'
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
