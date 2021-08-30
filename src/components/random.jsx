@@ -52,11 +52,7 @@ export class Random extends React.Component {
               {item.lines.map((line, i) => (
                 <div key={"line-" + i}>
                   <Draggable handle=".word">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: line.replace(/([A-Za-z0-9'<>/]+)/g, '<span className="word">$1</span>')
-                      }}
-                    />
+                    <SplitText className="word">{line}</SplitText>
                   </Draggable>
                 </div>
               ))}
