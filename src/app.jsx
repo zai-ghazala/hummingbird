@@ -27,10 +27,12 @@ export default function Home() {
     <Router hook={useHashLocation}>
       <Seo />
       <main role="main" className="wrapper">
+        <img id="img-top-right" src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-right.png"/>
         <div className="content">
           {/* Router specifies which component to insert here as the main content */}
           <PageRouter />
         </div>
+                <img id="img-bottom-left" src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"/>
       </main>
       {/* Footer links to Home and About, Link elements matched in router.jsx */}
       <footer className="footer">
