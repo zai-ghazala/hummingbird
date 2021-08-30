@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as axios from "axios";
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -49,7 +50,7 @@ export class Random extends React.Component {
             <div key={"block-" + i}>
               {item.lines.map((line, i) => (
                 <div key={"line-" + i}>
-                    {line.split(' ').map((word, i) => <span className="word" key={"word-" + i}>{word}</span>)}
+                  {line.split(' ').map((word, i) => <DragDropContainer targetKey="foo"><span className="word" key={"word-" + i}></span></DragDropContainer>)}
                 </div>
               ))}
             </div>
