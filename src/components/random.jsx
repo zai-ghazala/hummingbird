@@ -9,7 +9,7 @@ export class Random extends React.Component {
     this.getPoem = this.getPoem.bind(this);
     this.state = {
       poem: [],
-      dragged: [],
+      dragged: []
     };
   }
   getPoem() {
@@ -35,9 +35,7 @@ export class Random extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.getPoem();
-  };
-  
-
+  }
 
   render() {
     return (
@@ -45,20 +43,19 @@ export class Random extends React.Component {
         <button type="button" onClick={e => this.handleClick(e)}>
           next
         </button>
-        {this.state.poem.map((item, i) => (
-          <div key={"block-" + i}>
-            {item.lines.map((line, i) => (
-              <div key={"line-" + i}>
-                {line.split(" ").map((word, i) => (
-                    <span className="word">{word}</span>
-                ))}
-              </div>
-            ))}
-          </div>
-        ))}
-          <div id="droppable">
-          </div>
-          
+
+          {this.state.poem.map((item, i) => (
+            <div key={"block-" + i}>
+              {item.lines.map((line, i) => (
+                <div key={"line-" + i}>
+                  {line.split(" ").map((word, i) => (
+                      <span className="word">{word}</span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        <div id="droppable"></div>
       </>
     );
   }
