@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@moxy/react-split-text": "^1.0.1",
+    "arha-split-text": "^2.0.1",
     "axios": "^0.21.1",
     "flag": "^4.4.0",
     "react": "^17.0.2",
