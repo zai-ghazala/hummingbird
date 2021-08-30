@@ -56,6 +56,10 @@ export class Random extends React.Component {
             </div>
           ))}
         </div>
+        
+        <DropTarget targetKey="foo" >
+    <div id="droptarget"></div>
+</DropTarget>
       </>
     );
   }
