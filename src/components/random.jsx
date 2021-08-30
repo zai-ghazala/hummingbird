@@ -12,11 +12,6 @@ export class Random extends React.Component {
       poem: []
     };
   }
-
-  dropped(e) {
-    e.containerElem.append(e.dragElem);
-  }
-
   getPoem() {
     axios
       .get(URL, {
@@ -43,7 +38,6 @@ export class Random extends React.Component {
   }
 
   render() {
-    
     return (
       <>
         <button type="submit" onClick={e => this.handleClick(e)}>
@@ -56,11 +50,10 @@ export class Random extends React.Component {
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
                   <DragDropContainer
-                    dragClone="true"
                     targetKey="foo" 
-                    key={"drag-" + i}
+                    key={"drag-" + i} customDragElement={elem}
                   >
-                    
+                   
                   </DragDropContainer>
                 ))}
               </div>
