@@ -38,7 +38,6 @@ export class Random extends React.Component {
     e.preventDefault();
     this.getPoem();
   }
-  
 
   render() {
     return (
@@ -48,19 +47,21 @@ export class Random extends React.Component {
             next
           </button>
 
-            {this.state.poem.map((item, i) => (
-            
-       
-              <div key={"block-" + i}>
-                {item.lines.map((line, i) => (
-                  <p key={"line-" + i}>
-                       <Draggable handle=".word"><div>{line.replace(/(\w*)\s/g, "<span class='word'>$1</span>")}
-          </Draggable>
-                  </p>
-                ))}
-              </div>
-              
-            ))}
+          {this.state.poem.map((item, i) => (
+            <div key={"block-" + i}>
+              {item.lines.map((line, i) => (
+                <div key={"line-" + i}>
+                  <Draggable handle=".word">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: line.replace(/([A-Za-z0-9'<>/]+)/g, '<span className="word">$1</span>')
+                      }}
+                    />
+                  </Draggable>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </>
     );
