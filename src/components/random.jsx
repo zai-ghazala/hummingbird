@@ -1,11 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import {
-  Draggable,
-  Droppable,
-  DragComponent,
-  DragState
-} from "react-dragtastic";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -14,7 +8,8 @@ export class Random extends React.Component {
     super(props);
     this.getPoem = this.getPoem.bind(this);
     this.state = {
-      poem: []
+      poem: [],
+      dragged: [],
     };
   }
   getPoem() {
@@ -40,7 +35,9 @@ export class Random extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.getPoem();
-  }
+  };
+  
+
 
   render() {
     return (
@@ -48,29 +45,20 @@ export class Random extends React.Component {
         <button type="button" onClick={e => this.handleClick(e)}>
           next
         </button>
-
         {this.state.poem.map((item, i) => (
           <div key={"block-" + i}>
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <Draggable type="word-type">
-                    {({ isDragging, events }) => (
-                      <span {...events} className="word" key={"word" + i}>
-                        {word}
-                      </span>
-                    )}
-                  </Draggable>
+                    <span className="word">{word}</span>
                 ))}
-                )
               </div>
             ))}
           </div>
         ))}
-
-        <Droppable accepts="word-type" onDrop={this.animateDrop}>
-          {({ events, isOver }) => <div {...events} className="droppable" />}
-        </Droppable>
+          <div id="droppable">
+          </div>
+          
       </>
     );
   }
