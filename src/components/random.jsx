@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as axios from "axios";
+import * as dragula from "react-dragula";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -30,6 +31,11 @@ export class Random extends React.Component {
 
   componentDidMount() {
     this.getPoem();
+    var draggable = React.findDOMNode(this);
+    var droppable = React.findDOMNode(this);
+
+    
+    dragula([draggable, droppable]);
   }
 
   handleClick(e) {
@@ -55,7 +61,7 @@ export class Random extends React.Component {
               ))}
             </div>
           ))}
-        <div id="droppable"></div>
+        <div className="droppable"></div>
       </>
     );
   }
