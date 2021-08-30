@@ -6,6 +6,7 @@ import {
   DragComponent,
   DragState
 } from "react-dragtastic";
+
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 export class Random extends React.Component {
@@ -53,7 +54,7 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                  <Draggable>
+                  <Draggable type="word-type">
                     {({ isDragging, events }) => (
                       <span {...events} className="word" key={"word" + i}>
                         {word}
@@ -66,7 +67,10 @@ export class Random extends React.Component {
             ))}
           </div>
         ))}
-        <div className="droppable"></div>
+
+        <Droppable accepts="word-type" onDrop={this.animateDrop}>
+          {({ events, isOver }) => <div {...events} className="droppable" />}
+        </Droppable>
       </>
     );
   }
