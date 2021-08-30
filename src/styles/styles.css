@@ -93,3 +93,6 @@ span.word {
   
   
 }
+span.word:empty {
+  display: none
+}
