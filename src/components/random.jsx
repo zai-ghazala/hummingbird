@@ -1,7 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import SplitText from "@moxy/react-split-text";
-import Draggable from "react-draggable";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
