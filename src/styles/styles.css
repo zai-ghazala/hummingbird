@@ -105,3 +105,6 @@ span.word:empty {
   height: 14vh;
   background: white;
 }
+.bird {
+  margin: 1.5em
+}
