@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import * as dragula from "react-dragula";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -10,7 +9,7 @@ export class Random extends React.Component {
     this.getPoem = this.getPoem.bind(this);
     this.state = {
       poem: [],
-      dragged: []
+      dragged: [],
     };
   }
   getPoem() {
@@ -31,17 +30,14 @@ export class Random extends React.Component {
 
   componentDidMount() {
     this.getPoem();
-    var draggable = React.findDOMNode(this);
-    var droppable = React.findDOMNode(this);
-
-    
-    dragula([draggable, droppable]);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.getPoem();
-  }
+  };
+  
+
 
   render() {
     return (
@@ -49,19 +45,20 @@ export class Random extends React.Component {
         <button type="button" onClick={e => this.handleClick(e)}>
           next
         </button>
-
-          {this.state.poem.map((item, i) => (
-            <div key={"block-" + i}>
-              {item.lines.map((line, i) => (
-                <div key={"line-" + i}>
-                  {line.split(" ").map((word, i) => (
-                      <span className="word">{word}</span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
-        <div className="droppable"></div>
+        {this.state.poem.map((item, i) => (
+          <div key={"block-" + i}>
+            {item.lines.map((line, i) => (
+              <div key={"line-" + i}>
+                {line.split(" ").map((word, i) => (
+                    <span className="word">{word}</span>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
+          <div id="droppable">
+          </div>
+          
       </>
     );
   }
