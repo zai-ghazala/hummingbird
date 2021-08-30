@@ -1,6 +1,9 @@
 import * as React from "react";
 import * as axios from "axios";
-import Draggable from 'react-draggable'; 
+import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import 'jquery-ui/ui/widgets/draggable'
+import 'jquery-ui/ui/widgets/droppable'
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -49,11 +52,9 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-<Draggable>
                   <span className="word" key={"word-" + i}>
                     {word}
                   </span>
-  </Draggable>
                 ))}
               </div>
             ))}
