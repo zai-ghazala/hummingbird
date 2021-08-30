@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as axios from "axios";
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+import { DragDropContainer } from 'react-drag-drop-container';
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -56,10 +56,6 @@ export class Random extends React.Component {
             </div>
           ))}
         </div>
-        
-        <DropTarget targetKey="foo" >
-    <div id="droptarget"></div>
-</DropTarget>
       </>
     );
   }
