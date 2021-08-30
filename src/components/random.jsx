@@ -51,17 +51,12 @@ export class Random extends React.Component {
             <div key={"block-" + i}>
               {item.lines.map((line, i) => (
                 <div key={"line-" + i}>
-                  <Draggable handle=".word">
-                    <SplitText className="word">{line}</SplitText>
-                  </Draggable>
+                    {line.split(' ').map((word, i) => <span className="word" key={"word-" + i}>{word}</span>)}
                 </div>
               ))}
             </div>
           ))}
         </div>
-           <Draggable handle=".word">
-                    <SplitText className="word">{line}</SplitText>
-                  </Draggable>
       </>
     );
   }
