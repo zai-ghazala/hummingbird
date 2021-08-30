@@ -13,6 +13,10 @@ export class Random extends React.Component {
     };
   }
 
+  dropped(e) {
+    e.containerElem.append(e.dragElem);
+  }
+
   getPoem() {
     axios
       .get(URL, {
@@ -65,7 +69,7 @@ export class Random extends React.Component {
           </div>
         ))}
 
-        <DropTarget targetKey="foo">
+        <DropTarget onHit={this.dropped} targetKey="foo">
           <div id="droptarget"></div>
         </DropTarget>
       </>
