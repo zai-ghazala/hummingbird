@@ -38,6 +38,7 @@ export class Random extends React.Component {
     e.preventDefault();
     this.getPoem();
   }
+  
 
   render() {
     return (
@@ -49,16 +50,16 @@ export class Random extends React.Component {
 
             {this.state.poem.map((item, i) => (
             
-          <Draggable>
+       
               <div key={"block-" + i}>
                 {item.lines.map((line, i) => (
                   <p key={"line-" + i}>
-                    <SplitText className="word">{line}</SplitText>
+                       <Draggable handle=".word"><div><SplitText className="word">{line}</SplitText></div>
+          </Draggable>
                   </p>
                 ))}
               </div>
               
-          </Draggable>
             ))}
         </div>
       </>
