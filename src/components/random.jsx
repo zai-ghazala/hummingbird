@@ -41,7 +41,6 @@ export class Random extends React.Component {
   render() {
     return (
       <>
-        <div id="container">
           <button type="submit" onClick={e => this.handleClick(e)}>
             next
           </button>
@@ -55,7 +54,6 @@ export class Random extends React.Component {
               ))}
             </div>
           ))}
-        </div>
       </>
     );
   }
