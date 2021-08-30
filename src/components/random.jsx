@@ -54,7 +54,7 @@ export class Random extends React.Component {
               <div key={"block-" + i}>
                 {item.lines.map((line, i) => (
                   <p key={"line-" + i}>
-                       <Draggable handle=".word"><div><SplitText className="word">{line}</SplitText></div>
+                       <Draggable handle=".word"><div>{line.replace(/(\w*)\s/g, "<span class='word'>$1</span>")}
           </Draggable>
                   </p>
                 ))}
