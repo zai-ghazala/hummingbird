@@ -50,7 +50,7 @@ export class Random extends React.Component {
             {item.lines.map((line, i) => (
               <div key={"line-" + i}>
                 {line.split(" ").map((word, i) => (
-                    <span className="word">{word}</span>
+                    <span className="word" key={"word" + i}>{word}</span>
                 ))}
               </div>
             ))}
