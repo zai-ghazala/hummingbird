@@ -4,7 +4,7 @@ import * as axios from "axios";
 import { DndProvider, useDrag } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
-import { Draggable } from "../components/draggable.jsx";
+import Draggable from "../components/draggable.jsx";
 import { Droppable } from "../components/droppable.jsx";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
