@@ -8,8 +8,8 @@ const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 
 export class Random extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.getPoem = this.getPoem.bind(this);
     this.state = {
       poem: []
