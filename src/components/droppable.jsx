@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDrop } from "react-dnd";
 
-export const Droppable = () => {
+function Droppable() {
   const [hasDropped, setHasDropped] = useState(false);
   const [{ isOver, isOverCurrent }, drop] = useDrop(
     () => ({
@@ -22,3 +22,6 @@ export const Droppable = () => {
   );
   return <div ref={drop} id="droppable"></div>;
 };
+
+
+export default Droppable;

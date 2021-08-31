@@ -1,24 +1,20 @@
-import * as React from "react";
+import {useState, useEffect} from 'react';
 import * as axios from "axios";
 
 import { DndProvider, useDrag } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 import Draggable from "../components/draggable.jsx";
-import { Droppable } from "../components/droppable.jsx";
+import Droppable from "../components/droppable.jsx";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 
-export class Random extends React.Component {
-  constructor(props) {
-    super(props);
-    this.getPoem = this.getPoem.bind(this);
-    this.state = {
-      poem: []
-    };
-  }
-  getPoem() {
+function Random() {
+
+  const poem = useState([]);
+  
+  const getPoem = () => {
     axios
       .get(URL, {
         headers: {
@@ -34,16 +30,15 @@ export class Random extends React.Component {
       .catch(err => {});
   }
 
-  componentDidMount() {
+useEffect(()=>{
     this.getPoem();
-  }
+  },[]);
 
-  handleClick(e) {
+  handleClick = (e) => {
     e.preventDefault();
     this.getPoem();
   }
 
-  render() {
     return (
       <>
         <button type="button" onClick={e => this.handleClick(e)}>
@@ -57,4 +52,3 @@ export class Random extends React.Component {
       </>
     );
   }
-}
