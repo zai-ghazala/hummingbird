@@ -1,9 +1,9 @@
-import * as react from "react";
+import * as React from "react";
 import { useState, useEffect } from "react";
 import * as axios from "axios";
 import { useDrag } from "react-dnd";
 
-const Draggable = props => {
+function Draggable() {
   const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
@@ -20,9 +20,11 @@ const Draggable = props => {
       .catch(err => {});
   };
 
-  useEffect(() => {
-    getPoem();
-  }, []);
+  const useEffect(() => {
+getPoem()
+      });
+  }, []); // <-- Have to pass in [] here!
+
 
   const handleClick = e => {
     e.preventDefault();
@@ -34,7 +36,7 @@ const Draggable = props => {
   console.log(poem.lines);
   return (
     <>
-      {props.map((item, i) => (
+      {poem.map((item, i) => (
         <div key={"block-" + i}>
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
@@ -49,6 +51,6 @@ const Draggable = props => {
       ))}
     </>
   );
-};
+}
 
 export default Draggable;
