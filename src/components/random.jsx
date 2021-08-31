@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as axios from "axios";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
@@ -9,7 +10,7 @@ export class Random extends React.Component {
     this.getPoem = this.getPoem.bind(this);
     this.state = {
       poem: [],
-      dragged: [],
+      dragged: []
     };
   }
   getPoem() {
@@ -35,9 +36,7 @@ export class Random extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.getPoem();
-  };
-  
-
+  }
 
   render() {
     return (
@@ -45,20 +44,24 @@ export class Random extends React.Component {
         <button type="button" onClick={e => this.handleClick(e)}>
           next
         </button>
-        {this.state.poem.map((item, i) => (
-          <div key={"block-" + i}>
-            {item.lines.map((line, i) => (
-              <div key={"line-" + i}>
-                {line.split(" ").map((word, i) => (
-                    <span className="word" key={"word" + i}>{word}</span>
-                ))}
-              </div>
-            ))}
-          </div>
-        ))}
-          <div id="droppable">
-          </div>
+
+        <DragDropContext>
+          {this.state.poem.map((item, i) => (
+            <div key={"block-" + i}>
+              {item.lines.map((line, i) => (
+                <div key={"line-" + i}>
+                  {line.split(" ").map((word, i) => (
           
+                    <span className="word" key={"word" + i}>
+                      {word}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </DragDropContext>
+        <div id="droppable"></div>
       </>
     );
   }
