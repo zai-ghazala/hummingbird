@@ -7,26 +7,12 @@ function Draggable() {
   const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
-    fetch(= () => {
-    const URL = "https://poetrydb.org/random,author/1;Dickinson";)
-        .then(res => res.json())
-        .then(result => {
-          setData(data.albums)
-        })
-        .catch(error => console.log("error"))
-
-  }
-    axios
-      .get(URL, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        }
+    fetch("https://poetrydb.org/random,author/1;Dickinson")
+      .then(res => res.json())
+      .then(result => {
+        setPoem(result);
       })
-      .then(({ data }) => {
-        setPoem(data);
-      })
-      .catch(err => {});
+      .catch(error => console.log("error"));
   };
 
   useEffect(() => {
