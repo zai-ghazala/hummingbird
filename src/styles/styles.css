@@ -97,7 +97,7 @@ span.word {
 span.word:empty {
   display: none;
 }
-#droppable {
+.droppable {
   position: fixed;
   bottom: 0;
   width: 200vw;

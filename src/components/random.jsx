@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as axios from "axios";
+import * as ReactDom from 'react-dom';
+import { Draggable, Droppable } from '@syncfusion/ej2-base';
+
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 export class Random extends React.Component {
@@ -29,6 +32,9 @@ export class Random extends React.Component {
 
   componentDidMount() {
     this.getPoem();
+    let draggable = new Draggable(document.getElementsByClassName('word'), { clone: true });
+    let droppable = new Droppable(document.getElementsByClassName('droppable'));
+
   }
 
   handleClick(e) {
@@ -56,8 +62,11 @@ export class Random extends React.Component {
             ))}
           </div>
         ))}
-        <div id="droppable"></div>
+        <div className="droppable"></div>
       </>
     );
   }
 }
+
+
+ReactDom.render(<Random />, document.getElementById('poem'));
