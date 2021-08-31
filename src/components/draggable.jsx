@@ -7,6 +7,15 @@ function Draggable() {
   const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
+    fetch(= () => {
+    const URL = "https://poetrydb.org/random,author/1;Dickinson";)
+        .then(res => res.json())
+        .then(result => {
+          setData(data.albums)
+        })
+        .catch(error => console.log("error"))
+
+  }
     axios
       .get(URL, {
         headers: {
@@ -20,11 +29,9 @@ function Draggable() {
       .catch(err => {});
   };
 
-  const useEffect(() => {
-getPoem()
-      });
+  useEffect(() => {
+    getPoem();
   }, []); // <-- Have to pass in [] here!
-
 
   const handleClick = e => {
     e.preventDefault();
