@@ -1,7 +1,5 @@
 import * as React from "react";
 import * as axios from "axios";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 export class Random extends React.Component {
@@ -45,21 +43,19 @@ export class Random extends React.Component {
           next
         </button>
 
-        <DragDropContext>
-          {this.state.poem.map((item, i) => (
-            <div key={"block-" + i}>
-              {item.lines.map((line, i) => (
-                <div key={"line-" + i}>
-                  {line.split(" ").map((word, i) => (
-                    <span className="word" key={"word-" + i}>
-                      {word}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
-        </DragDropContext>
+        {this.state.poem.map((item, i) => (
+          <div key={"block-" + i}>
+            {item.lines.map((line, i) => (
+              <div key={"line-" + i}>
+                {line.split(" ").map((word, i) => (
+                  <span className="word" key={"word-" + i}>
+                    {word}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
         <div id="droppable"></div>
       </>
     );
