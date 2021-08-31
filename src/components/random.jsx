@@ -9,7 +9,7 @@ import Droppable from "../components/droppable.jsx";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
-function Random() {
+function Random(props) {
   const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
@@ -42,7 +42,7 @@ function Random() {
       </button>
 
       <DndProvider backend={HTML5Backend}>
-        <Draggable poem/>
+        <Draggable poem={poem.lines}/>
         <Droppable />
       </DndProvider>
     </>
