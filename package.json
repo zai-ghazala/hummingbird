@@ -8,7 +8,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@syncfusion/ej2-base": "^19.2.57",
     "axios": "^0.21.1",
     "flag": "^4.4.0",
     "jquery": "^3.6.0",
