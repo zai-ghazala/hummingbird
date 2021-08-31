@@ -10,8 +10,8 @@ import Droppable from "../components/droppable.jsx";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
-function Random() {
-  const poem = useState([]);
+function Random(props) {
+  const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
     axios
@@ -22,9 +22,7 @@ function Random() {
         }
       })
       .then(({ data }) => {
-        this.setState({
-          poem: data
-        });
+        setPoem(data)
       })
       .catch(err => {});
   };
