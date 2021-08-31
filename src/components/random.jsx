@@ -1,5 +1,9 @@
 import * as React from "react";
 import * as axios from "axios";
+
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
 export class Random extends React.Component {
@@ -7,8 +11,7 @@ export class Random extends React.Component {
     super(props);
     this.getPoem = this.getPoem.bind(this);
     this.state = {
-      poem: [],
-      dragged: []
+      poem: []
     };
   }
   getPoem() {
