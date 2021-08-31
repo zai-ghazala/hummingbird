@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDrop } from "react-dnd";
 
-function Droppable() {
+const Droppable = () => {
   const [hasDropped, setHasDropped] = useState(false);
   const [{ isOver, isOverCurrent }, drop] = useDrop(
     () => ({
