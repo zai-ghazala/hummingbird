@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Random } from "../components/random.jsx";
+import Random from "../components/random.jsx";
 
 export default function Home() {
   return (
