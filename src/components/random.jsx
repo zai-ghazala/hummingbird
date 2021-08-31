@@ -46,6 +46,7 @@ export class Random extends React.Component {
           next
         </button>
 
+        <DndProvider backend={HTML5Backend}>
         {this.state.poem.map((item, i) => (
           <div key={"block-" + i}>
             {item.lines.map((line, i) => (
@@ -59,7 +60,8 @@ export class Random extends React.Component {
             ))}
           </div>
         ))}
-        <div id="droppable"></div>
+        <Droppable/>
+        </DndProvider>
       </>
     );
   }
