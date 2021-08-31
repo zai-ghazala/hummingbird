@@ -1,10 +1,37 @@
-import React from "react";
+import * as react from "react";
+import { useState, useEffect } from "react";
+import * as axios from "axios";
 import { useDrag } from "react-dnd";
 
-const Draggable = (props) => {
+const Draggable = props => {
+  const [poem, setPoem] = useState([]);
+
+  const getPoem = () => {
+    axios
+      .get(URL, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      })
+      .then(({ data }) => {
+        setPoem(data);
+      })
+      .catch(err => {});
+  };
+
+  useEffect(() => {
+    getPoem();
+  }, []);
+
+  const handleClick = e => {
+    e.preventDefault();
+    getPoem();
+  };
+
   const [, drag] = useDrag(() => ({ type: "draggable" }));
-  
-    console.log(props.poem.lines);
+
+  console.log(poem.lines);
   return (
     <>
       {props.map((item, i) => (
@@ -22,6 +49,6 @@ const Draggable = (props) => {
       ))}
     </>
   );
-}
+};
 
 export default Draggable;

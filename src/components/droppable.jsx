@@ -1,3 +1,4 @@
+import * as react from "react";
 import { useState } from "react";
 import { useDrop } from "react-dnd";
 
@@ -22,6 +23,5 @@ const Droppable = () => {
   );
   return <div ref={drop} id="droppable"></div>;
 };
-
 
 export default Droppable;
