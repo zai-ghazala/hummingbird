@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 import { useDrag } from "react-dnd";
 
 function Draggable(props) {
   const [, drag] = useDrag(() => ({ type: "draggable" }));
+
+  console.log(props);
   return (
     <>
       {props.poem.map((item, i) => (

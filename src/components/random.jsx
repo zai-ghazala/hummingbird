@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react'; // import useState
 import * as axios from "axios";
 
 import { DndProvider, useDrag } from "react-dnd";
@@ -10,7 +9,7 @@ import Droppable from "../components/droppable.jsx";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
-function Random(props) {
+function Random() {
   const [poem, setPoem] = useState([]);
 
   const getPoem = () => {
@@ -43,7 +42,7 @@ function Random(props) {
       </button>
 
       <DndProvider backend={HTML5Backend}>
-        <Draggable />
+        <Draggable poem/>
         <Droppable />
       </DndProvider>
     </>
