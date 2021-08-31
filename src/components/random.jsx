@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as axios from "axios";
+import ReactDOM from "react-dom";
+import { v4 as uuid } from "uuid";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const URL = "https://poetrydb.org/random,author/1;Dickinson";
@@ -38,6 +40,22 @@ export class Random extends React.Component {
     this.getPoem();
   }
 
+  getRenderItem = (items, className) => (provided, snapshot, rubric) => {
+  const item = items[rubric.source.index];
+  return (
+    <React.Fragment>
+      <li
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}
+        ref={provided.innerRef}
+        style={provided.draggableProps.style}
+        className={snapshot.isDragging ? "dragging" : ""}
+      >
+        {item.label}
+      </li>
+    </React.Fragment>
+  );
+};
   render() {
     return (
       <>
