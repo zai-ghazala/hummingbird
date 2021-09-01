@@ -87,7 +87,14 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
-
+span.word {
+  box-shadow: 5px 10px #888888;
+  display: inline-block;
+  padding: 5px;
+  margin: 3px;
+  background: #fff;
+  cursor: move;
+}
 span.word:empty {
   visibility: hidden;
 }
