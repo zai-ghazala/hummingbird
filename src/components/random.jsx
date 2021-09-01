@@ -3,28 +3,26 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { DndProvider, useDrag } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import axios from 'axios';
 
 import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
-const Random = () => {
+function Random() {
   const [poem, setPoem] = useState(null);
 
-  useEffect(() => {
-    const URL = "https://poetrydb.org/random,author/1;Dickinson";
-    const fetchData = async () => {
-      try {
-        const response = await fetch(URL);
-        const json = await response.json();
-        console.log(json);
-        setPoem(json);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
 
-    fetchData();
-  }, []);
+  
+  useEffect(async () => {
+    
+    const URL = "https://poetrydb.org/random,author/1;Dickinson";
+    const result = await axios(
+      'https://hn.algolia.com/api/v1/search?query=redux',
+    );
+ 
+    setData(result.data);
+  });
+ 
 
   return (
     <>
@@ -34,6 +32,6 @@ const Random = () => {
       </DndProvider>
     </>
   );
-};
+}
 
 export default Random;

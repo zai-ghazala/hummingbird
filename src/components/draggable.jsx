@@ -8,7 +8,7 @@ function Draggable(props) {
   console.log(props.poem)
   return (
     <>
-      {props.poem && props.poem.map((item, i) => (
+      {props.poem && props.poem && props.poem.map((item, i) => (
         <div key={"block-" + i}>
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
