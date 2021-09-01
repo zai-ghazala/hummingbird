@@ -22,7 +22,7 @@ function Random() {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        <Draggable poem={poem} />
+        {poem && <Draggable poem={poem} />}
       </DndProvider>
     </>
   );

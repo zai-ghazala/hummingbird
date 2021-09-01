@@ -1,8 +1,8 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 
-function Draggable(props) {
-  const [, drag] = useDrag(() => ({ type: "draggable" }));
+export const Draggable = (props) => {
+  const [, drag] = useDrag(() => ({ type: 'draggable' }));
 
   return (
     <>
