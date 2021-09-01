@@ -12,7 +12,7 @@ export const Draggable = props => {
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-                <span ref={drag} className="word" key={"word-" + i}>
+                <span ref={drag}  className="word" key={"word-" + i}>
                   {word}
                 </span>
               ))}
