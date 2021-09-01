@@ -6,24 +6,20 @@ import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
 function Random() {
-  const [poem, setPoem] = useState([]);
+  const [poem, setPoem] = useState(null);
 
 
    useEffect(()=>{
-        console.log(poem);
-            axios
+  axios
       .get("https://poetrydb.org/random,author/1;Dickinson")
       .then(res => {
-        console.log(res.data);
         setPoem(res.data);
       })
       .catch(err => {
         console.log(err.message);
        })
      
-     
-     
-    }, [poem]) 
+    }, []) 
   
 
   
@@ -32,8 +28,7 @@ function Random() {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        {poem && <Draggable poemLines={poem} />}
-        <Droppable />
+        <Draggable poem={poem} />
       </DndProvider>
     </>
   );

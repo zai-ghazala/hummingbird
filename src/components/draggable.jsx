@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-
+import React from "react";
 import { useDrag } from "react-dnd";
 
 function Draggable(props) {
-
   const [, drag] = useDrag(() => ({ type: "draggable" }));
-  
+
   return (
     <>
-      {props.poemLines.map((item, i) => (
+      {props.poem.map((item, i) => (
         <div key={"block-" + i}>
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
