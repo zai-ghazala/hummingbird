@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDrop } from "react-dnd";
 
-export const Droppable = ({ children }) => {
+export const Droppable = () => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
     const [{ isOver, isOverCurrent }, drop] = useDrop(() => ({
@@ -18,11 +18,9 @@ export const Droppable = ({ children }) => {
     }), [setHasDropped, setHasDroppedOnChild]);
    
     return (<div ref={drop} id="droppable">
-			<div>{children}</div>
+
         
         {hasDropped && <span>hello</span>}
         
 		</div>);
 };
-
-export default Droppable;

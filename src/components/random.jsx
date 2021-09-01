@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { HTML5Backend } from 'react-dnd-html5-backend'
-import { DndProvider } from 'react-dnd'
 import axios from "axios";
-import Draggable from "../components/draggable.jsx";
-import Droppable from "../components/droppable.jsx";
+import { Draggable } from "../components/draggable.jsx";
+import { Droppable } from "../components/droppable.jsx";
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
 
 function Random() {
   const [poem, setPoem] = useState(null);

@@ -2,7 +2,7 @@ import React from "react";
 import { useDrag } from "react-dnd";
 
 export const Draggable = props => {
-  const [, drag] = useDrag(() => ({ type: 'draggable' }));
+  const [, drag] = useDrag(() => ({ type: "draggable" }));
 
   return (
     <>
@@ -22,5 +22,3 @@ export const Draggable = props => {
     </>
   );
 };
-
-export default Draggable;
