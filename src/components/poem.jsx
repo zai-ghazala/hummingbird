@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "./types";
 
 
     
 export const Poem = props => {
   
-  const [, drag] = useDrag(() => ({ type: ItemTypes.WORD }));
-  
+    const [{ isDragging }, dragRef] = useDrag(() => ({
+    type: "word",
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
 
   return (
     <>
@@ -16,7 +19,7 @@ export const Poem = props => {
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-                <span   ref={(span) => { drag = span; }}  className="word" key={"word-" + i}>
+                <span ref={dragRef}  className="word" key={"word-" + i}>
                   {word}
                 </span>
               ))}
