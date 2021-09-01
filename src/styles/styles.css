@@ -94,6 +94,8 @@ span.word {
   margin: 3px;
   background: #fff;
   cursor: move;
+  overflow: hidden;
+  clear: both
 }
 span.word:empty {
   visibility: hidden;
