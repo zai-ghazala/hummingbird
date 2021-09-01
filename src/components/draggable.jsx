@@ -6,18 +6,14 @@ import { useDrag } from "react-dnd";
 function Draggable() {
   const [poem, setPoem] = useState([]);
 
-  const getPoem = () => {
-    fetch("https://poetrydb.org/random,author/1;Dickinson")
-      .then(res => res.json())
-      .then(result => {
-        setPoem(result);
-      })
-      .catch(error => console.log("error"));
-  };
-
   useEffect(() => {
-    getPoem();
-  }, []); // <-- Have to pass in [] here!
+    const fetchData = async () => {
+      const res = await fetch("https://poetrydb.org/random,author/1;Dickinson");
+      const json = await res.json();
+      setPoem(json.hits);
+    };
+    fetchData();
+  }, [setPoem]);
 
   const handleClick = e => {
     e.preventDefault();
@@ -26,7 +22,7 @@ function Draggable() {
 
   const [, drag] = useDrag(() => ({ type: "draggable" }));
 
-  console.log(poem.lines);
+  console.log(poem);
   return (
     <>
       {poem.map((item, i) => (
