@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Router, Link } from "wouter";
 
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-
 /**
  * This code defines the react app
  *
@@ -30,14 +27,12 @@ export default function Home() {
     <Router hook={useHashLocation}>
       <Seo />
 
-      <DndProvider backend={HTML5Backend}>
         <main role="main">
           <div className="content">
             {/* Router specifies which component to insert here as the main content */}
             <PageRouter />
           </div>
         </main>
-      </DndProvider>
     </Router>
   );
 }
