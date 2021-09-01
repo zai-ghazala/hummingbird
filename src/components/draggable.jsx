@@ -4,23 +4,28 @@ import * as axios from "axios";
 import { useDrag } from "react-dnd";
 
 function Draggable() {
-  const [poem, setPoem] = useState([]);
+  const [data, setData] = useState([]);
+ 
 
  useEffect(async () => {
-    const result = await axios(
-      'https://poetrydb.org/random,author/1;Dickinson',
-    );
+    const fetchData = async () => {
+      const result = await axios(
+        'https://poetrydb.org/random,author/1;Dickinson',
+      );
  
-    setPoem(result.poem);
+      setData(result);
+    };
+ 
+    fetchData();
   }, []);
 
 
   const [, drag] = useDrag(() => ({ type: "draggable" }));
 
-  console.log(poem);
+  console.log(data);
   return (
     <>
-      {poem.map((item, i) => (
+      {data.map((item, i) => (
         <div key={"block-" + i}>
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
