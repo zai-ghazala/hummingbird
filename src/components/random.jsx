@@ -4,11 +4,9 @@ import axios from "axios";
 import { Poem } from "./poem.jsx";
 import { Droppable } from "./droppable.jsx";
 
-
 function Random() {
   const [poem, setPoem] = useState(null);
-  
-  
+
   useEffect(() => {
     axios
       .get("https://poetrydb.org/random,author/1;Dickinson")
@@ -22,10 +20,9 @@ function Random() {
 
   return (
     <>
-        {poem && <Poem poem={poem} />}
-      
-        <Droppable/>
+      {poem && <Poem poem={poem} />}
 
+      <Droppable />
     </>
   );
 }

@@ -10,9 +10,16 @@ export const Droppable = () => {
     }),
   }));
 
+  
+  const populateDroppable = (word) => {
+    const words = [];
+    words.push(word);
+    console.log(word);
+}
+  
+  
   return (
     <div ref={dropRef} id="droppable">
-      {isOver && <span>hello</span>}
     </div>
   );
 };
