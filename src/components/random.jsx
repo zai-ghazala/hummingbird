@@ -8,22 +8,16 @@ import Droppable from "../components/droppable.jsx";
 function Random() {
   const [poem, setPoem] = useState(null);
 
-
-   useEffect(()=>{
-  axios
+  useEffect(() => {
+    axios
       .get("https://poetrydb.org/random,author/1;Dickinson")
       .then(res => {
         setPoem(res.data);
       })
       .catch(err => {
         console.log(err.message);
-       })
-     
-    }, []) 
-  
-
-  
- 
+      });
+  }, []);
 
   return (
     <>
