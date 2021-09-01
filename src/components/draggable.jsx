@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "./types";
 
+
+    
 export const Draggable = props => {
   const [, drag] = useDrag(() => ({ type: ItemTypes.WORD }));
   
+
   return (
     <>
       {props.poem.map((item, i) => (
@@ -12,7 +15,7 @@ export const Draggable = props => {
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-                <span ref={drag} className="word" key={"word-" + i}>
+                <span = {el => inputRef.current[i] = el}  className="word" key={"word-" + i}>
                   {word}
                 </span>
               ))}
