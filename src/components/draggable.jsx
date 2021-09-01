@@ -6,7 +6,6 @@ function Draggable(props) {
 
   const [, drag] = useDrag(() => ({ type: "draggable" }));
   
-  console.log(props)
   return (
     <>
       {props.poemLines.map((item, i) => (

@@ -6,9 +6,12 @@ import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
 function Random() {
-  const [poem, setPoem] = useState(null);
+  const [poem, setPoem] = useState([]);
 
-    axios
+
+   useEffect(()=>{
+        console.log(poem);
+            axios
       .get("https://poetrydb.org/random,author/1;Dickinson")
       .then(res => {
         console.log(res.data);
@@ -16,7 +19,14 @@ function Random() {
       })
       .catch(err => {
         console.log(err.message);
-      });
+       })
+     
+     
+     
+    }, [poem]) 
+  
+
+  
  
 
   return (
