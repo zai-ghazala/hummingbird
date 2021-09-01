@@ -87,7 +87,7 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
-span.word {
+div.word {
   box-shadow: 5px 10px #888888;
   display: inline-block;
   padding: 5px;
@@ -97,7 +97,7 @@ span.word {
   overflow: hidden;
   clear: both
 }
-span.word:empty {
+div.word:empty {
   visibility: hidden;
 }
 #droppable {
