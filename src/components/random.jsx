@@ -22,7 +22,7 @@ function Random() {
     <>
       {poem && <Poem poem={poem} />}
 
-      <Droppable greedy={true} />
+      <Droppable />
     </>
   );
 }

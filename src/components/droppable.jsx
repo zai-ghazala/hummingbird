@@ -9,9 +9,6 @@ export const Droppable = greedy => {
       accept: "word",
       drop(item, monitor) {
         const didDrop = monitor.didDrop();
-        if (didDrop && !greedy) {
-          return;
-        }
         setHasDropped(true);
       },
       collect: monitor => ({
@@ -19,18 +16,8 @@ export const Droppable = greedy => {
         isOverCurrent: monitor.isOver({ shallow: true })
       })
     }),
-    [greedy, setHasDropped]
+    [setHasDropped]
   );
 
-  const text = greedy ? "move me" : "";
-  let backgroundColor = "rgba(0, 0, 0, .5)";
-  if (isOverCurrent || (isOver && greedy)) {
-    backgroundColor = "darkgreen";
-  }
-
-  return (
-    <div ref={dropRef} id="droppable">
-      <span>{text}</span>
-    </div>
-  );
+  return <div ref={dropRef} id="droppable"></div>;
 };

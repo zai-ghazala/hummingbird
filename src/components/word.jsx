@@ -12,7 +12,7 @@ export const Word = props => {
 
   return (
     <>
-      <span ref={dragRef}>
+      <span ref={dragRef} className="word">
         {props.word}
       </span>
     </>
