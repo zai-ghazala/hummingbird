@@ -8,7 +8,6 @@ import { Droppable } from "./droppable.jsx";
 function Random() {
   const [poem, setPoem] = useState(null);
   
-  
   const populateDroppable = (word) => {
     const words = [];
     words.push(word);
