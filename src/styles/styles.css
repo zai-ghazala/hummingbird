@@ -75,7 +75,7 @@ END Glitch hello-app default styles
 body {
   font-family: serif;
   background-color: var(--color-bg);
-  margin-bottom: 14vh
+  margin-bottom: 14vh;
 }
 #container {
   min-height: var(--wrapper-height);
@@ -87,13 +87,15 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
+div.wordwrapper {
+  display: inline-block;
+  cursor: move;
+}
 span.word {
   box-shadow: 5px 10px #888888;
-  display: inline-block;
   padding: 5px;
   margin: 3px;
   background: #fff;
-  cursor: move;
 }
 span.word:empty {
   visibility: hidden;

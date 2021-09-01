@@ -9,12 +9,9 @@ export const Word = props => {
     })
   }));
 
-
   return (
-    <>
-      <span ref={dragRef} className="word">
-        {props.word}
-      </span>
-    </>
+    <div className="wordwrapper" ref={dragRef}>
+      <span className="word">{props.word}</span>
+    </div>
   );
 };
