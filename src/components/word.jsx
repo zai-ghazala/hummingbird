@@ -10,11 +10,15 @@ export const Draggable = props => {
   
 
   return (
+    <>
+      {props.poem.lines.map((word, i) => (
+      <span
+         key={"word" + i}
+         className="word">
+        {word}
+      </span>
+    ))}
     
-
-                <span ref={drag} className="word">
-                  {props.poems.lines.split(" ")}
-                </span>
-    
-      );
-};
+  </>
+);
+}

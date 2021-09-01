@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Draggable } from "../components/draggable.jsx";
+
+import { Poem } from "../components/poem.jsx";
+import { Word } from "../components/word.jsx";
 import { Droppable } from "../components/droppable.jsx";
 
 
@@ -20,7 +22,7 @@ function Random() {
 
   return (
     <>
-        {poem && <Draggable poem={poem} />}
+        {poem && <Poem poem={poem} />}
         <Droppable />
     </>
   );
