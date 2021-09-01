@@ -9,27 +9,28 @@ import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
 const Random = () => {
-  const [poem, setPoem] = useState(null);
+  const [poem, setPoem] = useState([]);
 
   const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
   useEffect(() => {
-    fetchPoem();
-  }, [poem]);
+    fetchData();
+  }, []);
 
-  const fetchPoem = () => {
-    axios
-      .get(URL)
-      .then(response => {
-        const lines = response.data;
-        setPoem(lines);
-      })
-      .catch(error => console.error(`error: ${error}`));
+  
+  useEffect(() => {
+   const fetchData = async () => {
+    const res = await axios(URL);
+    const data = await res.data;
+    setPoem({ poem: poem });
+    console.log(data);
   };
+  fetchData();
+ }, []);
 
   const handleClick = e => {
     e.preventDefault();
-    fetchPoem();
+    this.fetchData();
   };
 
   return (
