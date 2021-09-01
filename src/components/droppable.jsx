@@ -23,7 +23,7 @@ export const Droppable = ({ greedy, children }) => {
     return (<div ref={drop} id="droppable">
 			<div>{children}</div>
         
-        {hasDropped && <span></span>}
+        {hasDropped && <span>{word}</span>}
         
 		</div>);
 };
