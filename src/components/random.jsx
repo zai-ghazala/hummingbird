@@ -8,11 +8,6 @@ import { Droppable } from "./droppable.jsx";
 function Random() {
   const [poem, setPoem] = useState(null);
   
-  const populateDroppable = (word) => {
-    const words = [];
-    words.push(word);
-    console.log(word);
-}
   
   useEffect(() => {
     axios
@@ -28,7 +23,9 @@ function Random() {
   return (
     <>
         {poem && <Poem poem={poem} />}
-        <Droppable populateDroppable={populateDroppable(this.word)}/>
+      
+        <Droppable/>
+
     </>
   );
 }
