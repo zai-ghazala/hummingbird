@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 
-
 export const Droppable = () => {
    const [{ isOver }, dropRef] = useDrop(() => ({
     accept: "word",
-    drop: () => fillDiv(),
+    drop: () => populateDroppable(),
     collect: (monitor) => ({
       isOver: monitor.isOver(),
     }),
