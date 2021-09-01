@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd';
 
 /**
  * Root of react site
@@ -12,9 +14,12 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Render the site https://reactjs.org/docs/react-dom.html#render
 ReactDOM.render(
+  
+      <DndProvider backend={HTML5Backend}>
   <HelmetProvider>
     <App />
-  </HelmetProvider>,
+  </HelmetProvider>
+  </DndProvider>,
   document.getElementById("root")
 );
 
