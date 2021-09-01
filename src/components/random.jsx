@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
 import axios from "axios";
 import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
@@ -23,7 +23,7 @@ function Random() {
     <>
       <DndProvider backend={HTML5Backend}>
         {poem && <Draggable poem={poem} />}
-        <Droppable/>
+        <Droppable />
       </DndProvider>
     </>
   );

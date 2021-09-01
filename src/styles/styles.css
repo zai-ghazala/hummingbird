@@ -87,15 +87,16 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
-span.word {
+div.word {
   box-shadow: 5px 10px #888888;
   display: inline-block;
   padding: 5px;
   margin: 3px;
   background: #fff;
+  cursor: move;
 }
-span.word:empty {
-  display: none;
+div.word:empty {
+  visibility: hidden;
 }
 #droppable {
   position: fixed;
