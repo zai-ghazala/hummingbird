@@ -17,18 +17,20 @@ function Random() {
         setPoem(res.data);
       }, []);
 
-    getRandom = () => {
-      
-      axios.get(`
+    const getRandom = poet => {
+      axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
+        setPoem(res.data);
+      });
     };
 
-    const results = poems.filter(person => person.includes(poet));
-    setPoet(results);
-  }, [poet]);
-
+  const handleClick = () => {
+    getRandom()
+    }
+  
+  
   const handleChange = event => {
     setPoet(event.target.value);
-  };
+  }
 
   return (
     <>
@@ -44,5 +46,6 @@ function Random() {
     </>
   );
 }
-
-export default Random;
+ }
+            
+ export default Random;
