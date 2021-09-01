@@ -17,9 +17,15 @@ function Random() {
         console.log(err.message);
       });
   }, []);
-
+  
   return (
-    <>
+   <>
+      <input
+        type="text"
+        placeholder="poet"
+        value={searchTerm}
+        onChange={handleChange}
+      />
       {poem && <Poem poem={poem} />}
 
       <Droppable />
