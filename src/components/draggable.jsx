@@ -7,13 +7,13 @@ function Draggable() {
   const [data, setData] = useState([]);
  
 
- useEffect(async () => {
+ useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
         'https://poetrydb.org/random,author/1;Dickinson',
       );
  
-      setData(result);
+      setData(result.data);
     };
  
     fetchData();
