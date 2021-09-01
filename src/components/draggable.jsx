@@ -5,10 +5,10 @@ function Draggable(props) {
 
 
   const [, drag] = useDrag(() => ({ type: "draggable" }));
-
+  console.log(props)
   return (
     <>
-      {poem.map((item, i) => (
+      {props.poem.map((item, i) => (
         <div key={"block-" + i}>
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>

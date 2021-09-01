@@ -9,32 +9,37 @@ import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
 const Random = () => {
-  const [poem, setPoem] = useState([]);
+  const [poem, setPoem] = useState(null);
 
   const URL = "https://poetrydb.org/random,author/1;Dickinson";
 
   useEffect(() => {
     fetchPoem();
-  }, []);
+  }, [poem]);
 
   const fetchPoem = () => {
     axios
       .get(URL)
       .then(response => {
-        const lines = response.data.poem;
+        const lines = response.data;
         setPoem(lines);
       })
       .catch(error => console.error(`error: ${error}`));
   };
 
+  const handleClick = e => {
+    e.preventDefault();
+    fetchPoem();
+  };
+
   return (
     <>
-      <button type="button" onClick={e => this.handleClick(e)}>
+      <button type="button" onClick={e => handleClick(e)}>
         next
       </button>
 
       <DndProvider backend={HTML5Backend}>
-        <Draggable />
+        <Draggable poem={poem} />
         <Droppable />
       </DndProvider>
     </>
