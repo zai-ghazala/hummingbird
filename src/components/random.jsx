@@ -9,23 +9,24 @@ import Draggable from "../components/draggable.jsx";
 import Droppable from "../components/droppable.jsx";
 
 function Random() {
-  const [poem, setPoem] = useState(null);
-
+  const [poem, setPoem] = useState({});
+  
   useEffect(() => {
-    const URL = "https://poetrydb.org/random,author/1;Dickinson";
-    const fetchData = async () => {
-      const result = await axios(URL);
-
-      setPoem(result.data);
-    };
-
-    fetchData();
+    this.fetchData();
   }, []);
+
+
+  const fetchData = () => {
+      const url = "https://poetrydb.org/random,author/1;Dickinson";
+      fetch(url)
+          .then(response => setPoem(response.json()))
+          .catch(error => console.log(error));
+  }
 
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        {poem && <Draggable poem={poem} />}
+        {poem && <Draggable dataObject={poem} />}
         <Droppable />
       </DndProvider>
     </>
