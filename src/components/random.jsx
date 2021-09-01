@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { Poem } from "../components/poem.jsx";
-import { Word } from "../components/word.jsx";
-import { Droppable } from "../components/droppable.jsx";
+import { Poem } from "./poem.jsx";
+import { Droppable } from "./droppable.jsx";
 
 
 function Random() {
