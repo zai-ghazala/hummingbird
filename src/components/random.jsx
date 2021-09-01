@@ -23,7 +23,7 @@ function Random() {
     <>
       <DndProvider backend={HTML5Backend}>
         {poem && <Draggable poem={poem} />}
-        <Droppable greedy="true"/>
+        <Droppable/>
       </DndProvider>
     </>
   );

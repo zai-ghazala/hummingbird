@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { useDrop } from "react-dnd";
 
-export const Droppable = ({ greedy, children }) => {
+export const Droppable = ({ children }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
     const [{ isOver, isOverCurrent }, drop] = useDrop(() => ({
         accept: "draggable",
         drop(item, monitor) {
             const didDrop = monitor.didDrop();
-            if (didDrop && !greedy) {
-                return;
-            }
             setHasDropped(true);
             setHasDroppedOnChild(didDrop);
         },
@@ -18,12 +15,12 @@ export const Droppable = ({ greedy, children }) => {
             isOver: monitor.isOver(),
             isOverCurrent: monitor.isOver({ shallow: true }),
         }),
-    }), [greedy, setHasDropped, setHasDroppedOnChild]);
+    }), [setHasDropped, setHasDroppedOnChild]);
    
     return (<div ref={drop} id="droppable">
 			<div>{children}</div>
         
-        {hasDropped && <span>{word}</span>}
+        {hasDropped && <span>hello</span>}
         
 		</div>);
 };

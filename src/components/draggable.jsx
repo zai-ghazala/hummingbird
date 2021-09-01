@@ -1,7 +1,7 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 
-export const Draggable = (props) => {
+export const Draggable = props => {
   const [, drag] = useDrag(() => ({ type: 'draggable' }));
 
   return (
@@ -11,9 +11,9 @@ export const Draggable = (props) => {
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-                <span ref={drag} className="word" key={"word-" + i}>
+                <div ref={drag} className="word" key={"word-" + i}>
                   {word}
-                </span>
+                </div>
               ))}
             </div>
           ))}
@@ -21,6 +21,6 @@ export const Draggable = (props) => {
       ))}
     </>
   );
-}
+};
 
 export default Draggable;
