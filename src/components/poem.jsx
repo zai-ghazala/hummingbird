@@ -1,15 +1,29 @@
 import React from "react";
-import Word from "./word.jsx";
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "./types";
 
+
+    
 export const Poem = props => {
-  const { words } = props.poem.lines.split(" ");
+  
+  const [, drag] = useDrag(() => ({ type: ItemTypes.WORD }));
+  
 
   return (
     <>
-      <div>
-        {words.length > 0 &&
-          words.map((word, i => <Word key={"word" + i} word={word} />))}
-      </div>
+      {props.poem.map((item, i) => (
+        <div key={"block-" + i}>
+          {item.lines.map((line, i) => (
+            <div key={"line-" + i}>
+              {line.split(" ").map((word, i) => (
+                <span   ref={(span) => { drag = span; }}  className="word" key={"word-" + i}>
+                  {word}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      ))}
     </>
   );
 };
