@@ -6,7 +6,18 @@ import { Droppable } from "./droppable.jsx";
 
 function Random() {
   const [poem, setPoem] = useState(null);
+  const [poet, setPoet] = useState("");
 
+  
+  axios.get(...)
+  .then((response) => {
+    return axios.get(...); // using response.data
+  })
+  .then((response) => {
+    console.log('Response', response);
+  });
+  
+  
   useEffect(() => {
     axios
       .get("https://poetrydb.org/random,author/1;Dickinson")
@@ -15,15 +26,26 @@ function Random() {
       })
       .catch(err => {
         console.log(err.message);
-      });
-  }, []);
-  
+      })
+    
+    
+    const results = poems.filter(person =>
+      person.includes(poet)
+    );
+    setPoet(results);
+  }, [poet]);
+ 
+
+  const handleChange = event => {
+    setPoet(event.target.value);
+  };
+
   return (
-   <>
+    <>
       <input
         type="text"
         placeholder="poet"
-        value={searchTerm}
+        value={poet}
         onChange={handleChange}
       />
       {poem && <Poem poem={poem} />}
