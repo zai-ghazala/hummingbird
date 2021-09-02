@@ -21,19 +21,23 @@ useEffect(() => {
     });
   }, []);
 
-  const handleClick = poet, button => e => {
+  const handleClick = (poet, button) => e => {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
-      
+      setClicked(button);
     });
   };
 
   return (
     <>
       <button
-        style={{ background: colour }}
-        type="button"
+        onClick={e => handleClick(buttonMap.button1)}  
+        clicked === buttonMap.button1 ? (
+         style="background:"pink"
+        ) : (
+          <img src={on} alt="visible"         )
+ type="button"
         onClick={handleClick("Dickinson")}
       >
         emily dickinson
