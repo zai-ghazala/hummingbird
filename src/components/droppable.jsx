@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDrop } from "react-dnd";
 
 export const Droppable = () => {
