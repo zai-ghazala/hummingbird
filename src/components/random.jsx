@@ -22,16 +22,16 @@ function Random() {
 
   return (
     <>
-      <button type="button" onClick={handleClick("Dickinson")}>dickinson<
-rshother'
-tton>
-
-      <button type="button" onClick={handleClick("Shakespeare")}>
-        shakespeare
+      <button { poem.author == 'Emily Dickinson' ? className="active-poetype="button" onClick={handleClick("Dickinson")}>
+        emily dickinson
       </button>
-
+      <button type="button" onClick={handleClick("Rossetti")}>
+        christina rossetti
+      </button>
+      <button type="button" onClick={handleClick("Bronte")}>
+        emily bronte
+      </button>
       {poem && <Poem poem={poem} />}
-
       <Droppable />
     </>
   );
