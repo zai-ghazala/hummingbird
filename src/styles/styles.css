@@ -111,14 +111,12 @@ span.word:empty {
   height: 14vh;
   background: #bafeb8;
 }
-div.buttons {
-  display: flex;
-  justify-content: center;
-  height: 2vh
-}
 img.bird {
   height: 20vh;
-    margin: 1.5em;
+}
+img.bird,
+div.buttons {
+  margin: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -134,8 +132,15 @@ div.buttons button {
   letter-spacing: 1px;
 }
 @media (orientation: landscape) {
+  img.bird {
+    height: 40vh
+  }
+  div.buttons button {
+    font-size:2em
+  }
   #container {
     width: 100vw;
+    height: 90vh
   }
   .poem {
     display: flex;
