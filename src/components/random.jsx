@@ -15,37 +15,28 @@ function Random() {
       )
       .then(res => {
         setPoem(res.data);
-      }, []);
-
-    const getRandom = poet => {
-      axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
-        setPoem(res.data);
       });
-    };
+  }, []);
+
+  const getRandom = poet => {
+    axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
+      setPoem(res.data);
+    });
+  };
 
   const handleClick = () => {
-    getRandom()
-    }
-  
-  
-  const handleChange = event => {
-    setPoet(event.target.value);
-  }
+    this.getRandom();
+  };
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="poet"
-        value={poet}
-        onChange={handleChange}
-      />
-      {poem && <Poem poem={poem} />}
+      
+        
+{poem && <Poem poem={poem} />}
 
       <Droppable />
     </>
   );
 }
- }
-            
- export default Random;
+
+export default Random;
