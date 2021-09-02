@@ -6,8 +6,10 @@ import { Droppable } from "./droppable.jsx";
 
 function Random() {
   const [poem, setPoem] = useState(null);
-  const [colour, setColour] = useState(null);
-
+  const [colour1, setColour1] = useState(null);
+  const [colour2, setColour2] = useState(null);
+  const [colour3, setColour3] = useState(null); 
+  
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);
@@ -18,20 +20,21 @@ function Random() {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
-      setColour(colour ? "#CCCCCC" : "pink");
+      setColour(!colour);
+      setColour(colour ? null : "pink");
     });
   };
 
   return (
     <>
       <button
-        style={{ background: isActive }}
+        style={{ background: colour }}
         type="button"
         onClick={handleClick("Dickinson")}
       >
         emily dickinson
       </button>
-      <button type="button" onClick={handleClick("Rossetti")}>
+      <button style={{background: colour}} type="button" onClick={handleClick("Rossetti")}>
         christina rossetti
       </button>
       <button type="button" onClick={handleClick("Bronte")}>
