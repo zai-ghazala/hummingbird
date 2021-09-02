@@ -87,16 +87,15 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
-div.wordwrapper {
-  display: inline-block;
-  cursor: move;
-  margin: 10px 2.5px 5px 2.5px
-}
 span.word {
-  box-shadow: 5px 10px #888888;
+  border-width: 1px 3px 3px 1px;
+  border-color: #888 #000 #000 #888;
+  border-style: solid;
   padding: 5px;
   margin: 3px;
   background: #fff;
+    display: inline-block;
+  cursor: move;
 }
 span.word:empty {
   visibility: hidden;
