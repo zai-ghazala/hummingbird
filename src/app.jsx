@@ -29,7 +29,6 @@ export default function Home() {
 
         <main role="main">
           <div className="content">
-            {/* Router specifies which component to insert here as the main content */}
             <PageRouter />
           </div>
         </main>

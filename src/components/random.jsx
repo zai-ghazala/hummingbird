@@ -17,7 +17,6 @@ function Random() {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
-      setClicked(button);
     });
   };
 
