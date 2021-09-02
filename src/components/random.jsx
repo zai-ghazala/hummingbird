@@ -8,9 +8,7 @@ function Random() {
   const [poem, setPoem] = useState(null);
   const [colour1, setColour1] = useState(null);
   const [colour2, setColour2] = useState(null);
-  const [colour3, setColour3] = useState(null); 
-  
-  useEffect(() => {
+  conEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);
     });
