@@ -135,19 +135,22 @@ div.buttons button {
 
   #container {
     width: 100vw;
-    row-gap: 10px
   }
   .poem {
     display: flex;
     flex-direction: row-reverse;
+  
+    
   }
   .poem div {
-    width: 50vw;
+    width: 40vw;
+      padding-left: 10px; 
   }
   #droppable {
     position: static;
     width: 50vw;
     flex-grow: 1;
-    height: initial
+    height: initial;
+    border-radius: 50px
   }
 }
