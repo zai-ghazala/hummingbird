@@ -18,10 +18,11 @@ function Random() {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
+
+      if (poem.author == poet) {
+        setColour(colour === "black" ? "white" : "black");
+      }
     });
-    if (poem.author == poet) {
-      setColour("black");
-    }
   };
 
   return (
@@ -46,4 +47,3 @@ function Random() {
 }
 
 export default Random;
-
