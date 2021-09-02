@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Router, Link } from "wouter";
 
 /**
@@ -26,8 +26,10 @@ export default function Home() {
   return (
     <Router hook={useHashLocation}>
       <Seo />
+
         <main role="main">
           <div className="content">
+            {/* Router specifies which component to insert here as the main content */}
             <PageRouter />
           </div>
         </main>

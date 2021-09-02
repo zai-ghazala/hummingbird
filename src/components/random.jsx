@@ -5,9 +5,17 @@ import { Poem } from "./poem.jsx";
 import { Droppable } from "./droppable.jsx";
 
 function Random() {
+  
+  const buttonMap = {
+    button1: 'button1',
+    button2: 'button2',
+    button3: 'button3'
+}
   const [poem, setPoem] = useState(null);
+ 
+  const [clicked, setClicked] = useState(); // Default button which you want to be clicked
 
-  useEffect(() => {
+useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);
     });
@@ -17,13 +25,24 @@ function Random() {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
+      setClicked(button);
     });
   };
 
   return (
     <>
-      <button onClick={handleClick("Dickinson")}>emily dickinson</button>
-      <button type="button" onClick={handleClick("Rossetti")}>
+      <button
+        onClick={e => handleClick(buttonMap.button1)}  
+        clicked === buttonMap.button1 ? (
+         style="background:"pink"
+        ) : (
+          <img src={on} alt="visible"         )
+ type="button"
+        onClick={handleClick("Dickinson")}
+      >
+        emily dickinson
+      </button>
+      <button style={{background: colour}} type="button" onClick={handleClick("Rossetti")}>
         christina rossetti
       </button>
       <button type="button" onClick={handleClick("Bronte")}>
@@ -36,5 +55,4 @@ function Random() {
 }
 
 export default Random;
-
 
