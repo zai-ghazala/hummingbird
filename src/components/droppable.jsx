@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 
-export const Droppable = greedy => {
+export const Droppable = () => {
   const [hasDropped, setHasDropped] = useState(false);
 
   const [{ isOver, isOverCurrent }, dropRef] = useDrop(

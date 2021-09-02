@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from "react";
 import { Router, Link } from "wouter";
-
-
-import { DndProvider } from "react-dnd-multi-backend";
-import { HTML5toTouch } from "rdndmb-html5-to-touch";
 
 /**
 
