@@ -9,13 +9,9 @@ function Random() {
   const [poet, setPoet] = useState("");
 
   useEffect(() => {
-    axios
-      .get(
-        "https://poetrydb.org/random,author/1;Dickinson://poetrydb.org/random,author/1;Dickinson"
-      )
-      .then(res => {
-        setPoem(res.data);
-      });
+    axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
+      setPoem(res.data);
+    });
   }, []);
 
   const getRandom = poet => {
@@ -24,15 +20,10 @@ function Random() {
     });
   };
 
-  const handleClick = () => {
-    this.getRandom();
-  };
-
   return (
     <>
-      
-        
-{poem && <Poem poem={poem} />}
+    <button type="button" onClick={getRandom("Shakespeare")
+      {poem && <Poem poem={poem} />}
 
       <Droppable />
     </>
