@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 /******************************************************************************
 START Glitch hello-app default styles
 
@@ -99,6 +98,7 @@ span.word {
   margin: 3px;
   background: #fff;
   display: inline-block;
+  cursor: pointer;
 }
 span.word:empty {
   visibility: hidden;
@@ -108,19 +108,21 @@ span.word:empty {
   bottom: 0;
   width: 200vw;
   left: -100vw;
-  height: 14vh;
+  height: 12vh;
   background: white;
 }
-.bird {
+img.bird,
+div.buttons {
   margin: 1.5em;
 }
-button {
+div.buttons button {
   background: none;
   color: #ff41a9;
   border: none;
-  padding: 0;
+  padding: 10px;
   font-family: Courgette;
+  cursor: pointer;
   outline: inherit;
-  font-size: 2em;
-  letter-spacing: 0.5em
+  font-size: 1.5em;
+  letter-spacing: 1px;
 }
