@@ -1,4 +1,4 @@
-import { DndProvider, Preview } from 'react-dnd-multi-backend'
+import MultiBackend, { DndProvider, Preview } from 'react-dnd-multi-backend'
 import {HTML5toTouch } from "rdndmb-html5-to-touch";
 
 const generatePreview = () => {
@@ -12,3 +12,6 @@ const App = () => {
     </DndProvider>
   )
 }
+
+
+export default DndProvider(MultiBackend)(App);

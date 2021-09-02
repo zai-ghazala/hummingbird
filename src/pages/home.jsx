@@ -1,7 +1,6 @@
 import * as React from "react";
 import Random from "../components/random.jsx";
 import { DndProvider } from 'react-dnd';
-import { TouchTransition, MouseTransition } from 'react-dnd-multi-backend';
 
 import {HTML5toTouch } from "rdndmb-html5-to-touch";
 
