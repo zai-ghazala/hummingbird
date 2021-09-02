@@ -1,6 +1,9 @@
+import * as React from "react";
 import Random from "../components/random.jsx";
-import { DndProvider } from "react-dnd-multi-backend";
-import { HTML5toTouch } from "rdndmb-html5-to-touch";
+
+import { DndProvider, TouchTransition, MouseTransition } from 'react-dnd-multi-backend';
+
+import {HTML5toTouch } from "rdndmb-html5-to-touch";
 
 export default function Home() {
   return (
