@@ -111,9 +111,14 @@ span.word:empty {
   height: 14vh;
   background: #bafeb8;
 }
-img.bird,
 div.buttons {
-  margin: 1.5em;
+  display: flex;
+  justify-content: center;
+  height: 2vh
+}
+img.bird {
+  height: 20vh;
+    margin: 1.5em;
   display: flex;
   justify-content: center;
 }
@@ -125,16 +130,23 @@ div.buttons button {
   font-family: Courgette;
   cursor: pointer;
   outline: inherit;
-  font-size: 1.5em;
+  font-size: 1.2em;
   letter-spacing: 1px;
 }
 @media (orientation: landscape) {
+  #container {
+    width: 100vw;
+  }
   .poem {
     display: flex;
     flex-direction: row;
   }
+  .poem div {
+    width: 70vw;
+  }
   #droppable {
-    position: relative;
-    width: 75%;
+    position: static;
+    width: 50vw;
+    height: 50vh
   }
 }
