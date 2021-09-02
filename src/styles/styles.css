@@ -108,8 +108,8 @@ span.word:empty {
   bottom: 0;
   width: 200vw;
   left: -100vw;
-  height: 12vh;
-  background: white;
+  height: 14vh;
+  background: #fff
 }
 img.bird,
 div.buttons {
