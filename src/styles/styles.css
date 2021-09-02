@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 /******************************************************************************
 START Glitch hello-app default styles
 
@@ -38,8 +40,7 @@ to this section's matching END comment to see page-specific styles.
     format("opentype");
 }
 
-/* Navigation grid */
-.footer {
+@import /* Navigation grid */ .footer {
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
@@ -88,12 +89,16 @@ body {
   overflow-y: scroll;
 }
 span.word {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   border-width: 1px 3px 3px 1px;
-  border-color: #888 000 #000 #888;
+  border-color: #888 #000 #000 #888;
   border-style: solid;
   padding: 5px;
   margin: 3px;
   background: #fff;
+  display: inline-block;
 }
 span.word:empty {
   visibility: hidden;
@@ -108,4 +113,14 @@ span.word:empty {
 }
 .bird {
   margin: 1.5em;
+}
+button {
+  background: none;
+  color: #ff41a9;
+  border: none;
+  padding: 0;
+  font-family: Courgette;
+  outline: inherit;
+  font-size: 2em;
+  letter-spacing: 0.5em
 }
