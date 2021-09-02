@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Router, Link } from "wouter";
 
 /**
@@ -26,7 +26,6 @@ export default function Home() {
   return (
     <Router hook={useHashLocation}>
       <Seo />
-
         <main role="main">
           <div className="content">
             <PageRouter />

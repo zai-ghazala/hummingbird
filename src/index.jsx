@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app.jsx";
+
+import { DndProvider } from "react-dnd-multi-backend";
+import HTML5toTouch from "react-dnd-multi-backend/dist/esm/HTML5toTouch";
+
 import { HelmetProvider } from "react-helmet-async";
 
 /**
@@ -12,9 +16,11 @@ import { HelmetProvider } from "react-helmet-async";
 
 // Render the site https://reactjs.org/docs/react-dom.html#render
 ReactDOM.render(
+    <DndProvider options={HTML5toTouch}>
   <HelmetProvider>
       <App />
-  </HelmetProvider>,
+  </HelmetProvider>
+  </DndProvider>,
   document.getElementById("root")
 );
 
