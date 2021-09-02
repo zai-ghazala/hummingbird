@@ -14,11 +14,11 @@ import { HTML5toTouch } from "rdndmb-html5-to-touch";
 
 // Render the site https://reactjs.org/docs/react-dom.html#render
 ReactDOM.render(
-  <HelmetProvider>
-    <DndProvider options={HTML5toTouch}>
+  <DndProvider options={HTML5toTouch}>
+    <HelmetProvider>
       <App />
-    </DndProvider>
-  </HelmetProvider>,
+    </HelmetProvider>
+  </DndProvider>,
   document.getElementById("root")
 );
 

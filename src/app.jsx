@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Router, Link } from "wouter";
 
+
+import { DndProvider } from "react-dnd-multi-backend";
+import { HTML5toTouch } from "rdndmb-html5-to-touch";
+
+/**
+
 /**
  * This code defines the react app
  *
@@ -29,6 +35,7 @@ export default function Home() {
         <main role="main">
           <div className="content">
             {/* Router specifies which component to insert here as the main content */}
+            
             <PageRouter />
           </div>
         </main>

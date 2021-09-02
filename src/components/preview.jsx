@@ -2,7 +2,7 @@ import { DndProvider, Preview } from 'react-dnd-multi-backend';
 import { HTML5toTouch } from 'rdndmb-html5-to-touch'
 
 const generatePreview = ({itemType, item, style}) => {
-  // render your preview
+  <div style={{ backgroundColor: 'red' }}>Generated</div>
 }
 
 const App = () => {
