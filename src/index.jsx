@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./app.jsx";
 import { HelmetProvider } from "react-helmet-async";
 
+import { DndProvider } from "react-dnd-multi-backend";
+import { HTML5toTouch } from "rdndmb-html5-to-touch";
 /**
  * Root of react site
  *
@@ -13,7 +15,9 @@ import { HelmetProvider } from "react-helmet-async";
 // Render the site https://reactjs.org/docs/react-dom.html#render
 ReactDOM.render(
   <HelmetProvider>
+    <DndProvider options={HTML5toTouch}>
       <App />
+    </DndProvider>
   </HelmetProvider>,
   document.getElementById("root")
 );

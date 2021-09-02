@@ -26,7 +26,6 @@ export default function Home() {
   return (
     <Router hook={useHashLocation}>
       <Seo />
-
         <main role="main">
           <div className="content">
             {/* Router specifies which component to insert here as the main content */}
