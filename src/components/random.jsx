@@ -11,18 +11,28 @@ function Random() {
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);
+      setPoet(res.data.author);
     });
   }, []);
 
-  const getRandom = poet => {
+  const handleClick = poet => e => {
+    e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
+      setPoet(res.data.author)
     });
   };
 
   return (
     <>
-    <button type="button" onClick={getRandom("Shakespeare")
+      <button type="button" onClick={handleClick("Dickinson")}>
+        dickinson
+      </button>
+
+      <button type="button" onClick={handleClick("Shakespeare")}>
+        shakespeare
+      </button>
+
       {poem && <Poem poem={poem} />}
 
       <Droppable />
