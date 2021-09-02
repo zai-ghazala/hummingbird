@@ -109,11 +109,13 @@ span.word:empty {
   width: 200vw;
   left: -100vw;
   height: 14vh;
-  background: #fff
+  background: #bafeb8;
 }
 img.bird,
 div.buttons {
   margin: 1.5em;
+  display: flex;
+  justify-content: center;
 }
 div.buttons button {
   background: none;
@@ -125,4 +127,14 @@ div.buttons button {
   outline: inherit;
   font-size: 1.5em;
   letter-spacing: 1px;
+}
+@media (orientation: landscape) {
+  .poem {
+    display: flex;
+    flex-direction: row;
+  }
+  #droppable {
+    position: relative;
+    width: 75%;
+  }
 }
