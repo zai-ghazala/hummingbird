@@ -128,30 +128,26 @@ div.buttons button {
   font-family: Courgette;
   cursor: pointer;
   outline: inherit;
-  font-size: 1.2em;
+  font-size: 2vh;
   letter-spacing: 1px;
 }
 @media (orientation: landscape) {
-  img.bird {
-    height: 40vh
-  }
-  div.buttons button {
-    font-size:2em
-  }
+
   #container {
     width: 100vw;
-    height: 90vh
+    row-gap: 10px
   }
   .poem {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
   .poem div {
-    width: 70vw;
+    width: 50vw;
   }
   #droppable {
     position: static;
     width: 50vw;
-    height: 50vh
+    flex-grow: 1;
+    height: initial
   }
 }
