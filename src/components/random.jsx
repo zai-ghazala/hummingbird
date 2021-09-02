@@ -6,7 +6,7 @@ import { Droppable } from "./droppable.jsx";
 
 function Random() {
   const [poem, setPoem] = useState(null);
-  const [colour, setColour] = useState("white");
+  const [colour, setColour] = useState(null);
 
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
@@ -18,17 +18,14 @@ function Random() {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
-
-      if (poem.author == poet) {
-        setColour(colour === "black" ? "white" : "black");
-      }
+      setColour(colour ? "#CCCCCC" : "pink");
     });
   };
 
   return (
     <>
       <button
-        style={{ background: colour }}
+        style={{ background: isActive }}
         type="button"
         onClick={handleClick("Dickinson")}
       >
@@ -47,3 +44,4 @@ function Random() {
 }
 
 export default Random;
+
