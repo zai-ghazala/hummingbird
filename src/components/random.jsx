@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import{ DragDropContext, Droppable } from "react-beautiful-dnd"
 
 import { Poem } from "./poem.jsx";
-import { Droppable } from "./droppable.jsx";
+import { Space } from "./space.jsx";
 
 function Random() {
   const [poem, setPoem] = useState(null);
@@ -34,10 +35,13 @@ function Random() {
         </button>
       </div>
 
-      <div className="poem">
+      <DragDropContext>
+        <div className="poem">
         <div>{poem && <Poem poem={poem} />}</div>
-        <Droppable />
+        <Droppable droppableId="droppable"><Space /></Droppable>
       </div>
+          </DragDropContext>
+
     </>
   );
 }

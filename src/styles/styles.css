@@ -146,7 +146,7 @@ div.buttons button {
     width: 40vw;
       padding-left: 10px; 
   }
-  #droppable {
+  #space {
     position: static;
     width: 50vw;
     flex-grow: 1;
