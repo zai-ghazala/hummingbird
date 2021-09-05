@@ -4,7 +4,7 @@ import axios from "axios";
 import { Poem } from "./poem";
 import { Space } from "./space";
 
-export const Random = ( handleWord ) => {
+export const Random = () => {
   const [poem, setPoem] = useState(null);
   const [currentWord, setCurrentWord] = useState(""); 
   
@@ -21,6 +21,11 @@ export const Random = ( handleWord ) => {
       setPoem(res.data);
     });
   };
+  
+  const handleWord = (poet, button) => e => {
+    
+    this.setCurrentWord(e.dragData);
+    };
 
   return (
     <>
@@ -37,11 +42,11 @@ export const Random = ( handleWord ) => {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem} onDrag={(e) => setCurrentWord(e.dragData)} />}</div>
+        <div className="words">{poem && <Poem poem={poem} handleWord={handleWord}/></div>
 
         <div id="space-parent">
           <div id="space">
-            <Space onChange={handleWord}/>
+            <Space/>
           </div>
 
           <div className="site-title">
@@ -58,7 +63,6 @@ export const Random = ( handleWord ) => {
         </div>
       </div>
     </>
-  );
-}
+  )
 
 export default Random;
