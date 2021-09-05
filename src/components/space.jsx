@@ -3,11 +3,11 @@ import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 import { Word } from "./word";
 
 export const Space = props => {
-  const handleDrop = e => {
+  const dropped =(e) => {
     e.preventDefault;
     e.stopPropagation;
     console.log(props.currentWord)
   };
 
-  return <DropTarget onHit={(e) => handleDrop(e)} targetKey="drag"></DropTarget>;
+  return <DropTarget onHit={dropped} targetKey="drag"></DropTarget>;
 };
