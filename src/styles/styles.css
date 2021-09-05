@@ -158,7 +158,8 @@ div.buttons button {
 
 @media (orientation: landscape) {
   #container {
-    width: 100vw;
+    width: 90vw;
+    margin: auto
   }
   .poem {
     display: flex;
