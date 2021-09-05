@@ -6,7 +6,6 @@ import { Space } from "./space";
 
 export const Random = () => {
   const [poem, setPoem] = useState(null);
-  
   const [word, setCurrentWord] = useState('');
   
 
@@ -39,11 +38,11 @@ export const Random = () => {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem}/>}</div>
+        <div className="words">{poem && <Poem poem={poem} onDrag={() => setCurrentWord(word)}/>}</div>
 
         <div id="space-parent">
           <div id="space">
-            <Space />
+            <Space/>
           </div>
 
           <div className="site-title">
