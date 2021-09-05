@@ -1,31 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import { DropTarget } from "react-drag-drop-container";
 import { Word } from "./word";
 
-export default class Space extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    };
-  }
+export const Space = props => {
+  const [composedPoem, setComposedPoem] = useState([]);
 
-  handleDrop() {
-    let words = this.state.items;
-    words.push(this.props.currentWord);
-    this.setState({ items: words });
-    console.log(words);
-  }
+  const handleDrop = () => {
+    setComposedPoem([...composedPoem, props.currentWord]);
+  };
 
-  render() {
-    return (
-      <DropTarget onHit={() => this.props.handleDrop(this.props.currentWord)}>
-        {this.state.items.map((word, i) => {
-          return (
-            <Word key={"dropped_word" + i} word={this.props.currentWord} />
-          );
-        })}
-      </DropTarget>
-    );
-  }
-}
+  return (
+    <DropTarget
+      handleDrag={props.handleDrag}
+      onHit={() => this.handleDrop(props.currentWord)}
+    >
+      {composedPoem.map((word, i) => {
+        return <Word key={"dropped_word" + i} word={props.currentWord} />;
+      })}
+    </DropTarget>
+  );
+};
