@@ -1,26 +1,26 @@
 import React from "react";
-import { DragDropContainer, DropTarget } from "react-drag-drop-container";
+import { DropTarget } from "react-drag-drop-container";
 import { Word } from "./word";
 
 export default class Space extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      words: []
+      items: []
     };
   }
 
   handleDrop() {
-    let words = this.state.words.slice();
-    words.push({ word: this.props.currentWord });
-    this.setState({ words: words });
+    let words = this.state.items;
+    words.push(this.props.currentWord);
+    this.setState({ items: words });
     console.log(words);
   }
 
   render() {
     return (
-      <DropTarget onHit={this.handleDrop} targetKey="drag">
-        {this.state.words.map((word, i) => {
+      <DropTarget onHit={this.handleDrop}>
+        {this.state.items.map((word, i) => {
           return (
             <Word key={"dropped_word" + i} word={this.props.currentWord} />
           );
