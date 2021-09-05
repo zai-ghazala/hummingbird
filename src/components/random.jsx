@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Poem } from "./poem";
-import Space from "./space";
+import { Space } from "./space";
 
 function Random() {
   const [poem, setPoem] = useState(null);
@@ -44,7 +44,7 @@ function Random() {
 
         <div id="space-parent">
           <div id="space">
-            <Space handleWord={handleWord}/>
+            <Space currentWord={handleWord}/>
           </div>
 
           <div className="site-title">
