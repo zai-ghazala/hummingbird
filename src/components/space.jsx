@@ -1,14 +1,25 @@
 import React from "react";
-import { DropTarget } from 'react-drag-drop-container';
-    
-export const Space = (props) => {
-  
-   dropped(ev){
-  
+import { DropTarget } from "react-drag-drop-container";
+
+export default class Space extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { words: [] };
   }
-    
-  return <DropTarget 
-    targetKey="drag"
-    onDrop={this.dropped}><div></div>
-</DropTarget>;
-};
+
+  dropped(e) {
+    this.setState({ words: [...this.state.words, e.dragData] });
+  }
+
+  render() {
+    return (
+      <DropTarget
+        targetKey="drag"
+        onHit={this.dropped}
+        dropData={this.props.word}
+      >
+        <div></div>
+      </DropTarget>
+    );
+  }
+}
