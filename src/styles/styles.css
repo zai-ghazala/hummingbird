@@ -156,7 +156,8 @@ div.buttons button {
   visibility: hidden;
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape), 
+@media (min-width: {
   #container {
     width: 90vw;
     margin: auto

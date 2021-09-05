@@ -1,12 +1,7 @@
 {
   "install": {
-    "include": ["^package\\.json$"],
-    "exclude": []
+    "include": ["^.trigger-rebuild$"]
   },
-  "restart": {
-    "include": ["^\\.env$", "^backend/"],
-    "exclude": ["src/"]
-  },
-  "noSavedEvents": true,
-  "throttle": 900000
+  "throttle": 100
+}
 }
