@@ -1,5 +1,5 @@
 import React from "react";
-import { DropTarget } from "react-drag-drop-container";
+import { DropTarget, DragDropContainer } from "react-drag-drop-container";
 import { Word } from "./word.jsx";
 
 export default class Space extends React.Component {
@@ -10,7 +10,7 @@ export default class Space extends React.Component {
 
   handleDrop(e) {
       let words = this.state.words.slice();
-      words.push({word: dragData.word});
+      words.push({word: e.dragData.word});
       this.setState({words: words});
     console.log('dropped');
   }

@@ -9,8 +9,7 @@ export const Word = props => {
       <DragDropContainer
         dragClone={true}
         targetKey="drag"
-        dragData={word}
-      >
+         dragData={{word: word}}>
         <span className="word">{props.word}</span>
       </DragDropContainer>
     </div>
