@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { Poem } from "./poem";
-import { Space } from "./space";
+import Space from "./space";
 
 export const Random = () => {
   const [poem, setPoem] = useState(null);
@@ -46,7 +46,7 @@ export const Random = () => {
 
         <div id="space-parent">
           <div id="space">
-            <Space/>
+            <Space handleDrag={handleDrag}  />
           </div>
 
           <div className="site-title">
