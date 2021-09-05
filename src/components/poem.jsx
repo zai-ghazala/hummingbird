@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Word } from './word.jsx';
     
-export const Poem = (props, handleDrag) => {
+export const Poem = (props) => {
   return (
     <>
       {props.poem.map((item, i) => (
@@ -9,7 +9,7 @@ export const Poem = (props, handleDrag) => {
           {item.lines.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-               <Word handleDrag={() => (word)} key={"word" + i} word={word}/>
+               <Word handler={props.handleWord} key={"word" + i} word={word}/>
               ))}
             </div>
           ))}
