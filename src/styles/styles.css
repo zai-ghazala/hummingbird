@@ -112,7 +112,7 @@ span.word:empty {
   background: #bafeb8;
 }
 img.bird {
-  height: 20vh;
+  width: 20vh;
 }
 img.bird,
 div.buttons {
@@ -131,6 +131,13 @@ div.buttons button {
   font-size: 2vh;
   letter-spacing: 1px;
 }
+h1.site-title {
+  color: #ff41a9;
+  font-family: Courgette;
+  font-size: 1vw;
+  letter-spacing: 1px;
+  display: inline
+}
   #space img.bird.bird--left {
     display: none
   }
@@ -148,24 +155,32 @@ div.buttons button {
     width: 40vw;
       padding-left: 10px; 
   }
-  #space {
-    position: static;
-    width: 50vw;
-    flex-grow: 0;
+  #space-container {
+        display: flex;
+    flex-direction: column;
+        width: 50vw;
     height: 50vh;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column
-  }
-  #space div {
-    height: 30vh
   }
   
+  #space {
+    position: static;
+
+    border-radius: 50px;
+
+  }
+  #space {
+    height: 40vh;
+    width: 100%
+  }
+  #space img {
+    width: 20vh;
+    display: inline
+  }
   img.bird.bird--left.portrait {
     display: none
   }
-    #space img.bird.bird--left {
+  #space img {
     display: initial;
-      height: 20vh
+      height: 100%;
   }
 }

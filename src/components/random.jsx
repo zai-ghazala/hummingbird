@@ -36,15 +36,19 @@ function Random() {
 
       <div className="poem">
         <div>{poem && <Poem poem={poem} />}</div>
+        
+        <div id="space-parent">
         <div id="space">
           <Space />
-          <div>
-          </div>
-           <img
+        </div>
+          
+          <div>           <img
               className="bird bird--left landscape"
               src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
-            />
+            /> <h1 className="site-title">hope is the thing with feathers</h1>
         </div>
+          </div>
+
       </div>
     </>
   );
