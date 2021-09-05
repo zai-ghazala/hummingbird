@@ -6,8 +6,8 @@ import { Space } from "./space";
 
 export const Random = () => {
   const [poem, setPoem] = useState(null);
-  const [currentWord, setCurrentWord] = useState("");
   
+
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);
@@ -20,7 +20,6 @@ export const Random = () => {
       setPoem(res.data);
     });
   };
- 
 
   return (
     <>
@@ -41,7 +40,7 @@ export const Random = () => {
 
         <div id="space-parent">
           <div id="space">
-            <Space/>
+            <Space />
           </div>
 
           <div className="site-title">
@@ -49,16 +48,20 @@ export const Random = () => {
               className="bird bird--left landscape"
               src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
             />
-            
+
             <div className="site-info">
-            <h1>hope is the thing with feathers</h1>
-            <span>assemble your very own poem inspired by emily dickinson, christina rossetti and emily bronte - just drag n drop the “magnetic” words</span>
-          </div>
+              <h1>hope is the thing with feathers</h1>
+              <span>
+                assemble your very own poem inspired by emily dickinson,
+                christina rossetti and emily bronte - just drag n drop the
+                “magnetic” words
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Random;
