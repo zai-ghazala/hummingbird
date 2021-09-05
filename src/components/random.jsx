@@ -38,7 +38,7 @@ export const Random = () => {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem} onDrag={() => setCurrentWord(word)}/>}</div>
+        <div className="words">{poem && <Poem poem={poem} handleDrag={() => (word)}/>}</div>
 
         <div id="space-parent">
           <div id="space">
