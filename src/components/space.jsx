@@ -8,19 +8,19 @@ export default class Space extends React.Component {
     this.state = { words: [] };
   }
 
-  dropped(e) {
-    this.setState({ words: [...this.state.words, e.dragData] });
-
-    let words = this.state.words.slice();
-    
-    console.log(this.state);
-    words.push(e.dragData);
-    this.setState({ words: words });
+  handleDrop(e) {
+      let words = this.state.words.slice();
+      words.push({word: dragData.word});
+      this.setState({words: words});
+    console.log('dropped');
   }
+  
 
   render() {
+    
+console.log(this.state);
     return (
-      <DropTarget targetKey="drag" onHit={this.dropped}>
+      <DropTarget targetKey="drag" onHit={this.handleDrop}>
         {this.state.words.map((word, i) => {
           return <Word key={"dropped_word" + i} word={word} />;
         })}
