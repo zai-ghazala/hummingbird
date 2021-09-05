@@ -196,8 +196,8 @@ div.buttons button {
   #space {
     position: fixed;
     bottom: 0;
-    width: 200vw;
-    left: -100vw;
-    height: 28vh;
+    width: 100vw;
+    left: 0;
+    height: 28vh;  
   }
 }
