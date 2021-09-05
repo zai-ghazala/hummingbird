@@ -3,13 +3,14 @@ import { DropTarget, DragDropContainer } from "react-drag-drop-container";
 import { Word } from "./word.jsx";
 
 export const Space = props => {
-  const currentWord = 
+  const currentWord = props.word
   const [words, setWords] = useState([]);
 
-    const handleDrop = () {
-     set
-    });
-  };
+
+  const handleDrop = () => {
+        setWords([...words, currentWord]);
+    };
+  
   return (
     <DropTarget targetKey="drag" onHit={handleDrop}>
       {words.map((word, i) => {
