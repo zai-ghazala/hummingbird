@@ -35,7 +35,7 @@ function Random() {
       </div>
 
       <div className="poem">
-        <div>{poem && <Poem poem={poem} />}</div>
+        <div className="words">{poem && <Poem poem={poem} />}</div>
 
         <div id="space-parent">
           <div id="space">

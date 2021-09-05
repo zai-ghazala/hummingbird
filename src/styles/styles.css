@@ -163,7 +163,7 @@ div.buttons button {
     display: flex;
     flex-direction: row-reverse;
   }
-  .poem div {
+  .poem .words {
     width: 40vw;
     padding-left: 10px;
   }
@@ -201,6 +201,7 @@ div.buttons button {
     height: 28vh;  
   }
 }
-div.poem div div div {
-}
+div.drag {
+  display: inline-block;
+  width: fit-content
 }
