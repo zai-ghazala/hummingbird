@@ -40,7 +40,7 @@ function Random() {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem} handleWord={handleWord} />}</div>
+        <div className="words">{poem && <Poem poem={poem} currentWord={handleWord} />}</div>
 
         <div id="space-parent">
           <div id="space">
