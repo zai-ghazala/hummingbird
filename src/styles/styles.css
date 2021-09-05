@@ -142,7 +142,7 @@ div.buttons button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90%
+  width: 90%;
 }
 .site-info {
   display: flex;
@@ -155,12 +155,10 @@ div.buttons button {
 .site-title {
   visibility: hidden;
 }
-
-@media (orientation: landscape), 
-@media (min-width: {
+  @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
   #container {
     width: 90vw;
-    margin: auto
+    margin: auto;
   }
   .poem {
     display: flex;
@@ -181,7 +179,7 @@ div.buttons button {
     height: 40vh;
     width: 90%;
     border-radius: 50px;
-    margin: auto
+    margin: auto;
   }
   #space img {
     width: 20vh;
