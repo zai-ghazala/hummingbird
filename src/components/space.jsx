@@ -9,7 +9,7 @@ export default class Space extends React.Component {
   }
 
   handleDrop(e) {
-      let words = this.state.words.slice();
+      let words = this.state.words;
       words.push({word: e.dragData.word});
       this.setState({words: words});
     console.log('dropped');
@@ -18,7 +18,6 @@ export default class Space extends React.Component {
 
   render() {
     
-console.log(this.state);
     return (
       <DropTarget targetKey="drag" onHit={this.handleDrop}>
         {this.state.words.map((word, i) => {

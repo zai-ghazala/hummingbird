@@ -4,7 +4,7 @@ import axios from "axios";
 import { Poem } from "./poem";
 import Space from "./space";
 
-function Random() {
+function Main() {
   const [poem, setPoem] = useState(null);
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Random from "../components/random.jsx";
+import Main from "../components/main";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-right.png"
       />
 
-      <Random />
+      <main />
 
       <img
         className="bird bird--left portrait"
