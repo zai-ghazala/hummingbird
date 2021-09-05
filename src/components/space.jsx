@@ -1,5 +1,6 @@
 import React from "react";
 import { DropTarget } from "react-drag-drop-container";
+var shortid = require('shortid');
 
 export default class Space extends React.Component {
   constructor(props) {
@@ -9,6 +10,12 @@ export default class Space extends React.Component {
 
   dropped(e) {
     this.setState({ words: [...this.state.words, e.dragData] });
+    
+      let words = this.state.items.slice();
+      words.push({word: e.dragData, uid: shortid.generate()});
+      this.setState({items: items});
+      e.containerElem.style.visibility="hidden";
+    };
   }
 
   render() {
@@ -16,9 +23,8 @@ export default class Space extends React.Component {
       <DropTarget
         targetKey="drag"
         onHit={this.dropped}
-        dropData={this.props.word}
       >
-        <div></div>
+        <div>{this.state.words}</div>
       </DropTarget>
     );
   }

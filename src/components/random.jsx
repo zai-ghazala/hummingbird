@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { Poem } from "./poem.jsx";
-import { Space } from "./space.jsx";
+import { Poem } from "./poem";
+import { Space } from "./space";
 
 function Random() {
   const [poem, setPoem] = useState(null);
