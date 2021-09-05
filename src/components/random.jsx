@@ -22,7 +22,7 @@ export const Random = () => {
     });
   };
   
-   const handleWord = (word) => {
+   const handleDrag = (word) => {
     setCurrentWord(word)
   }
   
@@ -42,7 +42,7 @@ export const Random = () => {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem} handler={handleWord}/>}</div>
+        <div className="words">{poem && <Poem poem={poem} handleDrag={handleDrag} />}</div>
 
         <div id="space-parent">
           <div id="space">
