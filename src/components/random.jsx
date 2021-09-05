@@ -34,14 +34,18 @@ function Random() {
         </button>
       </div>
 
-        <div className="poem">
+      <div className="poem">
         <div>{poem && <Poem poem={poem} />}</div>
-        <div id="space"><Space />    <img
-        className="bird bird--left landscape"
-        src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
-                                       /></div>
+        <div id="space">
+          <Space />
+          <div>
+          </div>
+           <img
+              className="bird bird--left landscape"
+              src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
+            />
+        </div>
       </div>
-
     </>
   );
 }

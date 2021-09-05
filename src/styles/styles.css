@@ -153,9 +153,19 @@ div.buttons button {
     width: 50vw;
     flex-grow: 0;
     height: 50vh;
-    border-radius: 50px
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column
   }
+  #space div {
+    height: 30vh
+  }
+  
   img.bird.bird--left.portrait {
     display: none
+  }
+    #space img.bird.bird--left {
+    display: initial;
+      height: 20vh
   }
 }
