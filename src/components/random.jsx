@@ -6,7 +6,7 @@ import { Space } from "./space";
 
 export const Random = () => {
   const [poem, setPoem] = useState(null);
-  const [word, setCurrentWord] = useState('');
+  const [currentWord, setCurrentWord] = useState('');
   
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const Random = () => {
 
         <div id="space-parent">
           <div id="space">
-            <Space handleDrag={handleDrag}  />
+            <Space currentWord={currentWord} />
           </div>
 
           <div className="site-title">
