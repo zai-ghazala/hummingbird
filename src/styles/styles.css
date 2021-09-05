@@ -87,6 +87,13 @@ body {
   align-items: center;
   overflow-y: scroll;
 }
+#space {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 0;
+    height: 28vh;
+  }
 span.word {
   font-family: HK Grotesk;
   font-weight: bold;
@@ -155,7 +162,7 @@ div.buttons button {
 .site-title {
   visibility: hidden;
 }
-  @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+  @media only screen and (min-device-width: 1024px) and (orientation: landscape) {
   #container {
     width: 90vw;
     margin: auto;
@@ -178,8 +185,8 @@ div.buttons button {
   #space {
     height: 40vh;
     width: 90%;
-    border-radius: 50px;
     margin: auto;
+    position: 
   }
   #space img {
     width: 20vh;
@@ -192,15 +199,6 @@ div.buttons button {
   }
   .site-title {
     visibility: initial;
-  }
-}
-@media (orientation: portrait) {
-  #space {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    left: 0;
-    height: 28vh;
   }
 }
 div.drag {
