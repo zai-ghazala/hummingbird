@@ -5,18 +5,13 @@ export const Word = props => {
   const word = props.word + ' ';
   const [currentWord, setCurrentWord] = useState("");
   
-  const onDrag = (e) => {
-    
-    
-  }
-  
   return (
     <div className="drag">
       <DragDropContainer
         dragClone={true}
         targetKey="drag"
          dragData={{word: word}}
-        onDrag={onDrag}>
+        onDrag={() => setCurrentWord(word)}>
         <span className="word">{props.word}</span>
       </DragDropContainer>
     </div>

@@ -6,7 +6,12 @@ import Space from "./space";
 
 function Random() {
   const [poem, setPoem] = useState(null);
-
+  const [currentWord, setCurrentWord] = useState(""); 
+  
+  const handleWord = (currentWord) => {
+    setCurrentWord({currentWord: currentWord});
+  }
+  
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
       setPoem(res.data);

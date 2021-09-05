@@ -5,7 +5,7 @@ import { Word } from "./word.jsx";
 export default class Space extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { words: [] };
+    this.props.words = { words: [] };
   }
 
   handleDrop(e) {
