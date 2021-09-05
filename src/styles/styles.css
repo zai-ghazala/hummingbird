@@ -116,7 +116,7 @@ img.bird {
   width: 20vh;
 }
 img.bird.bird--left.portrait {
-    display: none;
+    margin-top: -20vh
   }
 img.bird,
 div.buttons {
