@@ -1,3 +1,4 @@
+import React from "react";
 import { Word } from './word.jsx'
     
 export const Poem = props => {

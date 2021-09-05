@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import{ DragDropContext, Droppable } from "react-beautiful-dnd"
 
 import { Poem } from "./poem.jsx";
 import { Space } from "./space.jsx";
@@ -35,12 +34,13 @@ function Random() {
         </button>
       </div>
 
-      <DragDropContext>
         <div className="poem">
         <div>{poem && <Poem poem={poem} />}</div>
-        <Droppable droppableId="droppable"><Space /></Droppable>
+        <div id="space"><Space />    <img
+        className="bird bird--left landscape"
+        src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
+                                       /></div>
       </div>
-          </DragDropContext>
 
     </>
   );

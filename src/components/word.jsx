@@ -1,14 +1,8 @@
-import { useDrag } from "react-dnd";
+import React from "react";
 
 export const Word = props => {
-  const [{ isDragging }, dragRef] = useDrag(() => ({
-    type: "word",
-    collect: monitor => ({
-      isDragging: monitor.isDragging()
-    })
-  }));
 
   return (
-      <span className="word" ref={dragRef}>{props.word}</span>
+      <span className="word">{props.word}</span>
   );
 };

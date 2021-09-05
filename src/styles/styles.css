@@ -103,7 +103,7 @@ span.word {
 span.word:empty {
   visibility: hidden;
 }
-#droppable {
+#space {
   position: fixed;
   bottom: 0;
   width: 200vw;
@@ -131,6 +131,10 @@ div.buttons button {
   font-size: 2vh;
   letter-spacing: 1px;
 }
+  #space img.bird.bird--left {
+    display: none
+  }
+
 @media (orientation: landscape) {
 
   #container {
@@ -139,8 +143,6 @@ div.buttons button {
   .poem {
     display: flex;
     flex-direction: row-reverse;
-  
-    
   }
   .poem div {
     width: 40vw;
@@ -149,8 +151,11 @@ div.buttons button {
   #space {
     position: static;
     width: 50vw;
-    flex-grow: 1;
-    height: initial;
+    flex-grow: 0;
+    height: 50vh;
     border-radius: 50px
+  }
+  img.bird.bird--left.portrait {
+    display: none
   }
 }
