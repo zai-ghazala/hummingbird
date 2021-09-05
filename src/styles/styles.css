@@ -75,7 +75,7 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
-  margin-bottom: 14vh;
+  margin-bottom: 28vh;
 }
 #container {
   min-height: var(--wrapper-height);
@@ -105,19 +105,14 @@ span.word:empty {
   visibility: hidden;
 }
 #space {
-  position: fixed;
-  bottom: 0;
-  width: 200vw;
-  left: -100vw;
-  height: 14vh;
   background: #bafeb8;
 }
 img.bird {
   width: 20vh;
 }
 img.bird.bird--left.portrait {
-    margin-top: -20vh
-  }
+  margin-top: -20vh;
+}
 img.bird,
 div.buttons {
   margin: 1rem;
@@ -155,8 +150,9 @@ div.buttons button {
 .site-info span {
   line-height: 1.5em;
 }
-#space img.bird.bird--left, .site-title {
-  visibility: hidden
+#space img.bird.bird--left,
+.site-title {
+  visibility: hidden;
 }
 
 @media (orientation: landscape) {
@@ -181,7 +177,6 @@ div.buttons button {
   #space {
     height: 40vh;
     width: 100%;
-    position: static;
     border-radius: 50px;
   }
   #space img {
@@ -194,6 +189,15 @@ div.buttons button {
     display: none;
   }
   .site-title {
-    visibility: initial
+    visibility: initial;
+  }
+}
+@media (orientation: portrait) {
+  #space {
+    position: fixed;
+    bottom: 0;
+    width: 200vw;
+    left: -100vw;
+    height: 28vh;
   }
 }
