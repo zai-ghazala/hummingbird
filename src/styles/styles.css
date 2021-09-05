@@ -99,7 +99,7 @@ span.word {
   background: #fff;
   display: inline-block;
   cursor: pointer;
-  color: #821ca5
+  color: #821ca5;
 }
 span.word:empty {
   visibility: hidden;
@@ -115,6 +115,9 @@ span.word:empty {
 img.bird {
   width: 20vh;
 }
+img.bird.bird--left.portrait {
+    display: none;
+  }
 img.bird,
 div.buttons {
   margin: 1rem;
@@ -138,19 +141,22 @@ div.buttons button {
   font-size: 1.75vw;
   letter-spacing: 1px;
   display: inline-block;
-  font-weight: normal
+  font-weight: normal;
 }
 .site-title {
   display: flex;
   flex-direction: row;
-  align-items: start
+  align-items: start;
 }
 .site-info {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
-#space img.bird.bird--left {
-  display: none;
+.site-info span {
+  line-height: 1.5em;
+}
+#space img.bird.bird--left, .site-title {
+  visibility: hidden
 }
 
 @media (orientation: landscape) {
@@ -164,8 +170,6 @@ div.buttons button {
   .poem div {
     width: 40vw;
     padding-left: 10px;
-    overflow-y: scroll;
-    height: 100vh
   }
   #space-container {
     display: flex;
@@ -188,5 +192,8 @@ div.buttons button {
   }
   img.bird.bird--left.portrait {
     display: none;
+  }
+  .site-title {
+    visibility: initial
   }
 }
