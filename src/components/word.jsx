@@ -4,7 +4,7 @@ import { DragDropContainer } from "react-drag-drop-container";
 export const Word = props => {
   return (
     <div className="drag">
-      <DragDropContainer>
+      <DragDropContainer dragClone={true} dragData={props.word}>
         <span className="word">{props.word}</span>
       </DragDropContainer>
     </div>

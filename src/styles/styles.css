@@ -141,7 +141,8 @@ div.buttons button {
 .site-title {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
+  width: 90%
 }
 .site-info {
   display: flex;
@@ -170,14 +171,15 @@ div.buttons button {
   #space-container {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 80vw;
     height: 50vh;
   }
 
   #space {
     height: 40vh;
-    width: 100%;
+    width: 90%;
     border-radius: 50px;
+    margin: auto
   }
   #space img {
     width: 20vh;
@@ -198,10 +200,10 @@ div.buttons button {
     bottom: 0;
     width: 100vw;
     left: 0;
-    height: 28vh;  
+    height: 28vh;
   }
 }
 div.drag {
   display: inline-block;
-  width: fit-content
+  width: fit-content;
 }
