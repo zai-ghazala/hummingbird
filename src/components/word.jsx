@@ -9,8 +9,8 @@ export const Word = props => {
     <div className="drag">
       <DragDropContainer
         dragClone={true}
+        dragData={word}
         targetKey="drag"
-        onDrag={() => setCurrentWord(word)}
       >
         <span className="word">{props.word}</span>
       </DragDropContainer>
