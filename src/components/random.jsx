@@ -6,8 +6,7 @@ import { Space } from "./space";
 
 export const Random = () => {
   const [poem, setPoem] = useState(null);
-  const [currentWord, setCurrentWord] = useState(""); 
-
+  const [currentWord, setCurrentWord] = useState("");
   
   useEffect(() => {
     axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
@@ -21,11 +20,7 @@ export const Random = () => {
       setPoem(res.data);
     });
   };
-  
-   const handleWord = (e) => {
-      setCurrentWord(e.dragData);
-  };
-  
+ 
 
   return (
     <>
@@ -42,11 +37,11 @@ export const Random = () => {
       </div>
 
       <div className="poem">
-        <div className="words">{poem && <Poem poem={poem} handleWord={handleWord} />}</div>
+        <div className="words">{poem && <Poem poem={poem} />}</div>
 
         <div id="space-parent">
           <div id="space">
-            <Space handleWord={handleWord}/>
+            <Space/>
           </div>
 
           <div className="site-title">

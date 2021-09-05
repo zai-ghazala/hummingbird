@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { Word } from './word.jsx';
     
 export const Poem = (props) => {
-  console.log(props.currentWord)
   return (
     <>
       {props.poem.map((item, i) => (
