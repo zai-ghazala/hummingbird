@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { DropTarget, DragDropContainer } from "react-drag-drop-container";
 import { Word } from "./word.jsx";
 
-export const Space = currentWord => {
+export const Space = props => {
   const [words, setWords] = useState([]);
 
   const handleDrop = e => {
-    setWords([...words, currentWord]);
+    setWords([...words, props.currentWord]);
   };
 
   return (
