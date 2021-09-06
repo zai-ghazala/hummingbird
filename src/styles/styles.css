@@ -157,6 +157,12 @@ div.buttons button {
   line-height: 1.5em;
   font-size:calc(10px + 0.25vw);
 }
+.poem-data {
+  margin: 1rem
+}
+.poem-data span {
+  font-style: italic
+}
 #space img.bird.bird--left,
 .site-title {
   visibility: hidden;
@@ -200,7 +206,7 @@ div.buttons button {
     display: initial;
     height: 100%;
   }
-  img.bird.bird--left.portrait {
+  .portrait {
     display: none;
   }
   .site-title {
