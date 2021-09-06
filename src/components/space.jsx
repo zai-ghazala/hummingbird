@@ -5,12 +5,12 @@ import { Word } from "./word";
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
   const [copySuccess, setCopySuccess] = useState(false);
-  const [newLineSuccess, setNewLineSuccess] = useState([0, false]);
+  const [newLineSuccess, setNewLineSuccess] = useState({counter: 0, clicked: false});
   const [clearSuccess, setClearSuccess] = useState(false);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
-    setNewLineSuccess(false);
+    setNewLineSuccess({clicked: false});
     setClearSuccess(false);
     setCopySuccess(false);
   };
@@ -35,7 +35,7 @@ export const Space = props => {
   const newLine = e => {
     e.preventDefault();
     setComposedPoem([...composedPoem, <div></div>]);
-    setNewLineSuccess(true);
+    setNewLineSuccess({counter: newLineSuccess + 1, clicked: true});
   };
 
   return (
@@ -43,7 +43,9 @@ export const Space = props => {
       <div id="space">
         <div className="footer2">
           <div></div>
-          <div className="compose">compose your poem here 📝</div>
+          <div className="compose">
+          {newLine.counter === 7 ? "gorgeous poem! press ␡ to start over" : "compose your poem here 📝"}
+          </div>
           <div>
             <button className="copy" type="button" onClick={copy}>
               {copySuccess ? "✨" : "⎘"}
@@ -52,7 +54,7 @@ export const Space = props => {
               {clearSuccess ? "✨" : "␡"}
             </button>
             <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccess ? "✨" : "↵"}
+              {newLineSuccessCounter === 0 || !newLineSuccess.clicked ? "✨" : "↵"}
             </button>
           </div>
         </div>
