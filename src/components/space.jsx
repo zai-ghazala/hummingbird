@@ -46,8 +46,8 @@ export const Space = props => {
         <div className="footer2">
           <div></div>
           <div className="compose">
-            {lineCount == 8
-              ? "gorgeous poem! press ␡ to start over"
+            {lineCount > 17
+              ? "gorgeous poem! copy it to the clipboard or ␡ to start over"
               : "compose your poem here 📝"}
           </div>
           <div>
