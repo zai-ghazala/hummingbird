@@ -156,16 +156,8 @@ div.footer {
 div.footer2 {
   padding: 1rem;
   text-align: center;
-  
-  background: #e5cdfe;
-  position: fixed;
-  bottom: 0;
-  z-index: 1
 }
-
-#space p {
-  text-align: center;
-  padding: 1rem;
-  width: object-fit;
-  margin-top: 20vh
+#space div {
+  height: 100%;
+  width: 100%
 }

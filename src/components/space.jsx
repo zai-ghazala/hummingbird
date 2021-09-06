@@ -12,15 +12,19 @@ export const Space = props => {
   console.log(composedPoem);
 
   return (
+    
+      <div id="space">
     <DropTarget
       handleDrag={props.handleDrag}
       onHit={e => handleDrop(e, props.currentWord)}
     >
-      <div id="space">
+      <div>
         {composedPoem.map((word, i) => {
           return <Word key={"dropped_word" + i} word={word} />;
         })}
       </div>
     </DropTarget>
+    
+    </div>
   );
 };
