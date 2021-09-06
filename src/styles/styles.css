@@ -60,7 +60,7 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
-  margin-bottom: 30vh;
+  margin-bottom: 35vh;
   line-height: 1.5em;
   letter-spacing: 0.5px;
 }
@@ -73,12 +73,12 @@ body {
 }
 #space {
   position: fixed;
-  top: 75vh;
+  top: 65vh;
   width: 100vw;
   left: 0;
-  min-height: 50vh;
+  min-height: 35vh;
   background: #e5cdfe;
-  overflow-y: scroll
+  padding: 1rem  
 }
 span.word {
   font-family: HK Grotesk;
@@ -140,6 +140,7 @@ div.footer2 {
   text-align: center;
 }
 #space div.enter {
-  height: 100%;
+  min-height: 65vh;
+  overflow-y: scroll;
   width: 100%;
 }
