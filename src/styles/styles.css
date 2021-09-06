@@ -133,7 +133,7 @@ div.buttons button {
   outline: inherit;
   font-size: calc(10px + 0.75vw);
   letter-spacing: 1px;
-} 
+}
 
 .poem-data {
   margin: 2rem 0;
@@ -146,11 +146,14 @@ div.drag {
   display: inline-block;
   width: fit-content;
 }
-div.footer, #space {
+div.footer {
   padding: 1rem;
   font-weight: bold;
   color: #216d3e;
-  text-align: center
+  text-align: center;
 }
 
-
+#space {
+  text-align: center;
+  padding: 1rem;
+}
