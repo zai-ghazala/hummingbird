@@ -116,8 +116,9 @@ span.word:empty {
 img.bird {
   width: 20vh;
 }
+
 img.bird.bird--left.portrait {
-  margin-top: -20vh;
+  margin-top: -28vh;
 }
 img.bird,
 div.buttons {
@@ -135,7 +136,7 @@ div.buttons button {
   outline: inherit;
   font-size: calc(12px + 1vw);
   letter-spacing: 1px;
-}
+} 
 .site-title h1 {
   color: #ff41a9;
   font-family: Courgette;
@@ -159,7 +160,7 @@ div.buttons button {
   margin-bottom: -0.5em
 }
 .poem-data {
-  margin: 1rem;
+  margin: 2rem 0;
 }
 .poem-data span {
   font-style: italic;
@@ -176,7 +177,6 @@ div.buttons button {
     width: 90vw;
     margin: auto;
     overflow: hidden;
-    padding-bottom: 1rem;
   }
   .poem {
     display: flex;
