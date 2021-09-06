@@ -5,12 +5,13 @@ import { Word } from "./word";
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
   const [copySuccess, setCopySuccess] = useState(false);
-  const [newLineSuccess, setNewLineSuccess] = useState({counter: 0, clicked: false});
+  const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
+  const [lineCount, setLineCount] = useState(0);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
-    setNewLineSuccess({clicked: false});
+    setNewLineSuccess(false);
     setClearSuccess(false);
     setCopySuccess(false);
   };
@@ -19,7 +20,7 @@ export const Space = props => {
     e.preventDefault();
     let text = composedPoem.join(" ");
 
-    text = text.replace(/\[object Object\]/g, "\r\n")    
+    text = text.replace(/\[object Object\]/g, "\r\n");
 
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
@@ -35,7 +36,8 @@ export const Space = props => {
   const newLine = e => {
     e.preventDefault();
     setComposedPoem([...composedPoem, <div></div>]);
-    setNewLineSuccess({counter: newLineSuccess + 1, clicked: true});
+    setNewLineSuccess(true);
+    setLineCount(lineCount + 1);
   };
 
   return (
@@ -44,7 +46,9 @@ export const Space = props => {
         <div className="footer2">
           <div></div>
           <div className="compose">
-          {newLine.counter === 7 ? "gorgeous poem! press ␡ to start over" : "compose your poem here 📝"}
+            {lineCount == 9 
+              ? "gorgeous poem! press ␡ to start over"
+              : "compose your poem here 📝"}
           </div>
           <div>
             <button className="copy" type="button" onClick={copy}>
@@ -54,7 +58,7 @@ export const Space = props => {
               {clearSuccess ? "✨" : "␡"}
             </button>
             <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccessCounter === 0 || !newLineSuccess.clicked ? "✨" : "↵"}
+              {newLineSuccess ? "✨" : "↵"}
             </button>
           </div>
         </div>
