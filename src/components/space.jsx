@@ -27,11 +27,11 @@ export const Space = props => {
   return (
     <>
       <div id="space">
-        <div className="footer2"></div>
+        <div className="footer2">
         <div></div>
           <div>compose your poem here 📝</div>
           <div>
-            <button type="button" onClick={handleClick}>
+            <button className="copy" type="button" onClick={handleClick}>
               {copySuccess ? "✨" : "⎘"}
             </button>
           </div>
@@ -46,7 +46,7 @@ export const Space = props => {
             })}
           </div>
         </DropTarget>
-
+      </div>
     </>
   );
 };
