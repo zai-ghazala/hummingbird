@@ -8,7 +8,8 @@ export const Space = props => {
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
   const [lineCount, setLineCount] = useState(0);
-
+  setLineCount(lineCount + 1);
+  
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
     setNewLineSuccess(false);
@@ -37,7 +38,12 @@ export const Space = props => {
     e.preventDefault();
     setComposedPoem([...composedPoem, <div></div>]);
     setNewLineSuccess(true);
-    setLineCount(lineCount + 1);
+
+    if (lineCount < 14) {
+      setLineCount(lineCount + 1);
+    } else 
+      
+    }
   };
 
   return (
@@ -46,7 +52,7 @@ export const Space = props => {
         <div className="footer2">
           <div></div>
           <div className="compose">
-            {lineCount > 17
+            {lineCount > 14
               ? "gorgeous poem! copy it to the clipboard or ␡ to start over"
               : "compose your poem here 📝"}
           </div>
