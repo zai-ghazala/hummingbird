@@ -13,7 +13,7 @@ export const Poem = (props) => {
               ))}
             </div>
           ))}
-          <div class="poem-data">— <span>{item.title}</span> by {item.author}</div>
+          <div className="poem-data">— <span>{item.title}</span> by {item.author}</div>
         </div>
       ))}
     </>

@@ -45,11 +45,7 @@ export const Random = () => {
         </div>
 
         <div id="space-parent">
-          <div id="space">
-            <Space currentWord={currentWord} />
-          </div>
-
-          <div className="site-title">
+             <div className="site-title">
             <img
               className="bird bird--left landscape"
               src="https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fhummingbird-left.png"
@@ -59,11 +55,16 @@ export const Random = () => {
               <h1>hope is the thing with feathers</h1>
               <span>
                 assemble your very own poem inspired by emily dickinson,
-                christina rossetti and emily bronte - just drag n drop the
+                christina rossetti and emily bronte - refresh the poems and just drag n drop the
                 “magnetic” words
               </span>
             </div>
           </div>
+          <div id="space">
+            <Space currentWord={currentWord} />
+          </div>
+
+       
         </div>
       </div>
     </>

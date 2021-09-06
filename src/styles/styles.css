@@ -132,13 +132,13 @@ div.buttons button {
   font-family: Courgette;
   cursor: pointer;
   outline: inherit;
-  font-size: 2.5vh;
+  font-size: 1vw;
   letter-spacing: 1px;
 }
 .site-title h1 {
   color: #ff41a9;
   font-family: Courgette;
-  font-size: 1.75vw;
+  font-size: 2vw;
   letter-spacing: 1px;
   display: inline-block;
   font-weight: normal;
@@ -184,6 +184,7 @@ div.buttons button {
   .poem .words {
     width: 40vw;
     padding-left: 10px;
+    margin-top: 25vh
   }
   #space-container {
     display: flex;
@@ -207,7 +208,7 @@ div.buttons button {
     height: 100%;
   }
   .portrait {
-    display: none;
+    display: none !important;
   }
   .site-title {
     visibility: initial;
