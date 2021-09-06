@@ -5,20 +5,18 @@ import { Word } from "./word";
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
   const [copySuccess, setCopySuccess] = useState(false);
-  const [clearSuccess, setClearSuccess] = useState(false);
   const [newLineSuccess, setNewLineSuccess] = useState(false);
+  const [clearSuccess, setClearSuccess] = useState(false);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
+    setNewLineSuccess(false);
+    setClearSuccess(false);
   };
-
-  if (!navigator.clipboard) {
-    console.log("hello");
-  }
 
   const copy = e => {
     e.preventDefault();
-    const text = composedPoem.join(" ");
+    const text = composedPoem.join(" ")
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
     });
@@ -49,8 +47,8 @@ export const Space = props => {
             <button className="clear" type="button" onClick={clear}>
               {clearSuccess ? "✨" : "␡"}
             </button>
-            <button className="newLine" type="button" onClick={newLine}>
-              {newLineSuccess ? "✨" : "↲"}
+            <button className="newline" type="button" onClick={newLine}>
+              {newLineSuccess ? "✨" : "↵"}
             </button>
           </div>
         </div>

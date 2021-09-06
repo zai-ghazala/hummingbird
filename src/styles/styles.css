@@ -152,12 +152,7 @@ div.footer2 {
 }
 div.footer2 button {
   margin: 0.1em;
-}
-.footer2 .copy {
-  font-size: calc(25px + 0.75vh);
-}
-.footer2 .clear {
-  font-size: calc(20px + 0.75vh);
+  font-size: 18px;
 }
 #space div.enter {
   min-height: 65vh;
