@@ -131,7 +131,7 @@ div.buttons button {
   font-family: Courgette;
   cursor: pointer;
   outline: inherit;
-  font-size: calc(10px + 0.75vw);
+  font-size: calc(10px + 0.75vh);
   letter-spacing: 1px;
 }
 
