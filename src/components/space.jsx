@@ -12,11 +12,17 @@ export const Space = props => {
     setComposedPoem([...composedPoem, currentWord]);
     setNewLineSuccess(false);
     setClearSuccess(false);
+    setCopySuccess(false);
   };
 
   const copy = e => {
     e.preventDefault();
-    const text = composedPoem.join(" ")
+    let text = composedPoem.join(" ");
+
+    if (text.includes("object Object")) {
+      text = text.replace(/object Object/g, "\r\n");
+    }
+
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
     });
