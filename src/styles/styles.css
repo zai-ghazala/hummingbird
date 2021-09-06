@@ -157,15 +157,20 @@ div.buttons button {
 }
 .site-info span {
   line-height: 1.5em;
+  font-size:calc(10px + 0.25vw);
 }
 #space img.bird.bird--left,
 .site-title {
   visibility: hidden;
 }
   @media only screen and (min-device-width: 1024px) and (orientation: landscape) {
+    body {
+      margin-bottom: 5vh
+    }
   #container {
     width: 90vw;
     margin: auto;
+    overflow: hidden;
   }
   .poem {
     display: flex;
@@ -186,7 +191,7 @@ div.buttons button {
     height: 40vh;
     width: 90%;
     margin: auto;
-    position: static
+    position: static;
   }
   #space img {
     width: 20vh;
