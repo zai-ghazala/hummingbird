@@ -192,6 +192,8 @@ div.buttons button {
     width: 90%;
     margin: auto;
     position: static;
+    
+    border-radius: 50px
   }
   #space img {
     width: 20vh;
