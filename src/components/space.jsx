@@ -4,18 +4,25 @@ import { Word } from "./word";
 
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
+  const [copySuccess, setCopySuccess] = useState([]);
 
+  
   const handleDrop = (e, currentWord) => {
     e.preventDefault();
     e.stopPropagation();
     setComposedPoem([...composedPoem, currentWord]);
   };
 
-  console.log(composedPoem);
+  const handleClick = (e) => {
+    const el = this.input;
+    el.select()
+    document.execCommand("copy")
+    this.setState({copySuccess: true})
+  };
 
   return (
     <div id="space">
-      <div className="footer2">compose your poem here 📝</div>
+      <div className="footer2"></div><div><div>compose your poem here 📝</div><div><a onClick={() => handleClick}>{state.copySuccess ? '✨' : '⎘'}</a></div></div>
       <DropTarget
         handleDrag={props.handleDrag}
         onHit={e => handleDrop(e, props.currentWord)}
