@@ -43,10 +43,8 @@ export const Random = () => {
     
           {poem && <Poem poem={poem} handleDrag={handleDrag} />}
         </div>
-        <div id="space">
-          <p>compose your poem here 📝</p>
           <Space currentWord={currentWord} />
-        </div>
+        
     </>
   );
 };
