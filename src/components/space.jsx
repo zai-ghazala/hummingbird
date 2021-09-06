@@ -7,7 +7,11 @@ export const Space = (props) => {
 
   console.log("out", props.currentWord);
 
-  const handleDrop = (currentWord) => {
+  const handleDrop = (e, currentWord) => {
+    
+    e.stopPropagation();
+    e.preventDefault();
+    
     setComposedPoem([...composedPoem, currentWord]);
     console.log("handleDrop", props.currentWord, currentWord);
   };
@@ -15,7 +19,7 @@ export const Space = (props) => {
   return (
     <DropTarget
       handleDrag={props.handleDrag}
-      onHit={() => handleDrop(props.currentWord)}
+      onHit={(e) => handleDrop(e, props.currentWord)}
     >
       {composedPoem.map((word, i) => {
         return <Word key={"dropped_word" + i} word={props.currentWord} />;

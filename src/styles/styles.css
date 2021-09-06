@@ -146,7 +146,7 @@ div.drag {
   display: inline-block;
   width: fit-content;
 }
-div.footer {
+div.footer, #space {
   padding: 1rem;
   font-weight: bold;
   color: #216d3e;
