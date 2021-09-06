@@ -14,11 +14,13 @@ export const Space = props => {
   return (
     
       <div id="space">
+      
+         <div className="footer2">compose your poem here 📝</div>
     <DropTarget
       handleDrag={props.handleDrag}
       onHit={e => handleDrop(e, props.currentWord)}
     >
-      <div>
+      <div className="enter">
         {composedPoem.map((word, i) => {
           return <Word key={"dropped_word" + i} word={word} />;
         })}

@@ -75,7 +75,7 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
-  margin-bottom: 28vh;
+  margin-bottom: 30vh;
   line-height: 1.5em;
   letter-spacing: 0.5px;
 }
@@ -90,11 +90,11 @@ body {
 }
 #space {
   position: fixed;
-  bottom: 0;
+  top: 75vh;
   width: 100vw;
   left: 0;
   padding: 1rem;
-  height: 28vh;
+  height: 200vh;
   background: #e5cdfe;
 }
 span.word {
@@ -157,7 +157,7 @@ div.footer2 {
   padding: 1rem;
   text-align: center;
 }
-#space div {
-  height: 100%;
-  width: 100%
+#space div.enter {
+  height: 28vh;
+  width: 100vw
 }
