@@ -10,8 +10,16 @@ export const Space = props => {
     setComposedPoem([...composedPoem, currentWord]);
   };
 
+  if (!navigator.clipboard) {
+    console.log("hello");
+  }
+
   const handleClick = () => {
-    setCopySuccess(true);
+    
+    const text = composedPoem.join(' ')
+    navigator.clipboard.writeText(text).then(function() {
+      setCopySuccess(true);
+    });
   };
 
   return (
@@ -21,7 +29,7 @@ export const Space = props => {
         <div>
           <div>compose your poem here 📝</div>
           <div>
-            <button type="button" onClick={() => {handleClick}>
+            <button type="button" onClick={() => handleClick}>
               {copySuccess ? "✨" : "⎘"}
             </button>
           </div>
