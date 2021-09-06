@@ -24,14 +24,16 @@ to this section's matching END comment to see page-specific styles.
 [hidden] {
   display: none !important;
 }
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 /* Import fonts */
 @font-face {
@@ -68,7 +70,7 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
-  margin-bottom: 35vh;
+  margin-bottom: 40vh;
   line-height: 1.5em;
   letter-spacing: 0.5px;
 }
@@ -150,17 +152,18 @@ div.footer2 {
   justify-content: space-between;
 }
 div.footer2 .compose {
-  font-size: 1em
+  font-size: 1em;
 }
-div.footer2 button, button span {
+div.footer2 button,
+button span {
   margin: 0.25em;
   font-size: 20px;
   color: #000;
-  font-weight: normal
+  font-weight: normal;
 }
 #space div.enter {
   height: 40vh;
   width: 100vw;
   font-size: 0.75em;
-  line-height: 1.25em
+  line-height: 1.25em;
 }
