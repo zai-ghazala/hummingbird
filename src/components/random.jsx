@@ -53,11 +53,11 @@ export const Random = () => {
 
             <div className="site-info">
               <h1>hope is the thing with feathers</h1>
-              <span>
+              <p>
                 assemble your very own poem inspired by emily dickinson,
                 christina rossetti and emily bronte - refresh the poems and just drag n drop the
                 “magnetic” words
-              </span>
+              </p><p>have fun!</p>
             </div>
           </div>
           <div id="space">

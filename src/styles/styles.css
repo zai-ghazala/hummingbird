@@ -76,6 +76,7 @@ body {
   font-family: HK Grotesk;
   background-color: var(--color-bg);
   margin-bottom: 28vh;
+  line-height: 1.5em;
 }
 #container {
   min-height: var(--wrapper-height);
@@ -138,7 +139,7 @@ div.buttons button {
 .site-title h1 {
   color: #ff41a9;
   font-family: Courgette;
-  font-size: 2vw;
+  font-size: 1.5vw;
   letter-spacing: 1px;
   display: inline-block;
   font-weight: normal;
@@ -153,9 +154,9 @@ div.buttons button {
   display: flex;
   flex-direction: column;
 }
-.site-info span {
-  line-height: 1.5em;
+.site-info p {
   font-size: calc(10px + 0.25vw);
+  margin-bottom: -0.5em
 }
 .poem-data {
   margin: 1rem;
