@@ -156,6 +156,6 @@ div.footer {
 #space p {
   text-align: center;
   padding: 1rem;
-  position: absolute; 
-  bottom: 0 
+  width: object-fit;
+  margin-top: 20vh
 }
