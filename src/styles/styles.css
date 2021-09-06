@@ -78,7 +78,7 @@ body {
   left: 0;
   min-height: 35vh;
   background: #e5cdfe;
-  padding: 1rem  
+  padding: 1rem;
 }
 span.word {
   font-family: HK Grotesk;
@@ -135,9 +135,11 @@ div.footer {
   color: #216d3e;
   text-align: center;
 }
-div.footer2 {
+div.footer2 div{
   padding: 1rem;
-  text-align: center;
+  float: left;
+  width: 33%;
+  display: inline-block'
 }
 #space div.enter {
   min-height: 65vh;

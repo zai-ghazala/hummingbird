@@ -14,9 +14,11 @@ export const Space = props => {
     console.log("hello");
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     
-    const text = composedPoem.join(' ')
+    const text = composedPoem.join(' ');
+    console.log(text);
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
     });
@@ -26,10 +28,10 @@ export const Space = props => {
     <>
       <div id="space">
         <div className="footer2"></div>
-        <div>
+        <div></div>
           <div>compose your poem here 📝</div>
           <div>
-            <button type="button" onClick={() => handleClick}>
+            <button type="button" onClick={handleClick}>
               {copySuccess ? "✨" : "⎘"}
             </button>
           </div>
@@ -44,7 +46,7 @@ export const Space = props => {
             })}
           </div>
         </DropTarget>
-      </div>
+
     </>
   );
 };
