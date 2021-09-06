@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { DropTarget } from "react-drag-drop-container";
+import { DropTarget, } from "react-drag-drop-container";
 import { Word } from "./word";
 
 export const Space = props => {
@@ -12,7 +12,7 @@ export const Space = props => {
   return (
     <DropTarget
       handleDrag={props.handleDrag}
-      onHit={() => this.handleDrop(props.currentWord)}
+      onHit={() => handleDrop(props.currentWord)}
     >
       {composedPoem.map((word, i) => {
         return <Word key={"dropped_word" + i} word={props.currentWord} />;
