@@ -176,11 +176,13 @@ div.buttons button {
   #container {
     width: 90vw;
     margin: auto;
+    height: 90vh;
     overflow: hidden;
   }
   .poem {
     display: flex;
     flex-direction: row-reverse;
+    overflow-y:scroll
   }
   .poem .words {
     width: 40vw;
@@ -194,12 +196,10 @@ div.buttons button {
   }
 
   #space {
-    height: 40vh;
     width: 90%;
     margin: auto;
     position: static;
-
-    border-radius: 50px;
+    border-radius: 50px; 
   }
   #space img {
     width: 20vh;
