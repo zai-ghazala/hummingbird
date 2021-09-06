@@ -4,13 +4,12 @@ import { Word } from "./word";
 
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
-  console.log(composedPoem, props.currentWord)
-  
-  
-  
+
   const handleDrop = (e, currentWord) => {
-    setComposedPoem(currentWord => [...composedPoem, currentWord]);
+    setComposedPoem([...composedPoem, currentWord]);
   };
+
+  console.log(composedPoem);
 
   return (
     <DropTarget
@@ -19,7 +18,7 @@ export const Space = props => {
     >
       <div id="space">
         {composedPoem.map((word, i) => {
-          return <Word key={"dropped_word" + i}  />;
+          return <Word key={"dropped_word" + i} word={word} />;
         })}
       </div>
     </DropTarget>

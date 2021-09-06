@@ -18,6 +18,7 @@ export default function Home() {
       />
       
          <div className="footer">made with 💖 by zainab ismail</div>
+         <div className="footer2">compose your poem here 📝</div>
    
     </div>
    
