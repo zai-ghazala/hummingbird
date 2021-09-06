@@ -93,6 +93,7 @@ body {
     width: 100vw;
     left: 0;
     height: 28vh;
+  background: #e5cdfe
   }
 span.word {
   font-family: HK Grotesk;
@@ -110,9 +111,6 @@ span.word {
 }
 span.word:empty {
   visibility: hidden;
-}
-#space {
-  background: #bafeb8;
 }
 img.bird {
   width: 20vh;
@@ -171,6 +169,7 @@ div.buttons button {
     width: 90vw;
     margin: auto;
     overflow: hidden;
+    padding-bottom: 1rem
   }
   .poem {
     display: flex;

@@ -13,6 +13,7 @@ export const Poem = (props) => {
               ))}
             </div>
           ))}
+          {item.title}
         </div>
       ))}
     </>
