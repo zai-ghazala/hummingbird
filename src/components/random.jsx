@@ -29,13 +29,13 @@ export const Random = () => {
     <>
       <div className="buttons">
         <button type="button" onClick={handleClick("Dickinson")}>
-          emily dickinson
+           <span>↻</span><br/>emily dickinson
         </button>
         <button type="button" onClick={handleClick("Rossetti")}>
-          christina rossetti
+           <span>↻</span><br/>christina rossetti
         </button>
         <button type="button" onClick={handleClick("Bronte")}>
-          emily bronte
+           <span>↻</span><br/>emily bronte
         </button>
       </div>
 
