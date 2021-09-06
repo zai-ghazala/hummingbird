@@ -5,7 +5,7 @@ import { Word } from "./word";
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
   const [copySuccess, setCopySuccess] = useState(false);
-  const [newLineSuccess, setNewLineSuccess] = useState(false);
+  const [newLineSuccess, setNewLineSuccess] = useState([0, false]);
   const [clearSuccess, setClearSuccess] = useState(false);
 
   const handleDrop = currentWord => {
@@ -43,7 +43,7 @@ export const Space = props => {
       <div id="space">
         <div className="footer2">
           <div></div>
-          <div>compose your poem here 📝</div>
+          <div className="compose">compose your poem here 📝</div>
           <div>
             <button className="copy" type="button" onClick={copy}>
               {copySuccess ? "✨" : "⎘"}
