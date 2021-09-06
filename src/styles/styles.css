@@ -72,12 +72,13 @@ body {
   align-items: center;
 }
 #space {
-  position: absolute;
+  position: fixed;
   top: 75vh;
   width: 100vw;
   left: 0;
-  min-height: 1000vh;
+  min-height: 50vh;
   background: #e5cdfe;
+  overflow-y: scroll
 }
 span.word {
   font-family: HK Grotesk;
@@ -98,10 +99,6 @@ span.word:empty {
 }
 img.bird {
   width: 20vh;
-}
-.poem {
-  height: 75vh;
-  overflow-y: scroll
 }
 img.bird,
 div.buttons {
