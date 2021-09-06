@@ -151,7 +151,7 @@ div.footer2 {
   justify-content: space-between;
 }
 div.footer2 button {
-  margin: 0.1em
+  margin: 0.1em;
 }
 .footer2 .copy {
   font-size: calc(25px + 0.75vh);

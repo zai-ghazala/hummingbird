@@ -5,6 +5,8 @@ import { Word } from "./word";
 export const Space = props => {
   const [composedPoem, setComposedPoem] = useState([]);
   const [copySuccess, setCopySuccess] = useState(false);
+  const [clearSuccess, setClearSuccess] = useState(false);
+  const [newLineSuccess, setNewLineSuccess] = useState(false);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
@@ -17,7 +19,6 @@ export const Space = props => {
   const copy = e => {
     e.preventDefault();
     const text = composedPoem.join(" ");
-    console.log(text);
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
     });
@@ -26,11 +27,13 @@ export const Space = props => {
   const clear = e => {
     e.preventDefault();
     setComposedPoem([]);
+    setClearSuccess(true);
   };
-  
-    const newLine = e => {
+
+  const newLine = e => {
     e.preventDefault();
-    setComposedPoem([...composedPoem, '\n']);
+    setComposedPoem([...composedPoem, <div></div>]);
+    setNewLineSuccess(true);
   };
 
   return (
@@ -44,10 +47,10 @@ export const Space = props => {
               {copySuccess ? "✨" : "⎘"}
             </button>
             <button className="clear" type="button" onClick={clear}>
-              ␡
+              {clearSuccess ? "✨" : "␡"}
             </button>
-               <button className="newLine" type="button" onClick={newLine}>
-              ⏎
+            <button className="newLine" type="button" onClick={newLine}>
+              {newLineSuccess ? "✨" : "↲"}
             </button>
           </div>
         </div>
