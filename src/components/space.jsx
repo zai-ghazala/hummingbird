@@ -25,7 +25,12 @@ export const Space = props => {
 
   const clear = e => {
     e.preventDefault();
-    setComposedPoem("");
+    setComposedPoem([]);
+  };
+  
+    const newLine = e => {
+    e.preventDefault();
+    setComposedPoem([...composedPoem, '\n']);
   };
 
   return (
@@ -41,6 +46,9 @@ export const Space = props => {
             <button className="clear" type="button" onClick={clear}>
               ␡
             </button>
+               <button className="newLine" type="button" onClick={newLine}>
+              ⏎
+            </button>
           </div>
         </div>
         <DropTarget
@@ -49,7 +57,7 @@ export const Space = props => {
         >
           <div className="enter">
             {composedPoem.map((word, i) => {
-              return <Word key={"dropped_word" + i} word={word} />;
+              return <span key={"dropped_word" + i}>{word} </span>;
             })}
           </div>
         </DropTarget>

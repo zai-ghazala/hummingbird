@@ -150,11 +150,18 @@ div.footer2 {
   display: flex;
   justify-content: space-between;
 }
+div.footer2 button {
+  margin: 0.1em
+}
 .footer2 .copy {
-  font-size: calc(18px + 0.75vh);
+  font-size: calc(25px + 0.75vh);
+}
+.footer2 .clear {
+  font-size: calc(20px + 0.75vh);
 }
 #space div.enter {
   min-height: 65vh;
   overflow-y: scroll;
   width: 100vw;
+  font-size: 0.75em
 }
