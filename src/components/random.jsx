@@ -45,7 +45,7 @@ export const Random = () => {
         </div>
 
         <div id="space">
-          compose your poem here 📝
+          <p>compose your poem here 📝</p>
           <Space currentWord={currentWord} />
         </div>
       </div>
