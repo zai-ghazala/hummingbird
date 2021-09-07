@@ -80,6 +80,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: 
 }
 #space {
   position: fixed;
@@ -174,24 +175,19 @@ button span {
   font-size: 0.75em;
   line-height: 1.25em;
 }
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
 ::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
+  width: 12px;
 
-::-webkit-scrollbar:vertical {
-  width: 15px;
-}
-
-::-webkit-scrollbar:horizontal {
-  height: 15px;
+  background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff941a9;
   border-radius: 10px;
-  border: 2px solid #ff41a9;
-}
 
-::-webkit-scrollbar-track {
-  background-color: none;
+  background-color: #555;
 }

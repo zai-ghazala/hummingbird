@@ -27,6 +27,7 @@ export const Random = () => {
 
   return (
     <>
+      
       <div className="buttons">
         <button type="button" onClick={handleClick("Dickinson")}>
            <span>⟳</span><br/>emily dickinson
