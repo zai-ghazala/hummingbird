@@ -44,7 +44,11 @@ export const Space = props => {
         <div className="footer2">
           <div></div>
           <div className="compose-message">
-            compose your poem here <span className="emoji">📝</span>
+            
+            {copySuccess ? "copied!" : clearSuccess ? "start over?" : newLineSuccess ? "new line" : "drop here"}
+            
+            
+            drop here <span className="emoji">📝</span>
           </div>
           <div className="footer2-buttons">
             <button className="copy" type="button" onClick={copy}>
