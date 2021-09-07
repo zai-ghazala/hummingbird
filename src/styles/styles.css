@@ -170,6 +170,7 @@ button span {
   width: 100vw;
   font-size: 0.75em;
   line-height: 1.25em;
+  padding: 1rem
 }
 .emoji {
   font-size: 1.5em;
