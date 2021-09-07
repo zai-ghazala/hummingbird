@@ -34,8 +34,8 @@ export const Random = () => {
         <button type="button" onClick={handleClick("Rossetti")}>
            <span>⟳</span><br/>christina rossetti
         </button>
-        <button type="button" onClick={handleClick("Bronte")}>
-           <span>⟳</span><br/>emily bronte
+        <button type="button" onClick={handleClick("Emily Bronte")}>
+           <span>⟳</span><br/>emily brontë
         </button>
       </div>
 

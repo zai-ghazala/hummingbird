@@ -162,8 +162,8 @@ div.footer-buttons {
 }
 div.footer-buttons button,
 button span {
-  margin: 0.25em;
-  font-size: calc(20px + 0.5vh);
+  margin: 0.5em;
+  font-size: calc(23px + 0.5vh);
   color: #000;
   font-weight: normal;
 }
