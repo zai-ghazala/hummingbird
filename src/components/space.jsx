@@ -19,7 +19,7 @@ export const Space = props => {
     e.preventDefault();
     let text = composedPoem.join(" ");
 
-    text = text.replace(/,[ \t]+\[object Object\]/g, "\n");
+    text = text.replace(/ \[object Object\]/g, "\n");
 
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);

@@ -150,6 +150,10 @@ div.footer2 {
   flex: 0 0 33%;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 2rem 0 0
 }
 div.footer2 .compose {
   font-size: 0.75em;
