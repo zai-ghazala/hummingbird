@@ -43,7 +43,7 @@ export const Space = props => {
       <div id="space">
         <div className="footer2">
           <div></div>
-          <div className="compose">compose your poem here 📝</div>
+          <div className="compose">compose your poem here <span className="emoji">📝</span></div>
           <div>
             <button className="copy" type="button" onClick={copy}>
               {copySuccess ? "✨" : "⎘"}

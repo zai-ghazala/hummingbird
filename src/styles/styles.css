@@ -152,7 +152,8 @@ div.footer2 {
   justify-content: space-between;
 }
 div.footer2 .compose {
-  font-size: 1em;
+  font-size: 0.75em;
+  margin-top: -0.75em
 }
 div.footer2 button,
 button span {
@@ -166,4 +167,7 @@ button span {
   width: 100vw;
   font-size: 0.75em;
   line-height: 1.25em;
+}
+.emoji {
+  font-size: 1.5em;
 }
