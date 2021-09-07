@@ -156,7 +156,6 @@ div.footer2 {
 }
 div.footer2 .compose-message {
   font-size: 0.75em;
-  margin-left: 1.5em
 }
 div.footer2 button,
 button span {
@@ -170,7 +169,6 @@ button span {
   width: 100vw;
   font-size: 0.75em;
   line-height: 1.25em;
-  padding: 1rem
 }
 .emoji {
   font-size: 1.5em;
