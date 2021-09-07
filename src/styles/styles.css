@@ -149,9 +149,6 @@ div.footer {
   text-align: center;
   margin: auto;
   height: 5vh;
-  bottom: 0;
-  position: fixed;
-  z-index: 1
 }
 div.footer-buttons {
   position: fixed;

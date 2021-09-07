@@ -31,7 +31,7 @@ export const Space = props => {
 
   const clear = e => {
     e.preventDefault();
-    if (composedPoem != 0) {
+    if (composedPoem.length != 0) {
       setComposedPoem([]);
       setClearSuccess(true);
     }
@@ -39,18 +39,20 @@ export const Space = props => {
 
   const newLine = e => {
     e.preventDefault();
-    if (composedPoem != 0) {
+    if (composedPoem.length != 0) {
       setComposedPoem([...composedPoem, <div></div>]);
       setNewLineSuccess(true);
     }
   };
 
-  console.log(composedPoem.length);
+  console.log(copySuccess, clearSuccess);
 
   return (
     <>
       <div id="space">
-        
+        <div className="compose-message">
+          {copySuccess ? "copied!" : clearSuccess ? "start over?" : newLineSuccess ? "new line!" : null}
+        </div>
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
@@ -61,27 +63,17 @@ export const Space = props => {
             })}
           </div>
         </DropTarget>
-           <div className="footer-buttons">
-            <button className="copy" type="button" onClick={copy}>
-              {copySuccess && composedPoem.length != 0 ? "✨" : "⎘"}
-            </button>
-            <button className="clear" type="button" onClick={clear}>
-              {clearSuccess ? "✨" : "␡"}
-            </button>
-            <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccess && composedPoem.length != 0 ? "✨" : "↲"}
-            </button>
-          </div>
-        
-           <div className="compose-message">
-            {copySuccess && composedPoem.length != 0
-              ? "copied!"
-              : clearSuccess && composedPoem.length != 0
-              ? "start over?"
-              : newLineSuccess && composedPoem.length != 0
-              ? "new line!"
-              : null}
-          </div>
+        <div className="footer-buttons">
+          <button className="copy" type="button" onClick={copy}>
+            {copySuccess ? "✨" : "⎘"}
+          </button>
+          <button className="clear" type="button" onClick={clear}>
+            {clearSuccess ? "✨" : "␡"}
+          </button>
+          <button className="newline" type="button" onClick={newLine}>
+            {newLineSuccess != 0 ? "✨" : "↲"}
+          </button>
+        </div>
       </div>
     </>
   );
