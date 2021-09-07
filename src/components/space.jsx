@@ -19,7 +19,7 @@ export const Space = props => {
     e.preventDefault();
     let text = composedPoem.join(" ");
 
-    text = text.replace(/ \[object Object\] /g, "\n");
+    text = text.replace(/\[object Object\] /g, "\n").replace(/ \[object Object\] /g, "\n");
 
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
@@ -37,7 +37,7 @@ export const Space = props => {
     setComposedPoem([...composedPoem, <div></div>]);
     setNewLineSuccess(true);
   };
-
+  
   return (
     <>
       <div id="space">
@@ -45,18 +45,18 @@ export const Space = props => {
           <div></div>
           <div className="compose-message">
             
-            {copySuccess || clearSuccess ? "start over?" : newLineSuccess ? "new line!" :  "drop here 📝" }
+            {copySuccess && composedPoem.length != 0  ? "copied!" : clearSuccess && composedPoem.length != 0  ? "start over?" : newLineSuccess && composedPoem.length != 0  ? "new line!" :  "drop here 📝" }
         
           </div>
           <div className="footer2-buttons">
             <button className="copy" type="button" onClick={copy}>
-              {copySuccess && composedPoem.len? "✨" : "⎘"}
+              {copySuccess && composedPoem.length > 0 ? "✨" : "⎘"}
             </button>
             <button className="clear" type="button" onClick={clear}>
               {clearSuccess ? "✨" : "␡"}
             </button>
             <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccess ? "✨" : "↵"}
+              {newLineSuccess && composedPoem.length != 0  ? "✨" : "↵"}
             </button>
           </div>
         </div>
