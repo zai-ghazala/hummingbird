@@ -127,6 +127,7 @@ div.buttons button {
 .compose-message,
 div.buttons button {
   color: #ff41a9;
+
   font-size: calc(10px + 0.75vh);
   letter-spacing: 1px;
   font-family: Courgette;
@@ -173,6 +174,24 @@ button span {
   font-size: 0.75em;
   line-height: 1.25em;
 }
-.emoji {
-  font-size: 1.5em;
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 15px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff941a9;
+  border-radius: 10px;
+  border: 2px solid #ff41a9;
+}
+
+::-webkit-scrollbar-track {
+  background-color: none;
 }
