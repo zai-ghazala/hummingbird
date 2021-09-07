@@ -19,7 +19,7 @@ export const Space = props => {
     e.preventDefault();
     let text = composedPoem.join(" ");
 
-    text = text.replace(/ \[object Object\]/g, "\n");
+    text = text.replace(/ \[object Object\] /g, "\n");
 
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
@@ -43,7 +43,9 @@ export const Space = props => {
       <div id="space">
         <div className="footer2">
           <div></div>
-          <div className="compose">compose your poem here <span className="emoji">📝</span></div>
+          <div className="compose">
+            compose your poem here <span className="emoji">📝</span>
+          </div>
           <div>
             <button className="copy" type="button" onClick={copy}>
               {copySuccess ? "✨" : "⎘"}
