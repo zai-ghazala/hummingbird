@@ -13,14 +13,13 @@ export const Space = props => {
     setNewLineSuccess(false);
     setClearSuccess(false);
     setCopySuccess(false);
-    setBackspaceSuccess(false);
   };
 
   const copy = e => {
     e.preventDefault();
     let text = composedPoem.join(" ");
 
-    text = text.replace(/\[object Object\]/g, "\n");
+    text = text.replace(/ \[object Object\]/g, "\n");
 
     navigator.clipboard.writeText(text).then(function() {
       setCopySuccess(true);
