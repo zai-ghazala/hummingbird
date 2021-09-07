@@ -145,27 +145,20 @@ div.footer {
   color: #216d3e;
   text-align: center;
 }
-div.footer2 {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  max-height: 10vh
-}
-div.footer2 div {
-  min-width: 33%;
-}
-div.footer2 .compose-message {
+.compose-message {
   text-align: center;
-  margin-top: auto;
-  padding: 0.5rem
+  margin: auto;
+  height: 5vh;
+  bottom: 0;
+  position: fixed;
+  z-index: 1
 }
-div.footer2-buttons {
-  text-align: right;
-  padding-right: 1rem
+div.footer-buttons {
+  position: fixed;
+  bottom: 10px;
+  text-align: center
 }
-div.footer2 button,
+div.footer-buttons button,
 button span {
   margin: 0.25em;
   font-size: calc(20px + 1vh);

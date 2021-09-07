@@ -50,29 +50,7 @@ export const Space = props => {
   return (
     <>
       <div id="space">
-        <div className="footer2">
-          <div></div>
-          <div className="compose-message">
-            {copySuccess && composedPoem.length != 0
-              ? "copied!"
-              : clearSuccess && composedPoem.length != 0
-              ? "start over?"
-              : newLineSuccess && composedPoem.length != 0
-              ? "new line!"
-              : "write here 📝"}
-          </div>
-          <div className="footer2-buttons">
-            <button className="copy" type="button" onClick={copy}>
-              {copySuccess && composedPoem.length != 0 ? "✨" : "⎘"}
-            </button>
-            <button className="clear" type="button" onClick={clear}>
-              {clearSuccess ? "✨" : "␡"}
-            </button>
-            <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccess && composedPoem.length != 0 ? "✨" : "↲"}
-            </button>
-          </div>
-        </div>
+        
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
@@ -83,6 +61,27 @@ export const Space = props => {
             })}
           </div>
         </DropTarget>
+           <div className="footer-buttons">
+            <button className="copy" type="button" onClick={copy}>
+              {copySuccess && composedPoem.length != 0 ? "✨" : "⎘"}
+            </button>
+            <button className="clear" type="button" onClick={clear}>
+              {clearSuccess ? "✨" : "␡"}
+            </button>
+            <button className="newline" type="button" onClick={newLine}>
+              {newLineSuccess && composedPoem.length != 0 ? "✨" : "↲"}
+            </button>
+          </div>
+        
+           <div className="compose-message">
+            {copySuccess && composedPoem.length != 0
+              ? "copied!"
+              : clearSuccess && composedPoem.length != 0
+              ? "start over?"
+              : newLineSuccess && composedPoem.length != 0
+              ? "new line!"
+              : null}
+          </div>
       </div>
     </>
   );
