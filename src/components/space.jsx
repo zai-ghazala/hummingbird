@@ -59,7 +59,7 @@ export const Space = props => {
               ? "start over?"
               : newLineSuccess && composedPoem.length != 0
               ? "new line!"
-              : "drop here 📝"}
+              : "write here 📝"}
           </div>
           <div className="footer2-buttons">
             <button className="copy" type="button" onClick={copy}>
@@ -69,7 +69,7 @@ export const Space = props => {
               {clearSuccess ? "✨" : "␡"}
             </button>
             <button className="newline" type="button" onClick={newLine}>
-              {newLineSuccess && composedPoem.length != 0 ? "✨" : "↵"}
+              {newLineSuccess && composedPoem.length != 0 ? "✨" : "↲"}
             </button>
           </div>
         </div>

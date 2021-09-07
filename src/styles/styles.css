@@ -150,24 +150,25 @@ div.footer2 {
   justify-content: space-between;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  padding: 1rem
+  width: 100vw;
+  max-height: 10vh
 }
 div.footer2 div {
   min-width: 33%;
 }
 div.footer2 .compose-message {
-  font-size: 0.75em;
-  text-align: center
+  text-align: center;
+  margin-top: auto;
+  padding: 0.5rem
 }
 div.footer2-buttons {
   text-align: right;
-  margin-right: 1rem
+  padding-right: 1rem
 }
 div.footer2 button,
 button span {
   margin: 0.25em;
-  font-size: 20px;
+  font-size: calc(20px + 1vh);
   color: #000;
   font-weight: normal
 }
