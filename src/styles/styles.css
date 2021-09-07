@@ -88,7 +88,6 @@ body {
   left: 0;
   min-height: 40vh;
   background: #e5cdfe;
-  padding: 1rem;
 }
 span.word {
   font-family: HK Grotesk;
@@ -149,22 +148,22 @@ div.footer2 {
   text-align: center;
   flex: 0 0 33%;
   display: flex;
-  justify-content: space-between;
   position: fixed;
   bottom: 0;
+  justify-content: space-between;
   width: 100%;
-  padding: 0 2rem 0 0
+  padding: 1rem
 }
-div.footer2 .compose {
+div.footer2 .compose-message {
   font-size: 0.75em;
-  margin-top: -0.75em
+  margin-left: 1.5em
 }
 div.footer2 button,
 button span {
   margin: 0.25em;
   font-size: 20px;
   color: #000;
-  font-weight: normal;
+  font-weight: normal
 }
 #space div.enter {
   height: 40vh;
