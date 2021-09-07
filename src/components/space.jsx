@@ -7,7 +7,6 @@ export const Space = props => {
   const [copySuccess, setCopySuccess] = useState(false);
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
-  const [backspaceSuccess, setBackspaceSuccess] = useState(false);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
@@ -48,16 +47,6 @@ export const Space = props => {
     }
   };
 
-  const backspace = e => {
-    e.preventDefault();
-    if (composedPoem.length != 0) {
-      setComposedPoem([...composedPoem, composedPoem.slice(0, -1)]);
-      setBackspaceSuccess(true);
-    }
-  };
-
-  console.log(copySuccess, clearSuccess);
-
   return (
     <>
       <div id="space">
@@ -68,8 +57,6 @@ export const Space = props => {
             ? "copied!"
             : newLineSuccess
             ? "new line!"
-            : backspaceSuccess
-            ? "backspace!"
             : null}
         </div>
         <DropTarget
@@ -91,9 +78,6 @@ export const Space = props => {
           </button>
           <button className="newline" type="button" onClick={newLine}>
             {newLineSuccess != 0 ? "✨" : "↲"}
-          </button>
-          <button className="backspace" type="button" onClick={newLine}>
-            {backspaceSuccess != 0 ? "✨" : "↲"}
           </button>
         </div>
       </div>
