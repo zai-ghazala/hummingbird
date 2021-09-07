@@ -80,7 +80,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: 
 }
 #space {
   position: fixed;
@@ -175,19 +174,4 @@ button span {
   font-size: 0.75em;
   line-height: 1.25em;
 }
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-
-  background-color: #555;
-}
+ 
