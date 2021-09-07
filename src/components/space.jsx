@@ -7,7 +7,7 @@ export const Space = props => {
   const [copySuccess, setCopySuccess] = useState(false);
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
-
+  
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
     setNewLineSuccess(false);
@@ -45,14 +45,12 @@ export const Space = props => {
           <div></div>
           <div className="compose-message">
             
-            {copySuccess ? "copied!" : clearSuccess ? "start over?" : newLineSuccess ? "new line" : "drop here"}
-            
-            
-            drop here <span className="emoji">📝</span>
+            {copySuccess || clearSuccess ? "start over?" : newLineSuccess ? "new line!" :  "drop here 📝" }
+        
           </div>
           <div className="footer2-buttons">
             <button className="copy" type="button" onClick={copy}>
-              {copySuccess ? "✨" : "⎘"}
+              {copySuccess && composedPoem.len? "✨" : "⎘"}
             </button>
             <button className="clear" type="button" onClick={clear}>
               {clearSuccess ? "✨" : "␡"}
