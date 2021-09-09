@@ -51,12 +51,12 @@ export const Space = props => {
     <>
       <div id="space">
         <div className="compose-message">
-          {clearSuccess
+          {newLineSuccess
+            ? "new line!"
+            : clearSuccess
             ? "start over?"
             : copySuccess
             ? "copied!"
-            : newLineSuccess
-            ? "new line!"
             : null}
         </div>
         <DropTarget
