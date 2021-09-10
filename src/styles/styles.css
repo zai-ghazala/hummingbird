@@ -173,11 +173,11 @@ button span {
   line-height: 1.25em;
   overflow-y: scroll;
 }
-.enter::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 5px; /* width of the entire scrollbar */
 }
 
-.enter::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: none; /* color of the tracking area */
 }
 
