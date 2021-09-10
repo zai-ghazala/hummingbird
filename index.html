@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <!-- This is the main template for the site, with index.jsx building the content and behavior -->
-    
+
     <title>hope is the thing with feathers</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#9cc9ff">
+    <meta name="theme-color" content="#9cc9ff" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <script>
+      if (location.protocol != "https:") {
+        location.href =
+          "https:" +
+          window.location.href.substring(window.location.protocol.length);
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
