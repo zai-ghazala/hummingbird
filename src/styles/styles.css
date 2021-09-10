@@ -118,6 +118,7 @@ div.buttons {
 }
 div.buttons button {
   background: none;
+
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -171,20 +172,5 @@ button span {
   width: 95vw;
   font-size: 0.75em;
   line-height: 1.25em;
-  overflow-y: scroll;
-}
-::-webkit-scrollbar {
-  width: 5px; /* width of the entire scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: none; /* color of the tracking area */
-}
-
-.enter::-webkit-scrollbar-thumb {
-  background-color: #ff41a9; /* color of the scroll thumb */
-
-  border-radius: 20px; /* roundness of the scroll thumb */
-
-  border: 3px solid #ff41a9; /* creates padding around scroll thumb */
+  overflow: scroll;
 }
