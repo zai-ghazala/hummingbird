@@ -168,8 +168,9 @@ button span {
   font-weight: normal;
 }
 #space div.enter {
-  height: 40vh;
-  width: 100vw;
+  height: 20vh;
+  width: 95vw;
   font-size: 0.75em;
   line-height: 1.25em;
+  overflow: scroll;
 }
