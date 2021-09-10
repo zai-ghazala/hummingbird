@@ -158,8 +158,7 @@ div.footer-buttons {
   position: fixed;
   bottom: 10px;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
 }
 div.footer-buttons button,
 button span {

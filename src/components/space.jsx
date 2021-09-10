@@ -14,7 +14,7 @@ export const Space = props => {
     setNewLineSuccess(false);
     setClearSuccess(false);
     setCopySuccess(false);
-    
+    setBackspaceSuccess(false);
   };
 
   const copy = e => {
