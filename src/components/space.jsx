@@ -7,6 +7,7 @@ export const Space = props => {
   const [copySuccess, setCopySuccess] = useState(false);
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
+  const [backspaceSuccess, setBackspaceSuccess] = useState(false);
 
   const handleDrop = currentWord => {
     setComposedPoem([...composedPoem, currentWord]);
@@ -46,6 +47,15 @@ export const Space = props => {
       setNewLineSuccess(true);
     }
   };
+  
+  const backspace = e => {
+    e.preventDefault();
+    if (composedPoem.length != 0) {
+    const temp = [...composedPoem];
+    temp.pop();
+    setComposedPoem(temp);
+    }
+  };
 
   return (
     <>
@@ -75,6 +85,9 @@ export const Space = props => {
           </button>
           <button className="clear" type="button" onClick={clear}>
             {clearSuccess ? "✨" : "␡"}
+          </button>
+            <button className="backspace" type="button" onClick={backspace}>
+            {backspaceSuccess != 0 ? "✨" : "⌫"}
           </button>
           <button className="newline" type="button" onClick={newLine}>
             {newLineSuccess != 0 ? "✨" : "↲"}
