@@ -14,6 +14,7 @@ export const Space = props => {
     setNewLineSuccess(false);
     setClearSuccess(false);
     setCopySuccess(false);
+    
   };
 
   const copy = e => {
@@ -47,13 +48,14 @@ export const Space = props => {
       setNewLineSuccess(true);
     }
   };
-  
+
   const backspace = e => {
     e.preventDefault();
     if (composedPoem.length != 0) {
-    const temp = [...composedPoem];
-    temp.pop();
-    setComposedPoem(temp);
+      const temp = [...composedPoem];
+      temp.pop();
+      setComposedPoem(temp);
+      setBackspaceSuccess(true);
     }
   };
 
@@ -63,10 +65,12 @@ export const Space = props => {
         <div className="compose-message">
           {clearSuccess
             ? "start over?"
+           : backspaceSuccess
+            ? "backspace!"
+           : copySuccess
+            ? "copied!"
             : newLineSuccess
             ? "new line!"
-            : copySuccess
-            ? "copied!"
             : null}
         </div>
         <DropTarget
@@ -86,11 +90,11 @@ export const Space = props => {
           <button className="clear" type="button" onClick={clear}>
             {clearSuccess ? "✨" : "␡"}
           </button>
-            <button className="backspace" type="button" onClick={backspace}>
-            {backspaceSuccess != 0 ? "✨" : "⌫"}
+          <button className="backspace" type="button" onClick={backspace}>
+            {backspaceSuccess ? "✨" : "⌫"}
           </button>
           <button className="newline" type="button" onClick={newLine}>
-            {newLineSuccess != 0 ? "✨" : "↲"}
+            {newLineSuccess ? "✨" : "↲"}
           </button>
         </div>
       </div>
