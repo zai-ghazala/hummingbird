@@ -104,10 +104,6 @@ span.word {
   cursor: pointer;
   color: #821ca5;
 }
-#content {
-  height: 60vh;
-  overflow-y: scroll
-}
 span.word:empty {
   visibility: hidden;
 }
@@ -180,11 +176,11 @@ button span {
 }
 *::-webkit-scrollbar {
   width: 12px;
-  -webkit-appearance: none;
+  -webkit-appearance: none
 }
 
 *::-webkit-scrollbar-track {
-  background: none;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
