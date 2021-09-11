@@ -1,6 +1,6 @@
 {
   "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
-  "title": "hope is the thing with feathers",
+  "title": "hummingbird — hope is the thing with feathers",
   "description": "drag & drop poetry maker featuring inspiration from emily dickinson, christina rossetti and emily bronte",
   "url": "glitch-default",
   "image": "https://cdn.glitch.com/ff50bc56-1555-4860-bbd4-f822f0922562%2Fandroid-chrome-512x512.png"
