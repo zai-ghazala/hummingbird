@@ -27,6 +27,8 @@ export const Random = () => {
 
   return (
     <>
+      
+
       <div className="buttons">
         <button type="button" onClick={handleClick("Dickinson")}>
           <span>⟳</span>
@@ -44,10 +46,11 @@ export const Random = () => {
           emily brontë
         </button>
       </div>
-
+      <div id="content">
       <div className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
       </div>
+        </div>
       <Space currentWord={currentWord} />
     </>
   );
