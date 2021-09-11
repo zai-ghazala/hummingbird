@@ -207,4 +207,7 @@ button span {
   div.footer-buttons {
     width: 50%;
   }
+  #space div.enter {
+    height: 80vh
+  }
 }
