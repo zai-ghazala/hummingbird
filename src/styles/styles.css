@@ -176,7 +176,7 @@ button span {
 }
 *::-webkit-scrollbar {
   width: 12px;
-  -webkit-appearance: none
+  -webkit-appearance: none;
 }
 
 *::-webkit-scrollbar-track {
@@ -187,4 +187,24 @@ button span {
   background-color: #ff41a9;
   border-radius: 20px;
   border: 3px solid #ff41a9;
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 0;
+  }
+  #container {
+    width: 50vw;
+  }
+  #space {
+    top: 0;
+    width: 50vw;
+    left: 50vw;
+    min-height: 100vh;
+  }
+  div.footer-buttons {
+    width: 50%;
+  }
 }
