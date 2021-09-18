@@ -43,7 +43,7 @@ can learn more if you want.
 3. vite: Vite is a new breed of frontend build tool.
 4. @vitejs/plugin-react-refresh: 
 5. wouter: wouter is a tiny router for modern React and Preact apps.
-6. HK Grotesk: The font we're using. 
+6. Signika Negative: The font we're using. 
 
 
 ******************************************************************************
@@ -185,13 +185,13 @@ END, wouter
 
 
 ******************************************************************************
-6. HK Grotesk
+6. Signika Negative
 URL: https://hanken.co/products/hk-grotesk
 ******************************************************************************
-HK Grotesk was designed by Hanken Design Co. It is shared using a SIL OFL
+Signika Negative was designed by Hanken Design Co. It is shared using a SIL OFL
 license. Full license text can be found at:
 
 https://hanken.co/pages/web-fonts-eula
 ******************************************************************************
-END, HK Grotesk
+END, Signika Negative
 ******************************************************************************
