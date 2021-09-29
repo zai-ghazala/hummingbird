@@ -14,7 +14,7 @@ export const Random = () => {
     });
   }, []);
 
-  const handleClick = (poet, button) => e => {
+  const handleClick = (poet) => e => {
     e.preventDefault();
     axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
       setPoem(res.data);
