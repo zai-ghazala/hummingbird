@@ -2,5 +2,5 @@
   "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
   "title": "hummingbird — hope is the thing with feathers",
   "description": "drag & drop poetry maker featuring inspiration from emily dickinson, christina rossetti and emily bronte",
-  "url": "/hummingbird.zaiismail.net"
+  "url": "http://hummingbird.zaiismail.net"
 }
