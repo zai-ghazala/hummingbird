@@ -66,11 +66,11 @@ export const Space = props => {
           {clearSuccess
             ? "start over?"
            : backspaceSuccess
-            ? "backspace!"
+            ? "backspace"
            : copySuccess
             ? "copied!"
             : newLineSuccess
-            ? "new line!"
+            ? "new line"
             : null}
         </div>
         <DropTarget
