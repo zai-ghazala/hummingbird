@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Karla");
 
 * {
   box-sizing: border-box;
@@ -21,7 +20,7 @@ input[type="reset"] {
 
 a:link,
 a:visited {
-  font-family: 'Signika Negative';
+  font-family: Karla;
   font-style: normal;
   font-weight: normal;
   color: #ff41a9;
@@ -31,8 +30,8 @@ a:visited {
 
 /* Page structure */
 body {
-  font-family: 'Signika Negative';
-  background-color: #9cc9ff;
+  font-family: Karla;
+  background-color: #b2d4fe;
   margin-bottom: 40vh;
   line-height: 1.5em;
   letter-spacing: 0.5px;
@@ -54,7 +53,7 @@ body {
   background: #e5cdfe;
 }
 span.word {
-  font-family: 'Signika Negative';
+  font-family: Karla;
   font-weight: bold;
   letter-spacing: 1px;
   border-width: 1px 3px 3px 1px;

@@ -79,7 +79,7 @@ export const Space = props => {
         >
           <div className="enter">
             {composedPoem.map((word, i) => {
-              return <span key={"droppedWord" + i}>{word} </span>;
+              return <span key={word + i}>{word} </span>;
             })}
           </div>
         </DropTarget>
