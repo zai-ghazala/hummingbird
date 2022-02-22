@@ -85,16 +85,16 @@ export const Space = props => {
         </DropTarget>
         <div className="footer-buttons">
           <button className="copy" type="button" onClick={copy}>
-            {copySuccess ? "✨" : "⎘"}
+            ⎘
           </button>
           <button className="clear" type="button" onClick={clear}>
-            {clearSuccess ? "✨" : "␡"}
+            ␡
           </button>
           <button className="backspace" type="button" onClick={backspace}>
-            {backspaceSuccess ? "✨" : "⌫"}
+            ⌫
           </button>
           <button className="newline" type="button" onClick={newLine}>
-            {newLineSuccess ? "✨" : "↲"}
+            ↲
           </button>
         </div>
       </div>

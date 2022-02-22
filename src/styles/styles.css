@@ -34,7 +34,6 @@ body {
   background-color: #b2d4fe;
   margin-bottom: 40vh;
   line-height: 1.5em;
-  letter-spacing: 0.5px;
 }
 #container {
   margin: 0 1rem;
@@ -55,7 +54,6 @@ body {
 span.word {
   font-family: Karla;
   font-weight: bold;
-  letter-spacing: 1px;
   border-width: 1px 3px 3px 1px;
   border-color: #888 #000 #000 #888;
   border-style: solid;
@@ -89,9 +87,6 @@ div.buttons button {
 .compose-message,
 div.buttons button {
   color: #ff41a9;
-
-  font-size: calc(10px + 0.75vh);
-  letter-spacing: 1px;
   font-family: Courgette;
 }
 .poem-data {
@@ -132,7 +127,6 @@ button span {
 #space div.enter {
   height: 20vh;
   width: 95vw;
-  font-size: calc(7px + 1vh);
   line-height: 1.25em;
   overflow-y: scroll;
 }
@@ -151,11 +145,12 @@ button span {
   border: 3px solid #ff41a9;
 }
 
-@media (min-width: 481px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
   body {
     flex-direction: row;
     display: flex;
     margin-bottom: 0;
+    font-size: 1.5em 
   }
   #container {
     width: 50vw;
