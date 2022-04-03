@@ -84,7 +84,7 @@ export const Space = props => {
           </div>
         </DropTarget>
         <div className="footer-buttons">
-          <button className={copySuccess || clearSuccess|| composedPoem.length === 0
+          <button className={copySuccess || clearSuccess || composedPoem.length === 0
             ? 'disabled' : null} type="button" onClick={copy}>
             ⎘
           </button>
@@ -92,11 +92,11 @@ export const Space = props => {
             ? 'disabled' : null} type="button" onClick={clear}>
             ␡
           </button>
-          <button className={clearSuccess || copySuccess || composedPoem.length === 0
+          <button className={clearSuccess || composedPoem.length === 0
             ? 'disabled' : null} type="button" onClick={backspace}>
             ⌫
           </button>
-          <button className={clearSuccess || copySuccess|| composedPoem.length === 0
+          <button className={clearSuccess || composedPoem.length === 0
             ? 'disabled' : null} type="button" onClick={newLine}>
             ↲
           </button>
