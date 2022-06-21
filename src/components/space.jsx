@@ -43,7 +43,7 @@ export const Space = props => {
   const newLine = e => {
     e.preventDefault();
     if (composedPoem.length != 0) {
-      setComposedPoem([...composedPoem, <div></div>]);
+      setComposedPoem([...composedPoem, <><br/></>]);
       setNewLineSuccess(true);
     }
   };

@@ -180,9 +180,9 @@ button span {
 }
 #space div.enter {
   height: 20vh;
-  width: 95vw;
+  width: 90vw;
   line-height: 1.25em;
-  overflow-y: scroll;
+  overflow-y: scroll
 }
 *::-webkit-scrollbar {
   width: 12px;
@@ -219,7 +219,8 @@ button span {
     width: 50%;
   }
   #space div.enter {
-    height: 80vh
+    height: 80vh;
+    width: 40vw;
   }
 }
 .disabled {
