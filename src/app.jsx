@@ -23,10 +23,33 @@ import useHashLocation from "./hooks/wouter-hash";
 // The component that adds our Meta tags to the page
 import Seo from "./components/seo.jsx";
 
+import Splash from "./components/splash.jsx";
+
 // Home function that is reflected across the site
-export default function Home() {
-  return (
-    <Router hook={useHashLocation}>
+
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timePassed: false,
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setTimePassed();
+    }, 1500);
+  }
+
+  setTimePassed() {
+    this.setState({ timePassed: true });
+  }
+
+  render() {
+    if (!this.state.timePassed) {
+      return <Splash />;
+    } else {
+      return <Router hook={useHashLocation}>
       <Seo />
         <main role="main">
           <div className="content">
@@ -35,6 +58,7 @@ export default function Home() {
             <PageRouter />
           </div>
         </main>
-    </Router>
-  );
+      </Router>
+    }
+  }
 }
