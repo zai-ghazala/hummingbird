@@ -64,10 +64,10 @@ export const Space = props => {
         <div className="compose-message">
           {clearSuccess
             ? "start over?"
+            : copySuccess
+            ? "copied!"
            : backspaceSuccess
             ? "backspace"
-           : copySuccess
-            ? "copied!"
             : newLineSuccess
             ? "new line"
             : null}
