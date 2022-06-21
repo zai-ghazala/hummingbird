@@ -52,7 +52,7 @@
     transform: translateY(-50px) translateX(-20px)
   }
   100% {
-    transform: translateY(15px) translateX(2.5px)
+    transform: translateY(15px)
   }
 }
 
