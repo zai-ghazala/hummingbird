@@ -6,7 +6,7 @@ export default function Splash() {
         <div id="splash">
             <p>
         <span className="word">hummingbird</span><br/>hope is the thing with feathers<br/>
-    drag and drop poem kit
+    drag & drop poem kit
         <img
         className="bird bird--right slide-in-elliptic-top-fwd"
         src={right}/>
