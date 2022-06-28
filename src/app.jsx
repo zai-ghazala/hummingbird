@@ -30,25 +30,9 @@ import Splash from "./components/splash.jsx";
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      timePassed: false,
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setTimePassed();
-    }, 6000);
-  }
-
-  setTimePassed() {
-    this.setState({ timePassed: true });
   }
 
   render() {
-    if (!this.state.timePassed) {
-      return <Splash />;
-    } else {
       return <Router hook={useHashLocation}>
       <Seo />
         <main role="main">
@@ -59,6 +43,5 @@ export default class Home extends React.Component {
           </div>
         </main>
       </Router>
-    }
   }
 }
