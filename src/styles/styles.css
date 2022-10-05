@@ -107,6 +107,7 @@ body {
   padding: 1em;
   min-height: 40vh;
   background: #e5cdfe;
+  padding-bottom: env(safe-area-inset-bottom)
 }
 span.word {
   border-width: 1px 3px 3px 1px;
