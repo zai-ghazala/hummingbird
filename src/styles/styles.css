@@ -101,11 +101,11 @@ body {
 }
 #space {
   position: fixed;
-  top: 60vh;
+  bottom: 0;
   width: 100vw;
   left: 0;
   padding: 1em;
-  min-height: 40vh;
+  height: 40vh;
   background: #e5cdfe;
 }
 span.word {
@@ -231,6 +231,6 @@ button span {
 @media screen and (orientation: portrait), 
 screen and (orientation:landscape) and (max-width: 767px) {
   #space {
-  padding-bottom:calc(env(safe-area-inset-bottom) + 16px);
+  height: calc(env(safe-area-inset-bottom) + 40vh)
 } 
 }
