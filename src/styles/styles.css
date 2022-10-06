@@ -233,8 +233,7 @@ button span {
   height: calc(env(safe-area-inset-bottom) + 40vh)
 } 
 }
-@media screen and (orientation: portrait), 
-screen and (orientation:landscape) and (max-width: 767px) {
+@media screen and (orientation:landscape) and (max-width: 767px) {
   #space {
   height: calc(env(safe-area-inset-bottom) + 50vh)
 } 
