@@ -72,13 +72,12 @@ a {
 }
 body {
 	font-family: "PP Woodland Ultralight";
-	background-color: #b2d4fe;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	font-weight: 800 !important;
+	background: #b2d4fe;
 }
 #container {
-	margin: 0 1rem;
 	color: var(--color-text-main);
 	display: flex;
 	flex-direction: column;
