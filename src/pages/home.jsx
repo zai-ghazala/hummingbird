@@ -19,7 +19,7 @@ export default function Home() {
           src={left}
         />
 
-        <div className="footer">made with 💖 by zainab ismail</div>
+        <div className="footer">made with 💖 by Zainab Ismail</div>
       </div>
     </>
   );

@@ -11,41 +11,15 @@
 	src: url("/fonts/PP-Woodland-Ultralight.otf");
 }
 /* Page structure */
-#splash {
-	height: 100vh;
-	width: 95vw;
-	display: table;
-	background: #b2d4fe;
-	p {
-		color: #821ca5;
-		text-align: center;
-		display: table-cell;
-		vertical-align: middle;
-	}
-	img {
-		width: fit-content;
-		margin: 2em auto;
-		width: 20vh;
-	}
-}
 * {
 	box-sizing: border-box;
 	letter-spacing: 1px;
-	&::-webkit-scrollbar {
-		width: 12px;
-		-webkit-appearance: none;
-	}
-	&::-webkit-scrollbar-track {
-		background: transparent;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: #ff41a9;
-		border-radius: 20px;
-		border: 3px solid #ff41a9;
-	}
 }
 [hidden] {
 	display: none !important;
+}
+div.poem {
+	padding: 2rem;
 }
 button {
 	background: none;
@@ -138,6 +112,10 @@ span.word {
 	&:empty {
 		visibility: hidden;
 	}
+	&:hover {
+		background: yellow;
+		filter: brightness(150%);
+	}
 }
 img.bird {
 	width: 20vh;
@@ -166,6 +144,8 @@ div.buttons {
 }
 .poem-data {
 	margin: 2rem 0;
+	padding: 2rem;
+	white-space: break-spaces;
 	span {
 		font-style: italic;
 	}
@@ -175,9 +155,10 @@ div.drag {
 	width: fit-content;
 }
 div.footer {
-	padding: 1rem;
+	padding: 2rem;
 	font-weight: bold;
 	color: #216d3e;
+	white-space: break-spaces;
 	text-align: center;
 }
 div.footer-buttons {
@@ -198,11 +179,17 @@ div.footer-buttons {
 	pointer-events: none;
 }
 @media screen and (min-width: 768px) and (orientation: landscape) {
+	button span, div.footer-buttons button {
+    font-size: 3.5rem
+	}
 	body {
 		flex-direction: row;
 		display: flex;
 		margin-bottom: 0;
-		font-size: 1.25em;
+		font-size: 1.75rem;
+	}
+	* {
+		letter-spacing: 2px;
 	}
 	#container {
 		width: 50vw;
@@ -220,6 +207,9 @@ div.footer-buttons {
 	div.footer-buttons {
 		width: 50%;
 	}
+}
+span.word {
+	margin: 5px;
 }
 @media screen and (orientation: portrait) {
 	#space {
