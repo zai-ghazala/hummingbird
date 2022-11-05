@@ -15,6 +15,9 @@
 	box-sizing: border-box;
 	letter-spacing: 1px;
 }
+div.footer-buttons button:nth-of-type(1), div.footer-buttons button:nth-of-type(2){
+	font-size: calc(23px + 2vh)
+}
 [hidden] {
 	display: none !important;
 }
