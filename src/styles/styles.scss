@@ -269,6 +269,9 @@ div.footer-buttons {
 		height: calc(env(safe-area-inset-bottom) + 50vh);
 	}
 }
+.monospace {
+	font-family: monospace;
+}
 div.save {
 	text-align: center;
 	margin-bottom: 2em;
