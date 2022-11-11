@@ -123,7 +123,7 @@ export const Space = props => {
         <div className="footer-buttons">
           <button className={clearSuccess || composedPoem.length === 0
               ? 'disabled' : null} type="button" onClick={send}>
-              ✉
+              &#x2709;
             </button>
           <button className={copySuccess || clearSuccess || composedPoem.length === 0
             ? 'disabled' : null} type="button" onClick={copy}>
