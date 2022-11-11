@@ -100,7 +100,7 @@ export const Space = props => {
             : newLineSuccess
             ? "new line"
             : saveSuccess 
-            ? `wow, published! thanks ${username}`
+            ? `wow published! thanks ${username}`
             : sendRequest 
             ? "save & send?"
             : null}
