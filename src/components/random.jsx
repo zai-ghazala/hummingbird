@@ -91,7 +91,9 @@ const random = () => {
           Emily Brontë
         </button>
 
-        <button type="button" onClick={random}>
+      </div>
+      <div className="buttons">
+      <button type="button" onClick={random}>
           <span>⟳</span>
           <br />
           random submitted user poem
