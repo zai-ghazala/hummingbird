@@ -96,7 +96,7 @@ const random = () => {
       <button type="button" onClick={random}>
           <span>⟳</span>
           <br />
-          random submitted user poem
+          random user submission
         </button>
       </div>
       <div className="poem">
