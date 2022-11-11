@@ -18,7 +18,7 @@
 		transform: translateY(30px) translateX(-30px);
 	}
 	100% {
-		transform: translateY(-15px) translateX(20px);
+		transform: translateY(30px) translateX(0px);
 	}
 }
 #splash {
@@ -63,12 +63,6 @@ button {
 	cursor: pointer;
 	outline: inherit;
 	line-height: 1.25em;
-	span {
-		margin: 0.5em;
-		font-size: calc(23px + 0.5vh);
-		color: #000;
-		font-weight: normal;
-	}
 }
 input[type="submit"] {
 	background: none;
@@ -160,6 +154,9 @@ div.buttons {
 	margin: 1rem;
 	display: flex;
 	justify-content: center;
+	button span {
+		font-size: calc(23px + 3vh)
+	}
 	button {
 		background: none;
 		border: none;
@@ -167,6 +164,12 @@ div.buttons {
 		cursor: pointer;
 		outline: inherit;
 		color: #ff41a9;
+		span {
+			margin: 0.5em;
+			font-size: calc(23px + 0.5vh);
+			color: #000;
+			font-weight: normal;
+		}
 	}
 }
 .compose-message {
@@ -205,14 +208,14 @@ div.footer-buttons {
 		color: #000;
 		font-weight: normal;
 	}
+	button:nth-of-type(1) {
+		margin-left: -0.5em;
+	}
 }
 .disabled {
 	cursor: not-allowed;
 	opacity: 0.5;
 	pointer-events: none;
-}
-button span {
-	font-size: calc(23px + 3vh)
 }
 div.footer-buttons {
 	font-size: calc(23px + 1vh);
