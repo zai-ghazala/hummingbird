@@ -27,6 +27,9 @@
 	display: table;
 	background: #b2d4fe;
 	overflow-y: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
 	p {
 		color: #821ca5;
 		text-align: center;
