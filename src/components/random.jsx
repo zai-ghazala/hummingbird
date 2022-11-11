@@ -100,7 +100,7 @@ const random = () => {
       <div className="poem">
         <Poem poem={poem} handleDrag={handleDrag} />
 
-        {submission ? <div className="poem-data">by {author}</div> : <div className="poem-data">— <span>{title}</span> by {author}</div>}
+        {submission ? <div className="poem-data">— by {author}</div> : <div className="poem-data">— <span>{title}</span> by {author}</div>}
     </div>
         <Space currentWord={currentWord} />
   </>
