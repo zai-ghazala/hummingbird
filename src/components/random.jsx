@@ -10,7 +10,8 @@ import { Space } from "./space";
 export const Random = () => {
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
-  const [submittedName, setSubmittedName] = useState("");
+
+  const [submission, setSubmission] = useState(false);
 
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
@@ -20,6 +21,7 @@ export const Random = () => {
       setPoem(res.data[0].lines);
       setAuthor(res.data[0].author);
       setTitle(res.data[0].title);
+      setSubmission(false)
     });
   }, []);
 
@@ -29,6 +31,7 @@ export const Random = () => {
       setPoem(res.data[0].lines);
       setAuthor(res.data[0].author);
       setTitle(res.data[0].title);
+      setSubmission(false)
     });
   };
 
@@ -55,8 +58,8 @@ const random = () => {
         const random = poems[0][getRandomProperty(poems[0])]
 
         setPoem(random['poem'].split("\n"));
-        setSubmittedName(random['name'])
-
+        setAuthor(random['name'])
+        setSubmission(true)
       
     } else {
       console.log("No data available");
@@ -97,7 +100,7 @@ const random = () => {
       <div className="poem">
         <Poem poem={poem} handleDrag={handleDrag} />
 
-        {submittedName ? <div className="poem-data"><span>by {submittedName}</span></div> : <div className="poem-data">— <span>{title}</span> by {author}</div>}
+        {submission ? <div className="poem-data"><span>by {author}</span></div> : <div className="poem-data">— <span>{title}</span> by {author}</div>}
     </div>
         <Space currentWord={currentWord} />
   </>
