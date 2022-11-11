@@ -17,11 +17,8 @@
 	25% {
 		transform: translateY(30px) translateX(-30px);
 	}
-	50% {
-		transform: translateY(-80px) translateX(20px);
-	}
-	90% {
-		transform: translateY(20px) translateX(-20px);
+	100% {
+		transform: translateY(-40px) translateX(20px);
 	}
 }
 #splash {
@@ -65,6 +62,7 @@ button {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+	line-height: 1.25em;
 	span {
 		margin: 0.5em;
 		font-size: calc(23px + 0.5vh);
@@ -129,9 +127,9 @@ body {
 	background: #e5cdfe;
 	div.enter {
 		height: 20vh;
-		width: 90vw;
+		width: 90%;
 		line-height: 1.25em;
-		overflow-y: scroll;
+		overflow: auto
 	}
 }
 span.word {
@@ -178,8 +176,8 @@ div.buttons {
 	height: 5vh;
 }
 .poem-data {
-	margin: 2rem 0;
-	padding: 2rem;
+	margin: 1rem 0;
+	padding: 1rem;
 	white-space: break-spaces;
 	span {
 		font-style: italic;
@@ -216,19 +214,21 @@ div.footer-buttons {
 button span {
 	font-size: calc(23px + 3vh)
 }
-div.footer-buttons button {
-	font-size: calc(23px + 1vh)
-}
-div.footer-buttons button:nth-of-type(1), div.footer-buttons button:nth-of-type(2){
-	font-size: calc(23px + 2vh)
+div.footer-buttons {
+	font-size: calc(23px + 1vh);
+	button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
+		font-size: calc(23px + 2vh)
+	}
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-	div.footer-buttons button:nth-of-type(1), div.footer-buttons button:nth-of-type(2){
-		font-size: calc(23px + 3.25vw)
-	}
-	div.footer-buttons button:nth-of-type(3), div.footer-buttons button:nth-of-type(4){
-		font-size: calc(23px + 2vw)
+	div.footer-buttons {
+		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
+			font-size: calc(23px + 3.25vw)
+		}
+		button:nth-of-type(4), button:nth-of-type(5){
+			font-size: calc(23px + 2vw)
+		}
 	}
 	body {
 		flex-direction: row;
@@ -267,5 +267,23 @@ div.footer-buttons button:nth-of-type(1), div.footer-buttons button:nth-of-type(
 @media screen and (orientation:landscape) and (max-width: 767px) {
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 50vh);
+	}
+}
+div.save {
+	text-align: center;
+	margin-bottom: 2em;
+	input {
+		font-family: inherit;
+		font-size: 1em;
+		font-weight: inherit;
+		color: #000;
+		letter-spacing: inherit;
+	}
+	button {
+		font-family: inherit;
+		font-size: 1em;
+		margin-left: 0.5em;
+		letter-spacing: inherit;
+		color: #ff41a9;
 	}
 }

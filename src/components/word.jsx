@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DragDropContainer } from "react-drag-drop-container";
 
 export const Word = (props) => {
