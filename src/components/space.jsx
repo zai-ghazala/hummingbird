@@ -13,6 +13,8 @@ export const Space = props => {
   const [sendRequest, setSendRequest] = useState(false);
 
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [saveFailure, setSaveFailure] = useState(false);
+
   const [username, setUsername] = useState('');
   const [updated, setUpdated] = useState(username);
 
@@ -24,6 +26,7 @@ export const Space = props => {
     setBackspaceSuccess(false);
     setSendRequest(false);
     setSaveSuccess(false);
+    setSaveFailure(false);
   };
 
   const copy = () => {
@@ -72,6 +75,7 @@ export const Space = props => {
   // Push Function
   const handleClick = () => {
 
+    if (composedPoem.length != 0) {
     let text = composedPoem.join(" ");
 
     text = text
@@ -85,6 +89,10 @@ export const Space = props => {
       timestamp: serverTimestamp(),
     });
     setSaveSuccess(true);
+    }
+    else {
+      setSaveFailure(true);
+    }
   }
 
   return (
@@ -95,6 +103,8 @@ export const Space = props => {
             ? "start over?"
             : copySuccess
             ? "copied!"
+            : saveFailure 
+            ? "oops, empty poem"
             : backspaceSuccess
             ? "backspace"
             : newLineSuccess
