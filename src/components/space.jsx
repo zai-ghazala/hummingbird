@@ -117,7 +117,7 @@ export const Space = props => {
         </div>
 
         { sendRequest && <div className="save"><input type="text" name="username" placeholder="your name here" onChange={e => setUsername(e.target.value)} value={username}/><button type="button" 
-      onClick={handleClick}>press to publish</button></div> }
+      onClick={handleClick}>publish</button></div> }
 
           
         <DropTarget

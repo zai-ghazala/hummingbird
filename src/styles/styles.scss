@@ -162,12 +162,14 @@ div.buttons {
 		font-size: calc(23px + 3vh)
 	}
 	button {
-		background: none;
+		margin: 5px;
 		border: none;
 		padding: 10px;
 		cursor: pointer;
 		outline: inherit;
 		color: #ff41a9;
+		background: #95c5ff;
+		border-radius: 5px;
 		span {
 			margin: 0.5em;
 			font-size: calc(23px + 2vh);
@@ -295,5 +297,8 @@ div.save {
 		margin-left: 0.5em;
 		letter-spacing: inherit;
 		color: #ff41a9;
+		background: #dab7ff;
+		border-radius: 5px;
+		padding: 10px;
 	}
 }
