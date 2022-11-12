@@ -75,17 +75,17 @@ const random = () => {
   return (
     <>
       <div className="buttons">
-        <button type="button" onClick={handleClick("Dickinson")}>
+        <button type="button" className="author" onClick={handleClick("Dickinson")}>
           <span>⟳</span>
           <br />
           Emily Dickinson
         </button>
-        <button type="button" onClick={handleClick("Rossetti")}>
+        <button type="button" className="author" onClick={handleClick("Rossetti")}>
           <span>⟳</span>
           <br />
           Christina Rossetti
         </button>
-        <button type="button" onClick={handleClick("Emily Bronte")}>
+        <button type="button" className="author"  onClick={handleClick("Emily Bronte")}>
           <span>⟳</span>
           <br />
           Emily Brontë
