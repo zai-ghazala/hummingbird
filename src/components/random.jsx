@@ -14,6 +14,7 @@ export const Random = () => {
   const [submission, setSubmission] = useState(false);
 
   const [author, setAuthor] = useState("");
+  const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -39,8 +40,6 @@ export const Random = () => {
     setCurrentWord(word);
   };
 
-
-
 const random = () => {
   function getRandomProperty(obj) {
     const keys = Object.keys(obj);
@@ -59,6 +58,7 @@ const random = () => {
 
         setPoem(random['poem'].split("\n"));
         setAuthor(random['name'])
+        setTimestamp(new Date(random['timestamp']).toLocaleString());
         setSubmission(true)
       
     } else {
@@ -100,9 +100,9 @@ const random = () => {
         </button>
       </div>
       <div className="poem">
-        <Poem poem={poem} handleDrag={handleDrag} />
+        {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
-        {submission ? <div className="poem-data">— by {author}</div> : <div className="poem-data">— <span>{title}</span> by {author}</div>}
+        {submission ? <div className="poem-data">— by {author} at {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author}</div> : null}
     </div>
         <Space currentWord={currentWord} />
   </>
