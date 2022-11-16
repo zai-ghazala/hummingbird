@@ -33,8 +33,8 @@ export const Space = props => {
     let text = composedPoem.join(" ");
 
     text = text
-      .replace(/\[object Object\] /g, "\n")
-      .replace(/ \[object Object\] /g, "\n");
+      .replace(/\[object Object\] /g, '\n')
+      .replace(/ \[object Object\] /g, '\n');
 
     navigator.clipboard.writeText(text).then(function() {
       if (composedPoem.length != 0) {
@@ -76,11 +76,12 @@ export const Space = props => {
   const handleClick = () => {
 
     if (composedPoem.length != 0) {
-    let text = composedPoem.join(" ");
+    let text = composedPoem.join(' ');
 
     text = text
-      .replace(/\[object Object\] /g, "\n")
-      .replace(/ \[object Object\] /g, "\n");
+      .replace(/\[object Object\] /g, '\n')
+      .replace(/ \[object Object\] /g, '\n')
+      .replace('[object Object]', '')
 
     setUpdated(username);
     push(ref(db, 'poems/'), {

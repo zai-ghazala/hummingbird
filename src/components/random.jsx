@@ -56,7 +56,7 @@ const random = () => {
         poems.push(snapshot.val())
         const random = poems[0][getRandomProperty(poems[0])]
 
-        setPoem(random['poem'].split("\n"));
+        setPoem(random['poem'].split('\n'));
         setAuthor(random['name'])
         setTimestamp(new Date(random['timestamp']).toLocaleDateString());
         setSubmission(true)
