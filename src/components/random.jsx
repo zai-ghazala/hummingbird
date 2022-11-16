@@ -58,7 +58,7 @@ const random = () => {
 
         setPoem(random['poem'].split("\n"));
         setAuthor(random['name'])
-        setTimestamp(new Date(random['timestamp']).toLocaleString());
+        setTimestamp(new Date(random['timestamp']).toLocaleDateString());
         setSubmission(true)
       
     } else {
