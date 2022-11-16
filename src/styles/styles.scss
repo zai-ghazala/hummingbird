@@ -220,7 +220,6 @@ div.footer-buttons {
 	width: 100%;
 	button {
 		margin: 0.5em;
-		font-size: calc(23px + 0.5vh);
 		color: #000;
 		font-weight: normal;
 	}
@@ -233,33 +232,46 @@ div.footer-buttons {
 	opacity: 0.5;
 	pointer-events: none;
 }
-div.footer-buttons {
-	font-size: calc(23px + 1vh);
-	button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
-		font-size: calc(23px + 2vh)
+@media screen and (min-width: 480px) and (max-width:768px) and (orientation: landscape) {
+	body {
+		font-size: 1em !important
+	}
+	* {
+		letter-spacing: normal;
+	}
+	#container {
+		overflow-x: hidden
+	}
+	div.footer-buttons {
+		button {
+			font-size: calc(12.5px + 1.75vw);
+			button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
+				font-size: calc(12.5px + 3.25vw)
+			}
+			button:nth-of-type(4), button:nth-of-type(5){
+				font-size: calc(12.5px + 2vw)
+			}
+		}
 	}
 }
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
 	html {
 		overflow: hidden;
 	}
 	html, body {
 		height: 100vh;
 	}
-	div.footer-buttons {
-		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
-			font-size: calc(23px + 3.25vw)
-		}
-		button:nth-of-type(4), button:nth-of-type(5){
-			font-size: calc(23px + 2vw)
-		}
-	}
 	body {
 		flex-direction: row;
 		display: flex;
 		margin-bottom: 0;
-		font-size: 1.75rem;
+		font-size: 1.75rem
+	}
+	div.footer-buttons {
+		font-size: calc(45px + 1vh);
+		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
+			font-size: calc(55px + 2vh)
+		}
 	}
 	* {
 		letter-spacing: 2px;
@@ -279,7 +291,7 @@ div.footer-buttons {
 			margin-top: 12.5vh;	
 			&__send-request {
 				height: 62.5vh;
-				margin-top: 17.5vh;
+				margin-top: 22vh;
 			}
 		}
 	}
@@ -301,10 +313,14 @@ div.footer-buttons {
 	#container {
 		padding-bottom: 40vh;
 	}
-}
-@media screen and (orientation:landscape) and (max-width: 767px) {
-	#space {
-		height: calc(env(safe-area-inset-bottom) + 50vh);
+}	
+@media screen and (orientation: portrait),
+screen and (min-width: 480px) and (max-width:768px) and (orientation: landscape) {
+	div.footer-buttons {
+		font-size: calc(25px + 1vh);
+		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
+			font-size: calc(25px + 2vh)
+		}
 	}
 }
 .monospace {
@@ -312,7 +328,6 @@ div.footer-buttons {
 }
 div.save {
 	text-align: center;
-	margin-bottom: 2em;
 	input {
 		font-family: inherit;
 		font-size: 1em;
