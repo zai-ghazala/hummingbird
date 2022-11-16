@@ -104,7 +104,7 @@ const random = () => {
 
         {submission ? <div className="poem-data">— by {author} at {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author}</div> : null}
     </div>
-        <Space currentWord={currentWord} />
+        <Space currentWord={currentWord}/>
   </>
   );
 };
