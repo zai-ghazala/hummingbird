@@ -30,6 +30,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	font-size: 1em;
 	p {
 		color: #821ca5;
 		text-align: center;
@@ -232,9 +233,14 @@ div.footer-buttons {
 	opacity: 0.5;
 	pointer-events: none;
 }
+@media screen and (min-width: 993px) and (orientation: landscape) {
+	body {
+		font-size: 1.75rem
+	}
+}
 @media screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
 	body, #splash {
-		font-size: 1em !important
+		font-size: 1em;
 	}
 	* {
 		letter-spacing: normal;
@@ -265,7 +271,6 @@ div.footer-buttons {
 		flex-direction: row;
 		display: flex;
 		margin-bottom: 0;
-		font-size: 1.75rem
 	}
 	div.footer-buttons {
 		font-size: calc(45px + 1vh);
