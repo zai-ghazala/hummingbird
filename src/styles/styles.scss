@@ -277,7 +277,11 @@ div.footer-buttons {
 		div.enter {
 			height: 65vh;
 			width: 92.5%;
-			margin-top: 12.5vh;		
+			margin-top: 12.5vh;	
+			&__send-request {
+				height: 62.5vh;
+				margin-top: 17.5vh;
+			}
 		}
 	}
 	div.footer-buttons {
@@ -291,10 +295,10 @@ div.footer-buttons {
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 40vh);
 	}
-	#space .enter.send-request {
+	#space div.enter.enter__send-request {
 		margin-top: 6rem;
     height: 12.5vh;
-	}	
+	}
 	#container {
 		height: 60vh
 	}
@@ -302,10 +306,6 @@ div.footer-buttons {
 @media screen and (orientation:landscape) and (max-width: 767px) {
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 50vh);
-	}
-	#space .enter.send-request {
-		height: 62.5vh;
-    margin-top: 17.5vh;
 	}
 }
 .monospace {

@@ -124,7 +124,7 @@ export const Space = props => {
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
         >
-          <div className={sendRequest ? 'send-request enter' : 'enter'}>
+          <div className={sendRequest ? 'enter__send-request enter' : 'enter'}>
             {composedPoem.map((word, i) => {
               return <span key={word + i}>{word} </span>;
             })}
