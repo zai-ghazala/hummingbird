@@ -294,13 +294,11 @@ div.footer-buttons {
 @media screen and (orientation: portrait) {
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 40vh);
+		padding-bottom: 40vh;
 	}
 	#space div.enter.enter__send-request {
 		margin-top: 6rem;
     height: 12.5vh;
-	}
-	#container {
-		height: 60vh
 	}
 }
 @media screen and (orientation:landscape) and (max-width: 767px) {
