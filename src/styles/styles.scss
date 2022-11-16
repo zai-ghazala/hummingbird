@@ -7,46 +7,6 @@
 	src: url("/fonts/PP-Woodland-Ultralight.otf");
 }
 
-@keyframes drag-word {
-	0% {
-		transform: translateY(10px) translateX(5px);
-	}
-	10% {
-		transform: translateY(-20px) translateX(-5px);
-	}
-	50% {
-		transform: translateY(30px) translateX(-30px);
-	}
-	100% {
-		transform: translateY(30px) translateX(0px);
-	}
-}
-#splash {
-	height: 100vh;
-	width: 95vw;
-	display: table;
-	background: #b2d4fe;
-	overflow-y: hidden;
-	position: fixed;
-	top: 0;
-	left: 0;
-	p {
-		color: #821ca5;
-		text-align: center;
-		display: table-cell;
-		vertical-align: middle;
-	}
-	img {
-		width: fit-content;
-		margin: 2em auto;
-		width: 20vh;
-	}
-}
-.animate {
-	animation: drag-word 3s ease-in-out both;
-}
-
-
 /* Page structure */
 * {
 	box-sizing: border-box;
@@ -238,7 +198,7 @@ div.footer-buttons {
 	}
 }
 @media screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
-	body, #splash {
+	body {
 		font-size: 1em !important
 	}
 	* {

@@ -18,35 +18,14 @@ import "./styles/styles.scss";
 
 // Where all of our pages come from
 import PageRouter from "./components/router.jsx";
-import Splash from "./components/splash.jsx";
 
 // The component that adds our Meta tags to the page
 import Seo from "./components/seo.jsx";
 
 // Home function that is reflected across the site
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      timePassed: false,
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setTimePassed();
-    }, 6000);
-  }
-
-  setTimePassed() {
-    this.setState({ timePassed: true });
-  }
-
-  render() {
-    if (!this.state.timePassed) {
-      return <Splash />;
-    } else {
+export default function Home() {
+  
       return <Router>
       <Seo />
         <main role="main">
@@ -57,6 +36,4 @@ export default class Home extends React.Component {
           </div>
         </main>
       </Router>
-    }
-  }
 }
