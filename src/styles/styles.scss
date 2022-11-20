@@ -1,3 +1,10 @@
+html {
+	--purple: #babdff;
+	--green: #baffdc;
+	--blue: #bae1ff;
+	--dark-green: #1b412e
+}
+
 @font-face {
 	font-family: "Courgette";
 	src: url("/fonts/Courgette-Regular.ttf");
@@ -50,14 +57,14 @@ a {
 	&:link {
 		font-style: normal;
 		font-weight: normal;
-		color: #ff41a9;
+		color: var(--purple);
 		text-decoration: none;
 		border-style: none;
 	}
 	&:visited {
 		font-style: normal;
 		font-weight: normal;
-		color: #ff41a9;
+		color: var(--purple);
 		text-decoration: none;
 		border-style: none;
 	}
@@ -67,7 +74,7 @@ body {
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	font-weight: 800;
-	background: #b2d4fe;
+	background: var(--purple);
 }
 #container {
 	color: var(--color-text-main);
@@ -78,7 +85,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(#fefadf,#fff4f4,#ffe8fa,#f6e1ff);
+	background: linear-gradient(#d8daff,#d4ecfd,#e3fff1);
 }
 #space {
 	position: fixed;
@@ -107,7 +114,7 @@ span.word {
 	background: #fff;
 	display: inline-block;
 	cursor: pointer;
-	color: #821ca5;
+	color: var(--dark-purple);
 	&:empty {
 		visibility: hidden;
 	}
@@ -138,8 +145,8 @@ div.buttons {
 		padding: 10px;
 		cursor: pointer;
 		outline: inherit;
-		color: #ff41a9;
-		border: 1px solid #ff41a9;
+		color: var(--dark-green);
+		border: 1px solid var(--dark-green);
 		background:#fff;
 		border-radius: 5px;
 		span {
@@ -171,7 +178,7 @@ div.drag {
 div.footer {
 	padding: 2rem;
 	font-weight: bold;
-	color: #216d3e;
+	color: var(--dark-green);
 	white-space: break-spaces;
 	text-align: center;
 }
@@ -310,8 +317,8 @@ div.save {
 		font-size: 1em;
 		margin-left: 0.5em;
 		letter-spacing: inherit;
-		color: #ff41a9;
-		border: 1px solid #ff41a9;
+		color: var(--dark-green);
+		border: 1px solid var(--dark-green);
 		background:#fff;
 		border-radius: 5px;
 		padding: 10px;
@@ -323,5 +330,5 @@ div.save {
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	background: #d086af;
+	background: var(--purple);
 }
