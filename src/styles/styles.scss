@@ -1,17 +1,74 @@
-html {
+html[data-theme="light"] {
 	--purple: #babdff;
 	--green: #baffdc;
 	--blue: #bae1ff;
-	--dark-green: #1b412e
+	--dark-green: #1b412e;
+	--black: #000;
+	--white: #FFF;
+
+	--light-purple: #d8daff;
+	--light-blue: #d4ecfd;
+	--light-green: #e3fff1;
+}
+html[data-theme="dark"] {
+	--purple: #7b5d85;
+	--green: #567967;
+	--blue: #2b4050;
+	--dark-green: #040505;
+	--black: #FFF;
+	--white: #000;
+
+	--light-purple: #5d3869;
+	--light-blue: #316c4e;
+	--light-green: #154061;
 }
 
 @font-face {
-	font-family: "Courgette";
-	src: url("/fonts/Courgette-Regular.ttf");
-}
-@font-face {
 	font-family: "PP Woodland Ultralight";
 	src: url("/fonts/PP-Woodland-Ultralight.otf");
+}
+
+#checkbox {
+	position: relative;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	border: none;
+	top: 5px;
+	width: 80px;
+	height: 50px;
+	border-radius: 20px;
+	background: transparent;
+	box-shadow: none;
+	overflow: hidden;
+	transition: 0.3s ease-in-out;
+	z-index: 5;
+	&::before {
+		content: '✺';
+		transform: scale(3);
+		position: absolute;
+		top: 15px;
+		left: 30px;
+		transition: inherit;
+		color: gold;
+	}
+	&::after {
+		transform: scale(2.5);
+		content: '☽';
+		position: absolute;
+		top: 15px;
+		color: transparent;
+	}
+	&:checked {
+		&::before {
+			left: calc(100% - 25px);
+			display: none;
+		}
+		&::after {
+			right: 12px;
+			color: white;
+		}
+	}
 }
 
 /* Page structure */
@@ -34,6 +91,9 @@ button {
 	cursor: pointer;
 	outline: inherit;
 	line-height: 1.25em;
+	&:hover {
+		opacity: 0.8
+	}
 }
 input[type="submit"] {
 	background: none;
@@ -74,7 +134,7 @@ body {
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	font-weight: 800;
-	background: #d8daff;
+	background: var(--light-purple);
 }
 #container {
 	color: var(--color-text-main);
@@ -85,7 +145,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(#d8daff,#d4ecfd,#e3fff1);
+	background: linear-gradient(var(--light-purple),var(--light-blue),var(--light-green));
 }
 #space {
 	position: fixed;
@@ -94,7 +154,8 @@ body {
 	left: 0;
 	padding: 1em;
 	height: 40vh;
-	background: #FFF;
+	background: var(--white);
+	color: var(--black);
 	div.enter {
     height: 17.5vh;
     width: 90%;
@@ -107,19 +168,20 @@ body {
 }
 span.word {
 	border-width: 1px 3px 3px 1px;
-	border-color: #888 #000 #000 #888;
-	border-style: solid;
+	border-color: #888 var(--black) var(--black) #888;
+	border-style: outset;
 	padding: 5px;
 	margin: 3px;
-	background: #fff;
+	background: var(--white);
 	display: inline-block;
 	cursor: pointer;
-	color: var(--dark-purple);
+	color: var(--black);
 	&:empty {
 		visibility: hidden;
 	}
 	&:hover {
 		background: yellow;
+		color: black;
 		filter: brightness(150%);
 	}
 }
@@ -145,14 +207,14 @@ div.buttons {
 		padding: 10px;
 		cursor: pointer;
 		outline: inherit;
-		color: var(--dark-green);
-		border: 1px solid var(--dark-green);
-		background:#fff;
+		color: var(--black);
+		border: 1px solid var(--black);
+		background:var(--white);
 		border-radius: 5px;
 		span {
 			margin: 0.5em;
 			font-size: calc(23px + 2vh);
-			color: #000;
+			color: var(--black);
 			font-weight: normal;
 		}
 	}
@@ -167,6 +229,7 @@ div.buttons {
 	margin: 1rem 0;
 	padding: 1rem;
 	white-space: break-spaces;
+	color: var(--black);
 	span {
 		font-style: italic;
 	}
@@ -178,7 +241,7 @@ div.drag {
 div.footer {
 	padding: 2rem;
 	font-weight: bold;
-	color: var(--dark-green);
+	color: var(--black);
 	white-space: break-spaces;
 	text-align: center;
 }
@@ -189,7 +252,7 @@ div.footer-buttons {
 	width: 100%;
 	button {
 		margin: 0.5em;
-		color: #000;
+		color: var(--black);
 		font-weight: normal;
 	}
 	button:nth-of-type(1) {
@@ -309,7 +372,7 @@ div.save {
 		font-family: inherit;
 		font-size: 1em;
 		font-weight: inherit;
-		color: #000;
+		color: var(--black);
 		letter-spacing: inherit;
 	}
 	button {
@@ -317,9 +380,9 @@ div.save {
 		font-size: 1em;
 		margin-left: 0.5em;
 		letter-spacing: inherit;
-		color: var(--dark-green);
-		border: 1px solid var(--dark-green);
-		background:#fff;
+		color: var(--black);
+		border: 1px solid var(--black);
+		background:var(--white);
 		border-radius: 5px;
 		padding: 10px;
 	}
@@ -331,4 +394,19 @@ div.save {
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background: var(--purple);
+}
+@media screen and (min-width: 992px) and (max-width: 1279px) and (orientation: landscape) {
+	#checkbox {
+		transform: scale(2) translate(1em, 1em);
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+	#checkbox {
+		transform: scale(2) translate(1em, 1em);
+	}
+}
+@media screen and (min-width: 1280px) and (orientation: landscape) {
+	#checkbox {
+		transform: scale(2) translate(1em, 1em);
+	}
 }
