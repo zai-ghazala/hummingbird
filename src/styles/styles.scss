@@ -45,7 +45,7 @@ html[data-theme="dark"] {
 	z-index: 5;
 	&::before {
 		content: '✺';
-		transform: scale(3);
+		transform: scale(4);
 		position: absolute;
 		top: 15px;
 		left: 30px;
@@ -53,7 +53,7 @@ html[data-theme="dark"] {
 		color: gold;
 	}
 	&::after {
-		transform: scale(2.5);
+		transform: scale(3.5);
 		content: '☽';
 		position: absolute;
 		top: 15px;
