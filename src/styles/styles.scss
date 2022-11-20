@@ -78,7 +78,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(#B2D4FC, #FFF 80%);
+	background: linear-gradient(#fefadf,#fff4f4,#ffe8fa,#f6e1ff);
 }
 #space {
 	position: fixed;
@@ -139,7 +139,8 @@ div.buttons {
 		cursor: pointer;
 		outline: inherit;
 		color: #ff41a9;
-		background: linear-gradient(#d4e3f5, #bcdaff);
+		border: 1px solid #ff41a9;
+		background:#fff;
 		border-radius: 5px;
 		span {
 			margin: 0.5em;
@@ -310,7 +311,8 @@ div.save {
 		margin-left: 0.5em;
 		letter-spacing: inherit;
 		color: #ff41a9;
-		background: linear-gradient(#d4e3f5, #bcdaff);
+		border: 1px solid #ff41a9;
+		background:#fff;
 		border-radius: 5px;
 		padding: 10px;
 	}
@@ -322,6 +324,4 @@ div.save {
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background: #d086af;
-	-webkit-box-shadow: inset 0 0 6px rgba(#ff41a9, 0.9); 
-	box-shadow: inset 0 0 6px rgba(#ff41a9,0.9); 
 }
