@@ -18,7 +18,6 @@ import "./styles/styles.scss";
 
 // Where all of our pages come from
 import PageRouter from "./components/router.jsx";
-import { ThemeToggle } from './components/theme-toggle.jsx';
 // The component that adds our Meta tags to the page
 import Seo from "./components/seo.jsx";
 
@@ -30,7 +29,6 @@ export default function Home() {
       <Seo />
         <main role="main">
           <div className="content">
-            <ThemeToggle/>
             {/* Router specifies which component to insert here as the main content */}
             
             <PageRouter />

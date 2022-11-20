@@ -1,4 +1,4 @@
-html[data-theme="light"] {
+html {
 	--purple: #babdff;
 	--green: #baffdc;
 	--blue: #bae1ff;
@@ -10,65 +10,10 @@ html[data-theme="light"] {
 	--light-blue: #d4ecfd;
 	--light-green: #e3fff1;
 }
-html[data-theme="dark"] {
-	--purple: #7b5d85;
-	--green: #567967;
-	--blue: #2b4050;
-	--dark-green: #040505;
-	--black: #FFF;
-	--white: #000;
-
-	--light-purple: #5d3869;
-	--light-blue: #316c4e;
-	--light-green: #154061;
-}
 
 @font-face {
 	font-family: "PP Woodland Ultralight";
 	src: url("/fonts/PP-Woodland-Ultralight.otf");
-}
-
-#checkbox {
-	position: relative;
-	appearance: none;
-	-webkit-appearance: none;
-	outline: none;
-	border: none;
-	top: 5px;
-	width: 80px;
-	height: 50px;
-	border-radius: 20px;
-	background: transparent;
-	box-shadow: none;
-	overflow: hidden;
-	transition: 0.3s ease-in-out;
-	z-index: 5;
-	&::before {
-		content: '✺';
-		transform: scale(4);
-		position: absolute;
-		top: 15px;
-		left: 30px;
-		transition: inherit;
-		color: gold;
-	}
-	&::after {
-		transform: scale(3.5);
-		content: '☽';
-		position: absolute;
-		top: 15px;
-		color: transparent;
-	}
-	&:checked {
-		&::before {
-			left: calc(100% - 25px);
-			display: none;
-		}
-		&::after {
-			right: 12px;
-			color: white;
-		}
-	}
 }
 
 /* Page structure */
@@ -395,18 +340,8 @@ div.save {
 	border-radius: 10px;
 	background: var(--purple);
 }
-@media screen and (min-width: 992px) and (max-width: 1279px) and (orientation: landscape) {
+@media screen and (min-width: 768px) {
 	#checkbox {
-		transform: scale(2) translate(1em, 1em);
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
-	#checkbox {
-		transform: scale(2) translate(1em, 1em);
-	}
-}
-@media screen and (min-width: 1280px) and (orientation: landscape) {
-	#checkbox {
-		transform: scale(2) translate(1em, 1em);
+		transform: scale(1.5) translate(1em, 1em);
 	}
 }
