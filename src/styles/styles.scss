@@ -78,6 +78,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+	background: linear-gradient(#B2D4FC, #FFF);
 }
 #space {
 	position: fixed;
@@ -86,7 +87,7 @@ body {
 	left: 0;
 	padding: 1em;
 	height: 40vh;
-	background: #e5cdfe;
+	background: #FFF;
 	div.enter {
     height: 17.5vh;
     width: 90%;
@@ -118,6 +119,7 @@ span.word {
 img.bird {
 	margin: 1rem;
 	display: flex;
+	border-radius: 99%;
 	justify-content: center;
 }
 div.buttons {
@@ -137,7 +139,7 @@ div.buttons {
 		cursor: pointer;
 		outline: inherit;
 		color: #ff41a9;
-		background: #a1cafb;
+		background: linear-gradient(#d4e3f5, #bcdaff);
 		border-radius: 5px;
 		span {
 			margin: 0.5em;
@@ -225,9 +227,6 @@ div.footer-buttons {
 	html {
 		overflow: hidden;
 	}
-	html, body {
-		height: 100vh;
-	}
 	body {
 		flex-direction: row;
 		display: flex;
@@ -278,6 +277,7 @@ div.footer-buttons {
 	}
 	#container {
 		padding-bottom: 40vh;
+		width: 100%;
 	}
 }	
 @media screen and (orientation: portrait),
@@ -310,7 +310,7 @@ div.save {
 		margin-left: 0.5em;
 		letter-spacing: inherit;
 		color: #ff41a9;
-		background: #ddbdfe;
+		background: linear-gradient(#d4e3f5, #bcdaff);
 		border-radius: 5px;
 		padding: 10px;
 	}
