@@ -12,14 +12,13 @@ html {
 }
 
 @font-face {
-	font-family: "PP Woodland Ultralight";
-	src: url("/fonts/PP-Woodland-Ultralight.otf");
+	font-family: "Circular";
+	src: url("/fonts/CircularStd-Light.otf");
 }
 
 /* Page structure */
 * {
 	box-sizing: border-box;
-	letter-spacing: 1px;
 }
 [hidden] {
 	display: none !important;
@@ -60,25 +59,21 @@ input[type="reset"] {
 }
 a {
 	&:link {
-		font-style: normal;
-		font-weight: normal;
-		color: var(--purple);
+		color: var(--dark-green);
 		text-decoration: none;
-		border-style: none;
+		font-weight: bold;
 	}
 	&:visited {
-		font-style: normal;
-		font-weight: normal;
-		color: var(--purple);
+		color: var(--dark-green);
 		text-decoration: none;
 		border-style: none;
+		font-weight: bold;
 	}
 }
 body {
-	font-family: "PP Woodland Ultralight";
+	font-family: Circular;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
-	font-weight: 800;
 	background: var(--light-purple);
 }
 #container {
@@ -154,13 +149,13 @@ div.buttons {
 		outline: inherit;
 		color: var(--black);
 		border: 1px solid var(--black);
+		font-weight: bold;
 		background:var(--light-purple);
 		border-radius: 5px;
 		span {
 			margin: 0.5em;
 			font-size: calc(23px + 2vh);
 			color: var(--black);
-			font-weight: normal;
 		}
 	}
 }
@@ -168,7 +163,7 @@ div.buttons {
 	color: #ff41a9;
 	text-align: center;
 	margin: auto;
-	height: 4vh;
+	height: 5.5vh;
 }
 .poem-data {
 	margin: 1rem 0;
@@ -221,9 +216,6 @@ div.footer-buttons {
 	body {
 		font-size: 1em !important
 	}
-	* {
-		letter-spacing: 1px !important;
-	}
 	#container {
 		overflow-x: hidden
 	}
@@ -253,9 +245,6 @@ div.footer-buttons {
 		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
 			font-size: calc(55px + 2vh)
 		}
-	}
-	* {
-		letter-spacing: 2px;
 	}
 	#container {
 		width: 50vw;
@@ -313,18 +302,17 @@ screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape)
 }
 div.save {
 	text-align: center;
+	font-weight: bold;
 	input {
 		font-family: inherit;
 		font-size: 1em;
 		font-weight: inherit;
 		color: var(--black);
-		letter-spacing: inherit;
 	}
 	button {
 		font-family: inherit;
 		font-size: 1em;
 		margin-left: 0.5em;
-		letter-spacing: inherit;
 		color: var(--black);
 		border: 1px solid var(--black);
 		background:var(--light-purple);
