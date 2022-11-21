@@ -88,7 +88,7 @@ const random = () => {
         <button type="button" className="author"  onClick={handleClick("Emily Bronte")}>
           <span>⟳</span>
           <br />
-          Emily Brontë
+          Emily Bronte
         </button>
 
       </div>

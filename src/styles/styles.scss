@@ -149,7 +149,7 @@ div.buttons {
 		outline: inherit;
 		color: var(--black);
 		border: 1px solid var(--black);
-		background:var(--light-purple);
+		background: transparent;
 		border-radius: 5px;
 		span {
 			margin: 0.5em;
@@ -312,7 +312,6 @@ div.save {
 		margin-left: 0.5em;
 		color: var(--black);
 		border: 1px solid var(--black);
-		background:var(--light-purple);
 		border-radius: 5px;
 		padding: 10px;
 	}
@@ -329,4 +328,7 @@ div.save {
 	#checkbox {
 		transform: scale(1.5) translate(1em, 1em);
 	}
+}
+input[type='text'] {
+	border: 1px solid var(--black);
 }
