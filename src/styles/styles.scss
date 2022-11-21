@@ -12,8 +12,8 @@ html {
 }
 
 @font-face {
-	font-family: "Circular";
-	src: url("/fonts/CircularStd-Light.otf");
+	font-family: "Times";
+	src: url("/fonts/TIMESR.ttf");
 }
 
 /* Page structure */
@@ -71,7 +71,7 @@ a {
 	}
 }
 body {
-	font-family: Circular;
+	font-family: Times;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background: var(--light-purple);
@@ -149,7 +149,6 @@ div.buttons {
 		outline: inherit;
 		color: var(--black);
 		border: 1px solid var(--black);
-		font-weight: bold;
 		background:var(--light-purple);
 		border-radius: 5px;
 		span {
@@ -180,7 +179,6 @@ div.drag {
 }
 div.footer {
 	padding: 2rem;
-	font-weight: bold;
 	color: var(--dark-green);
 	white-space: break-spaces;
 	text-align: center;
@@ -302,7 +300,6 @@ screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape)
 }
 div.save {
 	text-align: center;
-	font-weight: bold;
 	input {
 		font-family: inherit;
 		font-size: 1em;
