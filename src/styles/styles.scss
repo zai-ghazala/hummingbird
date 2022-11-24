@@ -3,17 +3,12 @@ html {
 	--green: #baffdc;
 	--blue: #bae1ff;
 	--dark-green: #568b70;
-	--black: #000;
+	--black: #555;
 	--white: #FFF;
 
 	--light-purple: #d8daff;
 	--light-blue: #d4ecfd;
 	--light-green: #e3fff1;
-}
-
-@font-face {
-	font-family: "Times";
-	src: url("/fonts/TIMESR.ttf");
 }
 
 /* Page structure */
@@ -71,7 +66,7 @@ a {
 	}
 }
 body {
-	font-family: Times;
+	font-family: Georgia, serif;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background: var(--light-purple);

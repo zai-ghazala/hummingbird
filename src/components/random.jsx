@@ -85,7 +85,7 @@ const random = () => {
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="author"  onClick={handleClick("Emily Bronte")}>
+        <button type="button" className="author"  onClick={handleClick("Emily Brontë")}>
           <span>⟳</span>
           <br />
           Emily Bronte
@@ -102,7 +102,7 @@ const random = () => {
       <div className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
-        {submission ? <div className="poem-data">— by {author} at {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author}</div> : null}
+        {submission ? <div className="poem-data">— by {author} at {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
     </div>
         <Space currentWord={currentWord}/>
   </>
