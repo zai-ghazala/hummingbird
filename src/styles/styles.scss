@@ -31,7 +31,7 @@ button {
 	outline: inherit;
 	line-height: 1.25em;
 	&:hover {
-		opacity: 0.8
+		color: #000
 	}
 }
 input[type="submit"] {
@@ -116,7 +116,7 @@ span.word {
 	}
 	&:hover {
 		background: yellow;
-		color: black;
+		color: #000;
 		filter: brightness(150%);
 	}
 }
