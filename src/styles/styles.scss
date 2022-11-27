@@ -31,7 +31,8 @@ button {
 	outline: inherit;
 	line-height: 1.25em;
 	&:hover {
-		color: #000
+		opacity: 1;
+		color: #000 !important;
 	}
 }
 input[type="submit"] {
@@ -85,7 +86,7 @@ body {
 #space {
 	position: fixed;
 	bottom: 0;
-	width: 100%;
+	width: 100vw;
 	left: 0;
 	padding: 1em;
 	height: 40vh;
@@ -116,7 +117,7 @@ span.word {
 	}
 	&:hover {
 		background: yellow;
-		color: #000;
+		color: black;
 		filter: brightness(150%);
 	}
 }
@@ -134,7 +135,10 @@ div.buttons {
 		font-size: calc(23px + 3vh)
 	}
 	.author {
-		width: 30%
+		width: 30%;
+		&:hover {
+			border: 1px solid #000
+		}
 	}
 	button {
 		margin: 5px;
@@ -149,7 +153,10 @@ div.buttons {
 		span {
 			margin: 0.5em;
 			font-size: calc(23px + 2vh);
-			color: var(--black);
+			color: #000;
+			&:hover {
+				color: #000;
+			}
 		}
 	}
 }
