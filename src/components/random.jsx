@@ -85,10 +85,10 @@ const random = () => {
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="author"  onClick={handleClick("Emily Brontë")}>
+        <button type="button" className="author"  onClick={handleClick("Emily Bronte")}>
           <span>⟳</span>
           <br />
-          Emily Bronte
+          Emily Brontë
         </button>
 
       </div>
