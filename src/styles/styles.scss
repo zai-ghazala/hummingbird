@@ -209,6 +209,14 @@ div.footer-buttons {
 	opacity: 0.5;
 	pointer-events: none;
 }
+div.footer-buttons {
+	button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
+		font-size: calc(25px + 3.25vw)
+	}
+	button:nth-of-type(4), button:nth-of-type(5){
+		font-size: calc(17.5px + 2vw)
+	}
+}
 @media screen and (min-width: 993px) and (orientation: landscape) {
 	body {
 		font-size: 1.5em
@@ -224,17 +232,6 @@ div.footer-buttons {
 	#container {
 		overflow-x: hidden
 	}
-	div.footer-buttons {
-		button {
-			font-size: calc(12.5px + 1.75vw);
-			button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
-				font-size: calc(12.5px + 3.25vw)
-			}
-			button:nth-of-type(4), button:nth-of-type(5){
-				font-size: calc(12.5px + 2vw)
-			}
-		}
-	}
 }
 @media screen and (orientation: landscape) {
 	html {
@@ -244,12 +241,6 @@ div.footer-buttons {
 		flex-direction: row;
 		display: flex;
 		margin-bottom: 0;
-	}
-	div.footer-buttons {
-		font-size: calc(45px + 1vh);
-		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
-			font-size: calc(55px + 2vh)
-		}
 	}
 	#container {
 		width: 50vw;
@@ -292,12 +283,6 @@ div.footer-buttons {
 }	
 @media screen and (orientation: portrait),
 screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
-	div.footer-buttons {
-		font-size: calc(25px + 1vh);
-		button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(2), button:nth-of-type(3) {
-			font-size: calc(25px + 2vh)
-		}
-	}
 	img.bird {
 		width: 10em;
 	}
