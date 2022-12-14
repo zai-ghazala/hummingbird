@@ -11,6 +11,11 @@ html {
 	--light-green: #e3fff1;
 }
 
+@font-face {
+	font-family: 'Epilogue';
+	src: url("/fonts/Epilogue-VariableFont_wght.ttf");
+}
+
 /* Page structure */
 * {
 	box-sizing: border-box;
@@ -67,7 +72,7 @@ a {
 	}
 }
 body {
-	font-family: Georgia, serif;
+	font-family: 'Epilogue', sans-serif;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background: var(--light-purple);
@@ -206,7 +211,7 @@ div.footer-buttons {
 }
 @media screen and (min-width: 993px) and (orientation: landscape) {
 	body {
-		font-size: 1.75em
+		font-size: 1.5em
 	}
 	img.bird {
 		width: 10vw;
