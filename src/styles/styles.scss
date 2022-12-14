@@ -211,10 +211,10 @@ div.footer-buttons {
 }
 div.footer-buttons {
 	button:nth-of-type(1), button:nth-of-type(2), button:nth-of-type(3){
-		font-size: calc(25px + 3.25vw)
+		font-size: calc(25px + 3vw)
 	}
 	button:nth-of-type(4), button:nth-of-type(5){
-		font-size: calc(20px + 2vw)
+		font-size: calc(15px + 2vw)
 	}
 }
 @media screen and (min-width: 993px) and (orientation: landscape) {
