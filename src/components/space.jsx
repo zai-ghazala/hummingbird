@@ -76,20 +76,20 @@ export const Space = props => {
   const handleClick = () => {
 
     if (composedPoem.length != 0) {
-    let text = composedPoem.join(' ');
+      let text = composedPoem.join(' ');
 
-    text = text
-      .replace(/\[object Object\] /g, '\n')
-      .replace(/ \[object Object\] /g, '\n')
-      .replace('[object Object]', '')
+      text = text
+        .replace(/\[object Object\] /g, '\n')
+        .replace(/ \[object Object\] /g, '\n')
+        .replace('[object Object]', '')
 
-    setUpdated(username);
-    push(ref(db, 'poems/'), {
-      poem: text,
-      name: username,
-      timestamp: serverTimestamp(),
-    });
-    setSaveSuccess(true);
+      setUpdated(username);
+      push(ref(db, 'poems/'), {
+        poem: text,
+        name: username,
+        timestamp: serverTimestamp(),
+      });
+      setSaveSuccess(true);
     }
     else {
       setSaveFailure(true);
@@ -100,12 +100,12 @@ export const Space = props => {
     <>
       <div id="space">
         <div className="compose-message">
-          {clearSuccess
+          {saveFailure 
+            ? "oops, empty poem"
+            : clearSuccess
             ? "start over?"
             : copySuccess
             ? "copied!"
-            : saveFailure 
-            ? "oops, empty poem"
             : backspaceSuccess
             ? "backspace"
             : newLineSuccess
