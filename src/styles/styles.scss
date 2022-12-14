@@ -166,7 +166,7 @@ div.buttons {
 	}
 }
 .compose-message {
-	color: #ff41a9;
+	color: var(--dark-green);
 	text-align: center;
 	margin: auto;
 	height: calc(1em + 2.25vh);
@@ -197,7 +197,7 @@ div.footer-buttons {
 	width: 100%;
 	button {
 		margin: 0.5em;
-		color: var(--black);
+		color: var(--dark-green);
 		font-weight: normal;
 	}
 	button:nth-of-type(1) {
