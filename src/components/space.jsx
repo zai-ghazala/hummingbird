@@ -107,9 +107,7 @@ export const Space = (props) => {
     <>
       <div id="space">
         <div className="compose-message">
-          {message ? message : composedPoem.length === 0
-            ? "drag & drop poem here"
-            : null}
+          {message ? message : null}
         </div>
 
         {sendRequest && composedPoem.length != 0 && (
