@@ -115,8 +115,8 @@ span.word {
 	margin: 3px;
 	background: var(--white);
 	display: inline-block;
-	cursor: pointer;
 	color: var(--black);
+  cursor: move;
 	&:empty {
 		visibility: hidden;
 	}
