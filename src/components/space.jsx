@@ -105,7 +105,9 @@ export const Space = props => {
     <>
       <div id="space">
         <div className="compose-message">
-          {saveFailure 
+          {composedPoem.length === 0 
+            ? "compose poem here"
+            : saveFailure 
             ? "oops, empty poem"
             : clearSuccess
             ? "start over?"
