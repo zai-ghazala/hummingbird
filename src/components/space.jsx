@@ -117,7 +117,7 @@ export const Space = props => {
             : null}
         </div>
 
-        { sendRequest && <div className="save"><input type="text" name="username" placeholder="your name here" onChange={e => setUsername(e.target.value)} value={username}/><button type="button" 
+        { sendRequest && composedPoem.length != 0 && <div className="save"><input type="text" name="username" placeholder="your name here" onChange={e => setUsername(e.target.value)} value={username}/><button type="button" 
       onClick={handleClick}>publish</button></div> }
 
           
