@@ -14,6 +14,8 @@ export const Space = props => {
 
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [saveFailure, setSaveFailure] = useState(false);
+  // backspace or new line message
+  const [formattingMessage, setFormattingMessage] = useState(null);
 
   const [username, setUsername] = useState('');
   const [updated, setUpdated] = useState(username);
@@ -27,6 +29,7 @@ export const Space = props => {
     setSendRequest(false);
     setSaveSuccess(false);
     setSaveFailure(false);
+    setFormattingMessage(null)
   };
 
   const copy = () => {
@@ -54,6 +57,7 @@ export const Space = props => {
   const newLine = () => {
     if (composedPoem.length != 0) {
       setComposedPoem([...composedPoem, <><br/></>]);
+      setFormattingMessage('new line');
       setNewLineSuccess(true);
     }
   };
@@ -64,6 +68,7 @@ export const Space = props => {
       const temp = [...composedPoem];
       temp.pop();
       setComposedPoem(temp);
+      setFormattingMessage('backspace');
       setBackspaceSuccess(true);
     }
   };
@@ -105,11 +110,9 @@ export const Space = props => {
             : clearSuccess
             ? "start over?"
             : copySuccess
-            ? "copied!"
-            : backspaceSuccess
-            ? "backspace"
-            : newLineSuccess
-            ? "new line"
+            ? "copied!" 
+            : formattingMessage !== null 
+            ? formattingMessage
             : saveSuccess 
             ? `wow published! thanks ${username}`
             : sendRequest 
