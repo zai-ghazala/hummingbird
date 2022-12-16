@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DropTarget } from "react-drag-drop-container";
 
 import { ref, push, serverTimestamp } from "firebase/database";
@@ -14,7 +14,6 @@ export const Space = (props) => {
 
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [saveFailure, setSaveFailure] = useState(false);
-  // backspace or new line message
   const [message, setMessage] = useState(null);
 
   const [username, setUsername] = useState("");
@@ -31,6 +30,12 @@ export const Space = (props) => {
     setSaveFailure(false);
     setMessage(null);
   };
+
+  useEffect(() => {
+    if (composedPoem.length === 0) {
+      setMessage("drag & drop poem here");
+    }
+  },);
 
   const copy = () => {
     let text = composedPoem.join(" ");
