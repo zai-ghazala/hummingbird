@@ -35,7 +35,7 @@ export const Space = (props) => {
     if (composedPoem.length === 0) {
       setMessage("drag & drop poem here");
     }
-  },);
+  }, []);
 
   const copy = () => {
     let text = composedPoem.join(" ");
