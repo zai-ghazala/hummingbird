@@ -102,11 +102,14 @@ export const Space = (props) => {
     setUpdated(username);
 
 
-    if (composedPoem.length > 200 || username.length > 50) {
+    if (username.length === '') {
+      setMessage('blank name');
+      setSaveSuccess(false);
+    }
+    if (composedPoem.length > 200 || username.length > 20) {
       setMessage('oops too long');
       setSaveSuccess(false);
     }
-
     else {
       push(ref(db, "poems/"), {
         poem: text,
