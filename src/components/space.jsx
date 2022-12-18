@@ -102,7 +102,7 @@ export const Space = (props) => {
     setUpdated(username);
 
 
-    if (username.length === '') {
+    if (username.length === 0) {
       setMessage('blank name');
       setSaveSuccess(false);
     }
