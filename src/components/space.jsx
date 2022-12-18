@@ -91,6 +91,7 @@ export const Space = (props) => {
 
   // Push Function
   const handleClick = () => {
+
     let text = composedPoem.join(" ");
 
     text = text
@@ -99,13 +100,22 @@ export const Space = (props) => {
       .replace("[object Object]", "");
 
     setUpdated(username);
-    push(ref(db, "poems/"), {
-      poem: text,
-      name: username,
-      timestamp: serverTimestamp(),
-    });
-    setSaveSuccess(true);
-    setMessage(`wow published! thanks ${username}`);
+
+
+    if (composedPoem.length > 200 || username.length > 200) {
+      setMessage('oops too long');
+      setSaveSuccess(false);
+    }
+
+    else {
+      push(ref(db, "poems/"), {
+        poem: text,
+        name: username,
+        timestamp: serverTimestamp(),
+      });
+      setSaveSuccess(true);
+      setMessage(`wow published! thanks ${username}`);
+    }
   };
 
   return (
