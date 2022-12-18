@@ -102,7 +102,7 @@ export const Space = (props) => {
     setUpdated(username);
 
 
-    if (composedPoem.length > 200 || username.length > 200) {
+    if (composedPoem.length > 200 || username.length > 50) {
       setMessage('oops too long');
       setSaveSuccess(false);
     }
