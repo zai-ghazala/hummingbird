@@ -103,10 +103,10 @@ export const Space = (props) => {
 
 
     if (username.length === 0) {
-      setMessage('blank name');
+      setMessage('oops blank name')
       setSaveSuccess(false);
     }
-    if (composedPoem.length > 200 || username.length > 20) {
+    else if (composedPoem.length > 200 || username.length > 20) {
       setMessage('oops too long');
       setSaveSuccess(false);
     }
