@@ -12,8 +12,8 @@ html {
 }
 
 @font-face {
-	font-family: 'Epilogue';
-	src: url("/fonts/Epilogue-VariableFont_wght.ttf");
+	font-family: 'Just Sans';
+	src: url("/fonts/JUSTSans-Regular.otf");
 }
 
 /* Page structure */
@@ -72,7 +72,7 @@ a {
 	}
 }
 body {
-	font-family: 'Epilogue', sans-serif;
+	font-family: 'Just Sans', Arial, Helvetica, sans-serif;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background: var(--light-purple);
@@ -111,7 +111,7 @@ span.word {
 	border-width: 1px 3px 3px 1px;
 	border-color: #888 var(--black) var(--black) #888;
 	border-style: outset;
-	padding: 5px;
+	padding: 2.5px 5px;
 	margin: 3px;
 	background: var(--white);
 	display: inline-block;
