@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios-cache-adapter": "^2.7.3",
+    "axios": "^1.2.5",
     "dotenv": "^16.0.3",
     "firebase": "^9.13.0",
     "react": "^17.0.2",
