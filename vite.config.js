@@ -13,7 +13,6 @@ export default defineConfig({
         skipWaiting: true
       },
       includeAssets: [
-        "/icons/favicon.ico",
         "assets/data/*.js", 
         "assets/*.png",
         "/icons/pwaicons/*.png"],
@@ -25,7 +24,7 @@ export default defineConfig({
         background_color: "#a6c9ff",
         orientation: "portrait",
         start_url: "/",
-        scope: ".",
+        scope: "/",
         display: "standalone",
         icons: [
           {
@@ -37,13 +36,11 @@ export default defineConfig({
             src: "/icons/android-chrome-192x192.png",
             type: "image/png",
             sizes: "192x192",
-            purpose: "maskable any",
           },
           {
-            src: "/icons/android-chrome-512x512",
+            src: "/icons/android-chrome-512x512.png",
             type: "image/png",
             sizes: "512x512",
-            purpose: "maskable any",
           },
         ],
       },
