@@ -26,6 +26,7 @@ import Seo from "./components/seo.jsx";
 
 export default function Home() {
   
+  registerSW({ immediate: true })
   
       return <Router>
       <Seo />
