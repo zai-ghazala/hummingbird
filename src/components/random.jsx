@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import { db } from "../utils/firebase";
 import { ref, get } from "firebase/database";
 
 import { Poem } from "./poem";
 import { Space } from "./space";
 
+import { rossetti } from '../assets/data/Rossetti.js';
+import { bronte } from '../assets/data/Bronte.js'
+import { dickinson } from '../assets/data/Dickinson.js'
+
 export const Random = () => {
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
-
   const [submission, setSubmission] = useState(false);
-
   const [author, setAuthor] = useState("");
   const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
 
-    
   const getPoem = (poet) => {
-    axios(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
-      setPoem(res.data[0].lines);
-      setAuthor(res.data[0].author);
-      setTitle(res.data[0].title);
-      setSubmission(false)
-      });
-   }
+    const getRandom = (poet) => {
+      let poems = Object.values(poet)
+      return poems[parseInt(Math.random() * poems.length)]
+    }
+    setPoem(getRandom(poet).lines);
+    setAuthor(getRandom(poet).author);
+    setTitle(getRandom(poet).title);
+    setSubmission(false)
+  }
 
   useEffect(() => {
-    getPoem('Dickinson');
+    getPoem(dickinson);
   }, []);
 
   const handleClick = (poet) => e => {
@@ -74,17 +76,17 @@ const random = () => {
   return (
     <>
       <div className="buttons">
-        <button type="button" className="author" onClick={handleClick("Dickinson")}>
+        <button type="button" className="author" onClick={handleClick(dickinson)}>
           <span>⟳</span>
           <br />
           Emily Dickinson
         </button>
-        <button type="button" className="author" onClick={handleClick("Rossetti")}>
+        <button type="button" className="author" onClick={handleClick(rossetti)}>
           <span>⟳</span>
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="author"  onClick={handleClick("Emily Bronte")}>
+        <button type="button" className="author"  onClick={handleClick(bronte)}>
           <span>⟳</span>
           <br />
           Emily Brontë
