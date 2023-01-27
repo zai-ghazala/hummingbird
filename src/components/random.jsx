@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
+import { setup } from 'axios-cache-adapter'
 import { db } from "../utils/firebase";
 import { ref, get } from "firebase/database";
 
@@ -17,23 +16,28 @@ export const Random = () => {
   const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
 
-  useEffect(() => {
-    axios.get("https://poetrydb.org/random,author/1;Dickinson").then(res => {
+    
+  const getPoem = (poet) => {
+    const api = setup({
+        cache: {
+          maxAge: Infinity
+      }
+    })
+    api.get(`https://poetrydb.org/random,author/1;${poet}`).then(async (res) => {
       setPoem(res.data[0].lines);
       setAuthor(res.data[0].author);
       setTitle(res.data[0].title);
-      setSubmission(false)
-    });
+      setSubmission(false);
+    })
+  }
+
+  useEffect(() => {
+    getPoem('Dickinson');
   }, []);
 
   const handleClick = (poet) => e => {
     e.preventDefault();
-    axios.get(`https://poetrydb.org/random,author/1;${poet}`).then(res => {
-      setPoem(res.data[0].lines);
-      setAuthor(res.data[0].author);
-      setTitle(res.data[0].title);
-      setSubmission(false)
-    });
+    getPoem(poet);
   };
 
   const handleDrag = (word) => {
