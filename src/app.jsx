@@ -26,9 +26,6 @@ import Seo from "./components/seo.jsx";
 
 export default function Home() {
   
-  const updateSW = registerSW({
-    onOfflineReady() {},
-  })
   
       return <Router>
       <Seo />
