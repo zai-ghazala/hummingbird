@@ -13,12 +13,10 @@ export default defineConfig({
         skipWaiting: true
       },
       includeAssets: [
-        "icons/favicon.ico",
-        "robots.txt",
-        "icons/apple-touch-icon.png",
+        "/icons/favicon.ico",
         "assets/data/*.js", 
         "assets/*.png",
-        "pwaicons/*.png"],
+        "/icons/pwaicons/*.png"],
       manifest: {
         short_name: "Hummingbird",
         name: "Hummingbird",
@@ -26,23 +24,23 @@ export default defineConfig({
         theme_color: "#a6c9ff",
         background_color: "#a6c9ff",
         orientation: "portrait",
-        start_url: "./",
+        start_url: "/",
         scope: ".",
         display: "standalone",
         icons: [
           {
-            src: "icons/favicon.ico",
+            src: "/icons/favicon.ico",
             sizes: "48x48",
             type: "image/x-icon",
           },
           {
-            src: "icons/android-chrome-192x192.png",
+            src: "/icons/android-chrome-192x192.png",
             type: "image/png",
             sizes: "192x192",
             purpose: "maskable any",
           },
           {
-            src: "icons/android-chrome-512x512",
+            src: "/icons/android-chrome-512x512",
             type: "image/png",
             sizes: "512x512",
             purpose: "maskable any",
