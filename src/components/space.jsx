@@ -48,7 +48,7 @@ export const Space = (props) => {
       if (composedPoem.length != 0) {
         setCopySuccess(true);
         setNewLineSuccess(false);
-        setMessage('copied!');
+        setMessage('copied to clipboard!');
       }
     });
   };

@@ -59,16 +59,11 @@ input[type="reset"] {
 	outline: inherit;
 }
 a {
-	&:link {
+	&:link, &:visited {
 		color: var(--dark-green);
-		text-decoration: none;
-		font-weight: bold;
 	}
-	&:visited {
-		color: var(--dark-green);
-		text-decoration: none;
-		border-style: none;
-		font-weight: bold;
+	&:hover {
+		color: var(--black)
 	}
 }
 body {
