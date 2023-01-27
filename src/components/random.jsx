@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { db } from "../utils/firebase";
 import { ref, get } from "firebase/database";
 
@@ -9,13 +9,46 @@ import { rossetti } from '../assets/data/Rossetti.js';
 import { bronte } from '../assets/data/Bronte.js'
 import { dickinson } from '../assets/data/Dickinson.js'
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 export const Random = () => {
+  const poemRef = useRef(null);
+
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
   const [submission, setSubmission] = useState(false);
   const [author, setAuthor] = useState("");
   const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
+
+  const { height, width } = useWindowDimensions();
+
+  const scroll = () => {
+    poemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })    
+  }
 
   const getPoem = (poet) => {
     const getRandom = (poet) => {
@@ -25,15 +58,18 @@ export const Random = () => {
     setPoem(getRandom(poet).lines);
     setAuthor(getRandom(poet).author);
     setTitle(getRandom(poet).title);
-    setSubmission(false)
-  }
+    setSubmission(false);
+    
+    if (scroll && height > width ) {
+      scroll()
+    }
+    }
 
   useEffect(() => {
     getPoem(dickinson);
   }, []);
 
   const handleClick = (poet) => e => {
-    e.preventDefault();
     getPoem(poet);
   };
 
@@ -68,25 +104,24 @@ const random = () => {
   }).catch((error) => {
     console.error(error);
   });
+  
+    scroll();
   }
-
-
-
 
   return (
     <>
       <div className="buttons">
-        <button type="button" className="author" onClick={handleClick(dickinson)}>
+        <button type="button" className="author" onClick={handleClick(dickinson, true)}>
           <span>⟳</span>
           <br />
           Emily Dickinson
         </button>
-        <button type="button" className="author" onClick={handleClick(rossetti)}>
+        <button type="button" className="author" onClick={handleClick(rossetti, true)}>
           <span>⟳</span>
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="author"  onClick={handleClick(bronte)}>
+        <button type="button" className="author"  onClick={handleClick(bronte, true)}>
           <span>⟳</span>
           <br />
           Emily Brontë
@@ -100,10 +135,10 @@ const random = () => {
           random submission
         </button>
       </div>
-      <div className="poem">
+      <div ref={poemRef} className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
-        {submission ? <div className="poem-data">— by {author} at {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
+        {submission ? <div className="poem-data">— by {author} on {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
     </div>
         <Space currentWord={currentWord}/>
   </>
