@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Router } from "wouter";
+import { registerSW } from 'virtual:pwa-register'
 
 /**
 
@@ -24,6 +25,10 @@ import Seo from "./components/seo.jsx";
 // Home function that is reflected across the site
 
 export default function Home() {
+  
+  const updateSW = registerSW({
+    onOfflineReady() {},
+  })
   
       return <Router>
       <Seo />
