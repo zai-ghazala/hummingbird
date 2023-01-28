@@ -122,7 +122,7 @@ span.word {
 	color: var(--black);
   cursor: move;
 	&:empty {
-		visibility: hidden;
+		display: none;
 	}
 	&:hover {
 		background: yellow;

@@ -35,7 +35,8 @@ function useWindowDimensions() {
 }
 
 export const Random = () => {
-  const poemRef = useRef(null);
+  const poemRef = useRef();
+  const shuffleRef = useRef();
 
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
@@ -71,9 +72,11 @@ export const Random = () => {
   }, []);
 
   const shuffle = () => e => {
-    const newPoem = poem.map(line => line + ' ');
-    let shuffled = newPoem.join('').replace('\n', ' ').replace(' ', '').split(' ').sort(() => Math.floor(Math.random() * Math.floor(3)) - 1).join(' ');
-    setPoem([shuffled])
+    const newPoem = poem.map(line => ' ' + line + ' ');
+    console.log(newPoem)
+      const shuffled = newPoem.join('').replace(' ', '').split(' ').sort(() => Math.floor(Math.random() * Math.floor(3)) - 1).join(' ');
+      setPoem([shuffled])
+
   };
 
   const handleClick = (poet) => e => {
@@ -145,7 +148,7 @@ const random = () => {
       </div>
 
 
-      <button type="button" onClick={shuffle()} className="shuffle">
+      <button type="button" ref={shuffleRef} onClick={shuffle()} className="shuffle">
           shuffle!
         </button>
       
