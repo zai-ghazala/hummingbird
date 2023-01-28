@@ -15,7 +15,8 @@ export default defineConfig({
       includeAssets: [
         "assets/data/*.js", 
         "assets/*.png",
-        "/icons/pwaicons/*.png"],
+        "/icons/pwaicons/*.png",
+        "/*.png",],
       manifest: {
         short_name: "Hummingbird",
         name: "Hummingbird",

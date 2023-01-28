@@ -9,24 +9,6 @@ import { rossetti } from '../assets/data/Rossetti.js';
 import { bronte } from '../assets/data/Bronte.js'
 import { dickinson } from '../assets/data/Dickinson.js'
 
-const NetworkStatus = () => {
-  const [status, setStatus] = useState(true);
-
-  useEffect(() => {
-    function changeStatus() {
-      setStatus(navigator.onLine);
-    }
-    window.addEventListener("online", changeStatus);
-    window.addEventListener("offline", changeStatus);
-    return () => {
-      window.removeEventListener("online", changeStatus);
-      window.removeEventListener("offline", changeStatus);
-    };
-  }, []);
-
-  return status ? "online" : "offline";
-};
-
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -145,20 +127,19 @@ const random = () => {
 
       </div>
 
-      {NetworkStatus() === 'online' &&
       <div className="buttons">
       <button type="button" onClick={random}>
           <span>⟳</span>
           <br />
           random submission
         </button>
-      </div>}
+      </div>
       <div ref={poemRef} className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
         {submission ? <div className="poem-data">— by {author} on {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
     </div>
-        <Space currentWord={currentWord} online={NetworkStatus()}/>
+        <Space currentWord={currentWord}/>
   </>
   );
 };

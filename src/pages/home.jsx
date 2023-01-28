@@ -1,22 +1,21 @@
 import * as React from "react";
 import Random from "../components/random";
-import right from "../assets/hummingbird--right.png";
-import left from "../assets/hummingbird--left.png";
-
 export default function Home() {
   return (
     <>
       <div id="container">
         <img
           className="bird bird--right"
-          src={right}
+          src="/assets/hummingbird-right.png"
+          alt="hummingbird"
         />
 
         <Random />
 
         <img
           className="bird bird--left"
-          src={left}
+          src="/assets/hummingbird-left.png"
+          alt="hummingbird"
         />
 
         <div className="footer">made with 💖 by <a href="https://zaiz.ai">Zainab Ismail</a></div>
