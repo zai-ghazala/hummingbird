@@ -194,7 +194,6 @@ div.footer-buttons {
 	position: fixed;
 	bottom: 10px;
 	text-align: center;
-	width: 100%;
 	button {
 		margin: 0.5em;
 		filter: invert(52%) sepia(11%) saturate(1169%) hue-rotate(97deg) brightness(92%) contrast(85%);
@@ -231,6 +230,9 @@ div.footer-buttons {
 	}
 }
 @media screen and (orientation: landscape) {
+	div.footer-buttons  {
+		width: 50vw
+	}
 	html {
 		overflow: hidden;
 	}
@@ -263,6 +265,9 @@ div.footer-buttons {
 	}
 }
 @media screen and (orientation: portrait) {
+	div.footer-buttons  {
+		width: 100vw
+	}
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 40vh);
 		border-radius: 10px;
