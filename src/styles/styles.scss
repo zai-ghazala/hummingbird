@@ -270,7 +270,7 @@ div.footer-buttons {
 		width: 100vw
 	}
 	#space {
-		height: calc(env(safe-area-inset-bottom) + 45vh);
+		height: calc(env(safe-area-inset-bottom) + 40vh);
 		border-radius: 10px;
 	}
 	#space div.enter.enter__send-request {
@@ -278,7 +278,7 @@ div.footer-buttons {
     height: 12.5vh;
 	}
 	#container {
-		padding-bottom: 45vh;
+		padding-bottom: 50vh;
 		width: 100%;
 		border-radius: 10px;
 	}
