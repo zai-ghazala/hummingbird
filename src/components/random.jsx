@@ -71,7 +71,7 @@ export const Random = () => {
 
   const shuffle = () => e => {
     const newPoem = poem.map(line => line + ' ');
-    let shuffled = newPoem.join('').replace('\n', ' ').split(' ').sort(() => Math.floor(Math.random() * Math.floor(3)) - 1).join(' ');
+    let shuffled = newPoem.join('').replace('\n', ' ').replace(' ', '').split(' ').sort(() => Math.floor(Math.random() * Math.floor(3)) - 1).join(' ');
     setPoem([shuffled])
   };
 
