@@ -149,7 +149,7 @@ const random = () => {
 
 
       <button type="button" ref={shuffleRef} onClick={shuffle()} className="shuffle">
-          shuffle!
+          shuffle
         </button>
       
 
