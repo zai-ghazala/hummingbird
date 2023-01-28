@@ -334,6 +334,7 @@ input[type='text'] {
 }
 .shuffle {
 	color: var(--pink);
-	margin-top: 1em;
 	font-family: Courgette, Arial, Helvetica, sans-serif;
+	display: block;
+	margin: 1em auto
 }

@@ -49,6 +49,7 @@ export const Random = () => {
   const scroll = () => {
     poemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })    
   }
+  
 
   const getPoem = (poet) => {
     const getRandom = (poet) => {
@@ -153,7 +154,14 @@ const random = () => {
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
         {submission ? <div className="poem-data">— by {author} on {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
+
+
+    <button type="button" onClick={e => scroll(e)} className="shuffle">
+          back to top
+        </button>
     </div>
+
+
         <Space currentWord={currentWord}/>
   </>
   );
