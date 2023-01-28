@@ -5,7 +5,7 @@ html {
 	--dark-green: #568b70;
 	--black: #555;
 	--white: #fff;
-
+	--pink: #f442af;
 	--light-purple: #d8daff;
 	--light-blue: #d4ecfd;
 	--light-green: #e3fff1;
@@ -14,6 +14,10 @@ html {
 @font-face {
 	font-family: 'Just Sans';
 	src: url("/fonts/JUSTSans-Regular.otf");
+}
+@font-face {
+	font-family: 'Courgette';
+	src: url("/fonts/Courgette-Regular.ttf");
 }
 
 /* Page structure */
@@ -36,8 +40,7 @@ button {
 	outline: inherit;
 	line-height: 1.25em;
 	&:hover {
-		opacity: 1;
-		color: #000 !important;
+		opacity: 0.8;
 	}
 }
 input[type="submit"] {
@@ -63,7 +66,8 @@ a {
 		color: var(--dark-green);
 	}
 	&:hover {
-		color: var(--black)
+		color: inherit;
+		opacity: 0.8
 	}
 }
 body {
@@ -77,6 +81,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 7.5vh;
 	overflow: auto;
 	position: absolute;
 	top: 0;
@@ -121,7 +126,6 @@ span.word {
 	}
 	&:hover {
 		background: yellow;
-		color: black;
 		filter: brightness(150%);
 	}
 }
@@ -169,7 +173,7 @@ div.buttons {
 	color: var(--dark-green);
 	text-align: center;
 	margin: auto;
-	height: calc(1em + 1vh);
+	height: calc(1em + 1.5vh);
 }
 .poem-data {
 	margin: 1rem 0;
@@ -301,13 +305,15 @@ div.save {
 		color: var(--black);
 	}
 	button {
-		font-family: inherit;
 		font-size: 1em;
 		margin-left: 0.5em;
 		color: var(--black);
 		border: 1px solid var(--black);
 		border-radius: 5px;
 		padding: 10px;
+		background: transparent;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 	}
 }
 ::-webkit-scrollbar {
@@ -325,4 +331,9 @@ div.save {
 input[type='text'] {
 	border: 1px solid var(--black);
 	padding: 6px;
+}
+.shuffle {
+	color: var(--pink);
+	margin-top: 1em;
+	font-family: Courgette, Arial, Helvetica, sans-serif;
 }

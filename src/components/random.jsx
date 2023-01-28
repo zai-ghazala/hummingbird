@@ -69,9 +69,16 @@ export const Random = () => {
     getPoem(dickinson);
   }, []);
 
+  const shuffle = () => e => {
+    const newPoem = poem.map(line => line + ' ');
+    let shuffled = newPoem.join('').replace('\n', ' ').split(' ').sort(() => Math.floor(Math.random() * Math.floor(3)) - 1).join(' ');
+    setPoem([shuffled])
+  };
+
   const handleClick = (poet) => e => {
     getPoem(poet);
   };
+
 
   const handleDrag = (word) => {
     setCurrentWord(word);
@@ -110,17 +117,17 @@ const random = () => {
   return (
     <>
       <div className="buttons">
-        <button type="button" className="author" onClick={handleClick(dickinson, true)}>
+        <button type="button" className="random author" onClick={handleClick(dickinson, true)}>
           <span>⟳</span>
           <br />
           Emily Dickinson
         </button>
-        <button type="button" className="author" onClick={handleClick(rossetti, true)}>
+        <button type="button" className="random author" onClick={handleClick(rossetti, true)}>
           <span>⟳</span>
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="author"  onClick={handleClick(bronte, true)}>
+        <button type="button" className="random author"  onClick={handleClick(bronte, true)}>
           <span>⟳</span>
           <br />
           Emily Brontë
@@ -129,12 +136,19 @@ const random = () => {
       </div>
 
       <div className="buttons">
-      <button type="button" onClick={random}>
+      <button type="button" onClick={random} className="random">
           <span>⟳</span>
           <br />
           random submission
         </button>
       </div>
+
+
+      <button type="button" onClick={shuffle()} className="shuffle">
+          shuffle!
+        </button>
+      
+
       <div ref={poemRef} className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
