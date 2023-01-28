@@ -6,7 +6,7 @@ export default function Home() {
       <div id="container">
         <img
           className="bird bird--right"
-          src="/assets/hummingbird-right.png"
+          src="/hummingbird-right.png"
           alt="hummingbird"
         />
 
@@ -14,7 +14,7 @@ export default function Home() {
 
         <img
           className="bird bird--left"
-          src="/assets/hummingbird-left.png"
+          src="/hummingbird-left.png"
           alt="hummingbird"
         />
 
