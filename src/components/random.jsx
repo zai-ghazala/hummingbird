@@ -9,6 +9,24 @@ import { rossetti } from '../assets/data/Rossetti.js';
 import { bronte } from '../assets/data/Bronte.js'
 import { dickinson } from '../assets/data/Dickinson.js'
 
+const NetworkStatus = () => {
+  const [status, setStatus] = useState(true);
+
+  useEffect(() => {
+    function changeStatus() {
+      setStatus(navigator.onLine);
+    }
+    window.addEventListener("online", changeStatus);
+    window.addEventListener("offline", changeStatus);
+    return () => {
+      window.removeEventListener("online", changeStatus);
+      window.removeEventListener("offline", changeStatus);
+    };
+  }, []);
+
+  return status ? "online" : "offline";
+};
+
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -84,28 +102,26 @@ const random = () => {
     return keys[Math.floor(Math.random() * keys.length)];
   }
   
-  const firebaseRef = ref(db, 'poems')
+    const firebaseRef = ref(db, 'poems')
 
-  get(firebaseRef).then((snapshot) => {
-    if (snapshot.exists()) {
-      
-        let poems = [];
-        poems.push(snapshot.val())
-        const random = poems[0][getRandomProperty(poems[0])]
+    get(firebaseRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          
+            let poems = [];
+            poems.push(snapshot.val())
+            const random = poems[0][getRandomProperty(poems[0])]
 
-        setPoem(random['poem'].split('\n'));
-        setAuthor(random['name'])
-        setTimestamp(new Date(random['timestamp']).toLocaleDateString());
-        setSubmission(true)
-      
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-  
-    scroll();
+            setPoem(random['poem'].split('\n'));
+            setAuthor(random['name'])
+            setTimestamp(new Date(random['timestamp']).toLocaleDateString());
+            setSubmission(true)
+          
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+    });
   }
 
   return (
@@ -128,19 +144,21 @@ const random = () => {
         </button>
 
       </div>
+
+      {NetworkStatus() === 'online' &&
       <div className="buttons">
       <button type="button" onClick={random}>
           <span>⟳</span>
           <br />
           random submission
         </button>
-      </div>
+      </div>}
       <div ref={poemRef} className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
         {submission ? <div className="poem-data">— by {author} on {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
     </div>
-        <Space currentWord={currentWord}/>
+        <Space currentWord={currentWord} online={NetworkStatus()}/>
   </>
   );
 };

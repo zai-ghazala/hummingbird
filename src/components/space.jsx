@@ -148,7 +148,7 @@ export const Space = (props) => {
           </div>
         </DropTarget>
         <div className='footer-buttons'>
-          <button
+          {props.online === 'online' && <button
             className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
             }
@@ -156,7 +156,7 @@ export const Space = (props) => {
             onClick={send}
           >
             <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABbUlEQVRoge2XMU7DMBSGPwpiAFEOAEXqDRADt6iYuAIrI2tHLsDAHZBaqeIQsDBwAipxAKjYqMJALDXpS5w4NraLP+ktcWz/n5MnJRAmY+DWdwhTxkCWV3QSq+Gjk5DCRyNRFz54iSbhg5VoEz44CZPwaxJbwsKZo8DSXhLl/Wvn9cyyhMNGCrw62mvX0bpr7ADXwALzJmtTZXTjjRkCjzELKEbAPCaBM+HaIXAHLGMQWAL3wEGF3LNjgc6ohd+BS2FcNfln6AKqZsCJcN8R8BCDQAZ8ATfAtnD/CHgzCF71hJ0IqHoBzoU5+/x+YH03CF7XY6fAk2Z+J4HVAH2DAFUHsNfiADoL6F6BHnBFscltvoLWBFRNgGNhnQEwzccHFeMTg/2sC+hOuIx6Qh+GezkR0L3jiiZN6lUgQ27yNk3qXUDVHLjIy+bHYIG//Ce2RSHzRv5SRkUS8E0S8E0S8E0S8E30AolEIpH43/wAK9D7iR1oK7gAAAAASUVORK5CYII=' />
-          </button>
+          </button>}
           <button
             className={
               copySuccess || clearSuccess || composedPoem.length === 0
