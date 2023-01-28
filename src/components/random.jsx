@@ -104,6 +104,7 @@ const random = () => {
       }).catch((error) => {
         console.error(error);
     });
+    scroll();
   }
 
   return (
