@@ -5495,7 +5495,7 @@ export const dickinson = [
       "",
       "Had I presumed to gain",
       "A Favor so remote --",
-      "The failure but confirm the Grace",
+      "The failure but confirm the Grace",ƒ
       "In further Infinite --",
       "",
       "'Tis failure -- not of Hope --",

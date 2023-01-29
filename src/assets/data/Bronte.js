@@ -447,7 +447,7 @@ export const bronte = [
       "But mine sank sad and low.",
       "",
       "My lids closed down, yet through their veil",
-      "I saw him, blazinig, still,",
+      "I saw him, blazing, still,",
       "And steep in gold the misty dale,",
       "And flash upon the hill.",
       "",
