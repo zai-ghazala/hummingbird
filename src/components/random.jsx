@@ -60,11 +60,7 @@ export const Random = () => {
     setAuthor(getRandom(poet).author);
     setTitle(getRandom(poet).title);
     setSubmission(false);
-    
-    if (scroll && height > width ) {
-      scroll()
-    }
-    }
+  }
 
   useEffect(() => {
     getPoem(dickinson);
@@ -80,6 +76,10 @@ export const Random = () => {
 
   const handleClick = (poet) => e => {
     getPoem(poet);
+
+    if (height > width ) {
+      poemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   };
 
 
@@ -114,23 +114,23 @@ const random = () => {
       }).catch((error) => {
         console.error(error);
     });
-    scroll();
+    poemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
     <>
       <div className="buttons">
-        <button type="button" className="random author" onClick={handleClick(dickinson, true)}>
+        <button type="button" className="random author" onClick={handleClick(dickinson)}>
           <span>⟳</span>
           <br />
           Emily Dickinson
         </button>
-        <button type="button" className="random author" onClick={handleClick(rossetti, true)}>
+        <button type="button" className="random author" onClick={handleClick(rossetti)}>
           <span>⟳</span>
           <br />
           Christina Rossetti
         </button>
-        <button type="button" className="random author"  onClick={handleClick(bronte, true)}>
+        <button type="button" className="random author"  onClick={handleClick(bronte)}>
           <span>⟳</span>
           <br />
           Emily Brontë
