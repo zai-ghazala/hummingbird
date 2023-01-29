@@ -420,39 +420,6 @@ export const rossetti = [
     "linecount": "25"
   },
   {
-    "title": "A Better Ressurection",
-    "author": "Christina Rossetti",
-    "lines": [
-      "I have no wit, no words, no tears;",
-      "My heart within me like a stone",
-      "Is numbed too much for hopes or fears.",
-      "Look right, look left, I dwell alone;",
-      "I lift mine eyes, but dimmed with grief",
-      "No everlasting hills I see;",
-      "My life is in the falling leaf:",
-      "O Jesus, quicken me.",
-      "",
-      "My life is like a faded leaf,",
-      "My harvest dwindled to a husk:",
-      "Truly my life is void and brief",
-      "And tedious in the barren dusk;",
-      "My life is like a frozen thing,",
-      "No bud nor greenness can I see:",
-      "Yet rise it shall--the sap of spring;",
-      "O Jesus, rise in me.",
-      "",
-      "My life is like a broken bowl,",
-      "A broken bowl that cannot hold",
-      "One drop of water for my soul",
-      "Or cordial in the searching cold;",
-      "Cast in the fire the perished thing;",
-      "Melt and remould it, till it be",
-      "A royal cup for Him, my King:",
-      "O Jesus, drink of me."
-    ],
-    "linecount": "24"
-  },
-  {
     "title": "No, Thank You John",
     "author": "Christina Rossetti",
     "lines": [
@@ -496,38 +463,6 @@ export const rossetti = [
       "No, thank you, John."
     ],
     "linecount": "31"
-  },
-  {
-    "title": "Before The Paling Of The Stars",
-    "author": "Christina Rossetti",
-    "lines": [
-      "Before the winter morn,",
-      "Before the earliest cock crow,",
-      "Jesus Christ was born:",
-      "Born in a stable,",
-      "Cradled in a manger,",
-      "In the world his hands had made",
-      "Born a stranger.",
-      "",
-      "Priest and king lay fast asleep",
-      "In Jerusalem;",
-      "Young and old lay fast asleep",
-      "In crowded Bethlehem;",
-      "Saint and angel, ox and ass,",
-      "Kept a watch together",
-      "Before the Christmas daybreak",
-      "In the winter weather.",
-      "",
-      "Jesus on his mother's breast",
-      "In the stable cold,",
-      "Spotless lamb of God was he,",
-      "Shepherd of the fold:",
-      "Let us kneel with Mary maid,",
-      "With Joseph bent and hoary,",
-      "With saint and angel, ox and ass,",
-      "To hail the King of Glory."
-    ],
-    "linecount": "23"
   },
   {
     "title": "The Thread of Life",

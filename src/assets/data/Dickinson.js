@@ -1546,24 +1546,6 @@ export const dickinson = [
     "linecount": "17"
   },
   {
-    "title": "Just so -- Jesus -- raps",
-    "author": "Emily Dickinson",
-    "lines": [
-      "Just so -- Jesus -- raps --",
-      "He -- doesn't weary --",
-      "Last -- at the Knocker --",
-      "And first -- at the Bell.",
-      "Then -- on divinest tiptoe -- standing --",
-      "Might He but spy the lady's soul --",
-      "When He -- retires --",
-      "Chilled -- or weary --",
-      "It will be ample time for -- me --",
-      "Patient -- upon the steps -- until then --",
-      "Hears!  I am knocking -- low at thee."
-    ],
-    "linecount": "11"
-  },
-  {
     "title": "Rearrange a \"Wife's\" affection!",
     "author": "Emily Dickinson",
     "lines": [
@@ -2350,32 +2332,6 @@ export const dickinson = [
       "For such a Foe as this --"
     ],
     "linecount": "8"
-  },
-  {
-    "title": "He strained my faith",
-    "author": "Emily Dickinson",
-    "lines": [
-      "He strained my faith --",
-      "Did he find it supple?",
-      "Shook my strong trust --",
-      "Did it then -- yield?",
-      "",
-      "Hurled my belief --",
-      "But -- did he shatter -- it?",
-      "Racked -- with suspense --",
-      "Not a nerve failed!",
-      "",
-      "Wrung me -- with Anguish --",
-      "But I never doubted him --",
-      "'Tho' for what wrong",
-      "He did never say --",
-      "",
-      "Stabbed -- while I sued",
-      "His sweet forgiveness --",
-      "Jesus -- it's your little \"John\"!",
-      "Don't you know -- me?"
-    ],
-    "linecount": "16"
   },
   {
     "title": "Heaven is so far of the Mind",
@@ -3634,26 +3590,6 @@ export const dickinson = [
     "linecount": "20"
   },
   {
-    "title": "To her derided Home",
-    "author": "Emily Dickinson",
-    "lines": [
-      "To her derided Home",
-      "A Weed of Summer came --",
-      "She did not know her station low",
-      "Nor Ignominy's Name --",
-      "Bestowed a summer long",
-      "Upon a frameless flower --",
-      "Then swept as lightly from disdain",
-      "As Lady from her Bower --",
-      "",
-      "Of Bliss the Codes are few --",
-      "As Jesus cites of Him --",
-      "\"Come unto me\" the moiety",
-      "That wafts the Seraphim --"
-    ],
-    "linecount": "12"
-  },
-  {
     "title": "One Day is there of the Series",
     "author": "Emily Dickinson",
     "lines": [
@@ -4011,27 +3947,6 @@ export const dickinson = [
       "A manse of mechlin and of Floes --"
     ],
     "linecount": "5"
-  },
-  {
-    "title": "Dying! Dying in the night!",
-    "author": "Emily Dickinson",
-    "lines": [
-      "Dying! Dying in the night!",
-      "Won't somebody bring the light",
-      "So I can see which way to go",
-      "Into the everlasting snow?",
-      "",
-      "And \"Jesus\"! Where is Jesus gone?",
-      "They said that Jesus -- always came --",
-      "Perhaps he doesn't know the House --",
-      "This way, Jesus, Let him pass!",
-      "",
-      "Somebody run to the great gate",
-      "And see if Dollie's coming! Wait!",
-      "I hear her feet upon the stair!",
-      "Death won't hurt -- now Dollie's here!"
-    ],
-    "linecount": "12"
   },
   {
     "title": "How happy I was if I could forget",
@@ -5372,20 +5287,6 @@ export const dickinson = [
     "linecount": "8"
   },
   {
-    "title": "Jesus! thy Crucifix",
-    "author": "Emily Dickinson",
-    "lines": [
-      "Jesus! thy Crucifix",
-      "Enable thee to guess",
-      "The smaller size!",
-      "",
-      "Jesus! thy second face",
-      "Mind thee in Paradise",
-      "Of ours!"
-    ],
-    "linecount": "6"
-  },
-  {
     "title": "I saw no Way -- The Heavens were stitched",
     "author": "Emily Dickinson",
     "lines": [
@@ -5582,32 +5483,6 @@ export const dickinson = [
       "In Scarlet Maryland --"
     ],
     "linecount": "20"
-  },
-  {
-    "title": "Do People moulder equally,",
-    "author": "Emily Dickinson",
-    "lines": [
-      "Do People moulder equally,",
-      "They bury, in the Grave?",
-      "I do believe a Species",
-      "As positively live",
-      "",
-      "As I, who testify it",
-      "Deny that I -- am dead --",
-      "And fill my Lungs, for Witness --",
-      "From Tanks -- above my Head --",
-      "",
-      "I say to you, said Jesus --",
-      "That there be standing here --",
-      "A Sort, that shall not taste of Death --",
-      "If Jesus was sincere --",
-      "",
-      "I need no further Argue --",
-      "That statement of the Lord",
-      "Is not a controvertible --",
-      "He told me, Death was dead --"
-    ],
-    "linecount": "16"
   },
   {
     "title": "Had I presumed to hope --",
