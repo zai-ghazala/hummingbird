@@ -222,7 +222,7 @@ div.footer-buttons {
 		font-size: 1.5em
 	}
 	img.bird {
-		width: 10vw;
+		width: 20vw;
 	}
 }
 @media screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
@@ -333,8 +333,18 @@ input[type='text'] {
 	padding: 6px;
 }
 .shuffle {
-	color: var(--pink);
-	font-family: Courgette, Arial, Helvetica, sans-serif;
+	font-family: Courgette, sans-serif;
+	letter-spacing: 0.75px;
 	display: block;
-	margin: 1em auto
+	margin: -1em auto
+}
+.bendy {
+	fill: none;
+	stroke: var(--pink);
+	stroke-width: 34;
+	stroke-linecap: round;
+}
+.svg-button text {
+	transform: translateY(5px);
+	fill: honeydew
 }

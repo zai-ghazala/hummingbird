@@ -36,7 +36,6 @@ function useWindowDimensions() {
 
 export const Random = () => {
   const poemRef = useRef();
-  const shuffleRef = useRef();
 
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
@@ -147,11 +146,24 @@ const random = () => {
         </button>
       </div>
 
+      <div className="svg-button">
+      <button type="button" onClick={shuffle()} className="shuffle">
 
-      <button type="button" ref={shuffleRef} onClick={shuffle()} className="shuffle">
-          shuffle
+        <svg width="100%" height="100%">
+        <defs>
+  <path id="text-path" d="M 75 73 q 64 13 153 -15" />
+  </defs>
+
+
+<path d="M 75 73 q 64 13 153 -15" className="bendy" />
+<text>
+<textPath xlinkHref="#text-path" startOffset="50%" textAnchor="middle">shuffle words!</textPath>
+</text>
+</svg>
         </button>
       
+
+        </div>
 
       <div ref={poemRef} className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
@@ -159,9 +171,24 @@ const random = () => {
         {submission ? <div className="poem-data">— by {author} on {timestamp}</div> : title && author ? <div className="poem-data">— <span>{title}</span> by {author.replace('Bronte', 'Brontë')}</div> : null}
 
 
-    <button type="button" onClick={e => scroll(e)} className="shuffle">
-          back to top
+        <div className="svg-button">
+      <button type="button" onClick={shuffle()} className="shuffle">
+
+        <svg width="100%" height="100%">
+        <defs>
+  <path id="text-path-2" d="M 75 76 q 71 -28 139 10" />
+  </defs>
+
+
+<path d="M 75 76 q 71 -28 139 10" className="bendy" />
+<text>
+<textPath xlinkHref="#text-path-2" startOffset="50%" textAnchor="middle">back to top</textPath>
+</text>
+</svg>
         </button>
+      
+
+        </div>
     </div>
 
 
