@@ -46,7 +46,7 @@ export const Random = () => {
 
   const { height, width } = useWindowDimensions();
 
-  const scroll = () => {
+  const scroll = () => e => {
     poemRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })    
   }
   
@@ -172,7 +172,7 @@ const random = () => {
 
 
         <div className="svg-button">
-      <button type="button" onClick={shuffle()} className="shuffle">
+      <button type="button" onClick={scroll()} className="shuffle">
 
         <svg width="100%" height="100%">
         <defs>
