@@ -321,7 +321,8 @@ div.save {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--purple);
+	background: var(--pink);
+	border-radius: 34px
 }
 @media screen and (min-width: 768px) {
 	#checkbox {
@@ -346,5 +347,5 @@ input[type='text'] {
 }
 .svg-button text {
 	transform: translateY(5px);
-	fill: honeydew
+	fill: var(--light-green)
 }
