@@ -10,10 +10,12 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "firebase": "^9.13.0",
+    "iscroll": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-drag-drop-container": "^6.1.1",
     "react-helmet-async": "^1.1.2",
+    "react-use-is-online": "^1.2.1",
     "sass": "^1.56.0",
     "scss": "^0.2.4",
     "wouter": "^2.7.4"

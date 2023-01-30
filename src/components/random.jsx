@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../utils/firebase";
+import { useIsOnline } from 'react-use-is-online';
 import { ref, get } from "firebase/database";
 
 import { Poem } from "./poem";
@@ -36,6 +37,8 @@ function useWindowDimensions() {
 
 export const Random = () => {
   const poemRef = useRef();
+  
+  const { isOnline, isOffline, error } = useIsOnline();
 
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
@@ -67,7 +70,6 @@ export const Random = () => {
 
   const shuffle = () => (e) => {
     const newPoem = poem.map((line) => " " + line + " ");
-    console.log(newPoem);
     const shuffled = newPoem
       .join("")
       .replace(" ", "")
@@ -98,24 +100,29 @@ export const Random = () => {
 
     const firebaseRef = ref(db, "poems");
 
-    get(firebaseRef)
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          let poems = [];
-          poems.push(snapshot.val());
-          const random = poems[0][getRandomProperty(poems[0])];
+    {isOffline ?
+      poemRef.current.innerHTML = 'Go online first :)'
+    :
+      get(firebaseRef)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            let poems = [];
+            poems.push(snapshot.val());
+            const random = poems[0][getRandomProperty(poems[0])];
 
-          setPoem(random["poem"].split("\n"));
-          setAuthor(random["name"]);
-          setTimestamp(new Date(random["timestamp"]).toLocaleDateString());
-          setSubmission(true);
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+            setPoem(random["poem"].split("\n"));
+            setAuthor(random["name"]);
+            setTimestamp(new Date(random["timestamp"]).toLocaleDateString());
+            setSubmission(true);
+          } else {
+            console.log("No data available");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+    }
+
     poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 

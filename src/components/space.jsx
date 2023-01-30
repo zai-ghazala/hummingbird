@@ -135,6 +135,7 @@ export const Space = (props) => {
           </div>
         )}
 
+
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
