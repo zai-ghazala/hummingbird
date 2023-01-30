@@ -170,7 +170,9 @@ div.buttons {
 	}
 }
 .compose-message {
-	color: var(--dark-green);
+	font-family: Courgette, sans-serif;
+	letter-spacing: 0.75px;
+	color: var(--pink);
 	text-align: center;
 	margin: auto;
 	height: calc(1em + 1.5vh);

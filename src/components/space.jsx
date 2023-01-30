@@ -32,9 +32,7 @@ export const Space = (props) => {
   };
 
   useEffect(() => {
-    if (composedPoem.length === 0) {
-      setMessage('drag & drop poem here');
-    }
+    setMessage('drag & drop your poem here');
   }, []);
 
   const copy = () => {
