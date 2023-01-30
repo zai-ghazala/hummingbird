@@ -257,7 +257,7 @@ div.footer-buttons {
 		margin: 5px;
 	}
 }
-@media screen and (min-width: 1500px) and (orientation: landscape) {
+@media screen and (min-width: 1200px) and (orientation: landscape) {
 	body {
 		font-size: 1.25em
 	}
@@ -287,6 +287,11 @@ div.footer-buttons {
 		div.buttons {
 			display: flex;
 			justify-content: center;
+			flex-direction: column;
+		}
+		button {
+			width: 50%;
+			margin: 0.25em auto
 		}
 	}
 	#space {
@@ -297,7 +302,7 @@ div.footer-buttons {
 		border-left: 1px solid var(--pink);
 	}
 }
-@media screen and (max-width:992px) and (orientation: landscape) {
+@media screen and (max-width:1201px) and (orientation: landscape) {
 	body {
 		font-size: 1em !important
 	}
@@ -338,8 +343,8 @@ div.footer-buttons {
 		border-radius: 10px;
 	}
 }	
-@media screen and (orientation: portrait) and (max-width: 993px),
-screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
+@media screen and (orientation: portrait) and (max-width: 1201px),
+screen and (min-width: 480px) and (max-width:1201px) and (orientation: landscape) {
 	img.bird {
 		width: 10em;
 	}
@@ -371,11 +376,6 @@ div.save {
 ::-webkit-scrollbar-thumb {
 	background: var(--pink);
 	border-radius: 34px
-}
-@media screen and (min-width: 768px) {
-	#checkbox {
-		transform: scale(1.5) translate(1em, 1em);
-	}
 }
 input[type='text'] {
 	border: 1px solid var(--black);
