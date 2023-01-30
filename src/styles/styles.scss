@@ -318,12 +318,49 @@ div.footer-buttons {
 }
 @media screen and (orientation: portrait) {
 	#buttons {
-		background: var(--light-green);
 		width: 100vw;
-		padding: 1em 0;
 		border-top: 1px solid var(--pink);
 		border-bottom: 1px solid var(--pink);
+		background: var(--light-green);
+		height: fit-content;
+		padding: 1em 0;
 	}	
+	#buttons.stuck {
+		height: 0;
+		overflow: auto
+	}
+	#buttons.stuck .buttons button {
+		padding: 1.5em;
+    border: none;
+    box-shadow: none;
+		border-radius: 0;
+    position: fixed;
+		z-index: 1;
+    height: 12vh;
+		background: var(--light-green);
+    border-bottom: 1px solid var(--pink);
+    top: -3.5vh;
+		font-size: 2vh;
+		&:hover {
+			opacity: 1;
+		}
+	}	
+	#buttons.stuck .buttons button.author:nth-of-type(1) {
+		width: 30%;
+		left: -1.5vw
+	}
+	#buttons.stuck .buttons button.author:nth-of-type(2) {
+		width: 25%;
+		left: 25vw
+	}
+	#buttons.stuck .buttons button.author:nth-of-type(3) {
+		width: 25%;
+		left: 50vw
+	}
+	#buttons.stuck .buttons button.submission {
+		width: 30%;
+		left: 70vw;
+	}
 	div.footer-buttons  {
 		width: 100vw
 	}
@@ -340,6 +377,7 @@ div.footer-buttons {
 		padding-bottom: 45vh;
 		width: 100%;
 		border-radius: 10px;
+		overflow: unset
 	}
 }	
 @media screen and (orientation: portrait) and (max-width: 1201px),

@@ -37,7 +37,9 @@ function useWindowDimensions() {
 
 export const Random = () => {
   const poemRef = useRef();
-  
+  const buttonsRef = useRef();
+
+  const [isSticky, setIsSticky] = useState(false);  
   const { isOnline, isOffline, error } = useIsOnline();
 
   const [poem, setPoem] = useState([]);
@@ -67,6 +69,26 @@ export const Random = () => {
   useEffect(() => {
     getPoem(dickinson);
   }, []);
+
+  useEffect(() => {
+    const header = buttonsRef?.current 
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        setIsSticky(e.intersectionRatio < 1)
+      },
+      {threshold:[1]}
+    )
+    
+    if(header) {
+      observer.observe(header)
+    }
+    
+    // clean up the observer
+    return (() => {
+      observer.unobserve(header)
+    })
+    
+  }, [buttonsRef])
 
   const shuffle = () => (e) => {
     const newPoem = poem.map((line) => " " + line + " ");
@@ -129,7 +151,7 @@ export const Random = () => {
 
   return (
     <>
-    <div id="buttons">
+    <div id="buttons" ref={buttonsRef} className={isSticky < 1? null : 'stuck'}>
 
     <div className="compose-message reload">refresh the current poem</div>
       <div className="buttons">
