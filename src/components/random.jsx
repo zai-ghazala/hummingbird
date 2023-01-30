@@ -122,12 +122,16 @@ export const Random = () => {
           console.error(error);
         })
     }
-
-    poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (height > width) {
+      poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
     <>
+    <div id="buttons">
+
+    <div className="compose-message reload">refresh the current poem</div>
       <div className="buttons">
         <button
           type="button"
@@ -159,13 +163,13 @@ export const Random = () => {
       </div>
 
       <div className="buttons">
-        <button type="button" onClick={random} className="random">
+        <button type="button" onClick={random} className="random submission">
           <span>⟳</span>
           <br />
           random submission
         </button>
       </div>
-
+</div>
       <div className="svg-button">
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">

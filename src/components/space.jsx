@@ -134,6 +134,7 @@ export const Space = (props) => {
           </div>
         )}
 
+
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
@@ -145,6 +146,7 @@ export const Space = (props) => {
             })}
           </div>
         </DropTarget>
+
         <div className='footer-buttons'>
           <button
             className={
