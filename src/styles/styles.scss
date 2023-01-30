@@ -102,7 +102,7 @@ body {
 	height: 40vh;
 	color: var(--black);
 	background: rgba( 255, 255, 255, 0.5 );
-	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	box-shadow: 0 5px 10px 0 rgba( 31, 38, 135, 0.37 );
 	backdrop-filter: blur( 20px );
 	-webkit-backdrop-filter: blur( 20px );
 	div.enter {
@@ -284,6 +284,7 @@ div.footer-buttons {
 		flex-direction: column;
 		display: flex;
     justify-content: center;
+		box-shadow: 0 5px 10px 0 rgb(31 38 135 / 37%);
 		div.buttons {
 			display: flex;
 			justify-content: center;
