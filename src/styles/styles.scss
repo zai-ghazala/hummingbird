@@ -106,7 +106,7 @@ body {
 	backdrop-filter: blur( 20px );
 	-webkit-backdrop-filter: blur( 20px );
 	div.enter {
-    height: 17.5vh;
+    height: 22.5vh;
     width: 90%;
     line-height: 1.25em;
     position: absolute;
@@ -223,7 +223,7 @@ div.footer-buttons {
 }
 @media screen and (orientation: landscape) {
 	div.footer-buttons  {
-		width: 25vw
+		width: 50vw
 	}
 	html {
 		overflow: hidden;
@@ -244,7 +244,7 @@ div.footer-buttons {
 		left: 50vw;
 		height: 100vh;
 		div.enter {
-			height: 65vh;
+			height: 75vh;
 			width: 92.5%;
 			margin-top: 12.5vh;	
 			&__send-request {
@@ -263,6 +263,9 @@ div.footer-buttons {
 	}
 	img.bird {
 		width: 15vw;
+	}
+	div.footer-buttons  {
+		width: 25vw
 	}
 	#container {
 		width: 50vw;
