@@ -75,6 +75,7 @@ body {
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background: var(--light-purple);
+	font-size: 0.9em;
 }
 #container {
 	color: var(--color-text-main);
@@ -139,9 +140,6 @@ div.buttons {
 	margin: 1rem;
 	display: flex;
 	justify-content: center;
-	button span {
-		font-size: calc(23px + 3vh);
-	}
 	.author {
 		width: 30%;
 		&:hover {
@@ -161,7 +159,7 @@ div.buttons {
 		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 		span {
 			margin: 0.5em;
-			font-size: calc(23px + 2vh);
+			font-size: calc(23px + 1vh);
 			color: #000;
 			&:hover {
 				color: #000;
@@ -221,10 +219,10 @@ div.footer-buttons {
 }
 @media screen and (min-width: 993px) and (orientation: landscape) {
 	body {
-		font-size: 1.5em
+		font-size: 1.15em
 	}
 	img.bird {
-		width: 15vw;
+		width: 12vw;
 	}
 }
 @media screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape) {
@@ -295,19 +293,16 @@ screen and (min-width: 480px) and (max-width:992px) and (orientation: landscape)
 		width: 10em;
 	}
 }
-.monospace {
-	font-family: monospace;
-}
 div.save {
 	text-align: center;
 	input {
 		font-family: inherit;
-		font-size: 1em;
+		font-size: inherit;
 		font-weight: inherit;
 		color: var(--black);
 	}
 	button {
-		font-size: 1em;
+		font-size: inherit;
 		margin-left: 0.5em;
 		color: var(--black);
 		border: 1px solid var(--black);

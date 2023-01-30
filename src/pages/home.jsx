@@ -2,7 +2,6 @@ import * as React from "react";
 import Random from "../components/random";
 export default function Home() {
   return (
-    <>
       <div id="container">
         <img
           className="bird bird--right"
@@ -20,6 +19,5 @@ export default function Home() {
 
         <div className="footer">made with 💖 by <a href="https://zaiz.ai">Zainab Ismail</a></div>
       </div>
-    </>
   );
 }

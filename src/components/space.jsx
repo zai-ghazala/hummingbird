@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { DropTarget } from 'react-drag-drop-container';
-
 import { ref, push, serverTimestamp } from 'firebase/database';
 import { db } from '../utils/firebase';
 
@@ -117,7 +116,7 @@ export const Space = (props) => {
 
   return (
     <>
-      <div id='space'>
+      <div id="space">
         <div className='compose-message'>{message ? message : null}</div>
 
         {sendRequest && composedPoem.length != 0 && (
@@ -135,11 +134,11 @@ export const Space = (props) => {
           </div>
         )}
 
-
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
         >
+
           <div className={sendRequest ? 'enter__send-request enter' : 'enter'}>
             {composedPoem.map((word, i) => {
               return <span key={word + i}>{word} </span>;

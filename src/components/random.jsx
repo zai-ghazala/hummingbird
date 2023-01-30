@@ -221,7 +221,6 @@ export const Random = () => {
           </button>
         </div>
       </div>
-
       <Space currentWord={currentWord} />
     </>
   );
