@@ -17,6 +17,7 @@
     "react-use-is-online": "^1.2.1",
     "sass": "^1.56.0",
     "scss": "^0.2.4",
+    "use-local-storage": "^2.3.6",
     "wouter": "^2.7.4"
   },
   "devDependencies": {

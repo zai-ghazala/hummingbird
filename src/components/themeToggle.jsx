@@ -1,31 +1,27 @@
 import React, { useEffect, useState } from "react";
+import useLocalStorage from 'use-local-storage'
 
 export const ThemeToggle = () => {
 
   const [count, setCount] = useState(0);
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'default');
+
 
   useEffect(() => {
-    if (!localStorage.getItem("default")) {
       document
         .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", "default");
-    } else {
-      document
-        .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", localStorage.getItem("theme"));
-    }
-  }, []);
-
+        .setAttribute("data-theme", theme);
+  
+  });
+  
   const nextTheme = () => {
     const allThemes = ['default', 'dark', 'accent']
 
     setCount(count + 1);
-
-    localStorage.setItem("theme", allThemes[count % allThemes.length]);
-    document
-      .getElementsByTagName("HTML")[0]
-      .setAttribute("data-theme", localStorage.getItem("theme"));
+    setTheme(allThemes[count % allThemes.length]);
     }
+
 
   return (
       <button

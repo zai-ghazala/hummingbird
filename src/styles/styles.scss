@@ -28,8 +28,8 @@ html[data-theme="accent"] {
 
 html[data-theme="dark"] {
 	--textColour: #fff; 
-	--spaceText: #555;
-	--draggable: #555;
+	--spaceText: #1e193b;
+	--draggable: #1e193b;
 	--draggableText: #fff; 
 	--buttonText: #fff;
 	--accent: #971967;
@@ -111,7 +111,6 @@ body {
 	background: var(--buttonPane) !important;
 }
 #container {
-	background-color: var(--bg);
 	color: var(--textColour);
 	display: flex;
 	flex-direction: column;
