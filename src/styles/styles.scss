@@ -36,6 +36,7 @@ html[data-theme="dark"] {
 	--bg-image: none;
 	--bg: #000;
 	--buttonPane: #b4cfc1;
+	--footerFilter: invert(12%) sepia(13%) saturate(2785%) hue-rotate(209deg) brightness(90%) contrast(100%);
 }
 
 @font-face {
