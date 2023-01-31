@@ -160,7 +160,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className="svg-button" ref={startRef}>
+      <div className="svg-button shuffle" ref={startRef}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>

@@ -361,10 +361,13 @@ input[type='text'] {
 	font-family: Courgette, sans-serif;
 	letter-spacing: 0.75px;
 	display: block;
-	margin: 0 auto
+	margin: 0 auto;
 }
 .svg-button {
-	height: 7.5em
+	height: 7.5em;
+	&.shuffle {
+		margin-top: 7.5em;
+	}
 }
 .bendy {
 	fill: none;
