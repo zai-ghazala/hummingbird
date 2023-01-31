@@ -254,68 +254,6 @@ div.footer-buttons {
 		margin: 5px;
 	}
 }
-@media screen and (min-width: 1200px) and (orientation: landscape) {
-	body {
-		font-size: 1.25em
-	}
-	img.bird {
-		width: 15vw;
-	}
-	div.footer-buttons  {
-		width: 25vw
-	}
-	#container {
-		width: 50vw;
-		height: 100vh;
-		left: 25vw;
-		padding-bottom: 15vh
-	}
-	#buttons {
-		top: 0;
-		width: 25vw;
-		left: 0;
-		background: var(--light-green);
-		border-right: 1px solid var(--pink);
-		height: 100vh;
-		position: fixed;
-		flex-direction: column;
-		display: flex;
-    justify-content: center;
-		box-shadow: 0 5px 10px 0 rgb(31 38 135 / 37%);
-		div.buttons {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-		}
-		button {
-			width: 50%;
-			margin: 0.25em auto
-		}
-	}
-	#space {
-		top: 0;
-		width: 25vw;
-		left: 75vw;
-		height: 100vh;
-		border-left: 1px solid var(--pink);
-	}
-}
-@media screen and (max-width:1201px) and (orientation: landscape) {
-	body {
-		font-size: 1em !important
-	}
-	#container {
-		overflow-x: hidden;
-		border-right: 1px solid var(--pink);
-	}
-	#buttons {
-		background: var(--light-green);
-		width: 50vw;
-		padding: 1em 0;
-		border-top: 1px solid var(--pink);
-		border-bottom: 1px solid var(--pink);
-	}
-}
 @media screen and (orientation: portrait) {
 	#buttons {
 		width: 100vw;
@@ -382,6 +320,7 @@ div.footer-buttons {
 }	
 @media screen and (orientation: portrait) and (max-width: 1201px),
 screen and (min-width: 480px) and (max-width:1201px) and (orientation: landscape) {
+	
 	img.bird {
 		width: 10em;
 	}
@@ -439,4 +378,66 @@ input[type='text'] {
 }
 .reload {
   margin: unset
+}
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+	body {
+		font-size: 1.25em
+	}
+	img.bird {
+		width: 15vw;
+	}
+	div.footer-buttons  {
+		width: 25vw
+	}
+	#container {
+		width: 50vw;
+		height: 100vh;
+		left: 25vw;
+		padding-bottom: 15vh
+	}
+	#buttons {
+		top: 0;
+		width: 25vw;
+		left: 0;
+		background: var(--light-green);
+		border-right: 1px solid var(--pink);
+		height: 100vh;
+		position: fixed;
+		flex-direction: column;
+		display: flex;
+    justify-content: center;
+		box-shadow: 0 5px 10px 0 rgb(31 38 135 / 37%);
+		div.buttons {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+		button {
+			width: 50%;
+			margin: 0.25em auto
+		}
+	}
+	#space {
+		top: 0;
+		width: 25vw;
+		left: 75vw;
+		height: 100vh;
+		border-left: 1px solid var(--pink);
+	}
+}
+@media screen and (max-width:1201px) and (orientation: landscape) {
+	body {
+		font-size: 1em !important
+	}
+	#container {
+		overflow-x: hidden;
+		border-right: 1px solid var(--pink);
+	}
+	#buttons {
+		background: var(--light-green);
+		width: 50vw;
+		padding: 1em 0;
+		border-top: 1px solid var(--pink);
+		border-bottom: 1px solid var(--pink);
+	}
 }
