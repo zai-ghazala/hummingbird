@@ -24,7 +24,6 @@ html {
 /* Page structure */
 * {
 	box-sizing: border-box;
-	transition: all 0.3s ease;
 }
 [hidden] {
 	display: none !important;
@@ -268,6 +267,9 @@ div.footer-buttons {
 		background: var(--light-green);
 		height: fit-content;
 		padding: 1em 0;
+		.buttons button {
+			transition: all 0.3s ease;
+		}
 	}	
 	#buttons.stuck .buttons button {
 		padding: 2em 0 1em 0;
@@ -312,6 +314,7 @@ div.footer-buttons {
 	#space div.enter.enter__send-request {
 		margin-top: 6rem;
     height: 12.5vh;
+		transition: all 0.3s ease;
 	}
 	#container {
 		padding-bottom: 45vh;
