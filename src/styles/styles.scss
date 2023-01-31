@@ -147,8 +147,7 @@ body {
 }
 span.word {
 	border-width: 1px 3px 3px 1px;
-	border-color: #888 var(--textColour) var(--textColour) #888;
-	border-style: outset;
+	border-color: #000 var(--textColour) var(--textColour) #000;
 	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 	padding: 2.5px 5px;
 	margin: 3px;
@@ -364,16 +363,17 @@ div.save {
 		font-family: inherit;
 		font-size: 1em;
 		font-weight: inherit;
-		color: var(--textColour);
+		color: #555;
+		border: 1px solid #555;
 	}
 	button {
 		font-size: 1em;
 		margin-left: 0.5em;
-		color: var(--textColour);
-		border: 1px solid var(--textColour);
+		color: #555;
+		border: 1px solid #555;
 		border-radius: 5px;
 		padding: 10px;
-		background: transparent;
+		background: #fff;
 		border-radius: 5px;
 		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 	}
