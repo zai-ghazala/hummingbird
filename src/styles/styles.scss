@@ -1,15 +1,41 @@
-html {
-	--purple: #babdff;
-	--green: #baffdc;
-	--blue: #bae1ff;
-	--dark-green: #568b70;
-	--black: #555;
-	--white: #fff;
-	--pink: #f442af;
+html[data-theme="default"] {
+	--icons: #568b70; 
+	--textColour: #555; 
+	--spaceText: #555;
+	--draggable: #fff;
+	--draggableText: #555; /* words */
+	--buttonText: #fff;
+	--accent: #f442af;
+	--bg-image: repeating-linear-gradient(0deg, #d8daff, #d8daff 1px, #FFFFFF 1px, #FFFFFF);
+	--bg: linear-gradient(#d8daff, #d4ecfd, #e3fff1);
+	--buttonPane: #e3fff1;
+	--footerFilter: invert(52%) sepia(11%) saturate(1169%) hue-rotate(97deg) brightness(92%) contrast(85%); /* https://codepen.io/sosuke/pen/Pjoqqp */
+}
 
-	--light-purple: #d8daff;
-	--light-blue: #d4ecfd;
-	--light-green: #e3fff1;
+html[data-theme="accent"] {
+	--icons: #1e193b;
+	--textColour: #555;
+	--spaceText: #1e193b;
+	--draggable: #fff;
+	--draggableText: #1e193b;
+	--buttonText: #fff; 
+	--accent: #197e80; 
+	--bg-image: none;
+	--bg: #f0fff0;
+	--buttonPane: #b5e8d8;
+	--footerFilter: invert(9%) sepia(10%) saturate(7370%) hue-rotate(222deg) brightness(97%) contrast(96%);
+}
+
+html[data-theme="dark"] {
+	--textColour: #fff; 
+	--spaceText: #971967;
+	--draggable: linear-gradient(#2a2a2a, #555);
+	--draggableText: #fff; 
+	--buttonText: #fff;
+	--accent: #971967;
+	--bg-image: none;
+	--bg: #000;
+	--buttonPane: #9eb7aa;
 }
 
 @font-face {
@@ -64,7 +90,7 @@ input[type="reset"] {
 }
 a {
 	&:link, &:visited {
-		color: var(--dark-green);
+		color: var(--icons);
 	}
 	&:hover {
 		color: inherit;
@@ -75,11 +101,14 @@ body {
 	font-family: 'Just Sans', Arial, Helvetica, sans-serif;
 	margin-bottom: 40vh;
 	line-height: 1.5em;
-	background-color: #FFF;
 	opacity: 0.8;
+	color: var(--textColour);
 	background-size: 20px 20px;
-	background-image:  repeating-linear-gradient(0deg, #d8daff, #d8daff 1px, #FFF 1px, #FFF);
+	background-image: var(--bg-image);
 	font-size: 0.9em;
+}
+#buttons {
+	background: var(--buttonPane) !important;
 }
 #container {
 	color: var(--color-text-main);
@@ -91,7 +120,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: linear-gradient(var(--light-purple),var(--light-blue),var(--light-green));
+	background: var(--bg);
 }
 #space {
 	position: fixed;
@@ -100,7 +129,7 @@ body {
 	left: 0;
 	padding: 1em;
 	height: 40vh;
-	color: var(--black);
+	color: var(--spaceText);
 	background: rgba( 255, 255, 255, 0.5 );
 	box-shadow: 0 5px 10px 0 rgba( 31, 38, 135, 0.37 );
 	backdrop-filter: blur( 20px );
@@ -117,14 +146,14 @@ body {
 }
 span.word {
 	border-width: 1px 3px 3px 1px;
-	border-color: #888 var(--black) var(--black) #888;
+	border-color: #888 var(--textColour) var(--textColour) #888;
 	border-style: outset;
 	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 	padding: 2.5px 5px;
 	margin: 3px;
-	background: var(--white);
+	background: var(--draggable);
 	display: inline-block;
-	color: var(--black);
+	color: var(--draggableText);
   cursor: move;
 	&:empty {
 		display: none;
@@ -149,15 +178,15 @@ div.buttons {
 		&:hover {
 			border: 1px solid #000
 		}
-	}
+	}	
 	button {
 		margin: 5px;
 		padding: 10px;
 		cursor: pointer;
 		outline: inherit;
-		color: var(--white);
+		color: var(--buttonText);
 		border: 1px solid black;
-		background: var(--pink);
+		background: var(--accent);
 		border-radius: 5px;
 		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 		span {
@@ -172,7 +201,7 @@ div.buttons {
 }
 .compose-message {
 	font-family: Courgette, sans-serif;
-	color: var(--pink);
+	color: var(--accent);
 	letter-spacing: 0.25px;
 	text-align: center;
 	margin: auto;
@@ -182,7 +211,7 @@ div.buttons {
 	margin: 1rem 0;
 	padding: 1rem;
 	white-space: break-spaces;
-	color: var(--black);
+	color: var(--textColour);
 	span {
 		font-style: italic;
 	}
@@ -193,7 +222,7 @@ div.drag {
 }
 div.footer {
 	padding: 2rem;
-	color: var(--dark-green);
+	color: var(--icons);
 	white-space: break-spaces;
 	text-align: center;
 }
@@ -203,7 +232,7 @@ div.footer-buttons {
 	text-align: center;
 	button {
 		margin: 0.5em;
-		filter: invert(52%) sepia(11%) saturate(1169%) hue-rotate(97deg) brightness(92%) contrast(85%);
+		filter: var(--footerFilter);
 	}
 	button:nth-of-type(1) {
 		margin-left: -1em;
@@ -216,7 +245,7 @@ div.footer-buttons {
 }
 div.footer-buttons {
 	button svg {
-		fill: var(--dark-green);
+		fill: var(--icons);
 		width: 25px
 	}
 }
@@ -261,9 +290,8 @@ div.footer-buttons {
 		margin-top: 7.5em;
 	}
 	#buttons {
-		border-top: 1px solid var(--pink);
-		border-bottom: 1px solid var(--pink);
-		background: var(--light-green);
+		border-top: 1px solid var(--accent);
+		border-bottom: 1px solid var(--accent);
 		width: 100%;
 		padding: 1em 0;
 		.buttons button {
@@ -278,7 +306,7 @@ div.footer-buttons {
 		z-index: 1;
 		margin: 0;
     height: fit-content;
-		background: var(--pink);
+		background: var(--accent);
     top: -2.5vh;
 		box-shadow: 0 20px 20px -20px rgba( 31, 38, 135, 0.2 );
 		&:hover {
@@ -307,7 +335,7 @@ div.footer-buttons {
 	#space {
 		height: calc(env(safe-area-inset-bottom) + 40vh);
 		border-radius: 10px;
-		border-top: 1px solid var(--pink);
+		border-top: 1px solid var(--accent);
 	}
 	#space div.enter.enter__send-request {
 		margin-top: 6rem;
@@ -334,13 +362,13 @@ div.save {
 		font-family: inherit;
 		font-size: 1em;
 		font-weight: inherit;
-		color: var(--black);
+		color: var(--textColour);
 	}
 	button {
 		font-size: 1em;
 		margin-left: 0.5em;
-		color: var(--black);
-		border: 1px solid var(--black);
+		color: var(--textColour);
+		border: 1px solid var(--textColour);
 		border-radius: 5px;
 		padding: 10px;
 		background: transparent;
@@ -353,11 +381,11 @@ div.save {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--pink);
+	background: var(--accent);
 	border-radius: 34px
 }
 input[type='text'] {
-	border: 1px solid var(--black);
+	border: 1px solid var(--textColour);
 	padding: 6px;
 }
 .shuffle {
@@ -371,13 +399,13 @@ input[type='text'] {
 }
 .bendy {
 	fill: none;
-	stroke: var(--pink);
+	stroke: var(--accent);
 	stroke-width: 34;
 	stroke-linecap: round;
 }
 .svg-button text {
 	transform: translateY(5px);
-	fill: var(--light-green)
+	fill: var(--buttonText)
 }
 .reload {
   margin: unset
@@ -402,8 +430,8 @@ input[type='text'] {
 		top: 0;
 		width: 25vw;
 		left: 0;
-		background: var(--light-green);
-		border-right: 1px solid var(--pink);
+		background: var(--green);
+		border-right: 1px solid var(--accent);
 		height: 100vh;
 		position: fixed;
 		flex-direction: column;
@@ -425,7 +453,7 @@ input[type='text'] {
 		width: 25vw;
 		left: 75vw;
 		height: 100vh;
-		border-left: 1px solid var(--pink);
+		border-left: 1px solid var(--accent);
 	}
 }
 @media screen and (max-width:1201px) and (orientation: landscape) {
@@ -434,13 +462,33 @@ input[type='text'] {
 	}
 	#container {
 		overflow-x: hidden;
-		border-right: 1px solid var(--pink);
+		border-right: 1px solid var(--accent);
 	}
 	#buttons {
-		background: var(--light-green);
+		background: var(--green);
 		width: 50vw;
 		padding: 1em 0;
-		border-top: 1px solid var(--pink);
-		border-bottom: 1px solid var(--pink);
+		border-top: 1px solid var(--accent);
+		border-bottom: 1px solid var(--accent);
+	}
+}
+button.random.theme {
+	margin: 5px;
+	padding: 10px;
+	width: 30%;
+	cursor: pointer;
+	outline: inherit;
+	color: var(--buttonText);
+	border: 1px solid black;
+	background: var(--accent);
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
+	span {
+		margin: 0.5em;
+		font-size: calc(23px + 1vh);
+		color: black;
+		&:hover {
+			color: black;
+		}
 	}
 }
