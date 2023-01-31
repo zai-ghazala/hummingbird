@@ -273,9 +273,8 @@ div.footer-buttons {
     box-shadow: none;
 		border-radius: 0;
     position: fixed;
-		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 		z-index: 1;
-    height: 13.75vh;
+    height: fit-content;
 		background: var(--light-green);
     border-bottom: 1px solid var(--pink);
     top: -3.5vh;
