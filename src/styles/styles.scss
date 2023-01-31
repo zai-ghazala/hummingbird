@@ -28,14 +28,14 @@ html[data-theme="accent"] {
 
 html[data-theme="dark"] {
 	--textColour: #fff; 
-	--spaceText: #971967;
-	--draggable: linear-gradient(#2a2a2a, #555);
+	--spaceText: #555;
+	--draggable: #000;
 	--draggableText: #fff; 
 	--buttonText: #fff;
 	--accent: #971967;
 	--bg-image: none;
 	--bg: #000;
-	--buttonPane: #9eb7aa;
+	--buttonPane: #b4cfc1;
 }
 
 @font-face {
@@ -161,6 +161,7 @@ span.word {
 	&:hover {
 		background: yellow;
 		filter: brightness(150%);
+		color: black
 	}
 }
 img.bird {
