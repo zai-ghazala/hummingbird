@@ -9,7 +9,7 @@ html[data-theme="default"] {
 	--bg-image: repeating-linear-gradient(0deg, #d8daff, #d8daff 1px, #FFFFFF 1px, #FFFFFF);
 	--bg: linear-gradient(#d8daff, #d4ecfd, #e3fff1);
 	--buttonPane: #e3fff1;
-	--footerFilter: invert(52%) sepia(11%) saturate(1169%) hue-rotate(97deg) brightness(92%) contrast(85%); /* https://codepen.io/sosuke/pen/Pjoqqp */
+	--footerFilter:  invert(52%) sepia(26%) saturate(475%) hue-rotate(97deg) brightness(91%) contrast(93%); /* https://codepen.io/sosuke/pen/Pjoqqp */
 }
 
 html[data-theme="accent"] {
@@ -23,7 +23,7 @@ html[data-theme="accent"] {
 	--bg-image: none;
 	--bg: #f0fff0;
 	--buttonPane: #b5e8d8;
-	--footerFilter: invert(9%) sepia(10%) saturate(7370%) hue-rotate(222deg) brightness(97%) contrast(96%);
+	--footerFilter: invert(16%) sepia(12%) saturate(3226%) hue-rotate(133deg) brightness(102%) contrast(91%);
 }
 
 html[data-theme="dark"] {
