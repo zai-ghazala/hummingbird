@@ -34,9 +34,11 @@ export const Random = () => {
       let poems = Object.values(poet);
       return poems[parseInt(Math.random() * poems.length)];
     };
-    setPoem(getRandom(poet).lines);
-    setAuthor(getRandom(poet).author);
-    setTitle(getRandom(poet).title);
+
+    const random = getRandom(poet);
+    setPoem(random.lines);
+    setAuthor(random.author);
+    setTitle(random.title);
     setSubmission(false);
   };
 
