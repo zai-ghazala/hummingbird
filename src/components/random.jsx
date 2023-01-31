@@ -10,33 +10,8 @@ import { rossetti } from "../assets/data/Rossetti.js";
 import { bronte } from "../assets/data/Bronte.js";
 import { dickinson } from "../assets/data/Dickinson.js";
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
-function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-}
-
 export const Random = () => {
-  const poemRef = useRef();
+  const startRef = useRef();
   const buttonsRef = useRef();
 
   const [isSticky, setIsSticky] = useState(false);  
@@ -49,10 +24,9 @@ export const Random = () => {
   const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
 
-  const { height, width } = useWindowDimensions();
 
   const scroll = () => (e) => {
-    poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    startRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const getPoem = (poet) => {
@@ -104,9 +78,6 @@ export const Random = () => {
   const handleClick = (poet) => (e) => {
     getPoem(poet);
 
-    if (height > width) {
-      poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
   };
 
   const handleDrag = (word) => {
@@ -143,9 +114,6 @@ export const Random = () => {
         .catch((error) => {
           console.error(error);
         })
-    }
-    if (height > width) {
-      poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -192,7 +160,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className="svg-button">
+      <div className="svg-button" ref={startRef}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>
@@ -213,7 +181,7 @@ export const Random = () => {
         </button>
       </div>
 
-      <div ref={poemRef} className="poem">
+      <div className="poem">
         {poem && <Poem poem={poem} handleDrag={handleDrag} />}
 
         {submission ? (
