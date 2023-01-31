@@ -76,7 +76,9 @@ body {
 	margin-bottom: 40vh;
 	line-height: 1.5em;
 	background-color: #FFF;
-	opacity: 0.9;
+	opacity: 0.8;
+	background-size: 20px 20px;
+	background-image:  repeating-linear-gradient(0deg, #d8daff, #d8daff 1px, #FFF 1px, #FFF);
 	font-size: 0.9em;
 }
 #container {
