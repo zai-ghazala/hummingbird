@@ -24,6 +24,7 @@ html {
 /* Page structure */
 * {
 	box-sizing: border-box;
+	transition: all 0.3s ease;
 }
 [hidden] {
 	display: none !important;
@@ -257,9 +258,6 @@ div.footer-buttons {
 	}
 }
 @media screen and (orientation: portrait) {
-	#buttons .buttons button {
-		transition: all 0.3s ease;
-	}
 	.shuffle {
 		margin-top: 7.5em;
 	}
