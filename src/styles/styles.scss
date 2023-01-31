@@ -155,17 +155,17 @@ div.buttons {
 		padding: 10px;
 		cursor: pointer;
 		outline: inherit;
-		color: var(--black);
-		border: 1px solid var(--black);
-		background: transparent;
+		color: var(--white);
+		border: 1px solid black;
+		background: var(--pink);
 		border-radius: 5px;
 		box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.2 );
 		span {
 			margin: 0.5em;
 			font-size: calc(23px + 1vh);
-			color: #000;
+			color: black;
 			&:hover {
-				color: #000;
+				color: black;
 			}
 		}
 	}
@@ -273,20 +273,19 @@ div.footer-buttons {
 	#buttons.stuck .buttons button {
 		padding: 2em 0 1em 0;
     border: none;
-    box-shadow: none;
-		border-radius: 0;
+    border-radius: 0;
     position: fixed;
 		z-index: 1;
 		margin: 0;
     height: fit-content;
-		background: var(--light-green);
-    border-bottom: 1px solid var(--pink);
+		background: var(--pink);
     top: -2.5vh;
+		box-shadow: 0 20px 20px -20px rgba( 31, 38, 135, 0.2 );
 		&:hover {
 			opacity: 1;
 		}
 	}	
-	#buttons.stuck .buttons button.author:nth-of-type(1) {
+	#buttons.stuck .buttons button:nth-of-type(1) {
 		width: 25vw;
 		left: 0vw
 	}
