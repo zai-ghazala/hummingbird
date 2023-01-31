@@ -121,7 +121,7 @@ export const Random = () => {
     <>
     <div id="buttons" ref={buttonsRef} className={isSticky < 1 ? null : 'stuck'}>
 
-    <div className="compose-message reload">refresh the current poem</div>
+    <div className="compose-message reload">randomise the current poem</div>
       <div className="buttons">
         <button
           type="button"
