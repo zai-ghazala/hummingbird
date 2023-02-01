@@ -336,9 +336,6 @@ div.footer-buttons {
 		border-bottom: 1px solid var(--accent);
 		width: 100%;
 		padding: 1em 0;
-		.buttons button {
-			transition: all 0.3s ease;
-		}
 	}	
 	#buttons.stuck .buttons button {
 		padding: 2em 0 1em 0;
