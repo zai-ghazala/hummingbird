@@ -10,18 +10,16 @@ export const ThemeToggle = () => {
         document
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", "darkPalette");
-      }
-    }
-    else {
+      } else {
         document
         .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", localStorage.getItem("theme"));
-        localStorage.setItem("theme", "defaultPalette");
+        .setAttribute("data-theme", "defaultPalette");
+      }
     }
   },[]);
 
   const nextTheme = () => {
-    const allThemes = ['darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette', 'plainPalette', 'defaultPalette']
+    const allThemes = ['darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette', 'Palette', 'defaultPalette']
 
     setCount(count + 1);
 
