@@ -148,53 +148,52 @@ export const Space = (props) => {
         </DropTarget>
 
         <div className='footer-buttons'>
-          <button
-            className={
+          <div id="send" className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
-            }
+            }>
+            <button
             type='button'
             onClick={send}
           >
-            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAdlJREFUaEPt17FKA0EQBuB/LomxEFH7xGCstbBQjIVGsPQFBEV8A7HxDQQLX0BQsPANtLAwhafWFhHkLiQXkBSCYCMa4soVJ+EImttZ3T25NAfhZplvZnaXI8T8RzHPH98C8sWS+B0g3VuddLler7S462sC+GmrQWgEqEFoAxBwJ4Ap/9lOZZYfHypPMuOkDYA2jSEjLgDMcMZJG8BzbcrnF0a5CK0Af2S4CO0ALsIIAAdhDEAWYRRABmEcICrCSEAUhDZA1FvXv7Ebrj0djosNwE/cv/wSQNTWq3w/6YDKasqslXQgqFqvSshUNIjp99tbWQdiD+BUmxOrrAOcJDixCYBTPRWxyjrA3cT9njphdAJQMQacNZR1gJMEJzb2gKHsc7Zarb53FyFWHzQAjj3X3mQDuKdQeIx+OJVeBKwNwscRgBEI7Ho1ey9YQ6oDfwjokMBqo2af5SbnV0jQGQBLCFpr1q5OfYQUgLMRo8QKwnbTsQ+CmPFiaUcA+wBeLUK57ti3BgPEieder4fBuYnSIRG2ALTSArOmAm4GaHjJcc7fwoBCYXGwk2pfEjAHoGoq4Cvv7v3Wa7MngCibUubdXh3o/i+WHUgAMqMgG5OMkGzlVMX9+w58An7WbSTd4q+fAAAAAElFTkSuQmCC' />
-          </button>
-          <button
-            className={
+            </button>
+          </div>
+          <div id="copy"  className={
               copySuccess || clearSuccess || composedPoem.length === 0
                 ? 'disabled'
                 : null
-            }
+            }>
+            <button 
             type='button'
             onClick={copy}
           >
-            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAA45JREFUaEPtmUtoE1EUhv+TNG3EilZ0I51UOlFq3Rl8ZVQUF+rKqrQ+QN0puPWN6EYUX2sXrgQfKD5oF6IrLZpELcaVBK2Z1k4SBR9Ebam2dubIVGPHkLSZ5k5KIdmFnHPm/87jzr03hEn+oUmuH+IBVq+ukLTBnUS0D8DCvwl6xeCLCanyKtrbh0QmTShAbe3yma4q1wMAi3OKJOrAINZrWigtCkIkgMvnX/EUzEtGE8fAs4QaVgAYIiCEAfhkZTeAywWJItqlxUNXCrIdwygvgE9WuLgH0D3Dre9lwyAXV1wiYEMx8TQ1nFOrYwA6DUmp+POkKXqOvEqqgK6VAXJkwLEKMHDfoKE9zFXkgX6JgfWTqgLFiM3lW/IZKANkZaBcAdEtYTdeuQJ2MybavlwB0Rm1G69cAbsZE21froDojNqNV66A3YzZsDdPfi8JaCOiJ6Tzh/5pU5Puz1/Y6/XO0on9BrA8oUZO5Yrp2HmgAABT+C2d6XiqK9RZgH3ui458jsWfiUeVpBqGsSPZ/bRjvMIzfhNRgZAHvEVVIx+LFW/6lxrg0ewZP9dFo9FfVvGNjY2VvQM1m1zgjQxaBEbt8O+EJIFfMlFrdWW6NRaLDWZDlxJA1T2/lqZed3yxiqirD25honMA6seoiEqMQz1d4btWu1IBsGEYy/7v+Wa3JKfOEmi/nVZi4EJCDR/O3OyVCuCmpoa3WYVKcvCCXfEj/nROU0MmRElmgHWmButS+bdtbufKfPYbN99qyHBtSqhPWktRgReaGv53W20ObN9ATQyAXAwAGN3V3nSD4wAEnOhRwyczYiVZ2UrAjXx9X2gF/qxS1OI4gItozbt4qD0juE4OXmfQdjEAuOY4gMHu+cmux28zgn1ysBOgeZnv+XaZBe4Q3jgO8KPKM+1TrL1vBEDpBVAtCKDPcYChHz+nvn8f7XcI4LvjAG6D53Z3R3pGZkB5w8B8IRUgvHYcgMBre9TIQ0eGmHHVcQAmHEvEw6f/tZBfaQHjpphViJuF/clX6H4mEAh4Pn31mi8yf1EvMqCruiq9oOQApui6emUzE+4UA8DETYl4pG1CAEzhkqycJ+BAoZX7z474rBaPHBl1MzeuwPacXD5ZOQPgoD234Z3o0TG30/aCjt9aklc2EYzz+WbCEjnOxAfMtrE+bcJayCpieLC/TWkCeCOAgPVICSAKcOvs6QNt2UdRM8Zv5Ma7rsqhTWQAAAAASUVORK5CYII=' />
           </button>
-          <button
-            className={
+          </div>
+          <div id="clear"  className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
-            }
+            }>
+            <button
             type='button'
             onClick={clear}
           >
-            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAfVJREFUaEPtWDtOw0AQnVESqCkoYyTwKSCFO0oagkQiEXELOmg5RiIlSFEouEEKQpcbQKQYKVegyGeQsU2M47XX38HSbrmetd9782ZmE4SSLyw5flAEuDOYaQY0vfEARPehpJAezfe3u6yIZ0ZACryLOkMSkQS0kzPKSq0k7zE/JqEYFYEkqsY5ozIQRy2O2Mga4AAV55uKQBy18oiVzkDR8yCq+/zORFlVFAFZpZw4lQG/YMpC/9xCa0C8BaBzIGiHYiUcEW6eEbAHADVRbJE1sEbCm/nsdQDQrGj6oiskQTgyteo1jMcrTT+9BMKBiERhBJCwbYN3lmFUtc9lHwCufOoOzXqtbYF394+OGy1CsmJ3VmEEgHB0ePDVmk6nyy0KXyY8yntj6vqihwQtXgLW18NIbHDftY0seCuuuAxsUe1YBAyj+vPYYxtrT2CxP4ngICDIhBdXsxJmG28kDwGhnawH8uC5LGQLGFiwNoHQFuurZJ4MCMG76ORJcBAocRGH9fkN7kXOCe5BFtnnZYYdVw2U/yoBsEaCznw26Ue2Sk8mnMvcEwDYw44rA853V0jYIaSLgEucH9sQCV8IqSsCzzsHguRMsMfRRhPAFB9RBPzaqB/1MQ2mLKQsFNMyuQ+ylHhyOy7993puCFK+WBFIKWDq498Mv3JAiO5SZwAAAABJRU5ErkJggg==' />
           </button>
-          <button
-            className={
+          </div>
+          <div id="backspace"   className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
-            }
+            }>
+            <button 
             type='button'
             onClick={backspace}
           >
-            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAQVJREFUaEPtmUEOwiAQRYeLuPEYXsyddOnB7CnUBRcZIzGGVGxafoFM81134L//oMboxPjHGc8vBOhtkAZoAGxgP0focDwpWEbT8fC4xfK/BgjQtH8RGmhc+M92NEADYAN1j5CqF+c8mHF2vB6Aqg/Pcaj9vVIH4BP+XZ09gCS8PYBJeFsAmfB2AP6EX/P2Kb0r+CXeIDxiCgdweg338bym7dyz/QzEXxM4RF+AGYjSYEuN4kco3SljwhZAxoQ9gAmETYAEwi5AhHCDqF6WXsiS57a9xCUJwBkCgAXC4zQAVwguQANggfD4/gzAlXRaYD//0HQqEN6WBuAKwQVoACwQHjdv4AXLieExWLb62QAAAABJRU5ErkJggg==' />
           </button>
-          <button
-            className={
-              clearSuccess || composedPoem.length === 0 ? 'disabled' : null
-            }
+          </div>
+          <div id="newLine" className={clearSuccess || composedPoem.length === 0 ? 'disabled' : null
+            }>
+            <button 
             type='button'
             onClick={newLine}
           >
-            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZhJREFUaEPtmbFKw0AYx/9fYsFBwcEiEQxugvgA0nboID6BPoGjg9BJJ+0oIvgiri5uYnwAHd1CSZ0EXQQpPQkkJRypl6t3idEva+5y3+/7/+4SCKHmF9W8fjBA1QlyAn82Ad9rC5Nw4TDItcWaQgwgxccJ6PrMCrFCus5I41khVsiyQvK5rlLu170HrAOoOvLDgMAASQenfsxxAgrHWCFWKE8Roj6EOFWeUIS3MAqW0nEby+3Fjwbev5un/R7Q3sRE/TC6Pys47zocBntpwWsrrS1y6Kk6gKT4uIACAK9j190eDO6eJwBeq0egy2oAMsUrAGJFbseue5ItHth3fS96BLBZPoBUvNL9nAG+1zkCxJVqrvk9YKL41c4OIG4g0KgZQHfO90aHIHFRpPgYznwC8VM1Umg2uwvzzuc6HOwS6EDlvJyIHYB4FSHOw5eH43TBAqeQypbc+/YAJIh6AmQg6guQ7IlCnxIzSGRXoRkK0p3CALodMz2eEzDdUd3n/b8EdDtU1Xhr/8jKAmKAsjo9bR1OoOoEvgBqixBAY6Q/lAAAAABJRU5ErkJggg==' />
           </button>
+          </div>
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ export const ThemeToggle = () => {
 
   const [count, setCount] = useState(0);
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'default');
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'defaultPalette');
 
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const ThemeToggle = () => {
   });
   
   const nextTheme = () => {
-    const allThemes = ['default', 'dark', 'accent']
+    const allThemes = ['defaultPalette', 'darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette']
 
     setCount(count + 1);
     setTheme(allThemes[count % allThemes.length]);
