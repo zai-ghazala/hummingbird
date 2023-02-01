@@ -78,7 +78,7 @@ html[data-theme=darkPalette] {
 	--icons: #fff;
 	--textColour: #fff; 
 	--spaceText: #fff;
-	--spaceBg: #000;
+	--spaceBg: rgba( 0, 0, 0, 0.85 );
 	--draggable: #1e193b;
 	--draggableText: #fff; 
 	--buttonText: #fff;
@@ -101,7 +101,7 @@ html[data-theme=plainPalette] {
 	--draggable: #fff;
 	--draggableText: #1e193b;
 	--buttonText: #1e193b; 
-	--accent: #FFF; 
+	--accent: rgba(255,255,255, 1); 
 	--bg-image: none;
 	--bg: #FFF;
 	--buttonPane: #FFF;
