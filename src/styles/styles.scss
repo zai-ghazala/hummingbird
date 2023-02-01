@@ -241,7 +241,6 @@ body {
   color: var(--spaceText);
   background: var(--spaceBg);
   box-shadow: var(--boxShadow);
-	border-left: var(--buttonBorder);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   div.enter {
@@ -393,6 +392,7 @@ div.footer-buttons {
   #space {
     height: calc(env(safe-area-inset-bottom) + 40vh);
     border-radius: 10px;
+		border-top: var(--buttonBorder);
   }
   #space div.enter.enter__send-request {
     height: 12.5vh;
@@ -458,18 +458,19 @@ input[type='text'] {
     height: 100vh;
     left: 25vw;
     padding-bottom: 15vh;
+		border-left: var(--buttonBorder);
   }
   #buttons {
     top: 0;
     width: 25vw;
     left: 0;
     height: 100vh;
+		border-right: var(--buttonBorder);
     position: fixed;
     flex-direction: column;
     display: flex;
     justify-content: center;
     box-shadow: var(--boxShadow);
-		border-right: var(--buttonBorder);
     div.buttons {
       display: flex;
       justify-content: center;
