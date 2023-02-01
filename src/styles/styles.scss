@@ -504,6 +504,7 @@ input[type='text'] {
 	#buttons.stuck .buttons button.submission {
     width: 15vw;
     left: 35vw;
+		border-right: var(--buttonBorder);
   }
   body {
     font-size: calc(1em - 0.25vw) !important;
