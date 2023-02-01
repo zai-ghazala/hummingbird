@@ -4,22 +4,32 @@ import useLocalStorage from 'use-local-storage'
 export const ThemeToggle = () => {
 
   const [count, setCount] = useState(0);
-  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'defaultPalette');
-
 
   useEffect(() => {
-      document
+    if (!localStorage.getItem("theme")) {
+        document
         .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", theme);
-  
-  });
-  
+        .setAttribute("data-theme", "defaultPalette");
+    }
+    else {
+        document
+        .getElementsByTagName("HTML")[0]
+        .setAttribute("data-theme", localStorage.getItem("theme"));
+        localStorage.setItem("theme", "defaultPalette");
+    }
+  },[]);
+
   const nextTheme = () => {
     const allThemes = ['defaultPalette', 'darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette']
 
     setCount(count + 1);
-    setTheme(allThemes[count % allThemes.length]);
+
+    const theme = allThemes[count % allThemes.length];
+
+    document
+        .getElementsByTagName("HTML")[0]
+        .setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
     }
 
 
