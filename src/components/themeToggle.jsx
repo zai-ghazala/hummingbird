@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useLocalStorage from 'use-local-storage'
 
 export const ThemeToggle = () => {
 
@@ -7,6 +6,11 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("theme")) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document
+        .getElementsByTagName("HTML")[0]
+        .setAttribute("data-theme", "darkPalette");
+      }
         document
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", "defaultPalette");
@@ -20,7 +24,7 @@ export const ThemeToggle = () => {
   },[]);
 
   const nextTheme = () => {
-    const allThemes = ['darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette', 'defaultPalette']
+    const allThemes = ['darkPalette', 'nudePalette', 'turquoisePalette', 'serenePalette', 'plainPalette', 'defaultPalette']
 
     setCount(count + 1);
 
