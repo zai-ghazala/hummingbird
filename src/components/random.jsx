@@ -50,20 +50,13 @@ export const Random = () => {
     const header = buttonsRef?.current 
     const observer = new IntersectionObserver(
       ([e]) => {
-        setIsSticky(e.intersectionRatio < 1)
-      },
-      {threshold:[1]}
+        setIsSticky(e.isIntersecting, {
+          rootMargin: '-100% 0px 0px 0px', 
+          threshold: 0})}
     )
-    
-    if(header) {
+    if (header) {
       observer.observe(header)
-    }
-    
-    // clean up the observer
-    return (() => {
-      observer.unobserve(header)
-    })
-    
+    }    
   }, [buttonsRef])
 
   const shuffle = () => (e) => {
@@ -121,7 +114,7 @@ export const Random = () => {
 
   return (
     <>
-    <div id="buttons" ref={buttonsRef} className={isSticky < 1 ? null : 'stuck'}>
+    <div id="buttons" ref={buttonsRef} className={isSticky ? null: 'stuck'}>
 
     <div className="compose-message reload">randomise the current poem</div>
       <div className="buttons">
