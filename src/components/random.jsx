@@ -155,7 +155,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className="svg-button shuffle" ref={startRef}>
+      <div className={isSticky ? 'svg-button shuffle': 'svg-button shuffle stuck'} ref={startRef}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>

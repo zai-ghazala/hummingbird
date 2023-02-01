@@ -393,9 +393,6 @@ div.footer-buttons {
     width: 30vw;
     left: 70vw;
   }
-  .shuffle {
-    margin-top: 7.5em;
-  }
   #buttons {
     width: 100%;
     padding: 1em 0;
@@ -608,4 +605,7 @@ div.save {
 }
 #buttons.stuck .buttons button {
 	min-height: 7em;
+}
+.svg-button.shuffle.stuck {
+	margin-top: 7.5em;
 }
