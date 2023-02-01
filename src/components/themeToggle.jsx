@@ -23,7 +23,7 @@ export const ThemeToggle = () => {
   },[]);
 
   const nextTheme = () => {
-    const allThemes = ['darkPalette', 'nudePalette', 'tealPalette', 'glassPalette', 'plainPalette', 'contrastPalette',  'defaultPalette']
+    const allThemes = ['darkPalette', 'nudePalette', 'tealPalette', 'glassPalette', 'plainPalette', 'contrastPalette', 'tiedyePalette', 'defaultPalette']
 
     setCount(count + 1);
 
