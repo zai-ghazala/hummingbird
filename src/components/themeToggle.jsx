@@ -16,6 +16,9 @@ export const ThemeToggle = () => {
         .setAttribute("data-theme", "defaultPalette");
       }
     }
+    document
+    .getElementsByTagName("HTML")[0]
+    .setAttribute("data-theme", localStorage.getItem("theme"));
   },[]);
 
   const nextTheme = () => {
