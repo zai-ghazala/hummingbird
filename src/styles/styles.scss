@@ -208,6 +208,7 @@ body {
   top: 0;
   left: 0;
   background: var(--bg);
+  overflow-x: hidden;
 }
 #space {
   position: fixed;
@@ -216,7 +217,7 @@ body {
   left: 0;
   padding: 1em;
   height: 40vh;
-	z-index: 2;
+  z-index: 2;
   color: var(--spaceText);
   background: var(--spaceBg);
   box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.37);
@@ -237,7 +238,7 @@ span.word {
   border-color: #000 var(--textColour) var(--textColour) #000;
   box-shadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
   padding: 2.5px 5px;
-  margin: 3px;
+  margin: 0.5vw;
   background: var(--draggable);
   display: inline-block;
   color: var(--draggableText);
@@ -391,12 +392,10 @@ div.save {
   text-align: center;
   input {
     font-family: inherit;
-    font-size: 1em;
     font-weight: inherit;
     color: var(--draggableText);
   }
   button {
-    font-size: 1em;
     margin-left: 0.5em;
     color: var(--buttonText);
     padding: 10px;
@@ -441,7 +440,7 @@ input[type='text'] {
 }
 @media screen and (min-width: 1200px) and (orientation: landscape) {
   body {
-    font-size: 1.25em;
+    font-size: calc(1em + 0.25vw);
   }
   img.bird {
     width: 15vw;
@@ -495,12 +494,12 @@ input[type='text'] {
     width: 10vw;
     left: 25vw;
   }
-  #buttons.stuck .buttons button.submission {
+	#buttons.stuck .buttons button.submission {
     width: 15vw;
     left: 35vw;
   }
   body {
-    font-size: 1em !important;
+    font-size: calc(1em - 0.25vw) !important;
   }
   #buttons {
     width: 50vw;
@@ -565,7 +564,6 @@ button.random.theme {
     position: fixed;
     z-index: 1;
     margin: 0;
-    height: fit-content;
     background: var(--accent);
     top: -2.5vh;
     box-shadow: 0 20px 20px -20px rgba(31, 38, 135, 0.2);
