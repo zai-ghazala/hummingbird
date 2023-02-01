@@ -458,6 +458,7 @@ input[type='text'] {
     height: 100vh;
     left: 25vw;
     padding-bottom: 15vh;
+		border-right: var(--buttonBorder);
 		border-left: var(--buttonBorder);
   }
   #buttons {
@@ -465,7 +466,6 @@ input[type='text'] {
     width: 25vw;
     left: 0;
     height: 100vh;
-		border-right: var(--buttonBorder);
     position: fixed;
     flex-direction: column;
     display: flex;
@@ -512,6 +512,9 @@ input[type='text'] {
     width: 50vw;
     padding: 1em 0;
   }
+	#container {
+		border-right: var(--buttonBorder);
+	}
 }
 div.buttons button,
 button.random.theme {
