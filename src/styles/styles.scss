@@ -377,9 +377,7 @@ div.footer-buttons {
 		border-top: 1px solid var(--accent);
 	}
 	#space div.enter.enter__send-request {
-		margin-top: 6rem;
     height: 12.5vh;
-		transition: all 0.3s ease;
 	}
 	#container {
 		padding-bottom: 50vh;
@@ -556,4 +554,8 @@ button.random.theme {
 .footer-buttons button {
 	width: 48px;
 	height: 48px;
+}
+#space div.enter.enter__send-request {
+	margin-top: 7.5em;
+	transition: 0.3s ease;
 }
