@@ -11,9 +11,6 @@ export const ThemeToggle = () => {
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", "darkPalette");
       }
-        document
-        .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", "defaultPalette");
     }
     else {
         document
