@@ -438,7 +438,7 @@ input[type='text'] {
   display: block;
   margin: 0 auto;
 }
-.svg-button {
+.svgButton {
   height: 7.5em;
 }
 .bendy {
@@ -447,7 +447,7 @@ input[type='text'] {
   stroke-width: 34;
   stroke-linecap: round;
 }
-.svg-button text {
+.svgButton text {
   transform: translateY(5px);
   fill: var(--buttonText);
 }
@@ -606,6 +606,14 @@ div.save {
 #buttons.stuck .buttons button {
 	min-height: 7em;
 }
-.svg-button.shuffle.stuck {
+.svgButton.shuffle.stuck {
 	margin-top: 7.5em;
+}
+.likeCount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.likeCount div {
+  margin-right: -0.5em
 }

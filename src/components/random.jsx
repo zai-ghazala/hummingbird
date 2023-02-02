@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../utils/firebase";
 import { useIsOnline } from 'react-use-is-online';
-import { ref, get } from "firebase/database";
+import { ref, get, set, increment } from "firebase/database";
 
 import { Poem } from "./poem";
 import { Space } from "./space";
@@ -10,13 +10,18 @@ import { rossetti } from "../assets/data/Rossetti.js";
 import { bronte } from "../assets/data/Bronte.js";
 import { dickinson } from "../assets/data/Dickinson.js";
 
+import Heart from "react-animated-heart";
+
 export const Random = () => {
   const startRef = useRef();
   const buttonsRef = useRef();
 
-  const [isSticky, setIsSticky] = useState(false);  
+  const [isSticky, setIsSticky] = useState();  
   const { isOnline, isOffline, error } = useIsOnline();
-
+  
+  const [isClick, setClick] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
   const [submission, setSubmission] = useState(false);
@@ -59,6 +64,7 @@ export const Random = () => {
     }    
   }, [buttonsRef])
 
+
   const shuffle = () => (e) => {
     const newPoem = poem.map((line) => " " + line + " ");
     const shuffled = newPoem
@@ -80,18 +86,17 @@ export const Random = () => {
   };
 
   const random = () => {
+  
     function getRandomProperty(obj) {
       const keys = Object.keys(obj);
 
       return keys[Math.floor(Math.random() * keys.length)];
     }
 
-    const firebaseRef = ref(db, "poems");
-
     {isOffline ?
-      poemRef.current.innerHTML = 'Go online first :)'
+      startRef.current.innerHTML = 'Go online first :)'
     :
-      get(firebaseRef)
+      get(ref(db, "poems/"))
         .then((snapshot) => {
           if (snapshot.exists()) {
             let poems = [];
@@ -100,18 +105,53 @@ export const Random = () => {
 
             setPoem(random["poem"].split("\n"));
             setAuthor(random["name"]);
-            setTimestamp(new Date(random["timestamp"]).toLocaleDateString());
+            setTimestamp(new Date(random["timestamp"]));
             setSubmission(true);
-          } else {
-            console.log("No data available");
           }
         })
-        .catch((error) => {
-          console.error(error);
-        })
-    }
+  
+    get(ref(db, `likes/${author}-${timestamp}/`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        setLikeCount(snapshot.val().likeCount);
+      }
+  })
   };
 
+  };
+
+
+  // anonymous like functions
+  useEffect(() => {
+    if (localStorage.hasOwnProperty(`${author}-${timestamp}`)) {
+        setClick(false)
+
+        }
+      else {
+        setClick(true)
+      }
+  }, [author, timestamp])
+  const like = () => e => {  
+      set(ref(db, `likes/${author}-${timestamp}/`), {
+        likeCount: increment(+1),
+      });
+      setLikeCount(likeCount + 1);
+      setClick(false)
+    localStorage.setItem(`${author}-${timestamp}`, '1')
+
+  }
+    const unlike = () => e => {
+      if (likeCount > 0 ) {
+      set(ref(db, `likes/${author}-${timestamp}/`), {
+        likeCount: increment(-1),
+      });
+      setLikeCount(likeCount - 1);
+      }
+    localStorage.removeItem(`${author}-${timestamp}`)
+    setClick(true);
+  
+}
+    
   return (
     <>
     <div id="buttons" ref={buttonsRef} className={isSticky ? null: 'stuck'}>
@@ -155,7 +195,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className={isSticky ? 'svg-button shuffle': 'svg-button shuffle stuck'} ref={startRef}>
+      <div className={isSticky ? 'svgButton shuffle': 'svg-button shuffle stuck'} ref={startRef}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>
@@ -181,7 +221,7 @@ export const Random = () => {
 
         {submission ? (
           <div className="poem-data">
-            — by {author} on {timestamp}
+            — by {author} on {timestamp.toLocaleDateString()}<br/>  <div className="likeCount"><Heart isClick={!isClick} onClick={isClick ? like() : unlike()} /> {likeCount === undefined ? '0 likes' : `${likeCount} likes`}</div>
           </div>
         ) : title && author ? (
           <div className="poem-data">
@@ -189,7 +229,7 @@ export const Random = () => {
           </div>
         ) : null}
 
-        <div className="svg-button">
+        <div className="svgButton">
           <button type="button" onClick={scroll()} className="shuffle">
             <svg width="100%" height="100%">
               <defs>
