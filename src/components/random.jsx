@@ -13,7 +13,7 @@ import { dickinson } from "../assets/data/Dickinson.js";
 import Heart from "../components/heart";
 
 export const Random = () => {
-  const startRef = useRef();
+  const poemRef = useRef();
   const buttonsRef = useRef();
 
   const [isSticky, setIsSticky] = useState(false);  
@@ -35,7 +35,7 @@ export const Random = () => {
 
 
   const scroll = () => (e) => {
-    startRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const getPoem = (poet) => {
@@ -128,7 +128,7 @@ export const Random = () => {
     }
 
     {isOffline ?
-      startRef.current.innerHTML = 'Go online first :)'
+      poemRef.current.innerHTML = 'Go online first :)'
     :
       get(ref(db, "poems/"))
         .then((snapshot) => {
@@ -141,6 +141,7 @@ export const Random = () => {
             setAuthor(random["name"]);
             setTimestamp(new Date(random["timestamp"]));
             setSubmission(true);
+            setShuffled(false);
           } else {
             console.log("No data available");
           }
@@ -217,7 +218,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'} ref={startRef}>
+      <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>
@@ -238,7 +239,7 @@ export const Random = () => {
         </button>
       </div>
 
-      <div className="poem">
+      <div className="poem" ref={poemRef}>
         {poem && <Poem poem={isShuffled ? shuffledPoem : poem} handleDrag={handleDrag} />}
 
         {submission ? (
