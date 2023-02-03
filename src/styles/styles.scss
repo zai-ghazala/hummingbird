@@ -4,7 +4,7 @@ html[data-theme='defaultPalette'] {
   --spaceText: #555;
   --draggable: #fff;
   --spaceBg: rgba(255, 255, 255, 0.5);
-  --draggableText: #555; /* words */
+  --draggableText: #555; 
   --buttonText: #fff;
   --accent: #f442af;
   --messageColour: #f442af;
@@ -139,14 +139,14 @@ html[data-theme='contrastPalette'] {
 }
 html[data-theme='tiedyePalette'] {
   --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
-  --textColour: #33503f;
-  --spaceText: #33503f;
+  --textColour: #4e7c66;
+  --spaceText: #4e7c66;
   --draggable: #fff;
   --spaceBg: rgba(249, 222, 255, 0.85);
-  --draggableText: #33503f; /* words */
+  --draggableText: #4e7c66; 
   --buttonText: #fff;
-  --accent: #33503f;
-  --messageColour: #345140;
+  --accent: #4e7c66;
+  --messageColour: #4e7c66;
   --bg: linear-gradient(#ffd1d1, #fbffde, #fbffde, #e0fffd, #e0fffd, #f9deff);
   --buttonPane: transparent;
   --send: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAddJREFUaEPt179Lw0AUB/Dvq5WKU/UP0cFBVys4OlpQ8AdOLtJqWnDLpjTYBlwFBYfSZK+Dg6PODvovdBAERaXScpKhpYSizb3TS+S6FEre8T7vvbtrCAn/UMLzx7eAVacgfgn4KMR4zi87Le76ugBB3koQOgFKENoAArgnYCb4TtPYUt06eZIZJ22AdKc93UlnrgHMccZJG8ArubR2tDvFRWgFBCPDRWgHcBGxAHAQsQHIImIFkEHEDhAVEUtAFIQ2QNRbN7ix/ZI7G45LDCBIPLj8DCBq61U+bzqgspoya5kO9Ko2rBIyFe3FjPrurawDiQdwqs2JVdYBThKcWAPgVE9FrLIOcDfxqKdOGG0AKsaAs4ayDnCS4MQmHiDeshnftj8Hi5CoFxoiXDQsd5sN4J5C4TH64VR6AWETAucAskLQoV+uHffWkOrAHwK6EKkVr1xt5ivFZUGiCSAFwrpnufUAIQXgbMRIsUT7nlWr9f+1VgoWCA6AD0qlco2D6l1sAQRcNkruRhicd4pnAmIHEC3RFfNxBdy+ZrqLV3un7TBgy7Yn3iefb0C0ANBDXAH9vAf327DNbgCRNqXEw8M6MPhbIjtgABKTIB1iRki6dIoC/30HvgAazYJwQlWkvQAAAABJRU5ErkJggg==');
