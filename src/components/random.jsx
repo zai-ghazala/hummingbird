@@ -92,12 +92,10 @@ export const Random = () => {
       return keys[Math.floor(Math.random() * keys.length)];
     }
 
-    const firebaseRef = ref(db, "poems");
-
     {isOffline ?
-      poemRef.current.innerHTML = 'Go online first :)'
+      startRef.current.innerHTML = 'Go online first :)'
     :
-      get(firebaseRef)
+      get(ref(db, "poems/"))
         .then((snapshot) => {
           if (snapshot.exists()) {
             let poems = [];
@@ -115,7 +113,8 @@ export const Random = () => {
         .catch((error) => {
           console.error(error);
         })
-    }
+      }
+
   };
 
   // anonymous like functions
@@ -127,6 +126,18 @@ export const Random = () => {
       else {
         setFill(false)
       }
+      get(ref(db, `likes/${author}-${timestamp}/`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setLikeCount(snapshot.val().likeCount)
+          console.log(snapshot.val().likeCount)
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      })
   }, [author, timestamp])
 
   const like = () => e => {  
