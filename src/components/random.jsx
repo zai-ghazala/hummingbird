@@ -128,7 +128,7 @@ export const Random = () => {
     }
 
     {isOffline ?
-      poemRef.current.innerHTML = 'Go online first :)'
+      poemRef.current.innerHTML = '<br/><br/><br/>Go online first :)<br/><br/><br/>'
     :
       get(ref(db, "poems/"))
         .then((snapshot) => {
@@ -218,6 +218,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
+<div ref={poemRef}>
       <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
@@ -239,7 +240,7 @@ export const Random = () => {
         </button>
       </div>
 
-      <div className="poem" ref={poemRef}>
+      <div className="poem">
         {poem && <Poem poem={isShuffled ? shuffledPoem : poem} handleDrag={handleDrag} />}
 
         {submission ? (
@@ -271,6 +272,7 @@ export const Random = () => {
               </text>
             </svg>
           </button>
+          </div>
         </div>
       </div>
       <Space currentWord={currentWord} />
