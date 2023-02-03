@@ -49,6 +49,29 @@ export const Random = () => {
   };
 
   useEffect(() => {
+    if (localStorage.hasOwnProperty(`${author}-${timestamp}`)) {
+      setFill(true)
+      setClick(false)
+      }
+    else {
+      setFill(false)
+      setClick(false)
+    }
+    get(ref(db, `likes/${author}-${timestamp}/`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        setLikeCount(snapshot.val().likeCount)
+      } else {
+        setLikeCount(0)
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+  }, [author, timestamp]);
+
+  
+  useEffect(() => {
     getPoem(dickinson);
   }, []);
 
@@ -85,6 +108,7 @@ export const Random = () => {
     setCurrentWord(word);
   };
 
+
   const random = () => {
     function getRandomProperty(obj) {
       const keys = Object.keys(obj);
@@ -113,32 +137,9 @@ export const Random = () => {
         .catch((error) => {
           console.error(error);
         })
-      }
-
+    }
   };
 
-  // anonymous like functions
-  useEffect(() => {
-    if (localStorage.hasOwnProperty(`${author}-${timestamp}`)) {
-        setFill(true)
-
-        }
-      else {
-        setFill(false)
-      }
-      get(ref(db, `likes/${author}-${timestamp}/`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          setLikeCount(snapshot.val().likeCount)
-          console.log(snapshot.val().likeCount)
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-  }, [author, timestamp])
 
   const like = () => e => {  
       set(ref(db, `likes/${author}-${timestamp}/`), {
