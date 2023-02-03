@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../utils/firebase";
 import { useIsOnline } from 'react-use-is-online';
-import { ref, get } from "firebase/database";
+import { ref, get, set, increment } from "firebase/database";
 
 import { Poem } from "./poem";
 import { Space } from "./space";
@@ -10,13 +10,19 @@ import { rossetti } from "../assets/data/Rossetti.js";
 import { bronte } from "../assets/data/Bronte.js";
 import { dickinson } from "../assets/data/Dickinson.js";
 
+import Heart from "../components/heart";
+
 export const Random = () => {
   const startRef = useRef();
   const buttonsRef = useRef();
 
   const [isSticky, setIsSticky] = useState(false);  
   const { isOnline, isOffline, error } = useIsOnline();
-
+  
+  const [isClick, setClick] = useState(false);
+  const [isFill, setFill] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  
   const [poem, setPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
   const [submission, setSubmission] = useState(false);
@@ -100,7 +106,7 @@ export const Random = () => {
 
             setPoem(random["poem"].split("\n"));
             setAuthor(random["name"]);
-            setTimestamp(new Date(random["timestamp"]).toLocaleDateString());
+            setTimestamp(new Date(random["timestamp"]));
             setSubmission(true);
           } else {
             console.log("No data available");
@@ -112,11 +118,44 @@ export const Random = () => {
     }
   };
 
+  // anonymous like functions
+  useEffect(() => {
+    if (localStorage.hasOwnProperty(`${author}-${timestamp}`)) {
+        setFill(true)
+
+        }
+      else {
+        setFill(false)
+      }
+  }, [author, timestamp])
+
+  const like = () => e => {  
+      set(ref(db, `likes/${author}-${timestamp}/`), {
+        likeCount: increment(+1),
+      });
+      setLikeCount(likeCount + 1);
+      setClick(true)
+    localStorage.setItem(`${author}-${timestamp}`, '1')
+
+  }
+    const unlike = () => e => {
+      if (likeCount > 0 ) {
+      set(ref(db, `likes/${author}-${timestamp}/`), {
+        likeCount: increment(-1),
+      });
+      setLikeCount(likeCount - 1);
+      }
+    localStorage.removeItem(`${author}-${timestamp}`)
+    setClick(false);
+    setFill(false)
+  
+}
+    
   return (
     <>
     <div id="buttons" ref={buttonsRef} className={isSticky ? null: 'stuck'}>
 
-    <div className="compose-message reload">randomise the current poem</div>
+    <div className="composeMessage randomiseMessage">randomise the current poem</div>
       <div className="buttons">
         <button
           type="button"
@@ -155,7 +194,7 @@ export const Random = () => {
         </button>
       </div>
 </div>
-      <div className={isSticky ? 'svg-button shuffle': 'svg-button shuffle stuck'} ref={startRef}>
+      <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'} ref={startRef}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
             <defs>
@@ -181,7 +220,7 @@ export const Random = () => {
 
         {submission ? (
           <div className="poem-data">
-            — by {author} on {timestamp}
+            — by {author} on {timestamp.toLocaleDateString()}<br/>  <div className="likeCount"><Heart isFill={isFill} isClick={isClick} onClick={isClick ? unlike() : !isFill ? like() : unlike() } /> {likeCount === undefined ? null : likeCount}</div>
           </div>
         ) : title && author ? (
           <div className="poem-data">
@@ -189,7 +228,7 @@ export const Random = () => {
           </div>
         ) : null}
 
-        <div className="svg-button">
+        <div className="svgButton">
           <button type="button" onClick={scroll()} className="shuffle">
             <svg width="100%" height="100%">
               <defs>

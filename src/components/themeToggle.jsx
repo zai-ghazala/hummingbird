@@ -44,7 +44,7 @@ export const ThemeToggle = () => {
     >
       <span>⟳</span>
       <br />
-      random theme!
+      random palette
     </button>
   );
 }

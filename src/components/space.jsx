@@ -117,7 +117,7 @@ export const Space = (props) => {
   return (
     <>
       <div id="space">
-        <div className='compose-message'>{message ? message : null}</div>
+        <div className='composeMessage'>{message ? message : null}</div>
 
         {sendRequest && composedPoem.length != 0 && (
           <div className='save'>
@@ -140,14 +140,14 @@ export const Space = (props) => {
           onHit={() => handleDrop(props.currentWord)}
         >
 
-          <div className={sendRequest ? 'enter__send-request enter' : 'enter'}>
+          <div className={sendRequest ? 'sendRequest enter' : 'enter'}>
             {composedPoem.map((word, i) => {
               return <span key={word + i}>{word} </span>;
             })}
           </div>
         </DropTarget>
 
-        <div className='footer-buttons'>
+        <div className='footerButtons'>
           <div id="send" className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
             }>
