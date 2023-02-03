@@ -24,11 +24,14 @@ export const Random = () => {
   const [likeCount, setLikeCount] = useState(0);
   
   const [poem, setPoem] = useState([]);
+  const [shuffledPoem, setShuffledPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
   const [submission, setSubmission] = useState(false);
   const [author, setAuthor] = useState("");
   const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
+
+  const [isShuffled, setShuffled] = useState(false);
 
 
   const scroll = () => (e) => {
@@ -88,7 +91,9 @@ export const Random = () => {
     }    
   }, [buttonsRef])
 
-  const shuffle = () => (e) => {
+  const shuffle = () => e => {
+
+    if (!isShuffled) {
     const newPoem = poem.map((line) => " " + line + " ");
     const shuffled = newPoem
       .join("")
@@ -96,7 +101,13 @@ export const Random = () => {
       .split(" ")
       .sort(() => Math.floor(Math.random() * Math.floor(3)) - 1)
       .join(" ");
-    setPoem([shuffled]);
+    setShuffledPoem([shuffled]);
+    setShuffled(true)
+    }
+    else {
+      setShuffledPoem(poem);
+      setShuffled(false)
+    }
   };
 
   const handleClick = (poet) => (e) => {
@@ -220,7 +231,7 @@ export const Random = () => {
                 startOffset="50%"
                 textAnchor="middle"
               >
-                shuffle words!
+                {isShuffled ? 'reset' : 'shuffle words!'}
               </textPath>
             </text>
           </svg>
@@ -228,7 +239,7 @@ export const Random = () => {
       </div>
 
       <div className="poem">
-        {poem && <Poem poem={poem} handleDrag={handleDrag} />}
+        {poem && <Poem poem={isShuffled ? shuffledPoem : poem} handleDrag={handleDrag} />}
 
         {submission ? (
           <div className="poem-data">
