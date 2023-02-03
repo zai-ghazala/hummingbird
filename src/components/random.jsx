@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { db } from "../utils/firebase";
-import { useIsOnline } from 'react-use-is-online';
 import { ref, get, set, increment } from "firebase/database";
 
 import { Poem } from "./poem";
@@ -17,7 +16,6 @@ export const Random = () => {
   const buttonsRef = useRef();
 
   const [isSticky, setIsSticky] = useState(false);  
-  const { isOnline, isOffline, error } = useIsOnline();
   
   const [isClick, setClick] = useState(false);
   const [isFill, setFill] = useState(false);
@@ -126,10 +124,6 @@ export const Random = () => {
 
       return keys[Math.floor(Math.random() * keys.length)];
     }
-
-    {isOffline ?
-      poemRef.current.innerHTML = '<br/><br/><br/>Go online first :)<br/><br/><br/>'
-    :
       get(ref(db, "poems/"))
         .then((snapshot) => {
           if (snapshot.exists()) {
@@ -148,8 +142,8 @@ export const Random = () => {
         })
         .catch((error) => {
           console.error(error);
-        })
-    }
+        }
+        )
   };
 
 
