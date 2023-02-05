@@ -209,9 +209,6 @@ body {
   color: var(--textColour);
   font-size: 0.9em;
 }
-#buttons {
-  background: var(--buttonPane);
-}
 #container {
   color: var(--textColour);
   display: flex;
@@ -238,7 +235,7 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   div.enter {
-    height: 22.5vh;
+    height: 18vh;
     width: 90%;
     line-height: 1.25em;
     position: absolute;
@@ -382,7 +379,7 @@ div.footerButtons {
     width: 100vw;
   }
   #space {
-    height: calc(env(safe-area-inset-bottom) + 40vh);
+    height: calc(env(safe-area-inset-bottom) + 35vh);
     border-radius: 10px;
     border-top: var(--buttonBorder);
   }
@@ -436,6 +433,9 @@ input[type='text'] {
   margin: unset;
 }
 @media screen and (min-width: 1200px) and (orientation: landscape) {
+  #buttons {
+    background: var(--buttonPane);
+  }
   body {
     font-size: calc(1em + 0.25vw);
   }
