@@ -13,7 +13,7 @@ export const ThemeToggle = () => {
       } else {
         document
         .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", "defaultPalette");
+        .setAttribute("data-theme", "peachyPalette");
       }
     }
     else { document
@@ -23,7 +23,7 @@ export const ThemeToggle = () => {
   },[]);
 
   const nextTheme = () => {
-    const allThemes = ['darkPalette', 'nudePalette', 'tealPalette', 'plainPalette', 'contrastPalette', 'tiedyePalette', 'defaultPalette']
+    const allThemes = ['lilacPalette', 'beachyPalette', 'parrotPalette', 'plainPalette', 'contrastPalette', 'peachyPalette', 'northernLightsPalette', 'yellowPalette']
 
     setCount(count + 1);
 
