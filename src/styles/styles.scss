@@ -291,13 +291,13 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   div.enter {
-    height: 14vh;
+    height: 18vh;
     width: 90%;
     line-height: 1.25em;
     position: absolute;
     overflow-y: auto;
     top: 0;
-    margin-top: 8vh;
+    margin-top: 6vh;
   }
 }
 span.word {
