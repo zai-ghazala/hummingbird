@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DropTarget } from 'react-drag-drop-container';
 import { ref, push, serverTimestamp } from 'firebase/database';
 import { db } from '../utils/firebase';
@@ -17,6 +17,12 @@ export const Space = (props) => {
 
   const [username, setUsername] = useState('');
   const [updated, setUpdated] = useState(username);
+  const scrollRef = useRef();
+
+
+  useEffect(() => {
+    scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [composedPoem]);
 
   const handleDrop = (currentWord) => {
     setComposedPoem([...composedPoem, currentWord]);
@@ -140,7 +146,7 @@ export const Space = (props) => {
           onHit={() => handleDrop(props.currentWord)}
         >
 
-          <div className={sendRequest ? 'sendRequest enter' : 'enter'}>
+          <div ref={scrollRef} className={sendRequest ? 'sendRequest enter' : 'enter'}>
             {composedPoem.map((word, i) => {
               return <span key={word + i}>{word} </span>;
             })}
