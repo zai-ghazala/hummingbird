@@ -47,6 +47,8 @@ html[data-theme='beachyPalette'] {
   --spaceBg: rgba(255, 255, 255, 0.5);
   --draggableText: #111; 
   --buttonText: #fff;
+  --bendyFill: var(--accent);
+  --bendyText: var(--buttonText);
   --accent: #0d9787;
   --messageColour: #0d9787;
   --bg: #fceed1;
