@@ -109,7 +109,7 @@ html[data-theme='contrastPalette'] {
 html[data-theme='darkPalette'] {
   --textColour: #fff;
   --spaceText: #fff;
-  --spaceBg: rgba(0, 0, 0, 1);
+  --spaceBg: rgba(0, 0, 0, 0.5);
   --draggable: #555;
   --draggableText: #fff;
   --buttonText: #fff;
