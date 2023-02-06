@@ -72,6 +72,7 @@ export const Space = (props) => {
           <br />
         </>,
       ]);
+      setSendRequest(false);
       setNewLineSuccess(true);
       setMessage('new line');
     }
@@ -81,6 +82,7 @@ export const Space = (props) => {
     if (composedPoem.length != 0) {
       const temp = [...composedPoem];
       temp.pop();
+      setSendRequest(false);
       setComposedPoem(temp);
       setBackspaceSuccess(true);
       setMessage('backspace');
