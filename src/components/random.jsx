@@ -47,6 +47,7 @@ export const Random = () => {
     setAuthor(random.author);
     setTitle(random.title);
     setSubmission(false);
+    setShuffled(false)
   };
 
   useEffect(() => {
