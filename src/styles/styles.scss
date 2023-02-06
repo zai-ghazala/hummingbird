@@ -100,6 +100,7 @@ html[data-theme='northernLightsPalette'] {
   --newLine: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAWhJREFUaEPtmTFOw0AQRd8I6EDiCKkRB+AAiBNwA0oKpFSkgpQIIXERWhpuEUrugAQXGLRREjmLw+6Cx4th3Hp297/5f9eWLQz8koHrxwFqO+gO/FkHVFW7hBOR1rSYRcgBIvvcgdI8e4Q8QqWZieo9Qh4h4wjF53oqcr/uOWAOkOrIDw3CARYd3Pgy5w4kMuYR8gi1R2QKXGWcUG8isr+sU9U94P2rccXPgW9s4qmIXGeOexCR0wbAIfBcE2AuPgjIAHgFjkTkpQEwBu5qAazEJwBCRJ6ASSR+C5gBBzUA1sRnZP9TiapeAPepsRZ7oAvxx8AjsDMoAFXdBs6B2xzxAc7CgTBvtguquguMgBPgLJX52BErgLDOjYhcNk6UTr/ILee1BFiDyDhGU3FvvW8NsIIYMsB8T2S+ShS70IcDxaJKBjhASbcsat0Bi66WzPn/HCjpTs1as39kfUE5QF+d3rSOO1DbgQ/tC/sxzBDGlQAAAABJRU5ErkJggg==');
 }
 html[data-theme='contrastPalette'] {
+  --boxShadow: 0 2px 4px 0 rgba(0,0,0,1);
   --textColour: #fff;
   --spaceText: #fff;
   --buttonBorder: 1px solid #fff;
@@ -137,6 +138,7 @@ html[data-theme='darkPalette'] {
   --newLine: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAWhJREFUaEPtmTFOw0AQRd8I6EDiCKkRB+AAiBNwA0oKpFSkgpQIIXERWhpuEUrugAQXGLRREjmLw+6Cx4th3Hp297/5f9eWLQz8koHrxwFqO+gO/FkHVFW7hBOR1rSYRcgBIvvcgdI8e4Q8QqWZieo9Qh4h4wjF53oqcr/uOWAOkOrIDw3CARYd3Pgy5w4kMuYR8gi1R2QKXGWcUG8isr+sU9U94P2rccXPgW9s4qmIXGeOexCR0wbAIfBcE2AuPgjIAHgFjkTkpQEwBu5qAazEJwBCRJ6ASSR+C5gBBzUA1sRnZP9TiapeAPepsRZ7oAvxx8AjsDMoAFXdBs6B2xzxAc7CgTBvtguquguMgBPgLJX52BErgLDOjYhcNk6UTr/ILee1BFiDyDhGU3FvvW8NsIIYMsB8T2S+ShS70IcDxaJKBjhASbcsat0Bi66WzPn/HCjpTs1as39kfUE5QF+d3rSOO1DbgQ/tC/sxzBDGlQAAAABJRU5ErkJggg==');
 }
 html[data-theme='plainPalette'] {
+  --boxShadow: 0 2px 4px 0 rgba(255, 255, 255, 1);
   --textColour: #111;
   --spaceText: #111;
   --buttonBorder: 1px solid #111;
@@ -469,7 +471,7 @@ input[type='text'] {
   padding: 6px;
 }
 .shuffle {
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.5px;
   display: block;
   margin: 0 auto;
