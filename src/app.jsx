@@ -15,6 +15,7 @@ import { registerSW } from 'virtual:pwa-register'
  */
 
 // Import and apply CSS stylesheet
+import "./styles/normalize.css";
 import "./styles/styles.scss";
 
 // Where all of our pages come from
