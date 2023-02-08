@@ -240,13 +240,10 @@ html[data-theme='electricPalette'] {
   --newLine: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZhJREFUaEPtmbFKw0AYx/9fYsFBwcEiEQxugvgA0nboID6BPoGjg9BJJ+0oIvgiri5uYnwAHd1CSZ0EXQQpPQkkJRypl6t3idEva+5y3+/7/+4SCKHmF9W8fjBA1QlyAn82Ad9rC5Nw4TDItcWaQgwgxccJ6PrMCrFCus5I41khVsiyQvK5rlLu170HrAOoOvLDgMAASQenfsxxAgrHWCFWKE8Roj6EOFWeUIS3MAqW0nEby+3Fjwbev5un/R7Q3sRE/TC6Pys47zocBntpwWsrrS1y6Kk6gKT4uIACAK9j190eDO6eJwBeq0egy2oAMsUrAGJFbseue5ItHth3fS96BLBZPoBUvNL9nAG+1zkCxJVqrvk9YKL41c4OIG4g0KgZQHfO90aHIHFRpPgYznwC8VM1Umg2uwvzzuc6HOwS6EDlvJyIHYB4FSHOw5eH43TBAqeQypbc+/YAJIh6AmQg6guQ7IlCnxIzSGRXoRkK0p3CALodMz2eEzDdUd3n/b8EdDtU1Xhr/8jKAmKAsjo9bR1OoOoEvgBqixBAY6Q/lAAAAABJRU5ErkJggg==');
 }
 @font-face {
-  font-family: 'Just Sans';
-  src: url('/fonts/JUSTSans-Regular.otf');
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf');
 }
-@font-face {
-  font-family: 'Courgette';
-  src: url('/fonts/Courgette-Regular.ttf');
-}
+
 
 /* Page structure */
 * {
@@ -295,7 +292,7 @@ a {
   &:visited {
     color: var(--textColour);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
   }
   &:hover {
     color: inherit;
@@ -303,7 +300,7 @@ a {
   }
 }
 body {
-  font-family: 'Just Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   margin-bottom: 40vh;
   line-height: 1.5em;
   color: var(--textColour);
@@ -380,12 +377,10 @@ div.buttons {
 }
 .composeMessage {
   color: var(--messageColour);
-  font-weight: 700;
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   height: calc(1em + 1.5vh);
   font-style: italic;
-  letter-spacing: 0.5px
 }
 .poem-data {
   margin: 1rem 0;
@@ -514,7 +509,6 @@ input[type='text'] {
 }
 .shuffle {
   font-weight: 600;
-  letter-spacing: 0.5px;
   display: block;
   margin: 0 auto;
 }
@@ -531,7 +525,7 @@ input[type='text'] {
   transform: translateY(5px);
   fill: var(--bendyText);
   font-style: italic;
-  letter-spacing: 0.5px
+  letter-spacing: 0.25px
 }
 .randomiseMessage {
   margin: unset;
@@ -619,7 +613,7 @@ button.random.theme {
   outline: inherit;
   border: var(--buttonBorder);
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   span {
     margin: 0.5em;
@@ -638,7 +632,7 @@ button.random.theme {
   border-radius: 5px;
   margin-left: 0.5em;
   padding: 10px;
-  font-weight: 700;
+  font-weight: 600;
 }
 div.save {
   text-align: center;
