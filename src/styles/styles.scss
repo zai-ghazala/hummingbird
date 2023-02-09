@@ -388,7 +388,6 @@ div.buttons {
   font-weight: 500;
   margin: 0 auto;
   height: calc(1em + 1.5vh);
-  font-style: italic;
 }
 .poem-data {
   margin: 1rem 0;
@@ -533,7 +532,6 @@ input[type='text'] {
 .svgButton text {
   transform: translateY(5px);
   fill: var(--bendyText);
-  font-style: italic;
   letter-spacing: 0.25px
 }
 .randomiseMessage {
