@@ -241,7 +241,7 @@ html[data-theme='electricPalette'] {
 }
 @font-face {
   font-family: 'Freight Text';
-  src: url('/fonts/FreightText-BoldItalic.otf');
+  src: url('/fonts/FreightText-BoldItalic.ttf');
 }
 
 @font-face {
@@ -327,7 +327,7 @@ body {
 #space {
   position: fixed;
   font-family: 'Freight Text';
-  font-weight: 600;
+  font-weight: 500;
   bottom: 0;
   width: 100vw;
   left: 0;
@@ -385,7 +385,7 @@ div.buttons {
   color: var(--messageColour);
   text-align: center;
   font-family: 'Freight Text';
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 auto;
   height: calc(1em + 1.5vh);
   font-style: italic;
@@ -516,11 +516,10 @@ input[type='text'] {
   padding: 6px;
 }
 .shuffle {
-  font-weight: 600;
   display: block;
   margin: 0 auto;
   font-family: 'Freight Text';
-  font-weight: 600;
+  font-weight: 500;
 }
 .svgButton {
   height: 7.5em;
