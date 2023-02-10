@@ -253,7 +253,7 @@ html[data-theme='electricPalette'] {
 /* Page structure */
 * {
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 1s ease, color 1s ease;
 }
 [hidden] {
   display: none !important;
