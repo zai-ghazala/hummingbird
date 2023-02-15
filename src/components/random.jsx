@@ -252,10 +252,10 @@ export const Random = () => {
           <button type="button" onClick={scroll()} className="shuffle">
             <svg width="100%" height="100%">
               <defs>
-                <path id="text-path-2" d="M 68 79 q 84 -19 171 3" />
+                <path id="text-path-2" d="M 48 79 q 84 -19 171 3" />
               </defs>
 
-              <path d="M 68 79 q 84 -19 171 3" className="bendy" />
+              <path d="M 48 79 q 84 -19 171 3" className="bendy" />
               <text>
                 <textPath
                   xlinkHref="#text-path-2"
