@@ -112,7 +112,7 @@ export const Space = (props) => {
         })
         .catch(console.error);
       } else {
-        setMessage('your browser doesn’t support this')
+        setMessage('sharing not supported :(')
       }
   };
 
