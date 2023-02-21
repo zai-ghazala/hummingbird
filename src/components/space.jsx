@@ -105,7 +105,6 @@ export const Space = (props) => {
 
         navigator.share({
           text: text,
-          url: 'www.hummingbird.zaiz.ai',
         }).then(() => {
           setMessage('thanks for sharing!')
           setShareSuccess(true);
