@@ -5,6 +5,7 @@ import { db } from '../utils/firebase';
 
 export const Space = (props) => {
   const [composedPoem, setComposedPoem] = useState([]);
+  const [shareSuccess, setShareSuccess] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
@@ -94,6 +95,27 @@ export const Space = (props) => {
     setMessage('save and send?');
   };
 
+  const share = () => {
+      if (navigator.share) {
+        let text = composedPoem.join(' ');
+
+        text = text
+          .replace(/\[object Object\] /g, '\n')
+          .replace(/ \[object Object\] /g, '\n');
+
+        navigator.share({
+          text: text,
+          url: 'www.hummingbird.zaiz.ai',
+        }).then(() => {
+          setMessage('thanks for sharing!')
+          setShareSuccess(true);
+        })
+        .catch(console.error);
+      } else {
+        setMessage('your browser doesn’t support this')
+      }
+  };
+
   // Push Function
   const handleClick = () => {
     let text = composedPoem.join(' ');
@@ -162,6 +184,15 @@ export const Space = (props) => {
             <button
             type='button'
             onClick={send}
+          >
+            </button>
+          </div>
+          <div id="share" className={
+              clearSuccess || composedPoem.length === 0 ? 'disabled' : null
+            }>
+            <button
+            type='button'
+            onClick={share}
           >
             </button>
           </div>
