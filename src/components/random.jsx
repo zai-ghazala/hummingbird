@@ -172,7 +172,7 @@ export const Random = () => {
     
   return (
     <>
-    <div id="buttons" ref={buttonsRef} className={isSticky ? null: 'stuck'}>
+    <nav id="buttons" ref={buttonsRef} className={isSticky ? null: 'stuck'}>
 
     <div className="composeMessage randomiseMessage">randomise the current poem</div>
       <div className="buttons">
@@ -212,8 +212,8 @@ export const Random = () => {
           random submission
         </button>
       </div>
-</div>
-<div ref={poemRef}>
+</nav>
+<main ref={poemRef}>
       <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'}>
         <button type="button" onClick={shuffle()} className="shuffle">
           <svg width="100%" height="100%">
@@ -269,7 +269,7 @@ export const Random = () => {
           </button>
           </div>
         </div>
-      </div>
+      </main>
       <Space currentWord={currentWord} />
     </>
   );

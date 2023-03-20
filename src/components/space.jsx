@@ -110,7 +110,7 @@ export const Space = (props) => {
           setMessage('thanks for sharing!')
           setShareSuccess(true);
         })
-        .catch(console.error);
+        .catch(console.erroor);
       } else {
         setMessage('sharing not supported :(')
       }
