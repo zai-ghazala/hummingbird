@@ -277,32 +277,6 @@ export const dickinson = [
     "linecount": "8"
   },
   {
-    "title": "I never felt at Home -- Below",
-    "author": "Emily Dickinson",
-    "lines": [
-      "I never felt at Home -- Below --",
-      "And in the Handsome Skies",
-      "I shall not feel at Home -- I know --",
-      "I don't like Paradise --",
-      "",
-      "Because it's Sunday -- all the time --",
-      "And Recess -- never comes --",
-      "And Eden'll be so lonesome",
-      "Bright Wednesday Afternoons --",
-      "",
-      "If God could make a visit --",
-      "Or ever took a Nap --",
-      "So not to see us -- but they say",
-      "Himself -- a Telescope",
-      "",
-      "Perennial beholds us --",
-      "Myself would run away",
-      "From Him -- and Holy Ghost -- and All --",
-      "But there's the \"Judgement Day\"!"
-    ],
-    "linecount": "16"
-  },
-  {
     "title": "Could Hope inspect her Basis",
     "author": "Emily Dickinson",
     "lines": [
@@ -4836,22 +4810,6 @@ export const dickinson = [
       "Since Heaven and He are one."
     ],
     "linecount": "4"
-  },
-  {
-    "title": "Given in Marriage unto Thee",
-    "author": "Emily Dickinson",
-    "lines": [
-      "Given in Marriage unto Thee",
-      "Oh thou Celestial Host --",
-      "Bride of the Father and the Son",
-      "Bride of the Holy Ghost.",
-      "",
-      "Other Betrothal shall dissolve --",
-      "Wedlock of Will, decay --",
-      "Only the Keeper of this Ring",
-      "Conquer Mortality --"
-    ],
-    "linecount": "8"
   },
   {
     "title": "Before you thought of Spring",
