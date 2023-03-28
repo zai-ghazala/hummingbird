@@ -421,8 +421,7 @@ div.footerButtons {
   bottom: 1.5em;
   display: flex;
   text-align: center;
-  justify-content: center;
-  gap: 0.75em;
+  justify-content: space-evenly;
   margin-left: -1em;
 }
 .disabled {
@@ -431,6 +430,10 @@ div.footerButtons {
   pointer-events: none;
 }
 @media screen and (orientation: landscape) {
+  .footerButtons div, .footerButtons button {
+    width: calc(1.5em + 1vw);
+    height: calc(1.5em + 1vw);
+  }
   body {
     font-size: 1.3vw;
   }
@@ -471,6 +474,10 @@ div.footerButtons {
   }
 }
 @media screen and (orientation: portrait) {
+  .footerButtons div, .footerButtons button {
+    width: calc(1.5em + 4vh);
+    height: calc(1.5em + 4vh);
+  }
   body {
     font-size: calc(0.725em + 0.4vh);
   }
@@ -683,15 +690,9 @@ div.save {
   background-image: var(--share);
 }
 .footerButtons div {
-  width: calc(1.75em + 1vh);
-  height: calc(1.75em + 1vh);
   display: inline-block;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-.footerButtons button {
-  width: calc(1.75em + 1vh);
-  height: calc(1.75em + 1vh);
 }
 #space div.enter.sendRequest {
   margin-top: 7.5em;
