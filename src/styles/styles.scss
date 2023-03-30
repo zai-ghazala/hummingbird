@@ -731,8 +731,3 @@ div.save {
 .likeCount div {
   margin-right: -1em;
 }
-* {
-  :not(.disabled):focus {
-    outline: 5px solid #000;
-  }
-}
