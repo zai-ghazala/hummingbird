@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { db } from "../utils/firebase";
-import { ref, get, set, increment } from "firebase/database";
-
 import { Poem } from "./poem";
 import { Space } from "./space";
 
@@ -9,28 +6,20 @@ import { rossetti } from "../assets/data/Rossetti.js";
 import { bronte } from "../assets/data/Bronte.js";
 import { dickinson } from "../assets/data/Dickinson.js";
 
-import Heart from "../components/heart";
-
 export const Random = () => {
   const poemRef = useRef();
   const buttonsRef = useRef();
 
   const [isSticky, setIsSticky] = useState(false);  
-  
-  const [isClick, setClick] = useState(false);
-  const [isFill, setFill] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
-  
+
   const [poem, setPoem] = useState([]);
   const [shuffledPoem, setShuffledPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
   const [submission, setSubmission] = useState(false);
   const [author, setAuthor] = useState("");
-  const [timestamp, setTimestamp] = useState("");
   const [title, setTitle] = useState("");
 
   const [isShuffled, setShuffled] = useState(false);
-
 
   const scroll = () => (e) => {
     poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -46,32 +35,8 @@ export const Random = () => {
     setPoem(random.lines);
     setAuthor(random.author);
     setTitle(random.title);
-    setSubmission(false);
     setShuffled(false)
   };
-
-  useEffect(() => {
-    if (localStorage.hasOwnProperty(`${author}-${timestamp}`)) {
-      setFill(true)
-      setClick(false)
-      }
-    else {
-      setFill(false)
-      setClick(false)
-    }
-    get(ref(db, `likes/${author}-${timestamp}/`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        setLikeCount(snapshot.val().likeCount)
-      } else {
-        setLikeCount(0)
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    })
-  }, [author, timestamp]);
-
   
   useEffect(() => {
     getPoem(dickinson);
@@ -117,58 +82,6 @@ export const Random = () => {
   const handleDrag = (word) => {
     setCurrentWord(word);
   };
-
-
-  const random = () => {
-    function getRandomProperty(obj) {
-      const keys = Object.keys(obj);
-
-      return keys[Math.floor(Math.random() * keys.length)];
-    }
-      get(ref(db, "poems/"))
-        .then((snapshot) => {
-          if (snapshot.exists()) {
-            let poems = [];
-            poems.push(snapshot.val());
-            const random = poems[0][getRandomProperty(poems[0])];
-
-            setPoem(random["poem"].split("\n"));
-            setAuthor(random["name"]);
-            setTimestamp(new Date(random["timestamp"]));
-            setSubmission(true);
-            setShuffled(false);
-          } else {
-            console.log("No data available");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        }
-        )
-  };
-
-
-  const like = () => e => {  
-      set(ref(db, `likes/${author}-${timestamp}/`), {
-        likeCount: increment(+1),
-      });
-      setLikeCount(likeCount + 1);
-      setClick(true)
-    localStorage.setItem(`${author}-${timestamp}`, '1')
-
-  }
-    const unlike = () => e => {
-      if (likeCount > 0 ) {
-      set(ref(db, `likes/${author}-${timestamp}/`), {
-        likeCount: increment(-1),
-      });
-      setLikeCount(likeCount - 1);
-      }
-    localStorage.removeItem(`${author}-${timestamp}`)
-    setClick(false);
-    setFill(false)
-  
-}
     
   return (
     <>
@@ -204,14 +117,6 @@ export const Random = () => {
           Emily Brontë
         </button>
       </div>
-
-      <div className="buttons">
-        <button type="button" onClick={random} className="random submission">
-          <span>⟳</span>
-          <br />
-          random submission
-        </button>
-      </div>
 </nav>
 <main ref={poemRef}>
       <div className={isSticky ? 'svgButton shuffle': 'svgButton shuffle stuck'}>
@@ -240,8 +145,7 @@ export const Random = () => {
 
         {submission ? (
           <div className="poem-data">
-            — by {author} on {timestamp.toLocaleDateString()}<br/>  <div className="likeCount"><Heart isFill={isFill} isClick={isClick} onClick={isClick ? unlike() : !isFill ? like() : unlike() } /> {likeCount === undefined ? null : likeCount}</div>
-          </div>
+            — by {author}<br/></div>
         ) : title && author ? (
           <div className="poem-data">
             — <span>{title}</span> by {author.replace("Bronte", "Brontë")}

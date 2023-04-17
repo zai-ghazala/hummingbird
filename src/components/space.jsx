@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { DropTarget } from 'react-drag-drop-container';
-import { ref, push, serverTimestamp } from 'firebase/database';
-import { db } from '../utils/firebase';
 
 export const Space = (props) => {
   const [composedPoem, setComposedPoem] = useState([]);
@@ -10,14 +8,7 @@ export const Space = (props) => {
   const [newLineSuccess, setNewLineSuccess] = useState(false);
   const [clearSuccess, setClearSuccess] = useState(false);
   const [backspaceSuccess, setBackspaceSuccess] = useState(false);
-  const [sendRequest, setSendRequest] = useState(false);
-
-  const [saveSuccess, setSaveSuccess] = useState(false);
-  const [saveFailure, setSaveFailure] = useState(false);
   const [message, setMessage] = useState(null);
-
-  const [username, setUsername] = useState('');
-  const [updated, setUpdated] = useState(username);
   const scrollRef = useRef();
 
 
@@ -31,7 +22,6 @@ export const Space = (props) => {
     setClearSuccess(false);
     setCopySuccess(false);
     setBackspaceSuccess(false);
-    setSendRequest(false);
     setSaveSuccess(false);
     setSaveFailure(false);
     setMessage(null);
@@ -73,7 +63,6 @@ export const Space = (props) => {
           <br />
         </>,
       ]);
-      setSendRequest(false);
       setNewLineSuccess(true);
       setMessage('new line');
     }
@@ -83,16 +72,10 @@ export const Space = (props) => {
     if (composedPoem.length != 0) {
       const temp = [...composedPoem];
       temp.pop();
-      setSendRequest(false);
       setComposedPoem(temp);
       setBackspaceSuccess(true);
       setMessage('backspace');
     }
-  };
-
-  const send = () => {
-    setSendRequest(true);
-    setMessage('save and send?');
   };
 
   const share = () => {
@@ -149,28 +132,12 @@ export const Space = (props) => {
       <div id="space">
         <div className='composeMessage'>{message ? message : null}</div>
 
-        {sendRequest && composedPoem.length != 0 && (
-          <div className='save'>
-            <input
-              type='text'
-              name='username'
-              placeholder='your name here'
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-            />
-            <button type='button' onClick={handleClick}>
-              publish
-            </button>
-          </div>
-        )}
-
-
         <DropTarget
           handleDrag={props.handleDrag}
           onHit={() => handleDrop(props.currentWord)}
         >
 
-          <div ref={scrollRef} className={sendRequest ? 'sendRequest enter' : 'enter'}>
+          <div ref={scrollRef} className="enter">
             {composedPoem.map((word, i) => {
               return <span key={word + i}>{word} </span>;
             })}
@@ -178,15 +145,6 @@ export const Space = (props) => {
         </DropTarget>
 
         <div className='footerButtons'>
-          <div id="send" className={
-              clearSuccess || composedPoem.length === 0 ? 'disabled' : null
-            }>
-            <button
-            type='button'
-            onClick={send}
-          >
-            </button>
-          </div>
           <div id="share" className={
               clearSuccess || composedPoem.length === 0 ? 'disabled' : null
             }>
