@@ -418,8 +418,8 @@ div.footerButtons {
 }
 @media screen and (orientation: landscape) {
   .footerButtons div, .footerButtons button {
-    width: calc(1.5em + 1vw);
-    height: calc(1.5em + 1vw);
+    width: calc(1.75em + 1vw);
+    height: calc(1.75em + 1vw);
   }
   body {
     font-size: 1.3vw;
@@ -514,6 +514,10 @@ div.footerButtons {
   }
 }
 @media screen and (min-width: 480px) and (max-width: 1199px) and (orientation: landscape) {
+  .footerButtons div, .footerButtons button {
+    width: calc(2.75em + 1vw);
+    height: calc(2.75em + 1vw);
+  }
   body {
     font-size: calc(0.85em + 0.1vw);
   }
@@ -607,12 +611,12 @@ input[type='text'] {
     left: 0vw;
   }
   #buttons.stuck .buttons button.author:nth-of-type(2) {
-    width: 19.5vw;
-    left: 15.5vw;
+    width: 20vw;
+    left: 16.5vw;
   }
   #buttons.stuck .buttons button.author:nth-of-type(3) {
-    width: 17vw;
-    left: 33vw;
+    width: 18vw;
+    left: 34vw;
   }
   #buttons {
     width: 50vw;
