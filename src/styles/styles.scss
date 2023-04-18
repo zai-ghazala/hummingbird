@@ -424,6 +424,9 @@ div.footerButtons {
   body {
     font-size: 1.3vw;
   }
+  #buttons.stuck .buttons button {
+    font-size: 0.9em
+  }
   .svgButton,
   .composeMessage {
     font-size: 1.7vw;
@@ -464,21 +467,24 @@ div.footerButtons {
   body {
     font-size: calc(0.725em + 0.4vh);
   }
+  #buttons.stuck .buttons button {
+    font-size: 0.85em
+  }
   .svgButton,
   .composeMessage {
     font-size: calc(0.9em + 1.25vh);
   }
   #buttons.stuck .buttons button:nth-of-type(1) {
-    width: 38vw;
-    left: -2vw;
+    width: 35vw;
+    left: 0vw;
   }
   #buttons.stuck .buttons button.author:nth-of-type(2) {
-    width: 40vw;
-    left: 33.5vw;
+    width: 35vw;
+    left: 35vw;
   }
   #buttons.stuck .buttons button.author:nth-of-type(3) {
     width: 30vw;
-    left: 71vw;
+    left: 70vw;
   }
   #buttons {
     width: 100%;
@@ -687,9 +693,6 @@ div.save {
       opacity: 1;
     }
   }
-}
-#buttons.stuck .buttons button {
-  font-size: 0.9em
 }
 .svgButton.shuffle.stuck {
   margin-top: 7em;
