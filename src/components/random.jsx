@@ -15,11 +15,20 @@ export const Random = () => {
   const [poem, setPoem] = useState([]);
   const [shuffledPoem, setShuffledPoem] = useState([]);
   const [currentWord, setCurrentWord] = useState("");
-  const [submission, setSubmission] = useState(false);
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
 
   const [isShuffled, setShuffled] = useState(false);
+
+  const smarten = (string) => {
+    string = string.replace(/(^|[-\u2014/([{"\s])'/g, '$1\u2018'); // opening singles
+    string = string.replace(/'/g, '\u2019'); // closing singles & apostrophes
+    string = string.replace(/(^|[-\u2014/([{\u2018\s])"/g, '$1\u201c'); // opening doubles
+    string = string.replace(/"/g, '\u201d'); // closing doubles
+    string = string.replace(/--/g, '\u2014'); // em-dashes
+
+    return string;
+  };
 
   const scroll = () => (e) => {
     poemRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -32,9 +41,9 @@ export const Random = () => {
     };
 
     const random = getRandom(poet);
-    setPoem(random.lines);
+    setPoem(random.lines.map(line => smarten(line)));
     setAuthor(random.author);
-    setTitle(random.title);
+    setTitle(smarten(random.title));
     setShuffled(false)
   };
   
@@ -143,10 +152,7 @@ export const Random = () => {
       <div className="poem">
         {poem && <Poem poem={isShuffled ? shuffledPoem : poem} handleDrag={handleDrag} />}
 
-        {submission ? (
-          <div className="poem-data">
-            — by {author}<br/></div>
-        ) : title && author ? (
+        {title && author ? (
           <div className="poem-data">
             — <span>{title}</span> by {author.replace("Bronte", "Brontë")}
           </div>
