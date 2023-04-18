@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 export const ThemeToggle = () => {
-
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!localStorage.getItem("theme")) {
@@ -23,11 +21,10 @@ export const ThemeToggle = () => {
   },[]);
 
   const nextTheme = () => {
+
     const allThemes = ['parrotPalette', 'tropicalPalette', 'plainPalette','contrastPalette', 'beachyPalette', 'peachyPalette', 'northernLightsPalette', 'streetPalette', 'bubblegumPalette', 'magentaPalette', 'electricPalette', 'darkPalette']
 
-    setCount(count + 1);
-
-    const theme = allThemes[count % allThemes.length];
+    const theme = allThemes[parseInt(Math.random() * allThemes.length)];
 
     document
         .getElementsByTagName("HTML")[0]
@@ -44,7 +41,7 @@ export const ThemeToggle = () => {
     >
       <span>⟳</span>
       <br />
-      random palette
+      random theme
     </button>
   );
 }

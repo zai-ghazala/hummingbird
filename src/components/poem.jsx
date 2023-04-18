@@ -7,7 +7,7 @@ export const Poem = (props) => {
          {props.poem.map((line, i) => (
             <div key={"line-" + i}>
               {line.split(" ").map((word, i) => (
-               <Word handleDrag={props.handleDrag} key={"word" + i} word={word}/>
+                <Word handleDrag={props.handleDrag} key={"word" + i} word={word}/>
               ))}
             </div>
           ))}

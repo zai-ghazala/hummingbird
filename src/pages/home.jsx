@@ -20,8 +20,9 @@ export default function Home() {
           alt="hummingbird"
         />
 
-        <div className="footer">made with 💖 by <a href="https://zaiz.ai">Zainab Ismail</a></div>
+        
         <ThemeToggle />
+        <div className="footer">made with 💖 by <a href="https://zaiz.ai">Zainab Ismail</a></div>
       </div>
   );
 }
