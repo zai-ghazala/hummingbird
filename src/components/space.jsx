@@ -64,6 +64,7 @@ export const Space = (props) => {
         </>,
       ]);
       setNewLineSuccess(true);
+      setCopySuccess(false);
       setMessage('new line');
     }
   };
@@ -74,6 +75,7 @@ export const Space = (props) => {
       temp.pop();
       setComposedPoem(temp);
       setBackspaceSuccess(true);
+      setCopySuccess(false);
       setMessage('backspace');
     }
   };
@@ -97,34 +99,6 @@ export const Space = (props) => {
       } else {
         setMessage('sharing not supported :(')
       }
-  };
-
-  // Push Function
-  const handleClick = () => {
-    let text = composedPoem.join(' ');
-
-    text = text
-      .replace(/\[object Object\] /g, '\n')
-      .replace(/ \[object Object\] /g, '\n')
-      .replace('[object Object]', '');
-
-    setUpdated(username);
-
-    if (username.length === 0) {
-      setMessage('oops blank name');
-      setSaveSuccess(false);
-    } else if (composedPoem.length > 200 || username.length > 20) {
-      setMessage('oops too long');
-      setSaveSuccess(false);
-    } else {
-      push(ref(db, 'poems/'), {
-        poem: text,
-        name: username,
-        timestamp: serverTimestamp(),
-      });
-      setSaveSuccess(true);
-      setMessage(`wow published! thanks ${username}`);
-    }
   };
 
   return (
