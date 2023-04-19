@@ -565,9 +565,14 @@ input[type='text'] {
     border-right: var(--buttonBorder);
   }
 }
-div.save button,
 div.buttons button,
 button.random.theme {
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: 5px;
   padding: 10px;
   text-align: center;
@@ -577,21 +582,12 @@ button.random.theme {
   span {
     font-weight: 500;
     margin-bottom: 0.2em;
-    font-size: 2em;
+    font-size: 2.5em;
     color: var(--buttonText);
     &:hover {
       color: var(--buttonText);
     }
   }
-}
-div.buttons button,
-button.random.theme {
-  text-transform: uppercase;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 button.random.theme {
   width: 30%
@@ -645,4 +641,9 @@ div.save {
 }
 .svgButton.shuffle.stuck {
   margin-top: 7em;
+}
+#buttons.stuck .buttons button {
+  span {
+    font-size: 3em
+  }
 }
