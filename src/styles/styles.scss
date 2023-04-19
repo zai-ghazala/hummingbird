@@ -406,7 +406,7 @@ div.footerButtons {
     font-size: calc(0.725em + 0.4vh);
   }
   #buttons.stuck .buttons button {
-    font-size: calc(0.85em - 0.1vh)
+    font-size: calc(0.85em - 0.25vh)
   }
   .svgButton,
   .composeMessage {
@@ -429,7 +429,7 @@ div.footerButtons {
     padding: 1em 0;
   }
   #buttons.stuck .buttons button {
-    height: 6em;
+    height: calc(6em + 1.5vh);
   }
   div.footerButtons {
     width: 100vw;
@@ -542,7 +542,7 @@ input[type='text'] {
 }
 @media screen and (max-width: 1199px) and (orientation: landscape) {
   #buttons.stuck .buttons button {
-    height: 5.5em;
+    height: calc(5.5em + 1vw);
   }
   #buttons.stuck .buttons button:nth-of-type(1) {
     width: 18vw;
@@ -575,7 +575,6 @@ button.random.theme {
   background: var(--accent);
   color: var(--buttonText);
   span {
-    margin: 0.5em;
     font-weight: 500;
     font-size: 2em;
     color: var(--buttonText);
@@ -588,6 +587,13 @@ div.buttons button,
 button.random.theme {
   text-transform: uppercase;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+button.random.theme {
+  width: 30%
 }
 div.save button {
   text-transform: lowercase;
