@@ -104,7 +104,6 @@ export const Random = () => {
           onClick={handleClick(dickinson)}
         >
           <span>⟳</span>
-          <br />
           Emily Dickinson
         </button>
         <button
@@ -113,7 +112,6 @@ export const Random = () => {
           onClick={handleClick(rossetti)}
         >
           <span>⟳</span>
-          <br />
           Christina Rossetti
         </button>
         <button
@@ -122,7 +120,6 @@ export const Random = () => {
           onClick={handleClick(bronte)}
         >
           <span>⟳</span>
-          <br />
           Emily Brontë
         </button>
       </div>

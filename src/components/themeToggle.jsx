@@ -40,7 +40,6 @@ export const ThemeToggle = () => {
       onClick={() => nextTheme()}
     >
       <span>⟳</span>
-      <br />
       random theme
     </button>
   );
