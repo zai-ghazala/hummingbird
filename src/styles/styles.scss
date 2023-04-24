@@ -575,7 +575,7 @@ button.random.theme {
   color: var(--buttonText);
   span {
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin: 0.2em 0;
     font-size: 2.5em;
     color: var(--buttonText);
     &:hover {
