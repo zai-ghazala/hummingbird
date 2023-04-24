@@ -428,9 +428,6 @@ div.footerButtons {
     width: 100%;
     padding: 1em 0;
   }
-  #buttons.stuck .buttons button {
-    height: calc(6em + 1.5vh);
-  }
   div.footerButtons {
     width: 100vw;
   }
@@ -541,9 +538,6 @@ input[type='text'] {
   }
 }
 @media screen and (max-width: 1199px) and (orientation: landscape) {
-  #buttons.stuck .buttons button {
-    height: calc(5.5em + 1vw);
-  }
   #buttons.stuck .buttons button:nth-of-type(1) {
     width: 18vw;
     left: 0vw;
