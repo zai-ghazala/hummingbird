@@ -3,26 +3,20 @@ import React, { useEffect } from "react";
 export const ThemeToggle = () => {
 
   useEffect(() => {
-    if (!localStorage.getItem("theme")) {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document
-        .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", "darkPalette");
-      } else {
-        document
-        .getElementsByTagName("HTML")[0]
-        .setAttribute("data-theme", "electricPalette");
-      }
+    if (!localStorage.getItem('theme')) {
+      document
+        .getElementsByTagName('HTML')[0]
+        .setAttribute('data-theme', 'electric');
+    } else {
+      document
+        .getElementsByTagName('HTML')[0]
+        .setAttribute('data-theme', localStorage.getItem('theme'));
     }
-    else { document
-    .getElementsByTagName("HTML")[0]
-    .setAttribute("data-theme", localStorage.getItem("theme"));
-    }
-  },[]);
+  }, []);
 
   const nextTheme = () => {
 
-    const allThemes = ['parrotPalette', 'tropicalPalette', 'beachyPalette', 'peachyPalette', 'northernLightsPalette', 'bubblegumPalette', 'magentaPalette', 'electricPalette', 'darkPalette']
+    const allThemes = ['parrot', 'tropical', 'beachy', 'peachy', 'bubblegum', 'electric']
 
     const theme = allThemes[parseInt(Math.random() * allThemes.length)];
 
