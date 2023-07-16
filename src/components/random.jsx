@@ -139,7 +139,7 @@ export const Random = () => {
                 startOffset="50%"
                 textAnchor="middle"
               >
-                {isShuffled ? 'reset' : 'shuffle words!'}
+                {isShuffled ? 'reset' : 'shuffle'}
               </textPath>
             </text>
           </svg>

@@ -96,8 +96,8 @@ html {
   --share: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABg0lEQVR4nO2YPU7DQBBGHwVxQWqaiIojcANKrpAbIBxxCTgEdFyBK0QEVw5KlT59FBxEpChatNJYcoEdFpB2JvYnrWRpt5hZz8/bgU6dOsVWAoyAV2Aty3+nsqdaA2AKuJqVyxmV8rfbZHzVCZV/woeN++G6QaGyAAcmKFQR4IA/a9qBFYrUB+6BrbUQOgKGwCLAcKcliS+A8S8Md1JGe7EMPwUegV2NcQtgprGRHQO3wLLGsI3kQV+aVFpBCZ/cLxI2UW7+cs+tPgPnKNQZ8NRg+By40kCLH9JFR7JXlsVNjeFLCScfVupocdZQFneSwD6RVdOi+2aNpXSaoUVXKYtDaVqmaHFbKYtqVLSJFt9RqMx6CKXWkzgRmDJbRstG1uTE255G9hCzkZXqCRlOJLHXQovXsqcaJQ4C5lqD0yEPmk/gDjip0G4mpKtqNmr2Sfnfj/oEBTI9VjmIwVaraXeFQpkfr4fQrqokDqXdPOZs9K+0m2tpZCG0W8SejXbqhCF9AXR3z9ODUMhaAAAAAElFTkSuQmCC');
 }
 @font-face {
-  font-family: 'Dohearts Italic';
-  src: url('/fonts/Dohearts-Italic.otf');
+  font-family: 'Jenthill';
+  src: url('/fonts/Jenthill.ttf');
 }
 @font-face {
   font-family: 'Larsseit';
@@ -235,8 +235,7 @@ div.buttons {
 .composeMessage {
   color: var(--messageColour);
   text-align: center;
-  font-family: 'Dohearts Italic';
-  font-weight: 500;
+  font-family: 'Jenthill';
   margin: 0 auto;
   height: calc(1em + 1.5vh);
 }
@@ -394,8 +393,7 @@ input[type='text'] {
 .shuffle {
   display: block;
   margin: 0 auto;
-  font-family: 'Dohearts Italic';
-  font-weight: 500;
+  font-family: 'Jenthill';
 }
 .bendy {
   fill: none;

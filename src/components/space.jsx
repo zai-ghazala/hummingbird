@@ -28,7 +28,7 @@ export const Space = (props) => {
   };
 
   useEffect(() => {
-    setMessage('drag & drop your poem here');
+    setMessage('drag and drop your poem here');
   }, []);
 
   const copy = () => {
