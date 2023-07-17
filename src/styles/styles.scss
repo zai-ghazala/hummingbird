@@ -223,7 +223,7 @@ img.bird {
   display: flex;
   border-radius: 99%;
   justify-content: center;
-  filter: drop-shadow(5px 5px 0px var(--accent));
+  filter: drop-shadow(5px 5px 0px #fff);
 }
 div.buttons {
   margin: 1rem;
