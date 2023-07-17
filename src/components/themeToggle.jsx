@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
-  
+  const [rerender, setRerender] = useState(false);
 
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
@@ -13,7 +13,8 @@ export const ThemeToggle = () => {
         .getElementsByTagName('HTML')[0]
         .setAttribute('data-theme', localStorage.getItem('theme'));
     }
-  })
+    setRerender(!rerender);
+  }, [])
 
   const nextTheme = () => {
 
@@ -25,7 +26,7 @@ export const ThemeToggle = () => {
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-
+    setRerender(!rerender);
     }
 
 
