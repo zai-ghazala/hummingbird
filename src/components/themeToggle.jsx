@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
         .getElementsByTagName('HTML')[0]
         .setAttribute('data-theme', localStorage.getItem('theme'));
     }
-  }, []);
+  }, [document])
 
   const nextTheme = () => {
 
