@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
+  
+  const [theme, setTheme] = useState('')
 
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
@@ -12,7 +14,7 @@ export const ThemeToggle = () => {
         .getElementsByTagName('HTML')[0]
         .setAttribute('data-theme', localStorage.getItem('theme'));
     }
-  }, [document])
+  }, [theme])
 
   const nextTheme = () => {
 
@@ -24,6 +26,8 @@ export const ThemeToggle = () => {
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+
+    setTheme(theme)
     }
 
 
