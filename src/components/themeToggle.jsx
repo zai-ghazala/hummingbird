@@ -13,8 +13,7 @@ export const ThemeToggle = () => {
         .getElementsByTagName('HTML')[0]
         .setAttribute('data-theme', localStorage.getItem('theme'));
     }
-    setRerender(!rerender);
-  }, [])
+  }, [rerender])
 
   const nextTheme = () => {
 
