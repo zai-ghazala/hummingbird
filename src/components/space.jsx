@@ -42,7 +42,7 @@ export const Space = (props) => {
       if (composedPoem.length != 0) {
         setCopySuccess(true);
         setNewLineSuccess(false);
-        setMessage('copied to clipboard!');
+        setMessage('copied to clipboard');
       }
     });
   };
@@ -51,7 +51,7 @@ export const Space = (props) => {
     if (composedPoem.length != 0) {
       setComposedPoem([]);
       setClearSuccess(true);
-      setMessage('start over?');
+      setMessage('start over');
     }
   };
 
@@ -92,12 +92,12 @@ export const Space = (props) => {
           text: text,
           url: 'https://www.hummingbird.zaiz.ai',
         }).then(() => {
-          setMessage('thanks for sharing!')
+          setMessage('thanks for sharing')
           setShareSuccess(true);
         })
         .catch(console.erroor);
       } else {
-        setMessage('sharing not supported :(')
+        setMessage('sharing not supported')
       }
   };
 
