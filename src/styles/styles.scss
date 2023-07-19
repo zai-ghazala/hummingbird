@@ -1,5 +1,8 @@
 html[data-theme='peachy'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --draggable: #fff;
@@ -14,7 +17,10 @@ html[data-theme='peachy'] {
   --buttonPane: #c1ebe6;
 }
 html[data-theme='bubblegum'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --draggable: #fff;
@@ -29,7 +35,10 @@ html[data-theme='bubblegum'] {
   --bendyText: var(--buttonText);
 }
 html[data-theme='tropical'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --draggable: #fff;
@@ -44,7 +53,10 @@ html[data-theme='tropical'] {
   --bendyText: var(--buttonText);
 }
 html[data-theme='beachy'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --draggable: #fff;
@@ -59,7 +71,10 @@ html[data-theme='beachy'] {
   --buttonPane: #c1ebe6;
 }
 html[data-theme='parrot'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --bendyFill: var(--accent);
@@ -74,7 +89,10 @@ html[data-theme='parrot'] {
   --buttonPane: #c1ebe6;
 }
 html[data-theme='electric'] {
-  --boxShadow: 0 2px 4px 0 rgba(31, 38, 135, 0.2);
+  --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+  0 2px 2px rgba(0,0,0,0.15), 
+  0 4px 4px rgba(0,0,0,0.15), 
+  0 8px 8px rgba(0,0,0,0.15);
   --textColour: #111;
   --spaceText: #111;
   --draggable: #fff;
@@ -201,7 +219,7 @@ body {
 }
 span.word {
   border-width: 1px 3px 3px 1px;
-  box-shadow: var(--boxShadow);
+  filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.15));
   border: var(--buttonBorder);
   padding: 2.5px 5px;
   margin: 3.5px;
@@ -216,6 +234,7 @@ span.word {
     background: yellow;
     filter: brightness(150%);
     color: black;
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.15));
   }
 }
 img.bird {
@@ -223,7 +242,7 @@ img.bird {
   display: flex;
   border-radius: 99%;
   justify-content: center;
-  filter: drop-shadow(5px 5px 0px #fff);
+  filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.15));
 }
 div.buttons {
   margin: 1rem;
