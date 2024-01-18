@@ -22,7 +22,6 @@ export const Space = (props) => {
     setClearSuccess(false);
     setCopySuccess(false);
     setBackspaceSuccess(false);
-    setSaveSuccess(false);
     setSaveFailure(false);
     setMessage(null);
   };
