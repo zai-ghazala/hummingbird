@@ -89,7 +89,7 @@ export const Space = (props) => {
 
         navigator.share({
           text: text,
-          url: 'https://www.hummingbird.zaiz.ai',
+          url: 'https://www.hummingbird.ghazala.cc',
         }).then(() => {
           setMessage('thanks for sharing')
           setShareSuccess(true);
