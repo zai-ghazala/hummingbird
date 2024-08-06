@@ -22,7 +22,7 @@ export default function Home() {
 
         
         <ThemeToggle />
-        <div className="footer">made with 💖 by <a href="https://ghazala.cc">Zainab Ismail</a></div>
+        <div className="footer">made with 💖 by <a href="https://suddenghazals.com">Zainab Ismail</a></div>
       </div>
   );
 }
